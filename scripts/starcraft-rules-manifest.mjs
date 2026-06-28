@@ -333,4 +333,76 @@ export const STARCRAFT_RULES = [
     summary:
       'Phase 4 of each round: determine Mission Marker control, score victory points, resolve end-of-round effects, and refresh activation markers.',
   },
+  {
+    keyword: 'Hold',
+    phase: 'Movement Phase',
+    applicability: 'restricted',
+    labels: ['8.5.1 HOLD'],
+    ruleRef: '8.5.1',
+    summary:
+      'A unit performs no action during its Movement Phase activation. Set an Activation Marker beside it; the unit counts as activated for the phase.',
+  },
+  {
+    keyword: 'Move',
+    phase: 'Movement Phase',
+    applicability: 'restricted',
+    labels: ['8.5.2 MOVE'],
+    ruleRef: '8.5.2',
+    summary:
+      'An unengaged unit changes its position on the battlefield during the Movement Phase, following movement rules and terrain restrictions.',
+  },
+  {
+    keyword: 'Hidden',
+    phase: 'Battle Round',
+    applicability: 'general',
+    labels: ['HIDDEN is classified as a Status'],
+    ruleRef: '11',
+    summary:
+      'Hidden units cannot be targeted by enemy Ranged Attacks unless the attacker is within 6". Some statuses such as Burrowed also grant Hidden.',
+  },
+  {
+    keyword: 'Close Combat',
+    phase: 'Engagement',
+    applicability: 'restricted',
+    labels: ['8.8 PHASE 3: THE COMBAT PHASE'],
+    ruleRef: '8.8',
+    summary:
+      'During the Combat Phase, engaged units fight in close combat. Activations are mandatory for all engaged units—there is no passing.',
+  },
+  {
+    keyword: 'Batch',
+    phase: 'Assault Phase',
+    applicability: 'restricted',
+    labels: ['separate Batches'],
+    ruleRef: '8.7.3',
+    summary:
+      'Attacks with the same weapon profile against the same target resolve as one Batch. Sidearm and other special weapons may form separate Batches in the same activation.',
+  },
+  {
+    keyword: 'Shielded',
+    phase: 'Battle Round',
+    applicability: 'general',
+    labels: ['SHIELDED\nIf a Shield value is present'],
+    ruleRef: '11',
+    summary:
+      'If a unit card lists Shield, add that value to each model\'s Hit Points. Shield increases how much damage a model can absorb before it is removed.',
+  },
+  {
+    keyword: 'Activation Marker',
+    phase: 'Battle Round',
+    applicability: 'general',
+    labels: ['counts as Activated for the current', '8.5.1 HOLD'],
+    ruleRef: '8.5',
+    summary:
+      'Markers track which units have activated in the current phase. A unit with an Activation Marker cannot activate again until markers refresh at end of round.',
+  },
+  {
+    keyword: 'Psionic',
+    phase: 'Battle Round',
+    applicability: 'general',
+    labels: ['Psionic, Flying, and Ground'],
+    ruleRef: '11',
+    summary:
+      'Psionic is a Combat Tag identifying psionic units. Some weapons and abilities only apply against—or can only target—specific tags such as Psionic.',
+  },
 ];

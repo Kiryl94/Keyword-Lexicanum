@@ -46,7 +46,7 @@ const wh40kEntries = WH40K_RULES.map((rule) =>
 ).sort((a, b) => a.keyword.localeCompare(b.keyword, 'en', { sensitivity: 'base' }));
 
 writeSample('wh40k-core-corpus.sample.json', {
-  version: 'sample-v4',
+  version: 'sample-v5',
   license: 'sample-only',
   attribution:
     'Representative paraphrased entries for UX/demo. Not official Games Workshop text. ' +
@@ -65,7 +65,7 @@ const starcraftEntries = STARCRAFT_RULES.map((rule) =>
 ).sort((a, b) => a.keyword.localeCompare(b.keyword, 'en', { sensitivity: 'base' }));
 
 writeSample('starcraft-core-corpus.sample.json', {
-  version: 'sample-v4',
+  version: 'sample-v5',
   license: 'sample-only',
   attribution:
     'Representative paraphrased entries for UX/demo. Not official Archon/Blizzard text. ' +

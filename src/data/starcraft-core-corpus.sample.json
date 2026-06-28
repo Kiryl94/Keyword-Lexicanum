@@ -1,9 +1,21 @@
 {
-  "version": "sample-v4",
+  "version": "sample-v5",
   "license": "sample-only",
   "attribution": "Representative paraphrased entries for UX/demo. Not official Archon/Blizzard text. Build full corpus locally with npm run corpus:build-starcraft.",
-  "entryCount": 36,
+  "entryCount": 44,
   "entries": [
+    {
+      "keyword": "Activation Marker",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "Markers track which units have activated in the current phase. A unit with an Activation Marker cannot activate again until markers refresh at end of round.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Activation Marker (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Activation Marker (8.5)"
+      }
+    },
     {
       "keyword": "Alternating Activations",
       "phase": "Battle Round",
@@ -53,6 +65,18 @@
       }
     },
     {
+      "keyword": "Batch",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "Attacks with the same weapon profile against the same target resolve as one Batch. Sidearm and other special weapons may form separate Batches in the same activation.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Batch (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Batch (8.7.3)"
+      }
+    },
+    {
       "keyword": "Burrow",
       "phase": "Battle Round",
       "applicability": "general",
@@ -74,6 +98,18 @@
         "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
         "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
         "section": "Charge (8.7.7)"
+      }
+    },
+    {
+      "keyword": "Close Combat",
+      "phase": "Engagement",
+      "applicability": "restricted",
+      "explanation": "During the Combat Phase, engaged units fight in close combat. Activations are mandatory for all engaged units—there is no passing.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Close Combat (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Close Combat (8.8)"
       }
     },
     {
@@ -233,6 +269,30 @@
       }
     },
     {
+      "keyword": "Hidden",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "Hidden units cannot be targeted by enemy Ranged Attacks unless the attacker is within 6\". Some statuses such as Burrowed also grant Hidden.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Hidden (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Hidden (11)"
+      }
+    },
+    {
+      "keyword": "Hold",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "A unit performs no action during its Movement Phase activation. Set an Activation Marker beside it; the unit counts as activated for the phase.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Hold (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Hold (8.5.1)"
+      }
+    },
+    {
       "keyword": "Line of Sight",
       "phase": "Assault Phase",
       "applicability": "restricted",
@@ -254,6 +314,18 @@
         "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
         "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
         "section": "Minerals (9.1.3)"
+      }
+    },
+    {
+      "keyword": "Move",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "An unengaged unit changes its position on the battlefield during the Movement Phase, following movement rules and terrain restrictions.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Move (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Move (8.5.2)"
       }
     },
     {
@@ -302,6 +374,18 @@
         "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
         "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
         "section": "Pierce (11)"
+      }
+    },
+    {
+      "keyword": "Psionic",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "Psionic is a Combat Tag identifying psionic units. Some weapons and abilities only apply against—or can only target—specific tags such as Psionic.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Psionic (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Psionic (11)"
       }
     },
     {
@@ -362,6 +446,18 @@
         "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
         "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
         "section": "Scoring Phase (8.9)"
+      }
+    },
+    {
+      "keyword": "Shielded",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "If a unit card lists Shield, add that value to each model's Hit Points. Shield increases how much damage a model can absorb before it is removed.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Shielded (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Shielded (11)"
       }
     },
     {

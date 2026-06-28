@@ -181,6 +181,96 @@ export const WH40K_RULES = [
     summary:
       'After a unit finishes its close-combat attacks, each model may move up to 3" to reposition or move toward the nearest enemy model.',
   },
+  {
+    keyword: 'Attached Units',
+    phase: 'Command Phase',
+    applicability: 'general',
+    labels: ['19.01', 'Some units have the Leader or Support ability'],
+    ruleRef: '19.01',
+    summary:
+      'Leader and Support models can form attached units with bodyguard units, moving and fighting together as one for coherency, targeting, and many rules purposes.',
+  },
+  {
+    keyword: 'Mortal Wounds',
+    phase: 'General',
+    applicability: 'general',
+    labels: ['MORTAL WOUNDS 05.04', '05.04'],
+    ruleRef: '05.04',
+    summary:
+      'Mortal wounds bypass normal saving throws and are allocated like normal damage. They are not lost if the target unit is destroyed before all are allocated.',
+  },
+  {
+    keyword: 'Command Points',
+    phase: 'Command Phase',
+    applicability: 'general',
+    labels: ['08.02', 'gain 1 Command Point'],
+    ruleRef: '08.02',
+    summary:
+      'Each battle round, both players gain 1 CP at the start of the Command phase. CP are spent on stratagems and other abilities that list a cost.',
+  },
+  {
+    keyword: 'Overwatch',
+    phase: 'Shooting Phase',
+    applicability: 'restricted',
+    labels: ['OVERWATCH 15.08'],
+    ruleRef: '15.08',
+    summary:
+      'The Overwatch stratagem lets a friendly unengaged unit shoot at the end of the opponent\'s Movement phase using snap-shooting rules (hit rolls of 6+ required).',
+  },
+  {
+    keyword: 'Objective Control',
+    phase: 'Battle Round',
+    applicability: 'general',
+    labels: ['OBJECTIVE CONTROL', 'Objective Control (OOC)'],
+    ruleRef: '14.01',
+    summary:
+      'Objective Control (OOC) measures how well a unit can hold an objective. Compare OOC values when determining which unit controls a terrain objective.',
+  },
+  {
+    keyword: 'Wound Roll',
+    phase: 'General',
+    applicability: 'general',
+    labels: ['05.02', 'MAKING WOUND ROLLS'],
+    ruleRef: '05.02',
+    summary:
+      'After a hit roll succeeds, compare the attack\'s Strength to the target\'s Toughness and roll to wound using the wound roll table in the core rules.',
+  },
+  {
+    keyword: 'Critical Hit',
+    phase: 'General',
+    applicability: 'general',
+    labels: ['05.01', 'CRITICAL HITS'],
+    ruleRef: '05.01',
+    summary:
+      'An unmodified hit roll of 6 is a critical hit. Some weapons and abilities trigger extra effects when they score critical hits.',
+  },
+  {
+    keyword: 'Out of Coherency',
+    phase: 'Movement Phase',
+    applicability: 'restricted',
+    labels: ['03.03', 'unit is out of coherency'],
+    ruleRef: '03.03',
+    summary:
+      'If a unit ends a move out of coherency, models must be rearranged by the controlling player so the unit is in coherency again before any other models move.',
+  },
+  {
+    keyword: 'Fall Back',
+    phase: 'Movement Phase',
+    applicability: 'restricted',
+    labels: ['FALL-BACK MOVE 09.07'],
+    ruleRef: '09.07',
+    summary:
+      'Engaged units can make a fall-back move up to their Move characteristic, but cannot shoot or charge in the same turn unless an ability says otherwise.',
+  },
+  {
+    keyword: 'Advance',
+    phase: 'Movement Phase',
+    applicability: 'restricted',
+    labels: ['ADVANCE MOVE 09.06'],
+    ruleRef: '09.06',
+    summary:
+      'Units that advance roll one D6 and add the result to their Move characteristic for that move, but cannot shoot ranged weapons afterward unless an ability allows it.',
+  },
 
   // —— Core abilities (section 24) ——
   {

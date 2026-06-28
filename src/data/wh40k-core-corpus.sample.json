@@ -1,9 +1,21 @@
 {
-  "version": "sample-v4",
+  "version": "sample-v5",
   "license": "sample-only",
   "attribution": "Representative paraphrased entries for UX/demo. Not official Games Workshop text. Build full corpus locally with npm run corpus:build-wh40k.",
-  "entryCount": 55,
+  "entryCount": 65,
   "entries": [
+    {
+      "keyword": "Advance",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "Units that advance roll one D6 and add the result to their Move characteristic for that move, but cannot shoot ranged weapons afterward unless an ability allows it.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Advance (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Advance (09.06)"
+      }
+    },
     {
       "keyword": "Anti",
       "phase": "Fight Phase",
@@ -26,6 +38,18 @@
         "documentTitle": "Warhammer 40,000 11th ed Core Rules",
         "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
         "section": "Assault (24.04)"
+      }
+    },
+    {
+      "keyword": "Attached Units",
+      "phase": "Command Phase",
+      "applicability": "general",
+      "explanation": "Leader and Support models can form attached units with bodyguard units, moving and fighting together as one for coherency, targeting, and many rules purposes.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Attached Units (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Attached Units (19.01)"
       }
     },
     {
@@ -125,6 +149,18 @@
       }
     },
     {
+      "keyword": "Command Points",
+      "phase": "Command Phase",
+      "applicability": "general",
+      "explanation": "Each battle round, both players gain 1 CP at the start of the Command phase. CP are spent on stratagems and other abilities that list a cost.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Command Points (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Command Points (08.02)"
+      }
+    },
+    {
       "keyword": "Consolidate",
       "phase": "Fight Phase",
       "applicability": "restricted",
@@ -146,6 +182,18 @@
         "documentTitle": "Warhammer 40,000 11th ed Core Rules",
         "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
         "section": "Cover (13.08)"
+      }
+    },
+    {
+      "keyword": "Critical Hit",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "An unmodified hit roll of 6 is a critical hit. Some weapons and abilities trigger extra effects when they score critical hits.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Critical Hit (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Critical Hit (05.01)"
       }
     },
     {
@@ -218,6 +266,18 @@
         "documentTitle": "Warhammer 40,000 11th ed Core Rules",
         "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
         "section": "Extra Attacks (24.11)"
+      }
+    },
+    {
+      "keyword": "Fall Back",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "Engaged units can make a fall-back move up to their Move characteristic, but cannot shoot or charge in the same turn unless an ability says otherwise.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Fall Back (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Fall Back (09.07)"
       }
     },
     {
@@ -413,6 +473,18 @@
       }
     },
     {
+      "keyword": "Mortal Wounds",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Mortal wounds bypass normal saving throws and are allocated like normal damage. They are not lost if the target unit is destroyed before all are allocated.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Mortal Wounds (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Mortal Wounds (05.04)"
+      }
+    },
+    {
       "keyword": "Movement Phase",
       "phase": "Movement Phase",
       "applicability": "restricted",
@@ -422,6 +494,18 @@
         "documentTitle": "Warhammer 40,000 11th ed Core Rules",
         "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
         "section": "Movement Phase (09.01)"
+      }
+    },
+    {
+      "keyword": "Objective Control",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "Objective Control (OOC) measures how well a unit can hold an objective. Compare OOC values when determining which unit controls a terrain objective.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Objective Control (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Objective Control (14.01)"
       }
     },
     {
@@ -446,6 +530,30 @@
         "documentTitle": "Warhammer 40,000 11th ed Core Rules",
         "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
         "section": "One Shot (24.26)"
+      }
+    },
+    {
+      "keyword": "Out of Coherency",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "If a unit ends a move out of coherency, models must be rearranged by the controlling player so the unit is in coherency again before any other models move.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Out of Coherency (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Out of Coherency (03.03)"
+      }
+    },
+    {
+      "keyword": "Overwatch",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "The Overwatch stratagem lets a friendly unengaged unit shoot at the end of the opponent's Movement phase using snap-shooting rules (hit rolls of 6+ required).",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Overwatch (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Overwatch (15.08)"
       }
     },
     {
@@ -662,6 +770,18 @@
         "documentTitle": "Warhammer 40,000 11th ed Core Rules",
         "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
         "section": "Twin-linked (24.38)"
+      }
+    },
+    {
+      "keyword": "Wound Roll",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "After a hit roll succeeds, compare the attack's Strength to the target's Toughness and roll to wound using the wound roll table in the core rules.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Wound Roll (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Wound Roll (05.02)"
       }
     }
   ],
