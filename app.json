@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Keyword Lexicanum",
+    "slug": "keyword-lexicanum",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "keywordlexicanum",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#1a1a2e"
+    },
+    "android": {
+      "package": "com.keywordlexicanum.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#1a1a2e"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-asset",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
