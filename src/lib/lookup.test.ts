@@ -38,12 +38,45 @@ describe('lookupKeyword', () => {
     }
   });
 
+  it('returns a hit for Lance in the WH40k sample corpus', async () => {
+    const result = await lookupKeyword('lance', 'wh40k-11');
+    expect(result.found).toBe(true);
+    if (result.found) {
+      expect(result.keyword).toBe('Lance');
+      expect(result.explanation.length).toBeLessThan(320);
+      expect(result.source?.page).toBe(82);
+      expect(result.corpusVersion).toBeTruthy();
+    }
+  });
+
+  it('returns a brief Stratagems summary without individual stratagem cards', async () => {
+    const result = await lookupKeyword('stratagems', 'wh40k-11');
+    expect(result.found).toBe(true);
+    if (result.found) {
+      expect(result.explanation).toContain('favour');
+      expect(result.explanation.length).toBeLessThan(320);
+      expect(result.explanation).not.toMatch(/HEROIC INTERVENTION/i);
+      expect(result.explanation).not.toMatch(/1CP/i);
+    }
+  });
+
   it('returns a hit for a known Starcraft term', async () => {
     const result = await lookupKeyword('engagement', 'starcraft-mini');
     expect(result.found).toBe(true);
     if (result.found) {
       expect(result.keyword).toBe('engagement');
       expect(result.citation).toBeTruthy();
+    }
+  });
+
+  it('returns a brief Surge summary for Starcraft', async () => {
+    const result = await lookupKeyword('surge', 'starcraft-mini');
+    expect(result.found).toBe(true);
+    if (result.found) {
+      expect(result.keyword).toBe('Surge');
+      expect(result.explanation).toContain('Combat Tag');
+      expect(result.explanation.length).toBeLessThan(320);
+      expect(result.explanation).not.toMatch(/Jim Raynor|James needs/i);
     }
   });
 

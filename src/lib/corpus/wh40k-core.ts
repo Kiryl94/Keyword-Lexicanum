@@ -31,6 +31,10 @@ export function getWh40kCorpusEntries(): CorpusEntry[] {
   return WH40K_CORPUS;
 }
 
+export function getWh40kCorpusVersion(): string {
+  return wh40kBundle.version;
+}
+
 export function getWh40kCorpusAttribution(): string {
   return wh40kBundle.attribution;
 }

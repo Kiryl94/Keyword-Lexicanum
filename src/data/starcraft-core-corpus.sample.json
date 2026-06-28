@@ -1,9 +1,22 @@
 {
-  "version": "sample",
+  "version": "sample-v2",
   "license": "sample-only",
   "attribution": "Representative sample entries for UX/demo. Not official Archon/Blizzard text. Build full corpus locally with npm run corpus:build-starcraft.",
-  "entryCount": 10,
+  "entryCount": 12,
   "entries": [
+    {
+      "keyword": "Surge",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "When a weapon's Surge triggers, check whether the target's Combat Tag matches the weapon's Surge Type. If it matches, move dice equal to the Surge result from the Armour Pool directly to the Damage Pool, bypassing armour; otherwise discard the Surge die.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules, p. 64 — Surge (8.7.4) (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "page": 64,
+        "section": "Surge (8.7.4)"
+      }
+    },
     {
       "keyword": "engagement",
       "phase": "Engagement",

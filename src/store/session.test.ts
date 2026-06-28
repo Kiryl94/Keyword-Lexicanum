@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { LookupHit } from '@/lib/lookup';
+import { getCorpusVersion } from '@/lib/corpus/version';
 import {
   DEFAULT_SYSTEM_ID,
   MAX_RECENT_LOOKUPS,
@@ -15,6 +16,7 @@ const sampleHit: LookupHit = {
   phase: 'Ability Checks & Attacks',
   phaseApplicability: 'general',
   citation: 'SRD — Advantage',
+  corpusVersion: getCorpusVersion('dnd5e-srd'),
 };
 
 describe('isValidGameSystemId', () => {
@@ -95,6 +97,7 @@ describe('useSessionStore recent lookups', () => {
       ...sampleHit,
       keyword: 'engagement',
       citation: 'Core Rules — Engagement',
+      corpusVersion: getCorpusVersion('wh40k-11'),
     });
 
     expect(getRecentLookups('dnd5e-srd')).toEqual(['advantage']);

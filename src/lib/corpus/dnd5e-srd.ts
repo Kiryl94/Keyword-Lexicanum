@@ -41,6 +41,10 @@ export function getDndCorpusEntries(): CorpusEntry[] {
   return DND_SRD_CORPUS;
 }
 
+export function getDndCorpusVersion(): string {
+  return dndBundle.version;
+}
+
 export function getDndCorpusAttribution(): string {
   return dndBundle.attribution;
 }

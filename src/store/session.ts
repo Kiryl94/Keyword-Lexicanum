@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import type { LookupHit } from '@/lib/lookup';
+import { getCorpusVersion } from '@/lib/corpus/version';
 
 export type GameSystemId = 'dnd5e-srd' | 'wh40k-11' | 'starcraft-mini';
 
@@ -196,8 +197,15 @@ export const useSessionStore = create<SessionState>()(
           };
         }),
       getRecentLookups: (systemId) => get().recentLookupsBySystem[systemId] ?? [],
-      getCachedLookup: (systemId, keyword) =>
-        get().recentLookupCacheBySystem[systemId]?.[normalizeRecentKey(keyword)],
+      getCachedLookup: (systemId, keyword) => {
+        const cached =
+          get().recentLookupCacheBySystem[systemId]?.[normalizeRecentKey(keyword)];
+        if (!cached) return undefined;
+        if (!cached.corpusVersion || cached.corpusVersion !== getCorpusVersion(systemId)) {
+          return undefined;
+        }
+        return cached;
+      },
       getActiveSystem: () => {
         const id = get().activeSystemId;
         return GAME_SYSTEMS.find((s) => s.id === id);

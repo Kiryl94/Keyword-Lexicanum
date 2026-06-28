@@ -39,9 +39,9 @@ export function LookupResultCard({ result, systemLabel }: LookupResultCardProps)
         onClick={() => setCitationExpanded((open) => !open)}
         className="mt-1 flex w-full items-center justify-between gap-2 rounded-lg border border-[#2a2a40] bg-[#151525] px-3 py-2 text-left text-sm text-[#8a8aa0] hover:border-[#3a3a55] hover:text-[#a0a0b0]"
       >
-        <span className="font-medium text-[#a0a0b0]">Source</span>
+        <span className="font-medium text-[#a0a0b0]">Source &amp; page link</span>
         <span className="shrink-0 text-xs">
-          {citationExpanded ? '▲ Hide source' : '▼ Show source'}
+          {citationExpanded ? '▲ Hide' : '▼ Full rules in PDF'}
         </span>
       </button>
       {citationExpanded && (

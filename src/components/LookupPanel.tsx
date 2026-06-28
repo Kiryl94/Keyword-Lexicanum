@@ -59,6 +59,7 @@ export function LookupPanel() {
 
   function onSuggestionSelect(keyword: string) {
     setQuery(keyword);
+    onSearch(keyword);
   }
 
   function onRecentSelect(keyword: string) {

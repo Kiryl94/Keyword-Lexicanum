@@ -7,61 +7,35 @@
 
 import {
   buildPdfSource,
-  extractSectionWithMeta,
+  findRuleLocation,
   fetchPdfText,
   normalizeKeyword,
   pageAtOffset,
-  pageEndAtOffset,
   writeCorpusBundle,
 } from './corpus-pdf-utils.mjs';
+import { WH40K_RULES } from './wh40k-rules-manifest.mjs';
 
 const WH40K_PDF_URL =
   'https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf';
 
 const WH40K_DOCUMENT_TITLE = 'Warhammer 40,000 11th ed Core Rules';
 
-/** Curated core-rule keywords with phase metadata (11th ed Core Rules). */
-const WH40K_RULES = [
-  { keyword: 'Battle Round', phase: 'Battle Round', applicability: 'general', labels: ['THE BATTLE ROUND'] },
-  { keyword: 'Command Phase', phase: 'Command Phase', applicability: 'restricted', labels: ['COMMAND PHASE'] },
-  { keyword: 'Movement Phase', phase: 'Movement Phase', applicability: 'restricted', labels: ['MOVEMENT PHASE'] },
-  { keyword: 'Shooting Phase', phase: 'Shooting Phase', applicability: 'restricted', labels: ['SHOOTING PHASE'] },
-  { keyword: 'Charge Phase', phase: 'Charge Phase', applicability: 'restricted', labels: ['CHARGE PHASE'] },
-  { keyword: 'Fight Phase', phase: 'Fight Phase', applicability: 'restricted', labels: ['FIGHT PHASE', 'START OF FIGHT PHASE'] },
-  { keyword: 'Engagement', phase: 'Fight Phase', applicability: 'restricted', labels: ['ENGAGEMENT'] },
-  { keyword: 'Engagement Range', phase: 'Fight Phase', applicability: 'restricted', labels: ['Engagement Range'] },
-  { keyword: 'Coherency', phase: 'Movement Phase', applicability: 'restricted', labels: ['COHERENCY'] },
-  { keyword: 'Objectives', phase: 'Battle Round', applicability: 'general', labels: ['OBJECTIVES', 'CONTROLLING A TERRAIN OBJECTIVE'] },
-  { keyword: 'Battle-shock', phase: 'Command Phase', applicability: 'restricted', labels: ['BATTLE-SHOCK', 'Battle-shock'] },
-  { keyword: 'Blast', phase: 'Shooting Phase', applicability: 'restricted', labels: ['Blast'] },
-  { keyword: 'Feel No Pain', phase: 'General', applicability: 'general', labels: ['Feel No Pain'] },
-  { keyword: 'Deep Strike', phase: 'Movement Phase', applicability: 'restricted', labels: ['Deep Strike'] },
-  { keyword: 'Infiltrators', phase: 'Deployment', applicability: 'restricted', labels: ['Infiltrators'] },
-  { keyword: 'Reserves', phase: 'Movement Phase', applicability: 'restricted', labels: ['Reserves'] },
-  { keyword: 'Transports', phase: 'Movement Phase', applicability: 'restricted', labels: ['Transports'] },
-  { keyword: 'Cover', phase: 'Shooting Phase', applicability: 'restricted', labels: ['Cover'] },
-  { keyword: 'Line of Sight', phase: 'Shooting Phase', applicability: 'restricted', labels: ['Line of Sight'] },
-  { keyword: 'Pile-in', phase: 'Fight Phase', applicability: 'restricted', labels: ['PILE-IN MOVES', 'Pile-in'] },
-  { keyword: 'Consolidate', phase: 'Fight Phase', applicability: 'restricted', labels: ['ONGOING CONSOLIDATION', 'Consolidation'] },
-  { keyword: 'Stratagems', phase: 'Command Phase', applicability: 'general', labels: ['STRATAGEMS'] },
-  { keyword: 'Terrain', phase: 'Movement Phase', applicability: 'restricted', labels: ['TERRAIN AND MOVEMENT', 'TERRAIN PLACED ON THE BATTLEFIELD'] },
-];
+const MAX_SUMMARY_LENGTH = 320;
 
 async function main() {
   const { text, pages, pageStarts } = await fetchPdfText(WH40K_PDF_URL);
   console.log(`Parsed WH40k 11th ed Core Rules PDF (${pages} pages, ${text.length} chars)`);
 
-  const allLabels = WH40K_RULES.flatMap((rule) => rule.labels);
   const entries = [];
   const seen = new Set();
 
   for (const rule of WH40K_RULES) {
-    let extracted = null;
-    for (const label of rule.labels) {
-      extracted = extractSectionWithMeta(text, label, allLabels);
-      if (extracted) break;
+    if (rule.summary.length > MAX_SUMMARY_LENGTH) {
+      console.warn(`  summary too long (${rule.summary.length} chars): ${rule.keyword}`);
     }
-    if (!extracted) {
+
+    const location = findRuleLocation(text, rule.labels);
+    if (!location) {
       console.warn(`  skip (not found): ${rule.keyword}`);
       continue;
     }
@@ -70,21 +44,20 @@ async function main() {
     if (seen.has(key)) continue;
     seen.add(key);
 
-    const page = pageAtOffset(pageStarts, extracted.startIndex);
-    const pageEnd = pageEndAtOffset(pageStarts, extracted.endIndex);
+    const page = pageAtOffset(pageStarts, location.startIndex);
+    const section = rule.ruleRef ? `${rule.keyword} (${rule.ruleRef})` : rule.keyword;
     const { source, citation } = buildPdfSource({
       documentTitle: WH40K_DOCUMENT_TITLE,
       documentUrl: WH40K_PDF_URL,
       page,
-      pageEnd: pageEnd !== page ? pageEnd : undefined,
-      section: rule.keyword,
+      section,
     });
 
     entries.push({
       keyword: rule.keyword,
       phase: rule.phase,
       applicability: rule.applicability,
-      explanation: extracted.explanation,
+      explanation: rule.summary,
       citation,
       source,
     });
@@ -93,7 +66,7 @@ async function main() {
   entries.sort((a, b) => a.keyword.localeCompare(b.keyword, 'en', { sensitivity: 'base' }));
 
   writeCorpusBundle('wh40k-core-corpus.json', {
-    version: '11th-core',
+    version: '11th-core-summaries-v2',
     license: 'GW-download-personal-use',
     attribution:
       'Warhammer 40,000 11th ed Core Rules © Games Workshop Limited. ' +

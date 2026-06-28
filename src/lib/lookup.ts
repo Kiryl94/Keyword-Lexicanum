@@ -1,3 +1,4 @@
+import { getCorpusVersion } from '@/lib/corpus/version';
 import { findDndCorpusEntry, getDndCorpusEntries } from '@/lib/corpus/dnd5e-srd';
 import { findStarcraftCorpusEntry, getStarcraftCorpusEntries } from '@/lib/corpus/starcraft-core';
 import { findWh40kCorpusEntry, getWh40kCorpusEntries } from '@/lib/corpus/wh40k-core';
@@ -14,6 +15,8 @@ export type LookupHit = {
   phaseApplicability: PhaseApplicability;
   citation: string;
   source?: CorpusSource;
+  /** Bumped when corpus content changes; stale recent-lookup cache entries are ignored. */
+  corpusVersion?: string;
 };
 
 export type LookupMiss = {
@@ -47,7 +50,11 @@ function findCorpusEntry(query: string, systemId: GameSystemId): CorpusEntry | u
   return findStarcraftCorpusEntry(query);
 }
 
-function toLookupHit(entry: CorpusEntry): LookupHit {
+function getCorpusVersionForSystem(systemId: GameSystemId): string {
+  return getCorpusVersion(systemId);
+}
+
+function toLookupHit(entry: CorpusEntry, systemId: GameSystemId): LookupHit {
   return {
     found: true,
     keyword: entry.keyword,
@@ -56,6 +63,7 @@ function toLookupHit(entry: CorpusEntry): LookupHit {
     phaseApplicability: entry.applicability,
     citation: entry.citation,
     source: entry.source,
+    corpusVersion: getCorpusVersionForSystem(systemId),
   };
 }
 
@@ -73,7 +81,7 @@ export async function lookupKeyword(
     return { found: false, query: rawQuery.trim() || rawQuery };
   }
 
-  return toLookupHit(match);
+  return toLookupHit(match, systemId);
 }
 
 export function getPhasesForSystem(systemId: GameSystemId): string[] {

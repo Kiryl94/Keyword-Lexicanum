@@ -26,7 +26,9 @@ export function CitationBlock({ citation, source }: CitationBlockProps) {
       >
         {label}
       </a>
-      <span className="mt-1 block text-[#6b6b80]">Open source to verify this rule.</span>
+      <span className="mt-1 block text-[#6b6b80]">
+        Open the linked PDF at this page for the full rule text.
+      </span>
     </p>
   );
 }

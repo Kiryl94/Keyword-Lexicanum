@@ -31,6 +31,10 @@ export function getStarcraftCorpusEntries(): CorpusEntry[] {
   return STARCRAFT_CORPUS;
 }
 
+export function getStarcraftCorpusVersion(): string {
+  return starcraftBundle.version;
+}
+
 export function getStarcraftCorpusAttribution(): string {
   return starcraftBundle.attribution;
 }

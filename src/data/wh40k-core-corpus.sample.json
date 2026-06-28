@@ -1,9 +1,35 @@
 {
-  "version": "sample",
+  "version": "sample-v2",
   "license": "sample-only",
   "attribution": "Representative sample entries for UX/demo. Not official Games Workshop text. Build full corpus locally with npm run corpus:build-wh40k.",
-  "entryCount": 10,
+  "entryCount": 12,
   "entries": [
+    {
+      "keyword": "Lance",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "When attacking with a Lance weapon, add 1 to the wound roll if the attacking unit made a charge move this turn.",
+      "citation": "Warhammer 40,000 11th ed Core Rules, p. 82 — Lance (24.21) (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "page": 82,
+        "section": "Lance (24.21)"
+      }
+    },
+    {
+      "keyword": "Stratagems",
+      "phase": "Command Phase",
+      "applicability": "general",
+      "explanation": "Players spend Command Points on stratagems to create epic tactical moments when a critical point in the battle is reached, where extra effects can tip the balance in their favour. See the core rules PDF (rule 15.01) for how to use them and for individual stratagem cards.",
+      "citation": "Warhammer 40,000 11th ed Core Rules, p. 54 — Stratagems (15.01) (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "page": 54,
+        "section": "Stratagems (15.01)"
+      }
+    },
     {
       "keyword": "close quarters",
       "phase": "Engagement",
