@@ -83,8 +83,14 @@ export function SystemPicker({
                 : 'border-[#2a2a40] bg-[#1a1a2e] hover:border-[#3a3a55]'
             }`}
           >
-            <div className={`font-semibold text-[#f5f5f5] ${compact ? 'text-sm' : ''}`}>
-              {system.label}
+            <div className={`flex items-center gap-2.5 ${compact ? '' : 'mb-0.5'}`}>
+              <SystemIcon
+                systemId={system.id}
+                className={compact ? 'h-6 w-6' : 'h-8 w-8'}
+              />
+              <div className={`font-semibold text-[#f5f5f5] ${compact ? 'text-sm' : ''}`}>
+                {system.label}
+              </div>
             </div>
             {!compact && (
               <div className="text-sm text-[#a0a0b0]">{system.description}</div>
