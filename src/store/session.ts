@@ -154,6 +154,7 @@ type SessionState = {
   recordSuccessfulLookup: (systemId: GameSystemId, hit: LookupHit) => void;
   getRecentLookups: (systemId: GameSystemId) => string[];
   getCachedLookup: (systemId: GameSystemId, keyword: string) => LookupHit | undefined;
+  clearRecentLookups: (systemId: GameSystemId) => void;
   getActiveSystem: () => GameSystem | undefined;
 };
 
@@ -206,6 +207,14 @@ export const useSessionStore = create<SessionState>()(
         }
         return cached;
       },
+      clearRecentLookups: (systemId) =>
+        set((state) => {
+          const recentLookupsBySystem = { ...state.recentLookupsBySystem };
+          delete recentLookupsBySystem[systemId];
+          const recentLookupCacheBySystem = { ...state.recentLookupCacheBySystem };
+          delete recentLookupCacheBySystem[systemId];
+          return { recentLookupsBySystem, recentLookupCacheBySystem };
+        }),
       getActiveSystem: () => {
         const id = get().activeSystemId;
         return GAME_SYSTEMS.find((s) => s.id === id);

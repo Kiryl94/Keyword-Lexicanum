@@ -35,7 +35,7 @@ export function PhaseBrowseSection({ systemId, onKeywordSelect }: PhaseBrowseSec
         value={phaseQuery}
         onChange={(e) => setPhaseQuery(e.target.value)}
         placeholder="e.g. Engagement, Combat"
-        className="rounded-lg border border-[#2a2a40] bg-[#1a1a2e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#6b6b80] focus:border-[#e94560] focus:outline-none"
+        className="min-h-[48px] rounded-lg border border-[#2a2a40] bg-[#1a1a2e] px-4 py-3 text-base text-[#f5f5f5] placeholder:text-[#6b6b80] focus:border-[#e94560] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e94560]"
       />
       {phases.length > 0 && (
         <ul className="flex flex-wrap gap-2" aria-label="Known phases for this system">
@@ -47,7 +47,7 @@ export function PhaseBrowseSection({ systemId, onKeywordSelect }: PhaseBrowseSec
                   type="button"
                   onClick={() => setPhaseQuery(phase)}
                   aria-pressed={selected}
-                  className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${
+                  className={`min-h-[44px] rounded-full border px-3 py-2 text-sm transition-colors ${
                     selected
                       ? 'border-[#e94560] bg-[#1a1a2e] text-[#e94560]'
                       : 'border-[#2a2a40] bg-[#1a1a2e] text-[#a0a0b0] hover:border-[#3a3a55] hover:text-[#f5f5f5]'

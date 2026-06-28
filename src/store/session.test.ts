@@ -122,4 +122,27 @@ describe('useSessionStore recent lookups', () => {
     expect(recents).toHaveLength(MAX_RECENT_LOOKUPS);
     expect(recents[0]).toBe('advantage');
   });
+
+  it('clears recents and cache for one system without affecting others', () => {
+    const {
+      recordSuccessfulLookup,
+      clearRecentLookups,
+      getRecentLookups,
+      getCachedLookup,
+    } = useSessionStore.getState();
+
+    recordSuccessfulLookup('dnd5e-srd', sampleHit);
+    recordSuccessfulLookup('wh40k-11', {
+      ...sampleHit,
+      keyword: 'Lance',
+      corpusVersion: getCorpusVersion('wh40k-11'),
+    });
+
+    clearRecentLookups('dnd5e-srd');
+
+    expect(getRecentLookups('dnd5e-srd')).toEqual([]);
+    expect(getCachedLookup('dnd5e-srd', 'advantage')).toBeUndefined();
+    expect(getRecentLookups('wh40k-11')).toEqual(['Lance']);
+    expect(getCachedLookup('wh40k-11', 'Lance')?.keyword).toBe('Lance');
+  });
 });

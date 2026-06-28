@@ -9,15 +9,20 @@ import { getKeywordSuggestions, lookupKeyword } from '@/lib/lookup';
 import type { GameSystemId } from '@/store/session';
 import { useSessionStore } from '@/store/session';
 
+const SEARCH_INPUT_CLASS =
+  'min-h-[48px] rounded-lg border border-[#2a2a40] bg-[#1a1a2e] px-4 py-3 text-base text-[#f5f5f5] placeholder:text-[#6b6b80] focus:border-[#e94560] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e94560]';
+
 export function LookupPanel() {
   const activeSystem = useSessionStore((s) => s.getActiveSystem());
   const activeSystemId = useSessionStore((s) => s.activeSystemId);
   const recentLookupsBySystem = useSessionStore((s) => s.recentLookupsBySystem);
   const recordSuccessfulLookup = useSessionStore((s) => s.recordSuccessfulLookup);
   const getCachedLookup = useSessionStore((s) => s.getCachedLookup);
+  const clearRecentLookups = useSessionStore((s) => s.clearRecentLookups);
 
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<Awaited<ReturnType<typeof lookupKeyword>> | null>(
     null,
   );
@@ -39,11 +44,15 @@ export function LookupPanel() {
     return getKeywordSuggestions(query, activeSystem.id);
   }, [activeSystem, query, loading]);
 
+  const showWelcomeHint =
+    !loading && !error && !visibleResult && query.trim().length === 0;
+
   async function onSearch(term: string) {
     const trimmed = term.trim();
     if (!trimmed || !activeSystem) return;
 
     setLoading(true);
+    setError(null);
     setResult(null);
     try {
       const response = await lookupKeyword(trimmed, activeSystem.id);
@@ -52,6 +61,8 @@ export function LookupPanel() {
       if (response.found) {
         recordSuccessfulLookup(activeSystem.id, response);
       }
+    } catch {
+      setError('Something went wrong loading that keyword. Try again.');
     } finally {
       setLoading(false);
     }
@@ -66,6 +77,7 @@ export function LookupPanel() {
     if (!activeSystem) return;
 
     setQuery(keyword);
+    setError(null);
     const cached = getCachedLookup(activeSystem.id, keyword);
     if (cached) {
       setResult(cached);
@@ -76,10 +88,15 @@ export function LookupPanel() {
     onSearch(keyword);
   }
 
+  function onClearRecents() {
+    if (!activeSystemId) return;
+    clearRecentLookups(activeSystemId);
+  }
+
   if (!activeSystem) {
     return (
-      <div className="text-[#a0a0b0]">
-        Select a game system to start looking up keywords.
+      <div className="rounded-xl border border-[#2a2a40] bg-[#151525] p-4 text-[#a0a0b0]">
+        Select a game system above to start looking up keywords.
       </div>
     );
   }
@@ -91,16 +108,28 @@ export function LookupPanel() {
         type="search"
         enterKeyHint="search"
         autoComplete="off"
+        inputMode="search"
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => {
+          setQuery(e.target.value);
+          if (error) setError(null);
+        }}
         onKeyDown={(e) => e.key === 'Enter' && canSearch && onSearch(query)}
-        placeholder="Enter a keyword (e.g. Advantage, Engagement)"
-        className="rounded-lg border border-[#2a2a40] bg-[#1a1a2e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#6b6b80] focus:border-[#e94560] focus:outline-none"
+        placeholder="Enter a keyword (e.g. Advantage, Lance)"
+        className={SEARCH_INPUT_CLASS}
       />
       <KeywordSuggestionList
         suggestions={suggestions}
         onSelect={onSuggestionSelect}
       />
+
+      {showWelcomeHint && (
+        <p className="text-sm leading-relaxed text-[#8a8aa0]">
+          Type a keyword or tap a suggestion to look it up. Use{' '}
+          <span className="text-[#a0a0b0]">Browse by phase</span> below to explore terms
+          for the current game phase.
+        </p>
+      )}
 
       {loading && (
         <p className="text-sm text-[#8a8aa0]" aria-live="polite">
@@ -108,11 +137,24 @@ export function LookupPanel() {
         </p>
       )}
 
+      {error && (
+        <div
+          className="rounded-xl border border-[#5a3040] bg-[#1a1520] p-4 text-sm text-[#e0c0c8]"
+          role="alert"
+        >
+          {error}
+        </div>
+      )}
+
       {visibleResult && (
         <LookupResultCard result={visibleResult} systemLabel={activeSystem.label} />
       )}
 
-      <RecentLookupList items={recentLookups} onSelect={onRecentSelect} />
+      <RecentLookupList
+        items={recentLookups}
+        onSelect={onRecentSelect}
+        onClear={onClearRecents}
+      />
 
       <PhaseBrowseSection
         systemId={activeSystem.id}

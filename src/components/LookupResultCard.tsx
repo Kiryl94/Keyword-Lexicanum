@@ -15,11 +15,18 @@ export function LookupResultCard({ result, systemLabel }: LookupResultCardProps)
 
   if (!result.found) {
     return (
-      <div className="flex flex-col gap-2 rounded-xl border border-[#3a3a55] bg-[#151525] p-4">
-        <h2 className="text-lg font-semibold text-[#a0a0b0]">Not found</h2>
+      <div
+        className="flex flex-col gap-2 rounded-xl border border-[#3a3a55] bg-[#151525] p-4"
+        role="status"
+      >
+        <h2 className="text-lg font-semibold text-[#a0a0b0]">Not in corpus</h2>
         <p className="leading-relaxed text-[#d0d0e0]">
           &ldquo;{result.query}&rdquo; is not in the loaded rules for {systemLabel}. Check
-          spelling or try another term.
+          spelling, try a shorter term, or browse keywords by phase below.
+        </p>
+        <p className="text-sm text-[#8a8aa0]">
+          The app only returns terms from the active corpus — it will not guess or invent
+          rules.
         </p>
       </div>
     );

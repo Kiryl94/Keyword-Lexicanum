@@ -15,10 +15,10 @@ export default function HomePage() {
     <main className="mx-auto w-full max-w-5xl md:max-w-none md:p-0">
       {/* Mobile: icon picker at top + lookup below (merged, no tabs) */}
       <div className="flex min-h-[calc(100dvh-3rem)] flex-col md:hidden">
-        <header className="border-b border-[#2a2a40] px-4 py-3">
+        <header className="border-b border-[#2a2a40] px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))]">
           <SystemPicker variant="icons" />
         </header>
-        <section className="flex-1 px-4 py-4">
+        <section className="flex-1 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
           <KeyedLookupPanel />
         </section>
       </div>
