@@ -9,12 +9,7 @@ import { getKeywordSuggestions, lookupKeyword } from '@/lib/lookup';
 import type { GameSystemId } from '@/store/session';
 import { useSessionStore } from '@/store/session';
 
-export type LookupPanelProps = {
-  /** When true (mobile), picking a suggestion runs lookup immediately. When false (desktop), it only fills the search field — press Enter to look up. */
-  instantSuggestionLookup?: boolean;
-};
-
-export function LookupPanel({ instantSuggestionLookup = true }: LookupPanelProps) {
+export function LookupPanel() {
   const activeSystem = useSessionStore((s) => s.getActiveSystem());
   const activeSystemId = useSessionStore((s) => s.activeSystemId);
   const recentLookupsBySystem = useSessionStore((s) => s.recentLookupsBySystem);
@@ -64,9 +59,6 @@ export function LookupPanel({ instantSuggestionLookup = true }: LookupPanelProps
 
   function onSuggestionSelect(keyword: string) {
     setQuery(keyword);
-    if (instantSuggestionLookup) {
-      onSearch(keyword);
-    }
   }
 
   function onRecentSelect(keyword: string) {
