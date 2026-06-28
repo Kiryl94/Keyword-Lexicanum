@@ -3,7 +3,7 @@ project: Keyword Lexicanum
 version: 1
 status: draft
 created: 2026-06-24
-updated: 2026-06-28
+updated: 2026-06-24
 prd_version: 1
 main_goal: speed
 top_blocker: external
@@ -34,7 +34,7 @@ New tabletop players hit a steep terminology barrier in dense rulebooks. Keyword
 | S-02 | keyword-lookup-citation | look up a keyword and receive a grounded explanation with citation | S-01 | US-01, FR-002, FR-003, FR-004 | done |
 | S-03 | phase-on-keyword | see which game phase a keyword applies to on lookup results | S-02 | FR-007 | proposed |
 | S-04 | browse-by-phase | browse keywords relevant to an entered phase name | S-02 | FR-008 | proposed |
-| S-05 | guided-suggestions | pick from guided keyword suggestions while searching | S-02 | FR-002 | proposed |
+| S-05 | guided-suggestions | pick from guided keyword suggestions while searching | S-02 | FR-002 | done |
 | S-06 | recent-lookups | view recent keyword lookups from the current session | S-02 | FR-005 | proposed |
 | S-07 | dnd-srd-corpus | look up keywords against the real D&D SRD corpus (not sample data) | S-02, licensing clearance | FR-003, FR-004 | blocked |
 
@@ -140,8 +140,8 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **Parallel with:** S-03
 - **Blockers:** —
 - **Unknowns:** —
-- **Risk:** Improves novice UX per PRD Socrates note; defer if speed path needs to ship S-02 + F-01 first.
-- **Status:** proposed
+- **Risk:** Shipped in production; typeahead + auto-search on pick validated at table width.
+- **Status:** done
 
 ### S-06: Recent session lookups
 
@@ -178,8 +178,8 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 | S-02 | keyword-lookup-citation | Ship keyword lookup with citation UX | yes | North star — sample corpus OK for v1 demo |
 | S-03 | phase-on-keyword | Show phase relevance on keyword results | no | Resolve phase taxonomy OQ first |
 | S-04 | browse-by-phase | Browse keywords by phase name | no | Blocked on taxonomy OQ |
-| S-05 | guided-suggestions | Add guided keyword suggestions | yes | After S-02 plan if time allows |
-| S-06 | recent-lookups | Persist and show recent session lookups | yes | Nice-to-have |
+| S-05 | guided-suggestions | Add guided keyword suggestions | yes | Shipped |
+| S-06 | recent-lookups | Persist and show recent session lookups | yes | In progress |
 | S-07 | dnd-srd-corpus | Ingest D&D SRD corpus for real lookups | no | Blocked on licensing OQs |
 
 ## Open Roadmap Questions
@@ -205,3 +205,4 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **S-01: user can select which game system is active and use a local browser profile with no login.** — Archived 2026-06-28 → `context/archive/2026-06-24-system-picker-local/`. Lesson: —.
 - **S-02: user can look up a keyword or rule term and receive an in-context explanation grounded in the active system's corpus with a clear citation.** — Archived 2026-06-24 → `context/archive/2026-06-24-keyword-lookup-citation/`. Lesson: —.
 - **F-01: (foundation) production preview URL on Vercel so testers can open the app on a phone browser at the table.** — Archived 2026-06-24 → `context/archive/2026-06-24-shareable-web-deploy/`. Preview: https://keyword-lexicanum.vercel.app. Lesson: —.
+- **S-05: user can pick from guided keyword suggestions while searching, not only free typing.** — Archived 2026-06-24 → `context/archive/2026-06-24-guided-suggestions/`. Lesson: prefix match + corpus-only suggestions keeps table flow fast at sample corpus scale.

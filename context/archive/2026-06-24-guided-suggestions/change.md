@@ -1,9 +1,10 @@
 ---
 change_id: guided-suggestions
 title: Guided keyword suggestions
-status: implemented
+status: archived
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-06-24
+archived_at: 2026-06-24T20:30:00Z
 ---
 
 ## Notes

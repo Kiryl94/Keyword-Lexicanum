@@ -3,14 +3,17 @@
 import { useMemo, useState } from 'react';
 import { KeywordSuggestionList } from '@/components/KeywordSuggestionList';
 import { LookupResultCard } from '@/components/LookupResultCard';
+import { RecentLookupList } from '@/components/RecentLookupList';
 import { getKeywordSuggestions, lookupKeyword } from '@/lib/lookup';
 import type { GameSystemId } from '@/store/session';
 import { useSessionStore } from '@/store/session';
 
 export function LookupPanel() {
   const activeSystem = useSessionStore((s) => s.getActiveSystem());
-  const recentLookups = useSessionStore((s) => s.recentLookups);
-  const addRecentLookup = useSessionStore((s) => s.addRecentLookup);
+  const activeSystemId = useSessionStore((s) => s.activeSystemId);
+  const recentLookupsBySystem = useSessionStore((s) => s.recentLookupsBySystem);
+  const recordSuccessfulLookup = useSessionStore((s) => s.recordSuccessfulLookup);
+  const getCachedLookup = useSessionStore((s) => s.getCachedLookup);
 
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
@@ -22,6 +25,11 @@ export function LookupPanel() {
   const canSearch = query.trim().length > 0 && !loading;
   const visibleResult =
     result && resultSystemId === activeSystem?.id ? result : null;
+
+  const recentLookups = useMemo(() => {
+    if (!activeSystemId) return [];
+    return recentLookupsBySystem[activeSystemId] ?? [];
+  }, [activeSystemId, recentLookupsBySystem]);
 
   const suggestions = useMemo(() => {
     if (!activeSystem || query.trim().length < 1 || loading) {
@@ -41,7 +49,7 @@ export function LookupPanel() {
       setResult(response);
       setResultSystemId(activeSystem.id);
       if (response.found) {
-        addRecentLookup(trimmed);
+        recordSuccessfulLookup(activeSystem.id, response);
       }
     } finally {
       setLoading(false);
@@ -50,6 +58,20 @@ export function LookupPanel() {
 
   function onSuggestionSelect(keyword: string) {
     setQuery(keyword);
+    onSearch(keyword);
+  }
+
+  function onRecentSelect(keyword: string) {
+    if (!activeSystem) return;
+
+    setQuery(keyword);
+    const cached = getCachedLookup(activeSystem.id, keyword);
+    if (cached) {
+      setResult(cached);
+      setResultSystemId(activeSystem.id);
+      return;
+    }
+
     onSearch(keyword);
   }
 
@@ -98,24 +120,7 @@ export function LookupPanel() {
         <LookupResultCard result={visibleResult} systemLabel={activeSystem.label} />
       )}
 
-      {recentLookups.length > 0 && (
-        <div className="mt-2 flex flex-col gap-1">
-          <p className="font-semibold text-[#a0a0b0]">Recent lookups</p>
-          {recentLookups.map((item) => (
-            <button
-              key={item}
-              type="button"
-              onClick={() => {
-                setQuery(item);
-                onSearch(item);
-              }}
-              className="py-1 text-left text-[#e94560] hover:underline"
-            >
-              {item}
-            </button>
-          ))}
-        </div>
-      )}
+      <RecentLookupList items={recentLookups} onSelect={onRecentSelect} />
     </div>
   );
 }

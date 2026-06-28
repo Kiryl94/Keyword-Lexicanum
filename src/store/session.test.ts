@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
+import type { LookupHit } from '@/lib/lookup';
 import {
   DEFAULT_SYSTEM_ID,
   MAX_RECENT_LOOKUPS,
@@ -6,6 +7,14 @@ import {
   sanitizePersistedProfile,
   useSessionStore,
 } from '@/store/session';
+
+const sampleHit: LookupHit = {
+  found: true,
+  keyword: 'advantage',
+  explanation: 'Roll twice, take higher.',
+  phase: 'Combat',
+  citation: 'SRD — Advantage',
+};
 
 describe('isValidGameSystemId', () => {
   it('accepts all PRD game systems', () => {
@@ -36,50 +45,77 @@ describe('sanitizePersistedProfile', () => {
     );
   });
 
-  it('coerces recentLookups to strings and caps length', () => {
-    const keywords = Array.from({ length: 12 }, (_, i) => `term-${i}`);
+  it('migrates legacy flat recentLookups into the active system bucket', () => {
     const result = sanitizePersistedProfile({
-      recentLookups: ['valid', ...keywords, 42, null],
+      activeSystemId: 'wh40k-11',
+      recentLookups: ['engagement', 'advantage'],
     });
 
-    expect(result.recentLookups).toHaveLength(MAX_RECENT_LOOKUPS);
-    expect(result.recentLookups.every((k) => typeof k === 'string')).toBe(true);
-    expect(result.recentLookups[0]).toBe('valid');
+    expect(result.recentLookupsBySystem).toEqual({
+      'wh40k-11': ['engagement', 'advantage'],
+    });
+  });
+
+  it('preserves per-system recents and sanitizes unknown systems', () => {
+    const result = sanitizePersistedProfile({
+      recentLookupsBySystem: {
+        'dnd5e-srd': ['advantage', 42, 'initiative'],
+        bogus: ['ignored'],
+      },
+    });
+
+    expect(result.recentLookupsBySystem).toEqual({
+      'dnd5e-srd': ['advantage', 'initiative'],
+    });
   });
 
   it('returns empty recents when recentLookups is corrupted', () => {
-    expect(sanitizePersistedProfile({ recentLookups: 'not-an-array' }).recentLookups).toEqual(
-      [],
-    );
+    expect(
+      sanitizePersistedProfile({ recentLookups: 'not-an-array' }).recentLookupsBySystem,
+    ).toEqual({});
   });
 });
 
-describe('useSessionStore addRecentLookup', () => {
+describe('useSessionStore recent lookups', () => {
   beforeEach(() => {
     useSessionStore.setState({
       activeSystemId: DEFAULT_SYSTEM_ID,
-      recentLookups: [],
+      recentLookupsBySystem: {},
+      recentLookupCacheBySystem: {},
     });
   });
 
-  it('dedupes keywords and moves the latest to the front', () => {
-    const { addRecentLookup } = useSessionStore.getState();
+  it('scopes recents and cache per system', () => {
+    const { recordSuccessfulLookup, getRecentLookups, getCachedLookup } =
+      useSessionStore.getState();
 
-    addRecentLookup('advantage');
-    addRecentLookup('engagement');
-    addRecentLookup('advantage');
+    recordSuccessfulLookup('dnd5e-srd', sampleHit);
+    recordSuccessfulLookup('wh40k-11', {
+      ...sampleHit,
+      keyword: 'engagement',
+      citation: 'Core Rules — Engagement',
+    });
 
-    expect(useSessionStore.getState().recentLookups).toEqual(['advantage', 'engagement']);
+    expect(getRecentLookups('dnd5e-srd')).toEqual(['advantage']);
+    expect(getRecentLookups('wh40k-11')).toEqual(['engagement']);
+    expect(getCachedLookup('dnd5e-srd', 'advantage')).toEqual(sampleHit);
+    expect(getCachedLookup('wh40k-11', 'engagement')?.keyword).toBe('engagement');
   });
 
-  it('caps recent lookups at ten entries', () => {
-    const { addRecentLookup } = useSessionStore.getState();
+  it('dedupes and caps recents per system', () => {
+    const { recordSuccessfulLookup, getRecentLookups } = useSessionStore.getState();
 
     for (let i = 0; i < 12; i += 1) {
-      addRecentLookup(`term-${i}`);
+      recordSuccessfulLookup('dnd5e-srd', {
+        ...sampleHit,
+        keyword: `term-${i}`,
+      });
     }
 
-    expect(useSessionStore.getState().recentLookups).toHaveLength(MAX_RECENT_LOOKUPS);
-    expect(useSessionStore.getState().recentLookups[0]).toBe('term-11');
+    recordSuccessfulLookup('dnd5e-srd', sampleHit);
+
+    const recents = getRecentLookups('dnd5e-srd');
+    expect(recents).toHaveLength(MAX_RECENT_LOOKUPS);
+    expect(recents[0]).toBe('advantage');
   });
 });
