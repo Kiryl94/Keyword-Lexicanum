@@ -3,11 +3,19 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    include: ['src/**/*.test.ts'],
+    environment: 'node',
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@/data/wh40k-active-corpus.json': path.resolve(
+        __dirname,
+        'src/data/wh40k-core-corpus.sample.json',
+      ),
+      '@/data/starcraft-active-corpus.json': path.resolve(
+        __dirname,
+        'src/data/starcraft-core-corpus.sample.json',
+      ),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
 });

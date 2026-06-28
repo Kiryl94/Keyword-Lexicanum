@@ -1,0 +1,78 @@
+{
+  "version": "sample",
+  "license": "sample-only",
+  "attribution": "Representative sample entries for UX/demo. Not official Archon/Blizzard text. Build full corpus locally with npm run corpus:build-starcraft.",
+  "entryCount": 10,
+  "entries": [
+    {
+      "keyword": "engagement",
+      "phase": "Engagement",
+      "applicability": "restricted",
+      "explanation": "During Engagement, positional and close-range keyword effects are evaluated.",
+      "citation": "StarCraft TMG core rules (sample)"
+    },
+    {
+      "keyword": "close quarters",
+      "phase": "Engagement",
+      "applicability": "restricted",
+      "explanation": "Close quarters effects only apply while units are in Engagement with enemy models.",
+      "citation": "StarCraft TMG core rules — Engagement (sample)"
+    },
+    {
+      "keyword": "charge",
+      "phase": "Charge Phase",
+      "applicability": "restricted",
+      "explanation": "Units may charge enemy models within range during the Charge phase to enter Engagement.",
+      "citation": "StarCraft TMG core rules — Charge (sample)"
+    },
+    {
+      "keyword": "cover",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Models in cover receive defensive benefits against ranged attacks.",
+      "citation": "StarCraft TMG core rules — Cover (sample)"
+    },
+    {
+      "keyword": "deployment",
+      "phase": "Deployment",
+      "applicability": "restricted",
+      "explanation": "Players place units within their deployment zone before the first battle round begins.",
+      "citation": "StarCraft TMG core rules — Deployment (sample)"
+    },
+    {
+      "keyword": "line of sight",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "A model must have line of sight to a target to make a ranged attack against it.",
+      "citation": "StarCraft TMG core rules — Line of Sight (sample)"
+    },
+    {
+      "keyword": "morale",
+      "phase": "Morale Phase",
+      "applicability": "restricted",
+      "explanation": "Units that take casualties may need to pass a morale test or fall back.",
+      "citation": "StarCraft TMG core rules — Morale (sample)"
+    },
+    {
+      "keyword": "movement",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "Units move up to their Movement characteristic during the Movement phase.",
+      "citation": "StarCraft TMG core rules — Movement (sample)"
+    },
+    {
+      "keyword": "objective",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "Controlling objectives at the end of a battle round scores victory points.",
+      "citation": "StarCraft TMG core rules — Objectives (sample)"
+    },
+    {
+      "keyword": "shooting",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Units with ranged weapons fire at eligible targets during the Shooting phase.",
+      "citation": "StarCraft TMG core rules — Shooting (sample)"
+    }
+  ]
+}

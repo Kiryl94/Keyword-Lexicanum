@@ -19,12 +19,12 @@ export const GAME_SYSTEMS: GameSystem[] = [
   {
     id: 'wh40k-11',
     label: 'Warhammer 40k (11th ed)',
-    description: 'Core rules — license-free version',
+    description: '11th ed core rules — build locally from GW free PDF',
   },
   {
     id: 'starcraft-mini',
-    label: 'Starcraft Miniature Game',
-    description: 'Core rules corpus',
+    label: 'StarCraft TMG',
+    description: 'Core rules — build locally from Archon free PDF',
   },
 ];
 

@@ -37,6 +37,8 @@ New tabletop players hit a steep terminology barrier in dense rulebooks. Keyword
 | S-05 | guided-suggestions | pick from guided keyword suggestions while searching | S-02 | FR-002 | done |
 | S-06 | recent-lookups | view recent keyword lookups from the current session | S-02 | FR-005 | done |
 | S-07 | dnd-srd-corpus | look up keywords against the real D&D SRD corpus (not sample data) | S-02 | FR-003, FR-004 | done |
+| S-08 | wh40k-core-corpus | look up WH40k keywords against locally built GW core rules corpus | S-02, distribution policy | FR-003, FR-004 | in_progress |
+| S-09 | starcraft-core-corpus | look up StarCraft TMG keywords against locally built Archon corpus | S-02, distribution policy | FR-003, FR-004 | in_progress |
 
 ## Streams
 
@@ -47,7 +49,7 @@ Navigation aid — groups items that share a prerequisites chain. Canonical orde
 | A | Core lookup wedge | `S-01` → `S-02` → `S-03` / `S-05` | Speed-first must-have path; north star at `S-02`. |
 | B | Deploy for field test | `F-01` | Parallel with Stream A once `S-02` is demoable — share URL at the game store. |
 | C | Phase browse | `S-04` | Joins Stream A at `S-02`; blocked on phase taxonomy until Open Question 1 resolves. |
-| D | Real corpus | `S-07` | Joins Stream A at `S-02`; blocked on licensing Open Questions 2–3. |
+| D | Real corpus | `S-07` → `S-08` / `S-09` | D&D public; GW/Archon personal/local until consultation. See `distribution-policy.md`. |
 | E | Session polish | `S-06` | Joins Stream A at `S-02`; nice-to-have, cut if schedule slips. |
 
 ## Baseline
@@ -56,7 +58,7 @@ What's already in place as of `2026-06-24` (auto-researched + confirmed after we
 
 - **Frontend:** present — Next.js 16 App Router, Tailwind, tabbed UI at `src/app/` (system, lookup, phases), `src/components/AppNav.tsx`.
 - **Backend / API:** absent — client-only app; no API routes or server lookup layer yet.
-- **Data:** partial — D&D uses ingested SRD JSON (`src/data/dnd5e-srd-corpus.json`); WH40k/Starcraft remain sample corpora in `src/lib/lookup.ts`.
+- **Data:** D&D ingested SRD JSON (public). WH40k/StarCraft: sample in repo; full corpus via local PDF build (`src/data/local/`, gitignored).
 - **Auth:** absent per tech-stack.md (`has_auth: false`) — Zustand session in `src/store/session.ts`, no login.
 - **Deploy / infra:** partial — `next.config.ts` present; no `.github/workflows`; Vercel target declared in tech-stack.md only.
 - **Observability:** absent — no error tracking or perf instrumentation.
@@ -162,12 +164,32 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **PRD refs:** FR-003, FR-004
 - **Prerequisites:** S-02
 - **Parallel with:** —
-- **Blockers:** — (D&D SRD is CC BY 4.0; WH40k/Starcraft still blocked on PRD OQ 2–3)
-- **Unknowns:**
-  - D&D phase taxonomy refinement — Owner: product. Block: no for v1 (coarse General/Combat/Spellcasting labels).
-  - WH40k 11th / Starcraft Miniature license-free core rules — Owner: product/legal. Block: yes for those systems.
-- **Risk:** 258-entry static JSON keeps client bundle ~324KB; rebuild via `npm run corpus:build-dnd` when sources update.
+- **Blockers:** — (D&D SRD is CC BY 4.0)
+- **Unknowns:** D&D phase taxonomy refinement — Owner: product. Block: no for v1.
+- **Risk:** 258-entry static JSON; rebuild via `npm run corpus:build-dnd`.
 - **Status:** done
+
+### S-08: Real WH40k core rules corpus (personal)
+
+- **Outcome:** user can look up WH40k core-rule keywords from the official free Core Rules PDF, built locally.
+- **Change ID:** wh40k-core-corpus
+- **PRD refs:** FR-003, FR-004
+- **Prerequisites:** S-02, `context/foundation/distribution-policy.md`
+- **Parallel with:** S-09
+- **Blockers:** public deploy blocked until GW consultation; personal/local build OK
+- **Risk:** PDF extraction heuristics; edition updates require rebuild
+- **Status:** in_progress
+
+### S-09: Real StarCraft TMG corpus (personal)
+
+- **Outcome:** user can look up StarCraft TMG keywords from the official free rulebook PDF, built locally.
+- **Change ID:** starcraft-core-corpus
+- **PRD refs:** FR-003, FR-004
+- **Prerequisites:** S-02, distribution policy
+- **Parallel with:** S-08
+- **Blockers:** public deploy blocked until Archon consultation; personal/local build OK
+- **Risk:** living rules document; game still rolling out 2026
+- **Status:** in_progress
 
 ## Backlog Handoff
 
@@ -180,14 +202,15 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 | S-04 | browse-by-phase | Browse keywords by phase name | yes | Shipped |
 | S-05 | guided-suggestions | Add guided keyword suggestions | yes | Shipped |
 | S-06 | recent-lookups | Persist and show recent session lookups | yes | Shipped |
-| S-07 | dnd-srd-corpus | Ingest D&D SRD corpus for real lookups | yes | Shipped — D&D only |
+| S-07 | dnd-srd-corpus | Ingest D&D SRD corpus for real lookups | yes | Shipped — public OK |
+| S-08 | wh40k-core-corpus | Build WH40k corpus from GW free PDF (local) | yes | Personal use; consult GW before public |
+| S-09 | starcraft-core-corpus | Build StarCraft corpus from Archon free PDF (local) | yes | Personal use; consult Archon before public |
 
 ## Open Roadmap Questions
 
-1. **Exact game-phase taxonomy per system** (Engagement, etc.) — Owner: product/build. Block: S-03, S-04.
-2. **Licensing verification for WH40k 11th and Starcraft Miniature free core rules** — Owner: product/legal. Block: S-07 (non-D&D systems).
-3. **D&D 5e SRD vs basic manual boundary** — Owner: product. Block: S-07.
-4. **US-02 for phase-based keyword browse** — Owner: product. Block: roadmap-wide acceptance criteria only.
+1. **Exact game-phase taxonomy per system** (Engagement, etc.) — Owner: product/build. Block: refines browse quality, not v1 demo.
+2. **GW / Archon permission for public corpus** — Owner: product. Block: public deploy with embedded rules text only.
+3. **US-02 for phase-based keyword browse** — Owner: product. Block: roadmap-wide acceptance criteria only.
 
 ## Parked
 
@@ -199,6 +222,8 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **Voice-first input** — Why parked: PRD §Non-Goals.
 - **User accounts / cloud sync** — Why parked: PRD §Non-Goals.
 - **Offline corpus / service worker** — Why parked: speed path; NFR defers IndexedDB to post-MVP unless table testing demands it.
+- **Warhammer: The Old World** — Why dropped: no free core rules PDF; paid rulebook only. Out of scope unless GW publishes a free core document.
+- **Age of Sigmar** — Why parked: free core rules exist on Warhammer Community, but same GW republication constraints as 40k; optional post-deadline stretch if time allows after S-08/S-09 and GW consultation.
 
 ## Done
 
@@ -209,4 +234,4 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **S-06: user can view recent keyword lookups from the current session without re-querying.** — Archived 2026-06-24 → `context/archive/2026-06-24-recent-lookups/`. Lesson: per-system recents + hit cache satisfies FR-005 without a server round-trip.
 - **S-03: user can see which game phase a keyword applies to (or that it does not apply outside that phase).** — Archived 2026-06-24 → `context/archive/2026-06-24-phase-on-keyword/`. Lesson: restricted vs general applicability banners carry FR-007 until real corpus refines phase names.
 - **S-04: user can enter a phase name and browse keywords relevant to that phase.** — Archived 2026-06-24 → `context/archive/2026-06-24-browse-by-phase/`. Lesson: phase chips + keyword list on home panel keeps browse in the lookup flow without a separate tab.
-- **S-07: user can look up keywords against the canonical license-free D&D corpus (not hardcoded samples).** — Change docs at `context/changes/dnd-srd-corpus/`. Lesson: static SRD JSON + alias map keeps bundle small; WH40k/Starcraft await licensing.
+- **S-07: user can look up keywords against the canonical license-free D&D corpus (not hardcoded samples).** — Change docs at `context/changes/dnd-srd-corpus/`. Lesson: static SRD JSON + alias map keeps bundle small; D&D is the public-corpus wedge.

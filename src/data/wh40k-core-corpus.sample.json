@@ -1,0 +1,78 @@
+{
+  "version": "sample",
+  "license": "sample-only",
+  "attribution": "Representative sample entries for UX/demo. Not official Games Workshop text. Build full corpus locally with npm run corpus:build-wh40k.",
+  "entryCount": 10,
+  "entries": [
+    {
+      "keyword": "close quarters",
+      "phase": "Engagement",
+      "applicability": "restricted",
+      "explanation": "Close quarters rules apply only during the Engagement phase. Outside Engagement, this keyword does not affect play.",
+      "citation": "WH40k Core Rules — Engagement (sample)"
+    },
+    {
+      "keyword": "engagement",
+      "phase": "Engagement",
+      "applicability": "restricted",
+      "explanation": "Engagement is the phase where close-quarters and fight rules apply. Keywords tied to Engagement are irrelevant outside it.",
+      "citation": "WH40k Core Rules — Engagement (sample)"
+    },
+    {
+      "keyword": "battle round",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "A battle round consists of alternating player turns through movement, shooting, charge, and fight phases.",
+      "citation": "WH40k Core Rules — Battle Round (sample)"
+    },
+    {
+      "keyword": "charge phase",
+      "phase": "Charge Phase",
+      "applicability": "restricted",
+      "explanation": "During the Charge phase, eligible units declare charges against enemy units within range.",
+      "citation": "WH40k Core Rules — Charge Phase (sample)"
+    },
+    {
+      "keyword": "fight phase",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "Units that charged or are within engagement range fight in the Fight phase, alternating activations.",
+      "citation": "WH40k Core Rules — Fight Phase (sample)"
+    },
+    {
+      "keyword": "movement phase",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "Units move across the battlefield in the Movement phase, respecting coherency and terrain rules.",
+      "citation": "WH40k Core Rules — Movement Phase (sample)"
+    },
+    {
+      "keyword": "morale",
+      "phase": "Morale Phase",
+      "applicability": "restricted",
+      "explanation": "Units that lost models may need to take a Battle-shock test during the Morale phase.",
+      "citation": "WH40k Core Rules — Morale (sample)"
+    },
+    {
+      "keyword": "objective marker",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "Objective markers define scoring locations. Controlling them earns victory points each round.",
+      "citation": "WH40k Core Rules — Objectives (sample)"
+    },
+    {
+      "keyword": "shooting phase",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Units with ranged weapons attack eligible targets during the Shooting phase.",
+      "citation": "WH40k Core Rules — Shooting Phase (sample)"
+    },
+    {
+      "keyword": "terrain",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "Terrain features can block line of sight, provide cover, and restrict movement.",
+      "citation": "WH40k Core Rules — Terrain (sample)"
+    }
+  ]
+}

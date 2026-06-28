@@ -17,4 +17,4 @@ Output: `src/data/dnd5e-srd-corpus.json`
 
 ## Non-D&D systems
 
-Warhammer 40k and Starcraft Miniature Game entries remain sample data until separate licensing clearance (PRD Open Question 2).
+Warhammer 40k and StarCraft TMG use committed **sample** corpora on public preview. For personal use, build full corpora from official free PDFs — see [CORPUS-ATTRIBUTION.md](./CORPUS-ATTRIBUTION.md) and `context/foundation/distribution-policy.md`. Do not publish GW/Archon rule text publicly without publisher consultation.

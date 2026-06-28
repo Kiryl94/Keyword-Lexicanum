@@ -171,12 +171,16 @@ Acknowledged on 2026-06-24: 4–6 week MVP (midpoint `mvp_weeks: 5`) requires su
 
 ## Forward: rules corpus
 
-Candidate license-free sources for v1 (user-provided; licensing to be verified before ingestion):
-- D&D 5e — SRD / free rules
-- Warhammer 40k — 11th edition core rules (license-free version)
-- Starcraft Miniature Game — core rules
+Candidate sources for v1:
+- D&D 5e — SRD / free rules (CC BY 4.0, public OK)
+- Warhammer 40k — GW free Core Rules PDF (personal/local build; consult GW before public)
+- Starcraft Miniature Game — Archon free rulebook PDF (personal/local build; consult Archon before public)
+
+Parked post-deadline: Age of Sigmar (free GW PDF, same republication constraints). **Dropped:** Warhammer: The Old World (no free core rules).
+
+See `context/foundation/distribution-policy.md`.
 
 ## Open Questions
 
-- Exact game-phase taxonomy per system (Engagement, etc.) — must be derived from each corpus during implementation.
-- Licensing verification for WH40k 11th and Starcraft Miniature free core rules before ingestion.
+- Exact game-phase taxonomy per system — derive from each corpus during implementation.
+- GW / Archon permission — required only for public deploy with embedded rules text.

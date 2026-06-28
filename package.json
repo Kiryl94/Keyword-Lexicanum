@@ -10,7 +10,9 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "corpus:build-dnd": "node scripts/build-dnd-srd-corpus.mjs"
+    "corpus:build-dnd": "node scripts/build-dnd-srd-corpus.mjs",
+    "corpus:build-wh40k": "node scripts/build-wh40k-corpus.mjs",
+    "corpus:build-starcraft": "node scripts/build-starcraft-corpus.mjs"
   },
   "dependencies": {
     "next": "16.2.9",
@@ -25,6 +27,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "pdf-parse": "^2.4.5",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^3.2.4"

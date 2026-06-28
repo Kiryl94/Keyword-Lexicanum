@@ -138,6 +138,6 @@ Single user; no login; data lives in the browser only (localStorage / IndexedDB)
 ## Open Questions
 
 1. **Exact game-phase taxonomy per system** (Engagement, etc.) — must be derived from each corpus during implementation. Owner: product/build. By: before FR-007/FR-008 implementation.
-2. **Licensing verification for WH40k 11th and Starcraft Miniature free core rules** — confirm license-free use before ingestion. Owner: product/legal review. By: before corpus ingestion.
-3. **D&D 5e SRD vs basic manual boundary** — confirm which license-free D&D corpus is canonical for v1. Owner: product. By: before D&D corpus ingestion.
+2. **Public distribution of GW / Archon corpus** — personal/local build from free PDFs is OK; public web deploy with embedded rules text requires GW and Archon consultation first. See `context/foundation/distribution-policy.md`. Owner: product. By: before any public relaunch with full miniature-system corpora.
+3. **D&D 5e SRD vs basic manual boundary** — resolved: SRD 5.2.1 via Open5e is canonical for v1.
 4. **US-02 for phase-based keyword browse** — only US-01 captured in shaping; add user story for FR-007/FR-008 if acceptance criteria need explicit Given/When/Then coverage.

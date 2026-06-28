@@ -4,7 +4,19 @@ Web app for in-context tabletop rules keyword lookup (D&D, WH40k, Starcraft Mini
 
 **Platform:** responsive web (phone browser at the table). Native mobile is a long-term option.
 
-**Live preview:** https://keyword-lexicanum.vercel.app
+**Live preview:** https://keyword-lexicanum.vercel.app (D&D corpus + sample miniature-system placeholders; see distribution policy before public relaunch with full GW/Archon text)
+
+## Corpus builds
+
+```powershell
+npm run corpus:build-dnd          # D&D SRD — committed, public-safe
+npm run corpus:build-wh40k        # GW Core Rules PDF → src/data/local/ (gitignored)
+npm run corpus:build-starcraft    # Archon rulebook PDF → src/data/local/ (gitignored)
+```
+
+After building WH40k or StarCraft locally, copy env paths from script output into `.env.local` (see `.env.local.example`).
+
+**Distribution:** see `context/foundation/distribution-policy.md` — do not publish GW/Archon embedded rules publicly without publisher consultation.
 
 ## Run locally
 
@@ -47,6 +59,7 @@ mobile-expo-archive/  # prior Expo scaffold (archived)
 ## Foundation docs
 
 - `context/foundation/prd.md`
+- `context/foundation/distribution-policy.md`
 - `context/foundation/tech-stack.md`
 - `context/foundation/shape-notes.md`
 
