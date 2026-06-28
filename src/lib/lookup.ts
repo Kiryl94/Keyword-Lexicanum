@@ -279,3 +279,20 @@ export function getKeywordsForPhase(phaseQuery: string, systemId: GameSystemId):
     )
     .map((entry) => entry.keyword);
 }
+
+export function getKeywordSuggestions(
+  rawQuery: string,
+  systemId: GameSystemId,
+  limit = 8,
+): string[] {
+  const query = normalize(rawQuery);
+  if (!query) {
+    return [];
+  }
+
+  return (SAMPLE_CORPUS[systemId] ?? [])
+    .filter((entry) => normalize(entry.keyword).startsWith(query))
+    .map((entry) => entry.keyword)
+    .sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }))
+    .slice(0, limit);
+}

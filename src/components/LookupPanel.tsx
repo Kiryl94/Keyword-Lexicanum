@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
-import { lookupKeyword } from '@/lib/lookup';
+import { useMemo, useState } from 'react';
+import { KeywordSuggestionList } from '@/components/KeywordSuggestionList';
 import { LookupResultCard } from '@/components/LookupResultCard';
+import { getKeywordSuggestions, lookupKeyword } from '@/lib/lookup';
 import type { GameSystemId } from '@/store/session';
 import { useSessionStore } from '@/store/session';
 
@@ -22,6 +23,13 @@ export function LookupPanel() {
   const visibleResult =
     result && resultSystemId === activeSystem?.id ? result : null;
 
+  const suggestions = useMemo(() => {
+    if (!activeSystem || query.trim().length < 1 || loading) {
+      return [];
+    }
+    return getKeywordSuggestions(query, activeSystem.id);
+  }, [activeSystem, query, loading]);
+
   async function onSearch(term: string) {
     const trimmed = term.trim();
     if (!trimmed || !activeSystem) return;
@@ -38,6 +46,11 @@ export function LookupPanel() {
     } finally {
       setLoading(false);
     }
+  }
+
+  function onSuggestionSelect(keyword: string) {
+    setQuery(keyword);
+    onSearch(keyword);
   }
 
   if (!activeSystem) {
@@ -60,6 +73,10 @@ export function LookupPanel() {
         onKeyDown={(e) => e.key === 'Enter' && canSearch && onSearch(query)}
         placeholder="Enter a keyword (e.g. Advantage, Engagement)"
         className="rounded-lg border border-[#2a2a40] bg-[#1a1a2e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#6b6b80] focus:border-[#e94560] focus:outline-none"
+      />
+      <KeywordSuggestionList
+        suggestions={suggestions}
+        onSelect={onSuggestionSelect}
       />
       <button
         type="button"
