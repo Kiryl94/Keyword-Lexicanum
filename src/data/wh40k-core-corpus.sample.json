@@ -1,8 +1,8 @@
 {
-  "version": "sample-v3",
+  "version": "sample-v4",
   "license": "sample-only",
   "attribution": "Representative paraphrased entries for UX/demo. Not official Games Workshop text. Build full corpus locally with npm run corpus:build-wh40k.",
-  "entryCount": 48,
+  "entryCount": 55,
   "entries": [
     {
       "keyword": "Anti",
@@ -461,6 +461,54 @@
       }
     },
     {
+      "keyword": "Pistol",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Pistol weapons can be fired while engaged, like Close Quarters. [PISTOL] and [CLOSE-QUARTERS] are identical for all rules purposes.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Pistol (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Pistol (24.27)"
+      }
+    },
+    {
+      "keyword": "Precision",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "When attacking with Precision weapons, if the target unit has visible CHARACTER models, you may allocate hits to a CHARACTER group first during the Allocation Order step.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Precision (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Precision (24.28)"
+      }
+    },
+    {
+      "keyword": "Psychic",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Psychic weapons ignore BS/WS and hit-roll modifiers. Attacks made with them count as psychic attacks for triggering other rules.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Psychic (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Psychic (24.29)"
+      }
+    },
+    {
+      "keyword": "Rapid Fire",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Rapid Fire X adds X extra attack dice when gathering attacks if the target was within half range during the Select Targets step.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Rapid Fire (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Rapid Fire (24.30)"
+      }
+    },
+    {
       "keyword": "Reserves",
       "phase": "Movement Phase",
       "applicability": "restricted",
@@ -557,6 +605,18 @@
       }
     },
     {
+      "keyword": "Sustained Hits",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Sustained Hits X: each critical hit with the weapon scores X additional hits on the target beyond the critical hit itself.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Sustained Hits (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Sustained Hits (24.36)"
+      }
+    },
+    {
       "keyword": "Terrain",
       "phase": "Movement Phase",
       "applicability": "restricted",
@@ -569,6 +629,18 @@
       }
     },
     {
+      "keyword": "Torrent",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Each attack made with a Torrent weapon automatically hits the target.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Torrent (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Torrent (24.37)"
+      }
+    },
+    {
       "keyword": "Transports",
       "phase": "Movement Phase",
       "applicability": "restricted",
@@ -578,6 +650,18 @@
         "documentTitle": "Warhammer 40,000 11th ed Core Rules",
         "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
         "section": "Transports (18.01)"
+      }
+    },
+    {
+      "keyword": "Twin-linked",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Each time an attack is made with a Twin-linked weapon, you can re-roll the wound roll.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Twin-linked (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Twin-linked (24.38)"
       }
     }
   ],

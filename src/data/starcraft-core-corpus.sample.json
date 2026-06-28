@@ -1,8 +1,8 @@
 {
-  "version": "sample-v3",
+  "version": "sample-v4",
   "license": "sample-only",
   "attribution": "Representative paraphrased entries for UX/demo. Not official Archon/Blizzard text. Build full corpus locally with npm run corpus:build-starcraft.",
-  "entryCount": 17,
+  "entryCount": 36,
   "entries": [
     {
       "keyword": "Alternating Activations",
@@ -14,6 +14,18 @@
         "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
         "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
         "section": "Alternating Activations (8.1)"
+      }
+    },
+    {
+      "keyword": "Armour Roll",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "The defender rolls all dice in the Armour Pool; each die meeting or exceeding the unit's Armour characteristic is discarded as a successful save.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Armour Roll (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Armour Roll (8.7.3)"
       }
     },
     {
@@ -29,6 +41,42 @@
       }
     },
     {
+      "keyword": "Attack Pool",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "Ranged attacks resolve through three pools: dice start in the Attack Pool (hit rolls), move to the Armour Pool, then to the Damage Pool.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Attack Pool (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Attack Pool (8.7.3)"
+      }
+    },
+    {
+      "keyword": "Burrow",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "Burrowed units gain HIDDEN, have Size treated as 0, and refresh HIDDEN at the start of each round while burrowed.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Burrow (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Burrow (11)"
+      }
+    },
+    {
+      "keyword": "Charge",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "An unengaged ground unit moves into the Engagement Range of declared enemy units, crossing open ground with a charge move.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Charge (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Charge (8.7.7)"
+      }
+    },
+    {
       "keyword": "Combat Phase",
       "phase": "Engagement",
       "applicability": "restricted",
@@ -38,6 +86,18 @@
         "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
         "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
         "section": "Combat Phase (8.8)"
+      }
+    },
+    {
+      "keyword": "Combat Tag",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "Combat Tags identify a unit's physical nature and tactical class (e.g. Armoured, Biological, Light). Many weapon keywords such as Surge and Pierce apply only against matching tags.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Combat Tag (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Combat Tag (11)"
       }
     },
     {
@@ -53,6 +113,42 @@
       }
     },
     {
+      "keyword": "Critical Hit",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "Critical Hit (X) moves up to X dice from the Armour Pool directly to the Damage Pool, bypassing armour rolls.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Critical Hit (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Critical Hit (11)"
+      }
+    },
+    {
+      "keyword": "Damage Pool",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "Each die remaining in the Damage Pool after armour (and any Evade rolls) inflicts Damage equal to the weapon's Damage characteristic.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Damage Pool (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Damage Pool (8.7.3)"
+      }
+    },
+    {
+      "keyword": "Deploy",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "A unit in Reserves enters the battlefield during the Movement Phase if its Current Supply fits within your Available Supply.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Deploy (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Deploy (8.5.5)"
+      }
+    },
+    {
       "keyword": "Deployment",
       "phase": "Deployment",
       "applicability": "restricted",
@@ -62,6 +158,18 @@
         "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
         "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
         "section": "Deployment (9.3)"
+      }
+    },
+    {
+      "keyword": "Disengage",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "An engaged unit withdraws from melee during the Movement Phase. Disengaging triggers the Tactical Mass penalty for that activation.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Disengage (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Disengage (8.5.4)"
       }
     },
     {
@@ -86,6 +194,42 @@
         "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
         "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
         "section": "Engagement (7.2)"
+      }
+    },
+    {
+      "keyword": "Evade",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "After armour rolls, the defender may Evade to discard dice from the Damage Pool. A unit with Evade (-) cannot make Evade rolls unless an ability explicitly grants one.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Evade (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Evade (5)"
+      }
+    },
+    {
+      "keyword": "First Player Marker",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "Physical token tracking initiative. The roll-off winner holds it at game start; the first player to Pass in a phase takes it for the next phase.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — First Player Marker (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "First Player Marker (8.6)"
+      }
+    },
+    {
+      "keyword": "Flying",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "When checking line of sight to or from a Flying model, ignore Full Cover. For cover purposes, treat its Effective Size as higher than any terrain on the table.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Flying (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Flying (7.1.4)"
       }
     },
     {
@@ -149,6 +293,42 @@
       }
     },
     {
+      "keyword": "Pierce",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "Pierce (X) often applies only against specific Combat Tags, increasing the Damage each successful die deals when the target matches.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Pierce (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Pierce (11)"
+      }
+    },
+    {
+      "keyword": "Rate of Attack",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "Rate of Attack (RoA) is the number of dice rolled per firing model when making a ranged attack profile.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Rate of Attack (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Rate of Attack (5)"
+      }
+    },
+    {
+      "keyword": "Reaction",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "Reaction Abilities let a player respond to specific events outside the normal activation sequence, as defined on the ability card.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Reaction (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Reaction (2.7.3)"
+      }
+    },
+    {
       "keyword": "Reserves",
       "phase": "Deployment",
       "applicability": "restricted",
@@ -161,6 +341,30 @@
       }
     },
     {
+      "keyword": "Run",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "During the Assault Phase, a unit repositions without attacking—often to claim Mission Markers or improve its firing angle.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Run (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Run (8.7.1)"
+      }
+    },
+    {
+      "keyword": "Scoring Phase",
+      "phase": "Battle Round",
+      "applicability": "restricted",
+      "explanation": "Phase 4 of each round: determine Mission Marker control, score victory points, resolve end-of-round effects, and refresh activation markers.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Scoring Phase (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Scoring Phase (8.9)"
+      }
+    },
+    {
       "keyword": "Shooting Phase",
       "phase": "Assault Phase",
       "applicability": "restricted",
@@ -170,6 +374,18 @@
         "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
         "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
         "section": "Shooting Phase (8.7.3)"
+      }
+    },
+    {
+      "keyword": "Sidearm",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "Sidearm weapons can be fired alongside a model's primary weapon, ignoring the normal one-weapon-per-model restriction.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Sidearm (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Sidearm (11)"
       }
     },
     {
@@ -194,6 +410,18 @@
         "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
         "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
         "section": "Surge (8.7.4)"
+      }
+    },
+    {
+      "keyword": "Tactical Mass",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "A unit that Disengages suffers Tactical Mass: it cannot make Ranged Attacks during that activation.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Tactical Mass (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Tactical Mass (8.5.4)"
       }
     },
     {

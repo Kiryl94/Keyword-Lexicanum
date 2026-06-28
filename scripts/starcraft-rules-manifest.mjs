@@ -160,4 +160,177 @@ export const STARCRAFT_RULES = [
     summary:
       'Vespene Gas is spent only on Tactical Cards during army building. It cannot be converted into Minerals, and unspent Vespene is lost.',
   },
+
+  // —— Actions & combat resolution ——
+  {
+    keyword: 'Charge',
+    phase: 'Assault Phase',
+    applicability: 'restricted',
+    labels: ['8.7.7 CHARGE'],
+    ruleRef: '8.7.7',
+    summary:
+      'An unengaged ground unit moves into the Engagement Range of declared enemy units, crossing open ground with a charge move.',
+  },
+  {
+    keyword: 'Disengage',
+    phase: 'Movement Phase',
+    applicability: 'restricted',
+    labels: ['8.5.4 DISENGAGE'],
+    ruleRef: '8.5.4',
+    summary:
+      'An engaged unit withdraws from melee during the Movement Phase. Disengaging triggers the Tactical Mass penalty for that activation.',
+  },
+  {
+    keyword: 'Deploy',
+    phase: 'Movement Phase',
+    applicability: 'restricted',
+    labels: ['8.5.5 DEPLOY'],
+    ruleRef: '8.5.5',
+    summary:
+      'A unit in Reserves enters the battlefield during the Movement Phase if its Current Supply fits within your Available Supply.',
+  },
+  {
+    keyword: 'Run',
+    phase: 'Assault Phase',
+    applicability: 'restricted',
+    labels: ['8.7.1 RUN'],
+    ruleRef: '8.7.1',
+    summary:
+      'During the Assault Phase, a unit repositions without attacking—often to claim Mission Markers or improve its firing angle.',
+  },
+  {
+    keyword: 'Flying',
+    phase: 'Assault Phase',
+    applicability: 'restricted',
+    labels: ['7.1.4 FLYING UNITS AND COVER'],
+    ruleRef: '7.1.4',
+    summary:
+      'When checking line of sight to or from a Flying model, ignore Full Cover. For cover purposes, treat its Effective Size as higher than any terrain on the table.',
+  },
+  {
+    keyword: 'Reaction',
+    phase: 'Battle Round',
+    applicability: 'general',
+    labels: ['Reaction Abilities allow a player to act outside'],
+    ruleRef: '2.7.3',
+    summary:
+      'Reaction Abilities let a player respond to specific events outside the normal activation sequence, as defined on the ability card.',
+  },
+  {
+    keyword: 'Burrow',
+    phase: 'Battle Round',
+    applicability: 'general',
+    labels: ['BURROWED is classified as a Status'],
+    ruleRef: '11',
+    summary:
+      'Burrowed units gain HIDDEN, have Size treated as 0, and refresh HIDDEN at the start of each round while burrowed.',
+  },
+  {
+    keyword: 'Tactical Mass',
+    phase: 'Movement Phase',
+    applicability: 'restricted',
+    labels: ['TACTICAL MASS'],
+    ruleRef: '8.5.4',
+    summary:
+      'A unit that Disengages suffers Tactical Mass: it cannot make Ranged Attacks during that activation.',
+  },
+  {
+    keyword: 'First Player Marker',
+    phase: 'Battle Round',
+    applicability: 'general',
+    labels: ['FIRST PLAYER MARKER'],
+    ruleRef: '8.6',
+    summary:
+      'Physical token tracking initiative. The roll-off winner holds it at game start; the first player to Pass in a phase takes it for the next phase.',
+  },
+  {
+    keyword: 'Sidearm',
+    phase: 'Assault Phase',
+    applicability: 'restricted',
+    labels: ['When this Unit performs a Ranged Attack or Close'],
+    ruleRef: '11',
+    summary:
+      'Sidearm weapons can be fired alongside a model\'s primary weapon, ignoring the normal one-weapon-per-model restriction.',
+  },
+  {
+    keyword: 'Combat Tag',
+    phase: 'Battle Round',
+    applicability: 'general',
+    labels: ['Combat Tags identify a Unit'],
+    ruleRef: '11',
+    summary:
+      'Combat Tags identify a unit\'s physical nature and tactical class (e.g. Armoured, Biological, Light). Many weapon keywords such as Surge and Pierce apply only against matching tags.',
+  },
+  {
+    keyword: 'Critical Hit',
+    phase: 'Assault Phase',
+    applicability: 'restricted',
+    labels: ['CRITICAL HIT (X)'],
+    ruleRef: '11',
+    summary:
+      'Critical Hit (X) moves up to X dice from the Armour Pool directly to the Damage Pool, bypassing armour rolls.',
+  },
+  {
+    keyword: 'Evade',
+    phase: 'Assault Phase',
+    applicability: 'restricted',
+    labels: ['A Null Value (-): The Unit cannot make Evade Rolls'],
+    ruleRef: '5',
+    summary:
+      'After armour rolls, the defender may Evade to discard dice from the Damage Pool. A unit with Evade (-) cannot make Evade rolls unless an ability explicitly grants one.',
+  },
+  {
+    keyword: 'Rate of Attack',
+    phase: 'Assault Phase',
+    applicability: 'restricted',
+    labels: ['Rate of Attack: Dice rolled per firing model'],
+    ruleRef: '5',
+    summary:
+      'Rate of Attack (RoA) is the number of dice rolled per firing model when making a ranged attack profile.',
+  },
+  {
+    keyword: 'Armour Roll',
+    phase: 'Assault Phase',
+    applicability: 'restricted',
+    labels: ['3. ARMOUR ROLLS'],
+    ruleRef: '8.7.3',
+    summary:
+      'The defender rolls all dice in the Armour Pool; each die meeting or exceeding the unit\'s Armour characteristic is discarded as a successful save.',
+  },
+  {
+    keyword: 'Attack Pool',
+    phase: 'Assault Phase',
+    applicability: 'restricted',
+    labels: ['three-pool system: dice move from the Attack Pool'],
+    ruleRef: '8.7.3',
+    summary:
+      'Ranged attacks resolve through three pools: dice start in the Attack Pool (hit rolls), move to the Armour Pool, then to the Damage Pool.',
+  },
+  {
+    keyword: 'Damage Pool',
+    phase: 'Assault Phase',
+    applicability: 'restricted',
+    labels: ['DAMAGE POOL. Each die remaining in this pool inflicts'],
+    ruleRef: '8.7.3',
+    summary:
+      'Each die remaining in the Damage Pool after armour (and any Evade rolls) inflicts Damage equal to the weapon\'s Damage characteristic.',
+  },
+  {
+    keyword: 'Pierce',
+    phase: 'Assault Phase',
+    applicability: 'restricted',
+    labels: ['PIERCE (X) often apply only against specific tags'],
+    ruleRef: '11',
+    summary:
+      'Pierce (X) often applies only against specific Combat Tags, increasing the Damage each successful die deals when the target matches.',
+  },
+  {
+    keyword: 'Scoring Phase',
+    phase: 'Battle Round',
+    applicability: 'restricted',
+    labels: ['Score, cleanup, set initiative'],
+    ruleRef: '8.9',
+    summary:
+      'Phase 4 of each round: determine Mission Marker control, score victory points, resolve end-of-round effects, and refresh activation markers.',
+  },
 ];

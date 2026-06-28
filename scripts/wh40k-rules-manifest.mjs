@@ -400,6 +400,69 @@ export const WH40K_RULES = [
       'Each One Shot weapon can only be fired once per battle; mark it once used.',
   },
   {
+    keyword: 'Pistol',
+    phase: 'Shooting Phase',
+    applicability: 'restricted',
+    labels: ['[PISTOL] 24.27', 'Pistols can be wielded even at point-blank range'],
+    ruleRef: '24.27',
+    summary:
+      'Pistol weapons can be fired while engaged, like Close Quarters. [PISTOL] and [CLOSE-QUARTERS] are identical for all rules purposes.',
+  },
+  {
+    keyword: 'Precision',
+    phase: 'General',
+    applicability: 'restricted',
+    labels: ['[PRECISION] 24.28', 'Precision attacks can pick high-value targets'],
+    ruleRef: '24.28',
+    summary:
+      'When attacking with Precision weapons, if the target unit has visible CHARACTER models, you may allocate hits to a CHARACTER group first during the Allocation Order step.',
+  },
+  {
+    keyword: 'Psychic',
+    phase: 'General',
+    applicability: 'restricted',
+    labels: ['[PSYCHIC] 24.29', 'Some weapons can channel the bearer'],
+    ruleRef: '24.29',
+    summary:
+      'Psychic weapons ignore BS/WS and hit-roll modifiers. Attacks made with them count as psychic attacks for triggering other rules.',
+  },
+  {
+    keyword: 'Rapid Fire',
+    phase: 'Shooting Phase',
+    applicability: 'restricted',
+    labels: ['[RAPID FIRE] 24.30', 'Rapid fire weapons are capable'],
+    ruleRef: '24.30',
+    summary:
+      'Rapid Fire X adds X extra attack dice when gathering attacks if the target was within half range during the Select Targets step.',
+  },
+  {
+    keyword: 'Sustained Hits',
+    phase: 'General',
+    applicability: 'restricted',
+    labels: ['[SUSTAINED HITS] 24.36', 'Some weapons possess a punishing rate of fire'],
+    ruleRef: '24.36',
+    summary:
+      'Sustained Hits X: each critical hit with the weapon scores X additional hits on the target beyond the critical hit itself.',
+  },
+  {
+    keyword: 'Torrent',
+    phase: 'Shooting Phase',
+    applicability: 'restricted',
+    labels: ['[TORRENT] 24.37', 'Torrent weapons project clouds of fire'],
+    ruleRef: '24.37',
+    summary:
+      'Each attack made with a Torrent weapon automatically hits the target.',
+  },
+  {
+    keyword: 'Twin-linked',
+    phase: 'General',
+    applicability: 'restricted',
+    labels: ['[TWIN-LINKED] 24.38', 'Dual weapons are often grafted'],
+    ruleRef: '24.38',
+    summary:
+      'Each time an attack is made with a Twin-linked weapon, you can re-roll the wound roll.',
+  },
+  {
     keyword: 'Scouts',
     phase: 'Deployment',
     applicability: 'restricted',
