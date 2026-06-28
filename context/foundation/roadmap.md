@@ -29,7 +29,7 @@ New tabletop players hit a steep terminology barrier in dense rulebooks. Keyword
 
 | ID | Change ID | Outcome (user can …) | Prerequisites | PRD refs | Status |
 |---|---|---|---|---|---|
-| F-01 | shareable-web-deploy | (foundation) preview URL deployed for table-side testing | — | NFR responsive web | proposed |
+| F-01 | shareable-web-deploy | (foundation) preview URL deployed for table-side testing | — | NFR responsive web | done |
 | S-01 | system-picker-local | select the active game system with a local browser profile | — | FR-001, FR-006 | ready |
 | S-02 | keyword-lookup-citation | look up a keyword and receive a grounded explanation with citation | S-01 | US-01, FR-002, FR-003, FR-004 | done |
 | S-03 | phase-on-keyword | see which game phase a keyword applies to on lookup results | S-02 | FR-007 | proposed |
@@ -76,7 +76,7 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **Blockers:** —
 - **Unknowns:** —
 - **Risk:** Sequenced early for speed-to-launch feedback loop; minimal scope — deploy skeleton only, no CI polish yet.
-- **Status:** proposed
+- **Status:** done
 
 ## Slices
 
@@ -203,3 +203,4 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 ## Done
 
 - **S-02: user can look up a keyword or rule term and receive an in-context explanation grounded in the active system's corpus with a clear citation.** — Archived 2026-06-24 → `context/archive/2026-06-24-keyword-lookup-citation/`. Lesson: —.
+- **F-01: (foundation) production preview URL on Vercel so testers can open the app on a phone browser at the table.** — Archived 2026-06-24 → `context/archive/2026-06-24-shareable-web-deploy/`. Preview: https://keyword-lexicanum.vercel.app. Lesson: —.

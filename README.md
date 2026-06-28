@@ -4,6 +4,8 @@ Web app for in-context tabletop rules keyword lookup (D&D, WH40k, Starcraft Mini
 
 **Platform:** responsive web (phone browser at the table). Native mobile is a long-term option.
 
+**Live preview:** https://keyword-lexicanum.vercel.app
+
 ## Run locally
 
 ```powershell
@@ -13,6 +15,24 @@ npm run dev
 ```
 
 Open http://localhost:3000
+
+## Deploy
+
+Prerequisites: GitHub repo and a [Vercel](https://vercel.com) account (free tier is enough).
+
+1. Push the project to GitHub (`main` branch).
+2. In Vercel: **Add New → Project** → import `Kiryl94/keyword-lexicanum` (or your fork).
+3. Framework preset: **Next.js** (auto-detected).
+4. Build command: `npm run build` · Install command: `npm install` · **No environment variables.**
+5. Deploy. Vercel assigns a `*.vercel.app` URL (e.g. https://keyword-lexicanum.vercel.app).
+
+**Redeploy:** push to `main`; Vercel rebuilds automatically.
+
+**Verify after deploy:**
+
+- Open `/` — system picker loads.
+- Open `/lookup`, search `advantage` — success card with collapsible Source citation.
+- Switch to WH40k on System tab, search `close quarters` — phase + citation.
 
 ## Project structure
 
