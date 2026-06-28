@@ -1,20 +1,523 @@
 {
-  "version": "sample-v2",
+  "version": "sample-v3",
   "license": "sample-only",
-  "attribution": "Representative sample entries for UX/demo. Not official Games Workshop text. Build full corpus locally with npm run corpus:build-wh40k.",
-  "entryCount": 12,
+  "attribution": "Representative paraphrased entries for UX/demo. Not official Games Workshop text. Build full corpus locally with npm run corpus:build-wh40k.",
+  "entryCount": 48,
   "entries": [
+    {
+      "keyword": "Anti",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "Anti weapons have an improved critical wound roll against targets with a specified keyword (written as Anti X+).",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Anti (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Anti (24.03)"
+      }
+    },
+    {
+      "keyword": "Assault",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Assault weapons can be fired after the unit advances, though other restrictions on advancing units still apply.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Assault (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Assault (24.04)"
+      }
+    },
+    {
+      "keyword": "Battle Round",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "One full cycle in which each player completes a turn. When both players have taken a turn, the battle round ends and the next one begins.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Battle Round (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Battle Round (07.01)"
+      }
+    },
+    {
+      "keyword": "Battle-shock",
+      "phase": "Command Phase",
+      "applicability": "restricted",
+      "explanation": "At the start of your Command Phase, units below Starting Strength take a Battleshock test; failing units suffer penalties until your next Command Phase.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Battle-shock (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Battle-shock (08.01)"
+      }
+    },
+    {
+      "keyword": "Blast",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "When gathering attack dice for a Blast weapon, add one extra attack die for every five models in the target unit (rounding down).",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Blast (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Blast (24.05)"
+      }
+    },
+    {
+      "keyword": "Charge Phase",
+      "phase": "Charge Phase",
+      "applicability": "restricted",
+      "explanation": "Eligible units declare charges against enemy units within range and attempt to move into engagement range using a charge roll.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Charge Phase (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Charge Phase (11.01)"
+      }
+    },
+    {
+      "keyword": "Cleave",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "When a Cleave weapon scores a critical hit, the attacking model may immediately make additional attacks against the same target.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Cleave (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Cleave (24.06)"
+      }
+    },
+    {
+      "keyword": "Close Quarters",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "While engaged, a unit can only shoot with Close Quarters weapons and may only target enemy units it is engaged with.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Close Quarters (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Close Quarters (24.07)"
+      }
+    },
+    {
+      "keyword": "Coherency",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "Each model in a unit must stay within 2\" horizontally and 5\" vertically of at least two other models from the same unit.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Coherency (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Coherency (02.03)"
+      }
+    },
+    {
+      "keyword": "Command Phase",
+      "phase": "Command Phase",
+      "applicability": "restricted",
+      "explanation": "The first phase of your turn. You gain Command Points, resolve Battleshock tests, and trigger any start-of-turn abilities before moving on.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Command Phase (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Command Phase (08.01)"
+      }
+    },
+    {
+      "keyword": "Consolidate",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "After a unit finishes its close-combat attacks, each model may move up to 3\" to reposition or move toward the nearest enemy model.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Consolidate (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Consolidate (12.08)"
+      }
+    },
+    {
+      "keyword": "Cover",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Models that have cover gain +1 to their saving throws against ranged attacks that meet the cover conditions in the terrain rules.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Cover (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Cover (13.08)"
+      }
+    },
+    {
+      "keyword": "Deadly Demise",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "When a model with Deadly Demise is destroyed, roll a D6; on a specified result it inflicts mortal wounds on nearby units.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Deadly Demise (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Deadly Demise (24.08)"
+      }
+    },
+    {
+      "keyword": "Deep Strike",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "Units with Deep Strike can be set up from Reserves more than 9\" horizontally away from all enemy models during the Movement phase.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Deep Strike (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Deep Strike (24.09)"
+      }
+    },
+    {
+      "keyword": "Devastating Wounds",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "A critical wound with a Devastating Wounds weapon inflicts mortal wounds equal to that weapon's Damage characteristic.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Devastating Wounds (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Devastating Wounds (24.10)"
+      }
+    },
+    {
+      "keyword": "Engagement",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "Models that are within engagement range of enemy models are engaged and can make close-combat attacks during the Fight Phase.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Engagement (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Engagement (03.04)"
+      }
+    },
+    {
+      "keyword": "Engagement Range",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "The area within 2\" horizontally and 5\" vertically of a model. Models in engagement range of enemies can fight in the Fight Phase.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Engagement Range (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Engagement Range (03.04)"
+      }
+    },
+    {
+      "keyword": "Extra Attacks",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "Models with Extra Attacks weapons may make additional attacks under the conditions stated on their datasheet or ability.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Extra Attacks (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Extra Attacks (24.11)"
+      }
+    },
+    {
+      "keyword": "Feel No Pain",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Each time a model with Feel No Pain X+ would lose a wound, roll one D6; on X+ that wound is ignored.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Feel No Pain (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Feel No Pain (24.12)"
+      }
+    },
+    {
+      "keyword": "Fight Phase",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "Units within engagement range (including those that charged) make close-combat attacks, with players alternating unit activations.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Fight Phase (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Fight Phase (12.01)"
+      }
+    },
+    {
+      "keyword": "Fights First",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "Units with Fights First are selected to fight before other eligible units when resolving the Fight Phase.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Fights First (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Fights First (24.13)"
+      }
+    },
+    {
+      "keyword": "Firing Deck",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Embarked models with Firing Deck can shoot from a transport as if they were disembarked, subject to the ability's stated limits.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Firing Deck (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Firing Deck (24.14)"
+      }
+    },
+    {
+      "keyword": "Hazardous",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "After a unit shoots or fights with Hazardous weapons, test each one; on a failure the firing model suffers mortal wounds.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Hazardous (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Hazardous (24.15)"
+      }
+    },
+    {
+      "keyword": "Heavy",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "If the unit remained stationary this turn, Heavy weapons gain +1 to hit when they shoot.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Heavy (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Heavy (24.16)"
+      }
+    },
+    {
+      "keyword": "Hover",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "Hover vehicles can move over other models and terrain more freely than standard ground vehicles, as detailed in the ability.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Hover (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Hover (24.17)"
+      }
+    },
+    {
+      "keyword": "Ignores Cover",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Targets cannot claim the benefit of cover against attacks made with Ignores Cover weapons.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Ignores Cover (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Ignores Cover (24.18)"
+      }
+    },
+    {
+      "keyword": "Indirect Fire",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Indirect Fire weapons can target units not visible to the attacker, but those attacks suffer additional hit-roll restrictions and cover benefits for the target.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Indirect Fire (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Indirect Fire (24.19)"
+      }
+    },
+    {
+      "keyword": "Infiltrators",
+      "phase": "Deployment",
+      "applicability": "restricted",
+      "explanation": "If every model in the unit has Infiltrators, it can deploy anywhere more than 8\" horizontally from the enemy deployment zone and all enemy units.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Infiltrators (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Infiltrators (24.20)"
+      }
+    },
     {
       "keyword": "Lance",
       "phase": "Fight Phase",
       "applicability": "restricted",
       "explanation": "When attacking with a Lance weapon, add 1 to the wound roll if the attacking unit made a charge move this turn.",
-      "citation": "Warhammer 40,000 11th ed Core Rules, p. 82 — Lance (24.21) (sample)",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Lance (sample)",
       "source": {
         "documentTitle": "Warhammer 40,000 11th ed Core Rules",
         "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
-        "page": 82,
         "section": "Lance (24.21)"
+      }
+    },
+    {
+      "keyword": "Leader",
+      "phase": "Command Phase",
+      "applicability": "general",
+      "explanation": "Leader models can attach to bodyguard units, forming an Attached unit that moves and fights together; see the Attached Units rules for details.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Leader (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Leader (24.22)"
+      }
+    },
+    {
+      "keyword": "Lethal Hits",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "When a Lethal Hits weapon scores a critical hit, you may choose for that attack to automatically wound the target.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Lethal Hits (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Lethal Hits (24.23)"
+      }
+    },
+    {
+      "keyword": "Line of Sight",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "A model has line of sight to another if a 1 mm line can be drawn from any part of one model to any part of the other, ignoring models in their own units.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Line of Sight (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Line of Sight (06.01)"
+      }
+    },
+    {
+      "keyword": "Lone Operative",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Unless part of an Attached unit, this unit is not visible to enemy models beyond 12\" and cannot be targeted by Indirect Fire beyond that range.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Lone Operative (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Lone Operative (24.24)"
+      }
+    },
+    {
+      "keyword": "Melta",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Melta weapons add X to their Damage characteristic when the target was within half range during the Select Targets step (written as Melta X).",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Melta (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Melta (24.25)"
+      }
+    },
+    {
+      "keyword": "Movement Phase",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "Units move across the battlefield, including normal moves, advances, and fall-back moves, following coherency, terrain, and transport rules.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Movement Phase (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Movement Phase (09.01)"
+      }
+    },
+    {
+      "keyword": "Objectives",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "Players score victory points by controlling objective markers on the battlefield, checked at the end of each battle round unless a mission says otherwise.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Objectives (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Objectives (14.01)"
+      }
+    },
+    {
+      "keyword": "One Shot",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Each One Shot weapon can only be fired once per battle; mark it once used.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — One Shot (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "One Shot (24.26)"
+      }
+    },
+    {
+      "keyword": "Pile-in",
+      "phase": "Fight Phase",
+      "applicability": "restricted",
+      "explanation": "At the start of a unit's fight activation, each model may move up to 3\" toward the closest enemy model before making attacks.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Pile-in (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Pile-in (12.02)"
+      }
+    },
+    {
+      "keyword": "Reserves",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "Units held off the board in Strategic Reserves can arrive during the battle from board edges or via abilities such as Deep Strike, subject to mission limits.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Reserves (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Reserves (20.01)"
+      }
+    },
+    {
+      "keyword": "Scout Move",
+      "phase": "Deployment",
+      "applicability": "restricted",
+      "explanation": "The pre-battle move granted by the Scouts ability, allowing eligible units to adjust their starting positions before turn one.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Scout Move (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Scout Move (24.32)"
+      }
+    },
+    {
+      "keyword": "Scouts",
+      "phase": "Deployment",
+      "applicability": "restricted",
+      "explanation": "Units with Scouts can make a Scout move before the first turn, repositioning up to 6\" subject to deployment restrictions.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Scouts (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Scouts (24.31)"
+      }
+    },
+    {
+      "keyword": "Shooting Phase",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Units with eligible ranged weapons select targets and resolve shooting attacks, following visibility, range, and weapon ability restrictions.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Shooting Phase (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Shooting Phase (10.01)"
+      }
+    },
+    {
+      "keyword": "Stealth",
+      "phase": "Shooting Phase",
+      "applicability": "restricted",
+      "explanation": "Ranged attacks targeting a Stealth unit subtract 1 from the hit roll unless the attacker is within 12\".",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Stealth (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Stealth (24.33)"
       }
     },
     {
@@ -22,132 +525,59 @@
       "phase": "Command Phase",
       "applicability": "general",
       "explanation": "Players spend Command Points on stratagems to create epic tactical moments when a critical point in the battle is reached, where extra effects can tip the balance in their favour. See the core rules PDF (rule 15.01) for how to use them and for individual stratagem cards.",
-      "citation": "Warhammer 40,000 11th ed Core Rules, p. 54 — Stratagems (15.01) (sample)",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Stratagems (sample)",
       "source": {
         "documentTitle": "Warhammer 40,000 11th ed Core Rules",
         "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
-        "page": 54,
         "section": "Stratagems (15.01)"
       }
     },
     {
-      "keyword": "close quarters",
-      "phase": "Engagement",
-      "applicability": "restricted",
-      "explanation": "Close quarters rules apply only during the Engagement phase. Outside Engagement, this keyword does not affect play.",
-      "citation": "Warhammer 40,000 11th ed Core Rules — close quarters (sample)",
-      "source": {
-        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
-        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
-        "section": "close quarters"
-      }
-    },
-    {
-      "keyword": "engagement",
-      "phase": "Engagement",
-      "applicability": "restricted",
-      "explanation": "Engagement is the phase where close-quarters and fight rules apply. Keywords tied to Engagement are irrelevant outside it.",
-      "citation": "Warhammer 40,000 11th ed Core Rules — engagement (sample)",
-      "source": {
-        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
-        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
-        "section": "engagement"
-      }
-    },
-    {
-      "keyword": "battle round",
-      "phase": "Battle Round",
-      "applicability": "general",
-      "explanation": "A battle round consists of alternating player turns through movement, shooting, charge, and fight phases.",
-      "citation": "Warhammer 40,000 11th ed Core Rules — battle round (sample)",
-      "source": {
-        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
-        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
-        "section": "battle round"
-      }
-    },
-    {
-      "keyword": "charge phase",
-      "phase": "Charge Phase",
-      "applicability": "restricted",
-      "explanation": "During the Charge phase, eligible units declare charges against enemy units within range.",
-      "citation": "Warhammer 40,000 11th ed Core Rules — charge phase (sample)",
-      "source": {
-        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
-        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
-        "section": "charge phase"
-      }
-    },
-    {
-      "keyword": "fight phase",
-      "phase": "Fight Phase",
-      "applicability": "restricted",
-      "explanation": "Units that charged or are within engagement range fight in the Fight phase, alternating activations.",
-      "citation": "Warhammer 40,000 11th ed Core Rules — fight phase (sample)",
-      "source": {
-        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
-        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
-        "section": "fight phase"
-      }
-    },
-    {
-      "keyword": "movement phase",
+      "keyword": "Super-heavy Walker",
       "phase": "Movement Phase",
       "applicability": "restricted",
-      "explanation": "Units move across the battlefield in the Movement phase, respecting coherency and terrain rules.",
-      "citation": "Warhammer 40,000 11th ed Core Rules — movement phase (sample)",
+      "explanation": "Super-heavy Walker models count as both MONSTER and VEHICLE for rules purposes, combining aspects of both unit types.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Super-heavy Walker (sample)",
       "source": {
         "documentTitle": "Warhammer 40,000 11th ed Core Rules",
         "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
-        "section": "movement phase"
+        "section": "Super-heavy Walker (24.35)"
       }
     },
     {
-      "keyword": "morale",
-      "phase": "Morale Phase",
-      "applicability": "restricted",
-      "explanation": "Units that lost models may need to take a Battle-shock test during the Morale phase.",
-      "citation": "Warhammer 40,000 11th ed Core Rules — morale (sample)",
-      "source": {
-        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
-        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
-        "section": "morale"
-      }
-    },
-    {
-      "keyword": "objective marker",
-      "phase": "Battle Round",
-      "applicability": "general",
-      "explanation": "Objective markers define scoring locations. Controlling them earns victory points each round.",
-      "citation": "Warhammer 40,000 11th ed Core Rules — objective marker (sample)",
-      "source": {
-        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
-        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
-        "section": "objective marker"
-      }
-    },
-    {
-      "keyword": "shooting phase",
+      "keyword": "Support",
       "phase": "Shooting Phase",
       "applicability": "restricted",
-      "explanation": "Units with ranged weapons attack eligible targets during the Shooting phase.",
-      "citation": "Warhammer 40,000 11th ed Core Rules — shooting phase (sample)",
+      "explanation": "Support weapons on vehicles let crew fire additional ranged weapons from the transport, following the Support ability's targeting rules.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Support (sample)",
       "source": {
         "documentTitle": "Warhammer 40,000 11th ed Core Rules",
         "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
-        "section": "shooting phase"
+        "section": "Support (24.34)"
       }
     },
     {
-      "keyword": "terrain",
+      "keyword": "Terrain",
       "phase": "Movement Phase",
       "applicability": "restricted",
-      "explanation": "Terrain features can block line of sight, provide cover, and restrict movement.",
-      "citation": "Warhammer 40,000 11th ed Core Rules — terrain (sample)",
+      "explanation": "Terrain features affect how models move, what they can see, and whether they gain cover or other benefits during the battle.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Terrain (sample)",
       "source": {
         "documentTitle": "Warhammer 40,000 11th ed Core Rules",
         "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
-        "section": "terrain"
+        "section": "Terrain (13.01)"
+      }
+    },
+    {
+      "keyword": "Transports",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "Transport vehicles can embark and disembark friendly infantry models, with specific rules for when passengers can shoot, fight, or arrive from Reserves.",
+      "citation": "Warhammer 40,000 11th ed Core Rules — Transports (sample)",
+      "source": {
+        "documentTitle": "Warhammer 40,000 11th ed Core Rules",
+        "documentUrl": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+        "section": "Transports (18.01)"
       }
     }
   ],

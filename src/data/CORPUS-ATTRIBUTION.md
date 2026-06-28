@@ -21,3 +21,5 @@ See [SRD-ATTRIBUTION.md](./SRD-ATTRIBUTION.md). CC BY 4.0 — safe for public de
 ## Sample corpora (committed)
 
 When env paths are unset, the app ships with `*.sample.json` placeholder entries for UX demos on public preview — not official publisher text.
+
+Regenerate paraphrased samples from manifests: `npm run corpus:build-samples`

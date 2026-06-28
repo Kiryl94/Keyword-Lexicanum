@@ -37,8 +37,8 @@ New tabletop players hit a steep terminology barrier in dense rulebooks. Keyword
 | S-05 | guided-suggestions | pick from guided keyword suggestions while searching | S-02 | FR-002 | done |
 | S-06 | recent-lookups | view recent keyword lookups from the current session | S-02 | FR-005 | done |
 | S-07 | dnd-srd-corpus | look up keywords against the real D&D SRD corpus (not sample data) | S-02 | FR-003, FR-004 | done |
-| S-08 | wh40k-core-corpus | look up WH40k keywords against locally built GW core rules corpus | S-02, distribution policy | FR-003, FR-004 | in_progress |
-| S-09 | starcraft-core-corpus | look up StarCraft TMG keywords against locally built Archon corpus | S-02, distribution policy | FR-003, FR-004 | in_progress |
+| S-08 | wh40k-core-corpus | look up WH40k keywords against locally built GW core rules corpus | S-02, distribution policy | FR-003, FR-004 | done |
+| S-09 | starcraft-core-corpus | look up StarCraft TMG keywords against locally built Archon corpus | S-02, distribution policy | FR-003, FR-004 | done |
 
 ## Streams
 
@@ -166,7 +166,7 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **Parallel with:** —
 - **Blockers:** — (D&D SRD is CC BY 4.0)
 - **Unknowns:** D&D phase taxonomy refinement — Owner: product. Block: no for v1.
-- **Risk:** 258-entry static JSON; rebuild via `npm run corpus:build-dnd`.
+- **Risk:** 228-entry static JSON (table-only entries filtered); rebuild via `npm run corpus:build-dnd`.
 - **Status:** done
 
 ### S-08: Real WH40k core rules corpus (personal)
@@ -177,8 +177,8 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **Prerequisites:** S-02, `context/foundation/distribution-policy.md`
 - **Parallel with:** S-09
 - **Blockers:** public deploy blocked until GW consultation; personal/local build OK
-- **Risk:** PDF extraction heuristics; edition updates require rebuild
-- **Status:** in_progress
+- **Risk:** Curated brief summaries + PDF page citations; 48 keywords; local full build via `npm run corpus:build-wh40k`; public preview uses paraphrased samples via `npm run corpus:build-samples`.
+- **Status:** done
 
 ### S-09: Real StarCraft TMG corpus (personal)
 
@@ -188,8 +188,8 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **Prerequisites:** S-02, distribution policy
 - **Parallel with:** S-08
 - **Blockers:** public deploy blocked until Archon consultation; personal/local build OK
-- **Risk:** living rules document; game still rolling out 2026
-- **Status:** in_progress
+- **Risk:** Curated brief summaries + PDF page citations; 17 keywords; local build via `npm run corpus:build-starcraft`.
+- **Status:** done
 
 ## Backlog Handoff
 

@@ -1,7 +1,7 @@
 ---
 change_id: wh40k-core-corpus
 title: WH40k core rules corpus (personal)
-status: in_progress
+status: done
 created: 2026-06-24
 updated: 2026-06-24
 ---

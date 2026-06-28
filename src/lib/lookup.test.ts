@@ -49,8 +49,8 @@ describe('lookupKeyword', () => {
     const result = await lookupKeyword('close quarters', 'wh40k-11');
     expect(result.found).toBe(true);
     if (result.found) {
-      expect(result.keyword).toBe('close quarters');
-      expect(result.phase).toBe('Engagement');
+      expect(result.keyword).toBe('Close Quarters');
+      expect(result.phase).toBe('Shooting Phase');
       expect(result.phaseApplicability).toBe('restricted');
       expect(result.source?.documentUrl).toContain('warhammer-community.com');
     }
@@ -62,7 +62,7 @@ describe('lookupKeyword', () => {
     if (result.found) {
       expect(result.keyword).toBe('Lance');
       expect(result.explanation.length).toBeLessThan(320);
-      expect(result.source?.page).toBe(82);
+      expect(result.source?.section).toContain('24.21');
       expect(result.corpusVersion).toBeTruthy();
     }
   });
@@ -82,7 +82,7 @@ describe('lookupKeyword', () => {
     const result = await lookupKeyword('engagement', 'starcraft-mini');
     expect(result.found).toBe(true);
     if (result.found) {
-      expect(result.keyword).toBe('engagement');
+      expect(result.keyword).toBe('Engagement');
       expect(result.citation).toBeTruthy();
     }
   });
@@ -138,7 +138,7 @@ describe('getKeywordSuggestions', () => {
 
   it('scopes results to the active game system', () => {
     expect(getKeywordSuggestions('close', 'dnd5e-srd')).toEqual([]);
-    expect(getKeywordSuggestions('close', 'wh40k-11')).toContain('close quarters');
+    expect(getKeywordSuggestions('close', 'wh40k-11')).toContain('Close Quarters');
   });
 
   it('respects the result limit', () => {
@@ -148,14 +148,14 @@ describe('getKeywordSuggestions', () => {
   });
 
   it('matches multi-word keywords by prefix on the first word', () => {
-    expect(getKeywordSuggestions('close', 'wh40k-11')).toContain('close quarters');
+    expect(getKeywordSuggestions('close', 'wh40k-11')).toContain('Close Quarters');
   });
 });
 
 describe('getPhasesForSystem', () => {
   it('returns sorted unique phases for a system', () => {
     const phases = getPhasesForSystem('wh40k-11');
-    expect(phases).toContain('Engagement');
+    expect(phases).toContain('Fight Phase');
     expect(phases).toContain('Charge Phase');
     expect(new Set(phases).size).toBe(phases.length);
     expect(phases).toEqual([...phases].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })));
@@ -169,8 +169,8 @@ describe('getKeywordsForPhase', () => {
   });
 
   it('returns keywords matching the phase case-insensitively', () => {
-    expect(getKeywordsForPhase('engagement', 'wh40k-11')).toContain('close quarters');
-    expect(getKeywordsForPhase('ENGAGEMENT', 'wh40k-11')).toContain('close quarters');
+    expect(getKeywordsForPhase('shooting', 'wh40k-11')).toContain('Close Quarters');
+    expect(getKeywordsForPhase('fight', 'wh40k-11')).toContain('Engagement');
   });
 
   it('scopes results to the active game system', () => {

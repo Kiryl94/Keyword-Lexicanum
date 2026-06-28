@@ -1,140 +1,211 @@
 {
-  "version": "sample-v2",
+  "version": "sample-v3",
   "license": "sample-only",
-  "attribution": "Representative sample entries for UX/demo. Not official Archon/Blizzard text. Build full corpus locally with npm run corpus:build-starcraft.",
-  "entryCount": 12,
+  "attribution": "Representative paraphrased entries for UX/demo. Not official Archon/Blizzard text. Build full corpus locally with npm run corpus:build-starcraft.",
+  "entryCount": 17,
   "entries": [
+    {
+      "keyword": "Alternating Activations",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "In each phase, the first player activates one unit, then players alternate activating a single unit at a time until both players pass.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Alternating Activations (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Alternating Activations (8.1)"
+      }
+    },
+    {
+      "keyword": "Assault Phase",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "Phase 2 of each round. Activated units may Run, Hold, Charge, or make Ranged Attacks. This is where most shooting damage and charges happen before melee.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Assault Phase (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Assault Phase (8.6)"
+      }
+    },
+    {
+      "keyword": "Combat Phase",
+      "phase": "Engagement",
+      "applicability": "restricted",
+      "explanation": "Phase 3 of each round. Every unit that is Engaged must fight in close combat; unlike earlier phases, these activations are mandatory for all Engaged units.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Combat Phase (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Combat Phase (8.8)"
+      }
+    },
+    {
+      "keyword": "Cover",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "Terrain can grant Full Cover (blocks line of sight when the piece is large enough relative to both models) or Direct Cover (blocks LoS when a model is within 1\" of terrain tall enough for that model).",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Cover (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Cover (7.1.1)"
+      }
+    },
+    {
+      "keyword": "Deployment",
+      "phase": "Deployment",
+      "applicability": "restricted",
+      "explanation": "After the draft picks the Mission and Deployment cards, set up the battlefield—terrain, objectives, and zones—according to those cards before Round 1 begins.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Deployment (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Deployment (9.3)"
+      }
+    },
+    {
+      "keyword": "Draft System",
+      "phase": "Deployment",
+      "applicability": "restricted",
+      "explanation": "Before the battle, players draft Mission and Deployment cards from face-up options so both sides help choose what is played and where, without a preset advantage.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Draft System (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Draft System (9.2)"
+      }
+    },
+    {
+      "keyword": "Engagement",
+      "phase": "Engagement",
+      "applicability": "restricted",
+      "explanation": "Engagement Range extends 1\" horizontally from a model's base. Enemy models within that range are Engaged; if any models in two units are Engaged, both units count as Engaged.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Engagement (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Engagement (7.2)"
+      }
+    },
+    {
+      "keyword": "Line of Sight",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "Trace an imaginary line from any part of the attacker's base to any part of the target's base from a top-down view. If blocking terrain does not stop the line, the target is visible.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Line of Sight (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Line of Sight (7.1)"
+      }
+    },
+    {
+      "keyword": "Minerals",
+      "phase": "Army Building",
+      "applicability": "general",
+      "explanation": "Minerals are spent during army building to recruit units and buy upgrades. Total Mineral cost cannot exceed your engagement scale limit; unspent Minerals are lost.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Minerals (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Minerals (9.1.3)"
+      }
+    },
+    {
+      "keyword": "Movement Phase",
+      "phase": "Movement Phase",
+      "applicability": "restricted",
+      "explanation": "Phase 1 of each round. Units with a Movement-side activation marker may Hold, Move, Disengage, or Deploy from Reserves, then receive an Assault-side marker for the next phase.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Movement Phase (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Movement Phase (8.5)"
+      }
+    },
+    {
+      "keyword": "Objective Control",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "In the Scoring Phase, determine which units contest each Mission Marker and who controls them for victory points. A unit must meet all contesting requirements listed in the core rules.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Objective Control (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Objective Control (8.9.1)"
+      }
+    },
+    {
+      "keyword": "Passing",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "The active player may Pass instead of activating a unit. The first player to Pass in a phase takes the First Player Marker for the next phase and cannot activate further units that phase.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Passing (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Passing (8.6.2)"
+      }
+    },
+    {
+      "keyword": "Reserves",
+      "phase": "Deployment",
+      "applicability": "restricted",
+      "explanation": "All units in your army list start in Reserves—not on the table. You bring them on during the Movement Phase when you have enough Available Supply.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Reserves (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Reserves (8.3)"
+      }
+    },
+    {
+      "keyword": "Shooting Phase",
+      "phase": "Assault Phase",
+      "applicability": "restricted",
+      "explanation": "StarCraft TMG has no separate shooting phase—ranged attacks are Ranged Attack actions taken during the Assault Phase after units have moved into position.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Shooting Phase (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Shooting Phase (8.7.3)"
+      }
+    },
+    {
+      "keyword": "Supply",
+      "phase": "Battle Round",
+      "applicability": "general",
+      "explanation": "Each unit's Current Supply value depends on how many models it has left. The total Supply of your units on the table cannot exceed the mission Supply Pool (except in the final round, when it is unlimited).",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Supply (sample)",
+      "source": {
+        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
+        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
+        "section": "Supply (6.1)"
+      }
+    },
     {
       "keyword": "Surge",
       "phase": "Assault Phase",
       "applicability": "restricted",
       "explanation": "When a weapon's Surge triggers, check whether the target's Combat Tag matches the weapon's Surge Type. If it matches, move dice equal to the Surge result from the Armour Pool directly to the Damage Pool, bypassing armour; otherwise discard the Surge die.",
-      "citation": "StarCraft Tabletop Miniatures Game Core Rules, p. 64 — Surge (8.7.4) (sample)",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Surge (sample)",
       "source": {
         "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
         "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
-        "page": 64,
         "section": "Surge (8.7.4)"
       }
     },
     {
-      "keyword": "engagement",
-      "phase": "Engagement",
-      "applicability": "restricted",
-      "explanation": "During Engagement, positional and close-range keyword effects are evaluated.",
-      "citation": "StarCraft Tabletop Miniatures Game Core Rules — engagement (sample)",
-      "source": {
-        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
-        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
-        "section": "engagement"
-      }
-    },
-    {
-      "keyword": "close quarters",
-      "phase": "Engagement",
-      "applicability": "restricted",
-      "explanation": "Close quarters effects only apply while units are in Engagement with enemy models.",
-      "citation": "StarCraft Tabletop Miniatures Game Core Rules — close quarters (sample)",
-      "source": {
-        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
-        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
-        "section": "close quarters"
-      }
-    },
-    {
-      "keyword": "charge",
-      "phase": "Charge Phase",
-      "applicability": "restricted",
-      "explanation": "Units may charge enemy models within range during the Charge phase to enter Engagement.",
-      "citation": "StarCraft Tabletop Miniatures Game Core Rules — charge (sample)",
-      "source": {
-        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
-        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
-        "section": "charge"
-      }
-    },
-    {
-      "keyword": "cover",
-      "phase": "Shooting Phase",
-      "applicability": "restricted",
-      "explanation": "Models in cover receive defensive benefits against ranged attacks.",
-      "citation": "StarCraft Tabletop Miniatures Game Core Rules — cover (sample)",
-      "source": {
-        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
-        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
-        "section": "cover"
-      }
-    },
-    {
-      "keyword": "deployment",
-      "phase": "Deployment",
-      "applicability": "restricted",
-      "explanation": "Players place units within their deployment zone before the first battle round begins.",
-      "citation": "StarCraft Tabletop Miniatures Game Core Rules — deployment (sample)",
-      "source": {
-        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
-        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
-        "section": "deployment"
-      }
-    },
-    {
-      "keyword": "line of sight",
-      "phase": "Shooting Phase",
-      "applicability": "restricted",
-      "explanation": "A model must have line of sight to a target to make a ranged attack against it.",
-      "citation": "StarCraft Tabletop Miniatures Game Core Rules — line of sight (sample)",
-      "source": {
-        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
-        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
-        "section": "line of sight"
-      }
-    },
-    {
-      "keyword": "morale",
-      "phase": "Morale Phase",
-      "applicability": "restricted",
-      "explanation": "Units that take casualties may need to pass a morale test or fall back.",
-      "citation": "StarCraft Tabletop Miniatures Game Core Rules — morale (sample)",
-      "source": {
-        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
-        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
-        "section": "morale"
-      }
-    },
-    {
-      "keyword": "movement",
-      "phase": "Movement Phase",
-      "applicability": "restricted",
-      "explanation": "Units move up to their Movement characteristic during the Movement phase.",
-      "citation": "StarCraft Tabletop Miniatures Game Core Rules — movement (sample)",
-      "source": {
-        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
-        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
-        "section": "movement"
-      }
-    },
-    {
-      "keyword": "objective",
-      "phase": "Battle Round",
+      "keyword": "Vespene Gas",
+      "phase": "Army Building",
       "applicability": "general",
-      "explanation": "Controlling objectives at the end of a battle round scores victory points.",
-      "citation": "StarCraft Tabletop Miniatures Game Core Rules — objective (sample)",
+      "explanation": "Vespene Gas is spent only on Tactical Cards during army building. It cannot be converted into Minerals, and unspent Vespene is lost.",
+      "citation": "StarCraft Tabletop Miniatures Game Core Rules — Vespene Gas (sample)",
       "source": {
         "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
         "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
-        "section": "objective"
-      }
-    },
-    {
-      "keyword": "shooting",
-      "phase": "Shooting Phase",
-      "applicability": "restricted",
-      "explanation": "Units with ranged weapons fire at eligible targets during the Shooting phase.",
-      "citation": "StarCraft Tabletop Miniatures Game Core Rules — shooting (sample)",
-      "source": {
-        "documentTitle": "StarCraft Tabletop Miniatures Game Core Rules",
-        "documentUrl": "https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf",
-        "section": "shooting"
+        "section": "Vespene Gas (9.1.4)"
       }
     }
   ],
