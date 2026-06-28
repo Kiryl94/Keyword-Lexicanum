@@ -9,6 +9,10 @@
 import { writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  cleanDndExplanation,
+  shouldExcludeDndEntry,
+} from './dnd-corpus-utils.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = join(__dirname, '../src/data/dnd5e-srd-corpus.json');
@@ -111,6 +115,12 @@ async function main() {
     const keyword = normalizeKeyword(rule.name);
     if (!keyword || byKeyword.has(keyword)) continue;
 
+    const rawExplanation = cleanDescription(rule.desc);
+    if (shouldExcludeDndEntry(rule.name, rawExplanation)) continue;
+
+    const explanation = cleanDndExplanation(rawExplanation);
+    if (!explanation || explanation.length < 15) continue;
+
     const { phase, applicability } = inferPhaseMeta(rule.ruleset);
     const open5eUrl = `https://open5e.com/search/?query=${encodeURIComponent(rule.name)}`;
     const { source, citation } = dndRuleSource(rule.name, open5eUrl);
@@ -118,7 +128,7 @@ async function main() {
       keyword: rule.name,
       phase,
       applicability,
-      explanation: cleanDescription(rule.desc),
+      explanation,
       citation,
       source,
     });
@@ -126,13 +136,19 @@ async function main() {
 
   for (const condition of conditionsPayload.conditions) {
     const keyword = normalizeKeyword(condition.name);
+    const rawExplanation = cleanDescription(condition.description);
+    if (shouldExcludeDndEntry(condition.name, rawExplanation)) continue;
+
+    const explanation = cleanDndExplanation(rawExplanation);
+    if (!explanation || explanation.length < 15) continue;
+
     const open5eUrl = `https://open5e.com/search/?query=${encodeURIComponent(`${condition.name} condition`)}`;
     const { source, citation } = dndRuleSource(condition.name, open5eUrl);
     byKeyword.set(keyword, {
       keyword: condition.name,
       phase: 'Combat',
       applicability: 'general',
-      explanation: cleanDescription(condition.description),
+      explanation,
       citation,
       source,
     });
@@ -143,7 +159,7 @@ async function main() {
   );
 
   const output = {
-    version: '5.2.1',
+    version: '5.2.1-lookup-v1',
     license: 'CC-BY-4.0',
     attribution:
       'D&D System Reference Document v5.2.1, © Wizards of the Coast LLC. ' +

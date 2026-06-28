@@ -31,7 +31,7 @@ export const GAME_SYSTEMS: GameSystem[] = [
 
 export const DEFAULT_SYSTEM_ID: GameSystemId = 'dnd5e-srd';
 export const MAX_RECENT_LOOKUPS = 10;
-export const PROFILE_STORAGE_KEY = 'keyword-lexicanum-profile';
+export const PROFILE_STORAGE_KEY = 'keyword-lexicanum-profile-v2';
 
 const VALID_SYSTEM_IDS = new Set<GameSystemId>(GAME_SYSTEMS.map((s) => s.id));
 

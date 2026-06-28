@@ -27,6 +27,24 @@ describe('lookupKeyword', () => {
     }
   });
 
+  it('excludes pure numeric reference tables from the D&D corpus', async () => {
+    const result = await lookupKeyword(
+      'experience points by challenge rating',
+      'dnd5e-srd',
+    );
+    expect(result.found).toBe(false);
+  });
+
+  it('strips score tables from Ability Modifiers', async () => {
+    const result = await lookupKeyword('ability modifiers', 'dnd5e-srd');
+    expect(result.found).toBe(true);
+    if (result.found) {
+      expect(result.explanation).not.toContain('|');
+      expect(result.explanation).not.toMatch(/\+0|10–11/);
+      expect(result.explanation).toContain('ability modifier');
+    }
+  });
+
   it('returns a hit for a known WH40k term', async () => {
     const result = await lookupKeyword('close quarters', 'wh40k-11');
     expect(result.found).toBe(true);
