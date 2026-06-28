@@ -1,9 +1,10 @@
 ---
 change_id: recent-lookups
 title: Recent session lookups
-status: in_progress
+status: archived
 created: 2026-06-24
 updated: 2026-06-24
+archived_at: 2026-06-24T21:00:00Z
 ---
 
 ## Notes

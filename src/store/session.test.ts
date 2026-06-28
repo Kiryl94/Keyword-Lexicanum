@@ -12,7 +12,8 @@ const sampleHit: LookupHit = {
   found: true,
   keyword: 'advantage',
   explanation: 'Roll twice, take higher.',
-  phase: 'Combat',
+  phase: 'Ability Checks & Attacks',
+  phaseApplicability: 'general',
   citation: 'SRD — Advantage',
 };
 

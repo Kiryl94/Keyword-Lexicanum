@@ -6,6 +6,7 @@ describe('lookupKeyword', () => {
     expect(result.found).toBe(true);
     if (result.found) {
       expect(result.keyword).toBe('advantage');
+      expect(result.phaseApplicability).toBe('general');
       expect(result.citation).toBeTruthy();
     }
   });
@@ -16,6 +17,7 @@ describe('lookupKeyword', () => {
     if (result.found) {
       expect(result.keyword).toBe('close quarters');
       expect(result.phase).toBe('Engagement');
+      expect(result.phaseApplicability).toBe('restricted');
       expect(result.citation).toBeTruthy();
     }
   });

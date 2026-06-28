@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { PhaseRelevance } from '@/components/PhaseRelevance';
 import type { LookupResult } from '@/lib/lookup';
 
 type LookupResultCardProps = {
@@ -26,9 +27,10 @@ export function LookupResultCard({ result, systemLabel }: LookupResultCardProps)
   return (
     <div className="flex flex-col gap-2 rounded-xl bg-[#1a1a2e] p-4">
       <h2 className="text-lg font-bold text-[#f5f5f5]">{result.keyword}</h2>
-      {result.phase && (
-        <p className="font-semibold text-[#e94560]">Applies during: {result.phase}</p>
-      )}
+      <PhaseRelevance
+        phase={result.phase}
+        phaseApplicability={result.phaseApplicability}
+      />
       <p className="leading-relaxed text-[#d0d0e0]">{result.explanation}</p>
       <button
         type="button"

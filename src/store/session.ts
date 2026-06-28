@@ -101,7 +101,12 @@ function sanitizeLookupCacheBySystem(
     for (const [keyword, hit] of Object.entries(hits)) {
       if (!allowedKeys.has(normalizeRecentKey(keyword))) continue;
       if (!hit || typeof hit !== 'object' || !('found' in hit) || hit.found !== true) continue;
-      sanitizedHits[normalizeRecentKey(keyword)] = hit as LookupHit;
+      const lookupHit = hit as LookupHit & { phaseApplicability?: LookupHit['phaseApplicability'] };
+      sanitizedHits[normalizeRecentKey(keyword)] = {
+        ...lookupHit,
+        phase: lookupHit.phase ?? 'General',
+        phaseApplicability: lookupHit.phaseApplicability ?? 'general',
+      };
     }
 
     if (Object.keys(sanitizedHits).length > 0) {
