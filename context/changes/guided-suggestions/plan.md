@@ -202,27 +202,27 @@ Not applicable — no persisted data changes. S-07 corpus expansion may require 
 
 #### Automated
 
-- [x] 1.1 Unit tests pass: `npm run test`
-- [x] 1.2 Type checking passes: `npm run typecheck`
-- [x] 1.3 Linting passes: `npm run lint`
-- [x] 1.4 Production build passes: `npm run build`
+- [x] 1.1 Unit tests pass: `npm run test` — b944aaf
+- [x] 1.2 Type checking passes: `npm run typecheck` — b944aaf
+- [x] 1.3 Linting passes: `npm run lint` — b944aaf
+- [x] 1.4 Production build passes: `npm run build` — b944aaf
 
 #### Manual
 
-- [x] 1.5 Automated checks reviewed — ready for Phase 2
+- [x] 1.5 Automated checks reviewed — ready for Phase 2 — b944aaf
 
 ### Phase 2: Typeahead UI in Lookup Panel
 
 #### Automated
 
-- [x] 2.1 Unit tests pass: `npm run test`
-- [x] 2.2 Type checking passes: `npm run typecheck`
-- [x] 2.3 Linting passes: `npm run lint`
-- [x] 2.4 Production build passes: `npm run build`
+- [x] 2.1 Unit tests pass: `npm run test` — b944aaf
+- [x] 2.2 Type checking passes: `npm run typecheck` — b944aaf
+- [x] 2.3 Linting passes: `npm run lint` — b944aaf
+- [x] 2.4 Production build passes: `npm run build` — b944aaf
 
 #### Manual
 
-- [x] 2.5 Type partial keyword → tap suggestion → result without Look up button
-- [x] 2.6 Empty input shows no suggestions; unknown term still not-found via button
-- [x] 2.7 Recent lookups unchanged and still tappable
-- [x] 2.8 Phone-width and desktop smoke — suggestions usable, no horizontal overflow
+- [x] 2.5 Type partial keyword → tap suggestion → result without Look up button — b944aaf
+- [x] 2.6 Empty input shows no suggestions; unknown term still not-found via button — b944aaf
+- [x] 2.7 Recent lookups unchanged and still tappable — b944aaf
+- [x] 2.8 Phone-width and desktop smoke — suggestions usable, no horizontal overflow — b944aaf
