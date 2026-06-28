@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { CitationBlock } from '@/components/CitationBlock';
 import { PhaseRelevance } from '@/components/PhaseRelevance';
 import type { LookupResult } from '@/lib/lookup';
 
@@ -44,7 +45,7 @@ export function LookupResultCard({ result, systemLabel }: LookupResultCardProps)
         </span>
       </button>
       {citationExpanded && (
-        <p className="text-xs leading-relaxed text-[#8a8aa0]">{result.citation}</p>
+        <CitationBlock citation={result.citation} source={result.source} />
       )}
     </div>
   );

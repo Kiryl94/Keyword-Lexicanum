@@ -6,14 +6,19 @@
  */
 
 import {
-  extractSection,
+  buildPdfSource,
+  extractSectionWithMeta,
   fetchPdfText,
   normalizeKeyword,
+  pageAtOffset,
+  pageEndAtOffset,
   writeCorpusBundle,
 } from './corpus-pdf-utils.mjs';
 
 const STARCRAFT_PDF_URL =
   'https://starcraft-tmg.com/files/downloads/StarCraft-TMG_EN.pdf';
+
+const STARCRAFT_DOCUMENT_TITLE = 'StarCraft Tabletop Miniatures Game Core Rules';
 
 /** Curated keywords from StarCraft TMG core rules (living document — re-run after updates). */
 const STARCRAFT_RULES = [
@@ -36,7 +41,7 @@ const STARCRAFT_RULES = [
 ];
 
 async function main() {
-  const { text, pages } = await fetchPdfText(STARCRAFT_PDF_URL);
+  const { text, pages, pageStarts } = await fetchPdfText(STARCRAFT_PDF_URL);
   console.log(`Parsed StarCraft TMG rulebook (${pages} pages, ${text.length} chars)`);
 
   const allLabels = STARCRAFT_RULES.flatMap((rule) => rule.labels);
@@ -44,12 +49,12 @@ async function main() {
   const seen = new Set();
 
   for (const rule of STARCRAFT_RULES) {
-    let explanation = null;
+    let extracted = null;
     for (const label of rule.labels) {
-      explanation = extractSection(text, label, allLabels);
-      if (explanation) break;
+      extracted = extractSectionWithMeta(text, label, allLabels);
+      if (extracted) break;
     }
-    if (!explanation) {
+    if (!extracted) {
       console.warn(`  skip (not found): ${rule.keyword}`);
       continue;
     }
@@ -58,12 +63,23 @@ async function main() {
     if (seen.has(key)) continue;
     seen.add(key);
 
+    const page = pageAtOffset(pageStarts, extracted.startIndex);
+    const pageEnd = pageEndAtOffset(pageStarts, extracted.endIndex);
+    const { source, citation } = buildPdfSource({
+      documentTitle: STARCRAFT_DOCUMENT_TITLE,
+      documentUrl: STARCRAFT_PDF_URL,
+      page,
+      pageEnd: pageEnd !== page ? pageEnd : undefined,
+      section: rule.keyword,
+    });
+
     entries.push({
       keyword: rule.keyword,
       phase: rule.phase,
       applicability: rule.applicability,
-      explanation,
-      citation: 'StarCraft TMG Core Rules (Archon free PDF) — personal use',
+      explanation: extracted.explanation,
+      citation,
+      source,
     });
   }
 
@@ -75,6 +91,7 @@ async function main() {
     attribution:
       'StarCraft Tabletop Miniatures Game © Blizzard Entertainment / Archon Studio. ' +
       'Free PDF from starcraft-tmg.com. Personal/local use only; consult Archon before public distribution.',
+    sourceDocumentUrl: STARCRAFT_PDF_URL,
     entryCount: entries.length,
     envKey: 'STARCRAFT_CORPUS_PATH',
     entries,

@@ -12,7 +12,8 @@ describe('lookupKeyword', () => {
     if (result.found) {
       expect(result.keyword.toLowerCase()).toContain('advantage');
       expect(result.phaseApplicability).toBe('general');
-      expect(result.citation).toContain('SRD 5.2.1');
+      expect(result.source?.documentTitle).toContain('Reference Document');
+      expect(result.source?.documentUrl).toMatch(/^https?:\/\//);
     }
   });
 
@@ -21,7 +22,8 @@ describe('lookupKeyword', () => {
     expect(result.found).toBe(true);
     if (result.found) {
       expect(result.keyword).toBe('Blinded');
-      expect(result.citation).toContain('SRD 5.2.1');
+      expect(result.source?.section).toBe('Blinded');
+      expect(result.citation).toContain('Blinded');
     }
   });
 
@@ -32,7 +34,7 @@ describe('lookupKeyword', () => {
       expect(result.keyword).toBe('close quarters');
       expect(result.phase).toBe('Engagement');
       expect(result.phaseApplicability).toBe('restricted');
-      expect(result.citation).toBeTruthy();
+      expect(result.source?.documentUrl).toContain('warhammer-community.com');
     }
   });
 

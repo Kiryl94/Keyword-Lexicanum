@@ -1,10 +1,10 @@
 import { findDndCorpusEntry, getDndCorpusEntries } from '@/lib/corpus/dnd5e-srd';
 import { findStarcraftCorpusEntry, getStarcraftCorpusEntries } from '@/lib/corpus/starcraft-core';
 import { findWh40kCorpusEntry, getWh40kCorpusEntries } from '@/lib/corpus/wh40k-core';
-import type { CorpusEntry, PhaseApplicability } from '@/lib/corpus/types';
+import type { CorpusEntry, CorpusSource, PhaseApplicability } from '@/lib/corpus/types';
 import type { GameSystemId } from '@/store/session';
 
-export type { PhaseApplicability };
+export type { PhaseApplicability, CorpusSource };
 
 export type LookupHit = {
   found: true;
@@ -13,6 +13,7 @@ export type LookupHit = {
   phase: string;
   phaseApplicability: PhaseApplicability;
   citation: string;
+  source?: CorpusSource;
 };
 
 export type LookupMiss = {
@@ -54,6 +55,7 @@ function toLookupHit(entry: CorpusEntry): LookupHit {
     phase: entry.phase,
     phaseApplicability: entry.applicability,
     citation: entry.citation,
+    source: entry.source,
   };
 }
 

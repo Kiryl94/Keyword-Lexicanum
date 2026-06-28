@@ -18,6 +18,29 @@ const CONDITIONS_URL =
 const RULES_URL =
   'https://api.open5e.com/v2/rules/?document__slug=wotc-srd&limit=100';
 
+const DND_DOCUMENT_TITLE = 'D&D System Reference Document 5.2.1';
+const DND_DOCUMENT_URL = 'https://www.dndbeyond.com/sources/dnd/free-rules';
+
+function formatCorpusCitation(source) {
+  const parts = [source.documentTitle];
+  if (source.page) {
+    parts.push(`p. ${source.page}`);
+  }
+  if (source.section) {
+    parts.push(`— ${source.section}`);
+  }
+  return parts.join(', ').replace(', —', ' —');
+}
+
+function dndRuleSource(section, documentUrl = DND_DOCUMENT_URL) {
+  const source = {
+    documentTitle: DND_DOCUMENT_TITLE,
+    documentUrl,
+    section,
+  };
+  return { source, citation: formatCorpusCitation(source) };
+}
+
 const COMBAT_RULESETS = new Set([
   'srd_actions-in-combat',
   'srd_attacking',
@@ -89,23 +112,29 @@ async function main() {
     if (!keyword || byKeyword.has(keyword)) continue;
 
     const { phase, applicability } = inferPhaseMeta(rule.ruleset);
+    const open5eUrl = `https://open5e.com/search/?query=${encodeURIComponent(rule.name)}`;
+    const { source, citation } = dndRuleSource(rule.name, open5eUrl);
     byKeyword.set(keyword, {
       keyword: rule.name,
       phase,
       applicability,
       explanation: cleanDescription(rule.desc),
-      citation: `SRD 5.2.1 (CC BY 4.0) — ${rule.name}`,
+      citation,
+      source,
     });
   }
 
   for (const condition of conditionsPayload.conditions) {
     const keyword = normalizeKeyword(condition.name);
+    const open5eUrl = `https://open5e.com/search/?query=${encodeURIComponent(`${condition.name} condition`)}`;
+    const { source, citation } = dndRuleSource(condition.name, open5eUrl);
     byKeyword.set(keyword, {
       keyword: condition.name,
       phase: 'Combat',
       applicability: 'general',
       explanation: cleanDescription(condition.description),
-      citation: 'SRD 5.2.1 (CC BY 4.0) — Conditions',
+      citation,
+      source,
     });
   }
 
@@ -120,6 +149,7 @@ async function main() {
       'D&D System Reference Document v5.2.1, © Wizards of the Coast LLC. ' +
       'Licensed under CC BY 4.0. Rule text via Open5e API (wotc-srd); ' +
       'conditions via github.com/cocoajamworld/srd-5.2.1.',
+    sourceDocumentUrl: DND_DOCUMENT_URL,
     entryCount: entries.length,
     entries,
   };

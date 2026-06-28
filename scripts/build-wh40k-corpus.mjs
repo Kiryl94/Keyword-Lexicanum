@@ -6,14 +6,19 @@
  */
 
 import {
-  extractSection,
+  buildPdfSource,
+  extractSectionWithMeta,
   fetchPdfText,
   normalizeKeyword,
+  pageAtOffset,
+  pageEndAtOffset,
   writeCorpusBundle,
 } from './corpus-pdf-utils.mjs';
 
 const WH40K_PDF_URL =
   'https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf';
+
+const WH40K_DOCUMENT_TITLE = 'Warhammer 40,000 11th ed Core Rules';
 
 /** Curated core-rule keywords with phase metadata (11th ed Core Rules). */
 const WH40K_RULES = [
@@ -43,7 +48,7 @@ const WH40K_RULES = [
 ];
 
 async function main() {
-  const { text, pages } = await fetchPdfText(WH40K_PDF_URL);
+  const { text, pages, pageStarts } = await fetchPdfText(WH40K_PDF_URL);
   console.log(`Parsed WH40k 11th ed Core Rules PDF (${pages} pages, ${text.length} chars)`);
 
   const allLabels = WH40K_RULES.flatMap((rule) => rule.labels);
@@ -51,13 +56,12 @@ async function main() {
   const seen = new Set();
 
   for (const rule of WH40K_RULES) {
-    let explanation = null;
+    let extracted = null;
     for (const label of rule.labels) {
-      explanation = extractSection(text, label, allLabels);
-      if (explanation && explanation.length >= 40) break;
-      explanation = null;
+      extracted = extractSectionWithMeta(text, label, allLabels);
+      if (extracted) break;
     }
-    if (!explanation) {
+    if (!extracted) {
       console.warn(`  skip (not found): ${rule.keyword}`);
       continue;
     }
@@ -66,12 +70,23 @@ async function main() {
     if (seen.has(key)) continue;
     seen.add(key);
 
+    const page = pageAtOffset(pageStarts, extracted.startIndex);
+    const pageEnd = pageEndAtOffset(pageStarts, extracted.endIndex);
+    const { source, citation } = buildPdfSource({
+      documentTitle: WH40K_DOCUMENT_TITLE,
+      documentUrl: WH40K_PDF_URL,
+      page,
+      pageEnd: pageEnd !== page ? pageEnd : undefined,
+      section: rule.keyword,
+    });
+
     entries.push({
       keyword: rule.keyword,
       phase: rule.phase,
       applicability: rule.applicability,
-      explanation,
-      citation: 'WH40k 11th ed Core Rules (GW free PDF) — personal use',
+      explanation: extracted.explanation,
+      citation,
+      source,
     });
   }
 
@@ -84,6 +99,7 @@ async function main() {
       'Warhammer 40,000 11th ed Core Rules © Games Workshop Limited. ' +
       'Free PDF: eng_01-06_warhammer40k_new40k_core_rules (warhammer-community.com). ' +
       'Personal/local use only; consult GW before public distribution.',
+    sourceDocumentUrl: WH40K_PDF_URL,
     entryCount: entries.length,
     envKey: 'WH40K_CORPUS_PATH',
     entries,
