@@ -1,9 +1,10 @@
 ---
 change_id: system-picker-local
 title: Active game system selection (local profile)
-status: implemented
+status: archived
 created: 2026-06-24
 updated: 2026-06-28
+archived_at: 2026-06-28T18:00:00Z
 ---
 
 ## Notes
