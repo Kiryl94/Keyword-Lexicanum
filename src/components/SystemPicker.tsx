@@ -1,13 +1,19 @@
 'use client';
 
+import { SystemIcon } from '@/components/SystemIcon';
 import { GAME_SYSTEMS, type GameSystemId, useSessionStore } from '@/store/session';
 
 type SystemPickerProps = {
   onSelect?: (id: GameSystemId) => void;
-  compact?: boolean;
+  variant?: 'full' | 'compact' | 'icons';
+  className?: string;
 };
 
-export function SystemPicker({ onSelect, compact = false }: SystemPickerProps) {
+export function SystemPicker({
+  onSelect,
+  variant = 'full',
+  className = '',
+}: SystemPickerProps) {
   const activeSystemId = useSessionStore((s) => s.activeSystemId);
   const setActiveSystem = useSessionStore((s) => s.setActiveSystem);
 
@@ -16,11 +22,45 @@ export function SystemPicker({ onSelect, compact = false }: SystemPickerProps) {
     onSelect?.(id);
   }
 
+  if (variant === 'icons') {
+    return (
+      <div
+        role="radiogroup"
+        aria-label="Active game system"
+        className={`flex flex-row items-center justify-center gap-3 ${className}`}
+      >
+        {GAME_SYSTEMS.map((system) => {
+          const selected = activeSystemId === system.id;
+          return (
+            <button
+              key={system.id}
+              type="button"
+              role="radio"
+              aria-checked={selected}
+              aria-label={system.label}
+              title={system.label}
+              onClick={() => handleSelect(system.id)}
+              className={`flex h-14 w-14 items-center justify-center rounded-xl border transition-colors ${
+                selected
+                  ? 'border-[#e94560] bg-[#1a1a2e] text-[#e94560]'
+                  : 'border-[#2a2a40] bg-[#1a1a2e] text-[#a0a0b0] hover:border-[#3a3a55] hover:text-[#f5f5f5]'
+              }`}
+            >
+              <SystemIcon systemId={system.id} className="h-8 w-8" />
+            </button>
+          );
+        })}
+      </div>
+    );
+  }
+
+  const compact = variant === 'compact';
+
   return (
     <div
       role="radiogroup"
       aria-label="Active game system"
-      className={compact ? 'flex flex-col gap-2' : 'flex flex-col gap-3'}
+      className={`${compact ? 'flex flex-col gap-2' : 'flex flex-col gap-3'} ${className}`}
     >
       {!compact && (
         <>
