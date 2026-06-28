@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { KeywordSuggestionList } from '@/components/KeywordSuggestionList';
 import { LookupResultCard } from '@/components/LookupResultCard';
 import { RecentLookupList } from '@/components/RecentLookupList';
@@ -21,6 +21,13 @@ export function LookupPanel() {
     null,
   );
   const [resultSystemId, setResultSystemId] = useState<GameSystemId | null>(null);
+
+  useEffect(() => {
+    setQuery('');
+    setLoading(false);
+    setResult(null);
+    setResultSystemId(null);
+  }, [activeSystemId]);
 
   const canSearch = query.trim().length > 0 && !loading;
   const visibleResult =
