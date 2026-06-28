@@ -1,9 +1,10 @@
 ---
 change_id: phase-on-keyword
 title: Phase relevance on keyword lookup
-status: in_progress
+status: archived
 created: 2026-06-24
 updated: 2026-06-24
+archived_at: 2026-06-24T22:00:00Z
 ---
 
 ## Notes

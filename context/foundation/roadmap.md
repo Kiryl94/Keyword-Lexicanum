@@ -32,7 +32,7 @@ New tabletop players hit a steep terminology barrier in dense rulebooks. Keyword
 | F-01 | shareable-web-deploy | (foundation) preview URL deployed for table-side testing | — | NFR responsive web | done |
 | S-01 | system-picker-local | select the active game system with a local browser profile | — | FR-001, FR-006 | done |
 | S-02 | keyword-lookup-citation | look up a keyword and receive a grounded explanation with citation | S-01 | US-01, FR-002, FR-003, FR-004 | done |
-| S-03 | phase-on-keyword | see which game phase a keyword applies to on lookup results | S-02 | FR-007 | proposed |
+| S-03 | phase-on-keyword | see which game phase a keyword applies to on lookup results | S-02 | FR-007 | done |
 | S-04 | browse-by-phase | browse keywords relevant to an entered phase name | S-02 | FR-008 | proposed |
 | S-05 | guided-suggestions | pick from guided keyword suggestions while searching | S-02 | FR-002 | done |
 | S-06 | recent-lookups | view recent keyword lookups from the current session | S-02 | FR-005 | done |
@@ -116,7 +116,7 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **Unknowns:**
   - Exact phase taxonomy per system (Engagement, etc.) — Owner: product/build. Block: yes for production-quality corpus wiring.
 - **Risk:** Sample responses already include phase strings; full accuracy waits on taxonomy + real corpus.
-- **Status:** proposed
+- **Status:** done
 
 ### S-04: Browse keywords by phase
 
@@ -177,7 +177,7 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 | S-01 | system-picker-local | Polish system picker for mobile web | yes | Scaffold exists |
 | S-02 | keyword-lookup-citation | Ship keyword lookup with citation UX | yes | North star — sample corpus OK for v1 demo |
 | S-03 | phase-on-keyword | Show phase relevance on keyword results | yes | In progress |
-| S-04 | browse-by-phase | Browse keywords by phase name | no | Blocked on taxonomy OQ |
+| S-04 | browse-by-phase | Browse keywords by phase name | yes | In progress |
 | S-05 | guided-suggestions | Add guided keyword suggestions | yes | Shipped |
 | S-06 | recent-lookups | Persist and show recent session lookups | yes | Shipped |
 | S-07 | dnd-srd-corpus | Ingest D&D SRD corpus for real lookups | no | Blocked on licensing OQs |
@@ -207,3 +207,4 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **F-01: (foundation) production preview URL on Vercel so testers can open the app on a phone browser at the table.** — Archived 2026-06-24 → `context/archive/2026-06-24-shareable-web-deploy/`. Preview: https://keyword-lexicanum.vercel.app. Lesson: —.
 - **S-05: user can pick from guided keyword suggestions while searching, not only free typing.** — Archived 2026-06-24 → `context/archive/2026-06-24-guided-suggestions/`. Lesson: prefix match + corpus-only suggestions keeps table flow fast at sample corpus scale.
 - **S-06: user can view recent keyword lookups from the current session without re-querying.** — Archived 2026-06-24 → `context/archive/2026-06-24-recent-lookups/`. Lesson: per-system recents + hit cache satisfies FR-005 without a server round-trip.
+- **S-03: user can see which game phase a keyword applies to (or that it does not apply outside that phase).** — Archived 2026-06-24 → `context/archive/2026-06-24-phase-on-keyword/`. Lesson: restricted vs general applicability banners carry FR-007 until real corpus refines phase names.

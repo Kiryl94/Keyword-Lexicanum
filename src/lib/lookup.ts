@@ -305,14 +305,24 @@ export async function lookupKeyword(
   };
 }
 
+export function getPhasesForSystem(systemId: GameSystemId): string[] {
+  const phases = new Set((SAMPLE_CORPUS[systemId] ?? []).map((entry) => entry.phase));
+  return [...phases].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
+}
+
 export function getKeywordsForPhase(phaseQuery: string, systemId: GameSystemId): string[] {
   const phase = normalize(phaseQuery);
+  if (!phase) {
+    return [];
+  }
+
   return (SAMPLE_CORPUS[systemId] ?? [])
     .filter(
       (entry) =>
         normalize(entry.phase).includes(phase) || phase.includes(normalize(entry.phase)),
     )
-    .map((entry) => entry.keyword);
+    .map((entry) => entry.keyword)
+    .sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
 }
 
 export function getKeywordSuggestions(

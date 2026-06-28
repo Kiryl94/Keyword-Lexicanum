@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { getKeywordSuggestions, lookupKeyword } from '@/lib/lookup';
+import {
+  getKeywordSuggestions,
+  getKeywordsForPhase,
+  getPhasesForSystem,
+  lookupKeyword,
+} from '@/lib/lookup';
 describe('lookupKeyword', () => {
   it('returns a hit for a known D&D term', async () => {
     const result = await lookupKeyword('advantage', 'dnd5e-srd');
@@ -78,5 +83,38 @@ describe('getKeywordSuggestions', () => {
 
   it('matches multi-word keywords by prefix on the first word', () => {
     expect(getKeywordSuggestions('close', 'wh40k-11')).toContain('close quarters');
+  });
+});
+
+describe('getPhasesForSystem', () => {
+  it('returns sorted unique phases for a system', () => {
+    const phases = getPhasesForSystem('wh40k-11');
+    expect(phases).toContain('Engagement');
+    expect(phases).toContain('Charge Phase');
+    expect(new Set(phases).size).toBe(phases.length);
+    expect(phases).toEqual([...phases].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })));
+  });
+});
+
+describe('getKeywordsForPhase', () => {
+  it('returns an empty list for empty or whitespace-only queries', () => {
+    expect(getKeywordsForPhase('', 'wh40k-11')).toEqual([]);
+    expect(getKeywordsForPhase('   ', 'dnd5e-srd')).toEqual([]);
+  });
+
+  it('returns keywords matching the phase case-insensitively', () => {
+    expect(getKeywordsForPhase('engagement', 'wh40k-11')).toContain('close quarters');
+    expect(getKeywordsForPhase('ENGAGEMENT', 'wh40k-11')).toContain('close quarters');
+  });
+
+  it('scopes results to the active game system', () => {
+    expect(getKeywordsForPhase('engagement', 'dnd5e-srd')).toEqual([]);
+    expect(getKeywordsForPhase('combat', 'dnd5e-srd')).toContain('initiative');
+  });
+
+  it('returns results sorted alphabetically', () => {
+    const keywords = getKeywordsForPhase('battle round', 'wh40k-11');
+    expect(keywords.length).toBeGreaterThan(1);
+    expect(keywords).toEqual([...keywords].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })));
   });
 });

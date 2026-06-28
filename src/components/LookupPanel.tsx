@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { KeywordSuggestionList } from '@/components/KeywordSuggestionList';
 import { LookupResultCard } from '@/components/LookupResultCard';
+import { PhaseBrowseSection } from '@/components/PhaseBrowseSection';
 import { RecentLookupList } from '@/components/RecentLookupList';
 import { getKeywordSuggestions, lookupKeyword } from '@/lib/lookup';
 import type { GameSystemId } from '@/store/session';
@@ -121,6 +122,11 @@ export function LookupPanel() {
       )}
 
       <RecentLookupList items={recentLookups} onSelect={onRecentSelect} />
+
+      <PhaseBrowseSection
+        systemId={activeSystem.id}
+        onKeywordSelect={onSuggestionSelect}
+      />
     </div>
   );
 }

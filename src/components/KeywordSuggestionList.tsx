@@ -4,12 +4,14 @@ type KeywordSuggestionListProps = {
   suggestions: string[];
   onSelect: (keyword: string) => void;
   className?: string;
+  ariaLabel?: string;
 };
 
 export function KeywordSuggestionList({
   suggestions,
   onSelect,
   className = '',
+  ariaLabel = 'Keyword suggestions',
 }: KeywordSuggestionListProps) {
   if (suggestions.length === 0) {
     return null;
@@ -18,7 +20,7 @@ export function KeywordSuggestionList({
   return (
     <ul
       role="listbox"
-      aria-label="Keyword suggestions"
+      aria-label={ariaLabel}
       className={`flex flex-col overflow-hidden rounded-lg border border-[#2a2a40] bg-[#1a1a2e] ${className}`}
     >
       {suggestions.map((keyword) => (
