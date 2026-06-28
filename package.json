@@ -9,7 +9,8 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "corpus:build-dnd": "node scripts/build-dnd-srd-corpus.mjs"
   },
   "dependencies": {
     "next": "16.2.9",

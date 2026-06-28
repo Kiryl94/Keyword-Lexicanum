@@ -1,7 +1,7 @@
 ---
 change_id: browse-by-phase
 title: Browse keywords by phase
-status: in_progress
+status: archived
 created: 2026-06-24
 updated: 2026-06-24
 ---

@@ -9,7 +9,12 @@ import { getKeywordSuggestions, lookupKeyword } from '@/lib/lookup';
 import type { GameSystemId } from '@/store/session';
 import { useSessionStore } from '@/store/session';
 
-export function LookupPanel() {
+export type LookupPanelProps = {
+  /** When true (mobile), picking a suggestion runs lookup immediately. When false (desktop), it only fills the search field — press Enter to look up. */
+  instantSuggestionLookup?: boolean;
+};
+
+export function LookupPanel({ instantSuggestionLookup = true }: LookupPanelProps) {
   const activeSystem = useSessionStore((s) => s.getActiveSystem());
   const activeSystemId = useSessionStore((s) => s.activeSystemId);
   const recentLookupsBySystem = useSessionStore((s) => s.recentLookupsBySystem);
@@ -59,7 +64,9 @@ export function LookupPanel() {
 
   function onSuggestionSelect(keyword: string) {
     setQuery(keyword);
-    onSearch(keyword);
+    if (instantSuggestionLookup) {
+      onSearch(keyword);
+    }
   }
 
   function onRecentSelect(keyword: string) {
@@ -101,15 +108,6 @@ export function LookupPanel() {
         suggestions={suggestions}
         onSelect={onSuggestionSelect}
       />
-      <button
-        type="button"
-        disabled={!canSearch}
-        onClick={() => onSearch(query)}
-        className="rounded-lg bg-[#e94560] px-4 py-3 font-semibold text-white hover:bg-[#d63d56] disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-[#e94560] data-[loading=true]:animate-pulse"
-        data-loading={loading}
-      >
-        {loading ? 'Searching…' : 'Look up'}
-      </button>
 
       {loading && (
         <p className="text-sm text-[#8a8aa0]" aria-live="polite">

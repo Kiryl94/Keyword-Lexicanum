@@ -33,10 +33,10 @@ New tabletop players hit a steep terminology barrier in dense rulebooks. Keyword
 | S-01 | system-picker-local | select the active game system with a local browser profile | — | FR-001, FR-006 | done |
 | S-02 | keyword-lookup-citation | look up a keyword and receive a grounded explanation with citation | S-01 | US-01, FR-002, FR-003, FR-004 | done |
 | S-03 | phase-on-keyword | see which game phase a keyword applies to on lookup results | S-02 | FR-007 | done |
-| S-04 | browse-by-phase | browse keywords relevant to an entered phase name | S-02 | FR-008 | proposed |
+| S-04 | browse-by-phase | browse keywords relevant to an entered phase name | S-02 | FR-008 | done |
 | S-05 | guided-suggestions | pick from guided keyword suggestions while searching | S-02 | FR-002 | done |
 | S-06 | recent-lookups | view recent keyword lookups from the current session | S-02 | FR-005 | done |
-| S-07 | dnd-srd-corpus | look up keywords against the real D&D SRD corpus (not sample data) | S-02, licensing clearance | FR-003, FR-004 | blocked |
+| S-07 | dnd-srd-corpus | look up keywords against the real D&D SRD corpus (not sample data) | S-02 | FR-003, FR-004 | done |
 
 ## Streams
 
@@ -56,7 +56,7 @@ What's already in place as of `2026-06-24` (auto-researched + confirmed after we
 
 - **Frontend:** present — Next.js 16 App Router, Tailwind, tabbed UI at `src/app/` (system, lookup, phases), `src/components/AppNav.tsx`.
 - **Backend / API:** absent — client-only app; no API routes or server lookup layer yet.
-- **Data:** partial — in-memory sample corpus in `src/lib/lookup.ts`; no IndexedDB, FTS, or ingested rules files.
+- **Data:** partial — D&D uses ingested SRD JSON (`src/data/dnd5e-srd-corpus.json`); WH40k/Starcraft remain sample corpora in `src/lib/lookup.ts`.
 - **Auth:** absent per tech-stack.md (`has_auth: false`) — Zustand session in `src/store/session.ts`, no login.
 - **Deploy / infra:** partial — `next.config.ts` present; no `.github/workflows`; Vercel target declared in tech-stack.md only.
 - **Observability:** absent — no error tracking or perf instrumentation.
@@ -128,8 +128,8 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **Blockers:** —
 - **Unknowns:**
   - Exact phase taxonomy per system — Owner: product/build. Block: yes for complete keyword lists per phase.
-- **Risk:** `src/app/phases/page.tsx` exists with sample `getKeywordsForPhase`; production-quality browse blocked on same taxonomy unknown as S-03.
-- **Status:** proposed
+- **Risk:** Shipped; sample phase taxonomy until full corpus refines keyword lists per phase.
+- **Status:** done
 
 ### S-05: Guided keyword suggestions
 
@@ -160,14 +160,14 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **Outcome:** user can look up keywords against the canonical license-free D&D corpus (not hardcoded samples).
 - **Change ID:** dnd-srd-corpus
 - **PRD refs:** FR-003, FR-004
-- **Prerequisites:** S-02, WH40k/Starcraft licensing cleared for later systems
+- **Prerequisites:** S-02
 - **Parallel with:** —
-- **Blockers:** license-free use of rules text not yet confirmed (PRD Open Questions 2–3).
+- **Blockers:** — (D&D SRD is CC BY 4.0; WH40k/Starcraft still blocked on PRD OQ 2–3)
 - **Unknowns:**
-  - D&D 5e SRD vs basic manual boundary — Owner: product. Block: yes.
+  - D&D phase taxonomy refinement — Owner: product. Block: no for v1 (coarse General/Combat/Spellcasting labels).
   - WH40k 11th / Starcraft Miniature license-free core rules — Owner: product/legal. Block: yes for those systems.
-- **Risk:** External blocker is #1 per roadmap interview; this slice is where it lands. WH40k/Starcraft corpora follow same pattern after D&D proves ingestion.
-- **Status:** blocked
+- **Risk:** 258-entry static JSON keeps client bundle ~324KB; rebuild via `npm run corpus:build-dnd` when sources update.
+- **Status:** done
 
 ## Backlog Handoff
 
@@ -176,11 +176,11 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 | F-01 | shareable-web-deploy | Deploy Keyword Lexicanum preview to Vercel | yes | Unblocks table-side testing |
 | S-01 | system-picker-local | Polish system picker for mobile web | yes | Scaffold exists |
 | S-02 | keyword-lookup-citation | Ship keyword lookup with citation UX | yes | North star — sample corpus OK for v1 demo |
-| S-03 | phase-on-keyword | Show phase relevance on keyword results | yes | In progress |
-| S-04 | browse-by-phase | Browse keywords by phase name | yes | In progress |
+| S-03 | phase-on-keyword | Show phase relevance on keyword results | yes | Shipped |
+| S-04 | browse-by-phase | Browse keywords by phase name | yes | Shipped |
 | S-05 | guided-suggestions | Add guided keyword suggestions | yes | Shipped |
 | S-06 | recent-lookups | Persist and show recent session lookups | yes | Shipped |
-| S-07 | dnd-srd-corpus | Ingest D&D SRD corpus for real lookups | no | Blocked on licensing OQs |
+| S-07 | dnd-srd-corpus | Ingest D&D SRD corpus for real lookups | yes | Shipped — D&D only |
 
 ## Open Roadmap Questions
 
@@ -208,3 +208,5 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **S-05: user can pick from guided keyword suggestions while searching, not only free typing.** — Archived 2026-06-24 → `context/archive/2026-06-24-guided-suggestions/`. Lesson: prefix match + corpus-only suggestions keeps table flow fast at sample corpus scale.
 - **S-06: user can view recent keyword lookups from the current session without re-querying.** — Archived 2026-06-24 → `context/archive/2026-06-24-recent-lookups/`. Lesson: per-system recents + hit cache satisfies FR-005 without a server round-trip.
 - **S-03: user can see which game phase a keyword applies to (or that it does not apply outside that phase).** — Archived 2026-06-24 → `context/archive/2026-06-24-phase-on-keyword/`. Lesson: restricted vs general applicability banners carry FR-007 until real corpus refines phase names.
+- **S-04: user can enter a phase name and browse keywords relevant to that phase.** — Archived 2026-06-24 → `context/archive/2026-06-24-browse-by-phase/`. Lesson: phase chips + keyword list on home panel keeps browse in the lookup flow without a separate tab.
+- **S-07: user can look up keywords against the canonical license-free D&D corpus (not hardcoded samples).** — Change docs at `context/changes/dnd-srd-corpus/`. Lesson: static SRD JSON + alias map keeps bundle small; WH40k/Starcraft await licensing.

@@ -5,9 +5,14 @@ import { SystemPicker } from '@/components/SystemPicker';
 import { VerticalGameSystemLabel } from '@/components/VerticalGameSystemLabel';
 import { useSessionStore } from '@/store/session';
 
-function KeyedLookupPanel() {
+function KeyedLookupPanel({ instantSuggestionLookup }: { instantSuggestionLookup: boolean }) {
   const activeSystemId = useSessionStore((s) => s.activeSystemId);
-  return <LookupPanel key={activeSystemId ?? 'none'} />;
+  return (
+    <LookupPanel
+      key={activeSystemId ?? 'none'}
+      instantSuggestionLookup={instantSuggestionLookup}
+    />
+  );
 }
 
 export default function HomePage() {
@@ -19,7 +24,7 @@ export default function HomePage() {
           <SystemPicker variant="icons" />
         </header>
         <section className="flex-1 px-4 py-4">
-          <KeyedLookupPanel />
+          <KeyedLookupPanel instantSuggestionLookup={true} />
         </section>
       </div>
 
@@ -31,7 +36,7 @@ export default function HomePage() {
         </aside>
         <section className="min-w-0 flex-1 px-6 py-4">
           <div className="mx-auto max-w-2xl">
-            <KeyedLookupPanel />
+            <KeyedLookupPanel instantSuggestionLookup={false} />
           </div>
         </section>
       </div>

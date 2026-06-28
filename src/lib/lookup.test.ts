@@ -6,13 +6,22 @@ import {
   lookupKeyword,
 } from '@/lib/lookup';
 describe('lookupKeyword', () => {
-  it('returns a hit for a known D&D term', async () => {
+  it('returns a hit for a known D&D term via alias', async () => {
     const result = await lookupKeyword('advantage', 'dnd5e-srd');
     expect(result.found).toBe(true);
     if (result.found) {
-      expect(result.keyword).toBe('advantage');
+      expect(result.keyword.toLowerCase()).toContain('advantage');
       expect(result.phaseApplicability).toBe('general');
-      expect(result.citation).toBeTruthy();
+      expect(result.citation).toContain('SRD 5.2.1');
+    }
+  });
+
+  it('returns a hit for a real SRD condition', async () => {
+    const result = await lookupKeyword('blinded', 'dnd5e-srd');
+    expect(result.found).toBe(true);
+    if (result.found) {
+      expect(result.keyword).toBe('Blinded');
+      expect(result.citation).toContain('SRD 5.2.1');
     }
   });
 
@@ -40,7 +49,7 @@ describe('lookupKeyword', () => {
     const result = await lookupKeyword('  ADVANTAGE  ', 'dnd5e-srd');
     expect(result.found).toBe(true);
     if (result.found) {
-      expect(result.keyword).toBe('advantage');
+      expect(result.keyword).toBe('Advantage and Disadvantage');
     }
   });
 
@@ -62,12 +71,16 @@ describe('getKeywordSuggestions', () => {
   });
 
   it('matches prefixes case-insensitively', () => {
-    expect(getKeywordSuggestions('adv', 'dnd5e-srd')).toContain('advantage');
-    expect(getKeywordSuggestions('ADV', 'dnd5e-srd')).toContain('advantage');
+    expect(getKeywordSuggestions('adv', 'dnd5e-srd').length).toBeGreaterThan(0);
+    expect(getKeywordSuggestions('ADV', 'dnd5e-srd').length).toBeGreaterThan(0);
   });
 
   it('returns an empty list when no keyword matches the prefix', () => {
-    expect(getKeywordSuggestions('xyz', 'dnd5e-srd')).toEqual([]);
+    expect(getKeywordSuggestions('xyznotaterm999', 'dnd5e-srd')).toEqual([]);
+  });
+
+  it('scopes D&D suggestions to the real SRD corpus', () => {
+    expect(getKeywordSuggestions('bl', 'dnd5e-srd')).toContain('Blinded');
   });
 
   it('scopes results to the active game system', () => {
@@ -109,7 +122,7 @@ describe('getKeywordsForPhase', () => {
 
   it('scopes results to the active game system', () => {
     expect(getKeywordsForPhase('engagement', 'dnd5e-srd')).toEqual([]);
-    expect(getKeywordsForPhase('combat', 'dnd5e-srd')).toContain('initiative');
+    expect(getKeywordsForPhase('combat', 'dnd5e-srd')).toContain('Attack');
   });
 
   it('returns results sorted alphabetically', () => {

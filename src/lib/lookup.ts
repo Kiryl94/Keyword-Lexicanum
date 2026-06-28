@@ -1,6 +1,8 @@
+import { findDndCorpusEntry, getDndCorpusEntries } from '@/lib/corpus/dnd5e-srd';
+import type { CorpusEntry, PhaseApplicability } from '@/lib/corpus/types';
 import type { GameSystemId } from '@/store/session';
 
-export type PhaseApplicability = 'restricted' | 'general';
+export type { PhaseApplicability };
 
 export type LookupHit = {
   found: true;
@@ -18,97 +20,7 @@ export type LookupMiss = {
 
 export type LookupResult = LookupHit | LookupMiss;
 
-type CorpusEntry = {
-  keyword: string;
-  phase: string;
-  applicability: PhaseApplicability;
-  explanation: string;
-  citation: string;
-};
-
-const SAMPLE_CORPUS: Record<GameSystemId, CorpusEntry[]> = {
-  'dnd5e-srd': [
-    {
-      keyword: 'advantage',
-      phase: 'Ability Checks & Attacks',
-      applicability: 'general',
-      explanation:
-        'When you have advantage on a d20 roll, you roll twice and use the higher result.',
-      citation: 'SRD — Advantage / Disadvantage',
-    },
-    {
-      keyword: 'disadvantage',
-      phase: 'Ability Checks & Attacks',
-      applicability: 'general',
-      explanation:
-        'When you have disadvantage on a d20 roll, you roll twice and use the lower result.',
-      citation: 'SRD — Advantage / Disadvantage',
-    },
-    {
-      keyword: 'armor class',
-      phase: 'Combat',
-      applicability: 'restricted',
-      explanation:
-        'Armor Class (AC) represents how hard it is to land a damaging hit on a creature.',
-      citation: 'SRD — Armor Class',
-    },
-    {
-      keyword: 'concentration',
-      phase: 'Spellcasting',
-      applicability: 'restricted',
-      explanation:
-        'Some spells require concentration. Taking damage can break concentration on a Constitution save.',
-      citation: 'SRD — Concentration',
-    },
-    {
-      keyword: 'critical hit',
-      phase: 'Combat',
-      applicability: 'restricted',
-      explanation:
-        'When you roll a 20 on the d20 for an attack, you score a critical hit and roll extra damage dice.',
-      citation: 'SRD — Critical Hits',
-    },
-    {
-      keyword: 'hit points',
-      phase: 'Combat',
-      applicability: 'restricted',
-      explanation:
-        'Hit points represent durability. When you reach 0 hit points, you fall unconscious or die.',
-      citation: 'SRD — Hit Points',
-    },
-    {
-      keyword: 'initiative',
-      phase: 'Combat',
-      applicability: 'restricted',
-      explanation:
-        'Initiative determines turn order in combat. Each creature rolls a d20 plus Dexterity modifier.',
-      citation: 'SRD — Initiative',
-    },
-    {
-      keyword: 'opportunity attack',
-      phase: 'Combat',
-      applicability: 'restricted',
-      explanation:
-        'You can make an opportunity attack when a hostile creature you can see leaves your reach.',
-      citation: 'SRD — Opportunity Attacks',
-    },
-    {
-      keyword: 'proficiency bonus',
-      phase: 'General',
-      applicability: 'general',
-      explanation:
-        'Your proficiency bonus is added to rolls for skills, saves, and attacks you are proficient in.',
-      citation: 'SRD — Proficiency Bonus',
-    },
-    {
-      keyword: 'saving throw',
-      phase: 'General',
-      applicability: 'general',
-      explanation:
-        'A saving throw is a d20 roll plus the relevant ability modifier to resist spells, traps, and effects.',
-      citation: 'SRD — Saving Throws',
-    },
-  ],
+const SAMPLE_CORPUS: Record<Exclude<GameSystemId, 'dnd5e-srd'>, CorpusEntry[]> = {
   'wh40k-11': [
     {
       keyword: 'close quarters',
@@ -279,6 +191,32 @@ function normalize(value: string) {
   return value.trim().toLowerCase();
 }
 
+function getCorpusEntries(systemId: GameSystemId): CorpusEntry[] {
+  if (systemId === 'dnd5e-srd') {
+    return getDndCorpusEntries();
+  }
+  return SAMPLE_CORPUS[systemId] ?? [];
+}
+
+function findCorpusEntry(query: string, systemId: GameSystemId): CorpusEntry | undefined {
+  if (systemId === 'dnd5e-srd') {
+    return findDndCorpusEntry(query);
+  }
+
+  return getCorpusEntries(systemId).find((entry) => normalize(entry.keyword) === query);
+}
+
+function toLookupHit(entry: CorpusEntry): LookupHit {
+  return {
+    found: true,
+    keyword: entry.keyword,
+    explanation: entry.explanation,
+    phase: entry.phase,
+    phaseApplicability: entry.applicability,
+    citation: entry.citation,
+  };
+}
+
 export async function lookupKeyword(
   rawQuery: string,
   systemId: GameSystemId,
@@ -288,25 +226,16 @@ export async function lookupKeyword(
     return { found: false, query: rawQuery };
   }
 
-  const entries = SAMPLE_CORPUS[systemId] ?? [];
-  const match = entries.find((entry) => normalize(entry.keyword) === query);
-
+  const match = findCorpusEntry(query, systemId);
   if (!match) {
     return { found: false, query: rawQuery.trim() || rawQuery };
   }
 
-  return {
-    found: true,
-    keyword: match.keyword,
-    explanation: match.explanation,
-    phase: match.phase,
-    phaseApplicability: match.applicability,
-    citation: match.citation,
-  };
+  return toLookupHit(match);
 }
 
 export function getPhasesForSystem(systemId: GameSystemId): string[] {
-  const phases = new Set((SAMPLE_CORPUS[systemId] ?? []).map((entry) => entry.phase));
+  const phases = new Set(getCorpusEntries(systemId).map((entry) => entry.phase));
   return [...phases].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
 }
 
@@ -316,7 +245,7 @@ export function getKeywordsForPhase(phaseQuery: string, systemId: GameSystemId):
     return [];
   }
 
-  return (SAMPLE_CORPUS[systemId] ?? [])
+  return getCorpusEntries(systemId)
     .filter(
       (entry) =>
         normalize(entry.phase).includes(phase) || phase.includes(normalize(entry.phase)),
@@ -335,7 +264,7 @@ export function getKeywordSuggestions(
     return [];
   }
 
-  return (SAMPLE_CORPUS[systemId] ?? [])
+  return getCorpusEntries(systemId)
     .filter((entry) => normalize(entry.keyword).startsWith(query))
     .map((entry) => entry.keyword)
     .sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }))
