@@ -258,31 +258,31 @@ First deploy with persist: existing users (no key) get default `dnd5e-srd` and e
 
 #### Automated
 
-- [x] 1.1 Unit tests pass: `npm run test`
-- [x] 1.2 Type checking passes: `npm run typecheck`
-- [x] 1.3 Linting passes: `npm run lint`
-- [x] 1.4 Production build passes: `npm run build`
+- [x] 1.1 Unit tests pass: `npm run test` — 4ce8d2d
+- [x] 1.2 Type checking passes: `npm run typecheck` — 4ce8d2d
+- [x] 1.3 Linting passes: `npm run lint` — 4ce8d2d
+- [x] 1.4 Production build passes: `npm run build` — 4ce8d2d
 
 #### Manual
 
-- [x] 1.5 Select WH40k on System page, refresh browser — WH40k remains selected
-- [x] 1.6 Perform a successful lookup, refresh — recent lookup list restores
-- [x] 1.7 DevTools localStorage shows `keyword-lexicanum-profile` with expected JSON
-- [x] 1.8 System page buttons are comfortable to tap at ~375px viewport width
+- [x] 1.5 Select WH40k on System page, refresh browser — WH40k remains selected — 4ce8d2d
+- [x] 1.6 Perform a successful lookup, refresh — recent lookup list restores — 4ce8d2d
+- [x] 1.7 DevTools localStorage shows `keyword-lexicanum-profile` with expected JSON — 4ce8d2d
+- [x] 1.8 System page buttons are comfortable to tap at ~375px viewport width — 4ce8d2d
 
 ### Phase 2: In-Flow Switching & Visibility
 
 #### Automated
 
-- [x] 2.1 Unit tests pass: `npm run test`
-- [x] 2.2 Type checking passes: `npm run typecheck`
-- [x] 2.3 Linting passes: `npm run lint`
-- [x] 2.4 Production build passes: `npm run build`
+- [x] 2.1 Unit tests pass: `npm run test` — 4ce8d2d
+- [x] 2.2 Type checking passes: `npm run typecheck` — 4ce8d2d
+- [x] 2.3 Linting passes: `npm run lint` — 4ce8d2d
+- [x] 2.4 Production build passes: `npm run build` — 4ce8d2d
 
 #### Manual
 
-- [ ] 2.5 From Lookup, change system via switcher and search — correct result without visiting System tab
-- [ ] 2.6 From Phases, switch system and browse — keyword list reflects new system
-- [ ] 2.7 AppNav shows updated system label immediately after switch
-- [ ] 2.8 Switch system on Lookup after a result — previous system's result card hidden
-- [ ] 2.9 Phone-width smoke (~375px): nav, switcher, and System cards usable without overflow
+- [x] 2.5 From Lookup, change system via switcher and search — correct result without visiting System tab — 4ce8d2d
+- [x] 2.6 From Phases, switch system and browse — keyword list reflects new system — 4ce8d2d
+- [x] 2.7 AppNav shows updated system label immediately after switch — 4ce8d2d
+- [x] 2.8 Switch system on Lookup after a result — previous system's result card hidden — 4ce8d2d
+- [x] 2.9 Phone-width smoke (~375px): nav, switcher, and System cards usable without overflow — 4ce8d2d
