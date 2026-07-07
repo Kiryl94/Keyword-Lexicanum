@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "command": "node .cursor/hooks/post-edit-lint.mjs",
+        "matcher": "Write|Edit"
+      },
+      {
+        "command": "node .cursor/hooks/post-edit-test.mjs",
+        "matcher": "Write|Edit"
+      }
+    ]
+  }
+}

@@ -100,7 +100,9 @@ Test-base profile at plan authoring: **sparse → growing** — 8 test files / 7
 | lint (ESLint) | local + CI | required | style/import drift |
 | production build | local + CI | required | alias/bundle failures, Next.js compile errors |
 | e2e table-smoke | manual / optional MCP | optional | full mobile browser quirks component tests miss |
-| post-edit hook | local (agent loop) | not planned | — |
+| post-edit hook (lint + scoped vitest) | local (agent loop) | active | trivial lint/type drift, risk-file regressions mid-session |
+| pre-commit hook (lint + typecheck + scoped vitest) | local (git) | active | changes that bypass agent hooks |
+| pre-push hook (full test + build) | local (git) | active | heavier checks before remote |
 | visual diff | CI | excluded (see §7) | — |
 
 ## 6. Cookbook Patterns
@@ -130,13 +132,21 @@ relevant rollout phase ships.
 - **Reference test**: `src/components/LookupResultCard.test.tsx`
 - **Run locally**: `npm test`
 
-### 6.4 Adding a CI gate
+### 6.4 Local quality hooks (agent + git)
+
+- **Per-edit (Cursor)**: `.cursor/hooks.json` — `postToolUse` on `Write|Edit` runs ESLint on the edited file and `vitest related <file> --run` when the path is a risk area (`src/lib/`, `src/store/`, `src/components/`, `src/data/`, `scripts/`).
+- **Pre-commit**: `lefthook.yml` — ESLint on staged `*.{js,ts,tsx,mjs}`, full `typecheck`, scoped `vitest related` on staged risk files.
+- **Pre-push**: full `npm test` + `npm run build`.
+- **Install**: `npm install` runs `lefthook install` via `prepare`.
+- **Risk areas**: mirror §1 hot-spots; config-only edits outside those paths skip per-edit tests.
+
+### 6.5 Adding a CI gate
 
 - **Workflow**: `.github/workflows/ci.yml` — after checkout and `npm ci`, run `typecheck`, `lint`, `test`, then `build`.
 - **Run locally**: `npm run typecheck && npm run lint && npm test && npm run build`
 - **Note**: ESLint warnings do not fail the job; errors do.
 
-### 6.5 Per-rollout-phase notes
+### 6.6 Per-rollout-phase notes
 
 | Phase | Shipped artifact | Archive |
 |-------|------------------|---------|
