@@ -1,10 +1,10 @@
 ---
 change_id: srd-corpus-expansion-v5
 title: SRD corpus expansion batch v5 (PF2e + YZE)
-status: implemented
+status: archived
 created: 2026-07-07
 updated: 2026-07-07
-archived_at: null
+archived_at: 2026-07-07T12:00:00Z
 ---
 
 ## Notes

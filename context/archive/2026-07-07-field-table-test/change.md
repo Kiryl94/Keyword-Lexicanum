@@ -1,10 +1,10 @@
 ---
 change_id: field-table-test
 title: Field table test checklist (S-14)
-status: implemented
+status: archived
 created: 2026-07-07
 updated: 2026-07-07
-archived_at: null
+archived_at: 2026-07-07T12:00:00Z
 ---
 
 ## Notes

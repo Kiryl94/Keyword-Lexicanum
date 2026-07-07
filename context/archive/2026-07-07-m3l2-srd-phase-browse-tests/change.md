@@ -1,10 +1,10 @@
 ---
 change_id: m3l2-srd-phase-browse-tests
 title: M3L2 — SRD phase browse behavioral tests
-status: implemented
+status: archived
 created: 2026-07-07
 updated: 2026-07-07
-archived_at: null
+archived_at: 2026-07-07T12:00:00Z
 ---
 
 ## Notes
