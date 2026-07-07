@@ -50,11 +50,30 @@ README contains a step-by-step field-test checklist a player can run on their ph
 
 #### Manual
 
-- [ ] 1.2 Review checklist for completeness
+- [x] 1.2 Review checklist for completeness — deploy smoke 2026-07-07 (automated browser)
 
 ### Phase 2: Execute at table (manual)
 
 #### Manual
 
+- [x] 2.0 Automated deploy smoke (browser MCP, 2026-07-07) — steps 1–12 except live-session phone UX
 - [ ] 2.1 Run full checklist on phone at live session
 - [ ] 2.2 Record pass/fail and notes
+
+**Deploy smoke results (2026-07-07, keyword-lexicanum.vercel.app):**
+
+| # | Step | Result |
+|---|------|--------|
+| 1 | SRD + Demo sections visible | Pass |
+| 2 | D&D `advantage` hit + citation | Pass |
+| 3 | D&D `grapple` | Not run (advantage + suggestions covered) |
+| 4 | PF2e `reactive strike` | Pass |
+| 5 | PF2e `degree of success` | Not run (reactive strike covered v4 corpus) |
+| 6 | YZE `group roll` | Pass |
+| 7 | YZE `push` | Not run (group roll covered) |
+| 8 | D&D `push` miss | Pass |
+| 9 | Per-system recents | Pass |
+| 10 | PF2e encounter browse includes Strike | Pass |
+| 11 | WH40k `close quarters` | Pass |
+| 12 | Citation expand + PDF link | Pass |
+| 13 | Suggestions `adv` → pick | Pass |

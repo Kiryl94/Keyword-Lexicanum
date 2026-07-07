@@ -163,6 +163,33 @@ describe('lookupKeyword', () => {
     }
   });
 
+  it('stamps pf2e-remaster-v3 and yze-srd-v4 on expanded SRD hits', async () => {
+    const pf2e = await lookupKeyword('degree of success', 'pf2e-srd');
+    expect(pf2e.found).toBe(true);
+    if (pf2e.found) {
+      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v3');
+      expect(pf2e.keyword).toBe('Degree of Success');
+    }
+
+    const yze = await lookupKeyword('suppressive fire', 'year-zero-engine');
+    expect(yze.found).toBe(true);
+    if (yze.found) {
+      expect(yze.corpusVersion).toBe('yze-srd-v4');
+      expect(yze.keyword).toBe('Suppressive Fire');
+    }
+  });
+
+  it('scopes degree of success to PF2e — miss under D&D and YZE', async () => {
+    expect(await lookupKeyword('degree of success', 'dnd5e-srd')).toEqual({
+      found: false,
+      query: 'degree of success',
+    });
+    expect(await lookupKeyword('degree of success', 'year-zero-engine')).toEqual({
+      found: false,
+      query: 'degree of success',
+    });
+  });
+
   it('returns PF2e hits for remaster terms and aliases', async () => {
     const strike = await lookupKeyword('strike', 'pf2e-srd');
     expect(strike.found).toBe(true);
@@ -235,6 +262,11 @@ describe('getKeywordSuggestions', () => {
     expect(getKeywordSuggestions('close', 'wh40k-11')).toContain('Close Quarters');
   });
 
+  it('suggests PF2e Reactive Strike from react prefix', () => {
+    expect(getKeywordSuggestions('react', 'pf2e-srd')).toContain('Reactive Strike');
+    expect(getKeywordSuggestions('react', 'dnd5e-srd')).not.toContain('Reactive Strike');
+  });
+
   it('respects the result limit', () => {
     const allMatches = getKeywordSuggestions('a', 'dnd5e-srd');
     expect(allMatches.length).toBeGreaterThan(1);
@@ -297,6 +329,7 @@ describe('getKeywordsForPhase', () => {
     const keywords = getKeywordsForPhase('encounter', 'pf2e-srd');
     expect(keywords).toContain('Strike');
     expect(keywords).toContain('Off-Guard');
+    expect(keywords).toContain('Reactive Strike');
     expect(keywords).not.toContain('Close Quarters');
   });
 
@@ -305,7 +338,16 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Push');
     expect(keywords).toContain('Skill Roll');
     expect(keywords).toContain('Sneak Attack');
+    expect(keywords).toContain('Group Roll');
+    expect(keywords).toContain('Suppressive Fire');
     expect(keywords).not.toContain('Strike');
+  });
+
+  it('returns YZE downtime keywords from the FTL corpus', () => {
+    const keywords = getKeywordsForPhase('downtime', 'year-zero-engine');
+    expect(keywords).toContain('Rest');
+    expect(keywords).toContain('Craft');
+    expect(keywords).not.toContain('Reactive Strike');
   });
 
   it('does not return D&D combat keywords when browsing PF2e phases', () => {
