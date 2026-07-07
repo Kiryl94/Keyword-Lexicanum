@@ -23,3 +23,6 @@ Product pivot: web-only (no native mobile). Public focus on open-licensed SRD sy
 **Ongoing expansion (not blocked):**
 - Grow PF2e/YZE manifests from table-play feedback
 - D&D entry count may grow as Open5e ruleset coverage expands
+
+**Deferred (product decision 2026-07-07):**
+- Publisher outreach and Demo → full promotion for WH40k/StarCraft — after all SRD and main web-app work

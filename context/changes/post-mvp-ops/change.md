@@ -18,6 +18,11 @@ MVP roadmap slices (F-01, S-01–S-12) and test-plan rollout (Phases 1–4) are 
 - Roadmap post-MVP horizon (S-13+)
 - ESLint warning fix in corpus PDF tests
 
-**Next (manual / product):**
-- S-14: field table test at local game store
-- S-15: GW / Archon publisher outreach per `distribution-policy.md`
+**Next (active):**
+- S-16: SRD corpus expansion (D&D, PF2e, YZE)
+- M3L2: `/10x-tdd` ad-hoc tests per test-plan §6 cookbook
+- S-14: field table test when ready
+
+**Deferred until SRD + web app complete:**
+- S-15: GW / Archon publisher outreach
+- Demo → full promotion for WH40k / StarCraft (samples stay in production until then)

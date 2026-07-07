@@ -42,6 +42,10 @@ For private table-side use, you may build full Demo-tier corpora from the offici
 
 ## Before promoting Demo → full public
 
+**Sequencing (2026-07-07):** Do not start publisher outreach until SRD systems (D&D, PF2e, YZE) and main web-app work are complete. WH40k and StarCraft remain **Demo** tier with sample corpora in the public bundle until permission is granted — this is intentional and not a blocker for SRD-focused releases.
+
+When SRD + web app work is done:
+
 1. Contact Games Workshop (licensing / IP) regarding embedding core rules excerpts in a lookup tool.
 2. Contact Archon Studio regarding StarCraft TMG rule text in a third-party web app.
 3. Keep attribution files (`src/data/*-ATTRIBUTION.md`) accurate.

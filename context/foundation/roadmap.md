@@ -214,20 +214,21 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 
 ## Post-MVP horizon
 
-MVP slices and test-plan rollout are complete. Remaining work is product- and process-led.
+MVP slices and test-plan rollout are complete. **Build priority (2026-07-07):** finish all SRD systems and main web-app quality first; keep WH40k and StarCraft as **Demo** (sample corpora) until the very end; **defer publisher outreach** until after that work ships.
 
-| ID | Change ID | Outcome | Status | Notes |
-|---|---|---|---|---|
-| S-13 | post-mvp-ops | Dependabot, doc refresh, health-check current | done | Shipped 2026-07-07 |
-| S-14 | field-table-test | Validate lookup flow on phone at a live game | not started | Manual — use deploy verify checklist in README |
-| S-15 | publisher-outreach | GW / Archon permission for Demo-tier full corpus | not started | Business track; see `distribution-policy.md` |
-| S-16 | corpus-expansion | Grow PF2e/YZE manifests from table feedback | ongoing | Edit manifests + `npm run corpus:build-*` |
-| S-17 | offline-pwa | Service worker / IndexedDB corpus cache | parked | PRD non-goal unless field test demands it |
+| Priority | ID | Change ID | Outcome | Status | Notes |
+|----------|-----|-----------|---------|--------|-------|
+| 1 | S-16 | corpus-expansion | Grow D&D / PF2e / YZE manifests from table feedback | ongoing | Public-safe; edit manifests + `npm run corpus:build-*` |
+| 1 | — | m3l2-tdd | Ad-hoc tests via `/10x-tdd` + test-plan §6 cookbook | in progress | Quality contract for day-to-day test authoring |
+| 2 | S-14 | field-table-test | Validate SRD lookup flow on phone at a live game | not started | Manual — README deploy verify checklist |
+| 2 | S-17 | offline-pwa | Service worker / IndexedDB corpus cache | parked | Only if field test (S-14) demands it |
+| **last** | S-15 | publisher-outreach | GW / Archon permission for Demo-tier full corpus | **deferred** | After SRD + web app complete; see `distribution-policy.md` |
+| **last** | — | demo-promotion | Promote WH40k / StarCraft from sample to full public corpus | **deferred** | Blocked on S-15; samples stay in production until then |
 
 ## Open Roadmap Questions
 
 1. **Exact game-phase taxonomy per system** (Engagement, etc.) — Owner: product/build. Block: refines browse quality, not v1 demo.
-2. **GW / Archon permission for public corpus** — Owner: product. Block: public deploy with embedded rules text only.
+2. **GW / Archon permission for public corpus** — Owner: product. **Deferred** until SRD + main web app work is complete; Demo samples remain in production until then.
 3. **US-02 for phase-based keyword browse** — Owner: product. Block: roadmap-wide acceptance criteria only.
 
 ## Parked
@@ -239,9 +240,10 @@ MVP slices and test-plan rollout are complete. Remaining work is product- and pr
 - **D&D extension manuals** — Why parked: PRD §Non-Goals.
 - **Voice-first input** — Why parked: PRD §Non-Goals.
 - **User accounts / cloud sync** — Why parked: PRD §Non-Goals.
-- **Offline corpus / service worker** — Why parked: speed path; NFR defers IndexedDB to post-MVP unless table testing demands it.
+- **Publisher outreach (GW / Archon)** — Why parked: product decision 2026-07-07 — finish SRD depth and main web app first; WH40k and StarCraft stay Demo (sample corpora) until the very end. See S-15 in Post-MVP horizon.
 - **Warhammer: The Old World** — Why dropped: no free core rules PDF; paid rulebook only. Out of scope unless GW publishes a free core document.
-- **Age of Sigmar** — Why parked: free core rules exist on Warhammer Community, but same GW republication constraints as 40k; optional post-deadline stretch if time allows after S-08/S-09 and GW consultation.
+- **Offline corpus / service worker** — Why parked: speed path; NFR defers IndexedDB to post-MVP unless table testing (S-14) demands it.
+- **Age of Sigmar** — Why parked: free core rules exist on Warhammer Community, but same GW republication constraints as 40k; only after S-15 publisher outreach if ever pursued.
 
 ## Done
 

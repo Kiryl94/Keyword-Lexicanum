@@ -134,4 +134,4 @@ Health status: **healthy**
 
 The project has a pinned lockfile, zero critical/high vulnerabilities, 71 passing tests (unit + integration + component), strict TypeScript, and CI enforcing typecheck, lint, test, and production build. MVP roadmap and test-plan rollouts are complete. Remaining work is product-led (field testing, publisher outreach, corpus expansion) rather than infrastructure blockers.
 
-Next step: field table test (roadmap S-14) and GW/Archon outreach (S-15).
+Next step: SRD corpus expansion (S-16) and M3L2 test authoring; field table test (S-14) when ready. Publisher outreach (S-15) deferred until SRD + web app work is complete — Demo systems stay on samples until then.
