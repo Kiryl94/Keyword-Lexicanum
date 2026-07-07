@@ -953,4 +953,46 @@ export const PF2E_RULES = [
     ruleRef: 'Actions — Bon Mot',
     aliases: ['bon mot'],
   },
+  {
+    keyword: 'Follow the Expert',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Stay close to a guide to move faster and safer through unfamiliar terrain.',
+    ruleRef: 'Actions — Follow the Expert',
+  },
+  {
+    keyword: 'Steal',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Thievery check to lift an object from a person without being noticed.',
+    ruleRef: 'Actions — Steal',
+  },
+  {
+    keyword: 'Twin',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Weapon trait treating a one-handed weapon as if you were wielding two copies for flurry attacks.',
+    ruleRef: 'Equipment — Twin',
+  },
+  {
+    keyword: 'Identify Alchemy',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Crafting check to recognize alchemical items, poisons, or reagents.',
+    ruleRef: 'Actions — Identify Alchemy',
+    aliases: ['identify alchemist'],
+  },
+  {
+    keyword: 'Palm an Object',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Thievery check to secretly pick up or palm a small unattended object.',
+    ruleRef: 'Actions — Palm an Object',
+    aliases: ['palm'],
+  },
 ];

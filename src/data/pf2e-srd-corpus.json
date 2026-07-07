@@ -1,9 +1,9 @@
 {
-  "version": "pf2e-remaster-v12",
+  "version": "pf2e-remaster-v13",
   "license": "ORC",
   "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
   "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
-  "entryCount": 121,
+  "entryCount": 126,
   "entries": [
     {
       "keyword": "Administer First Aid",
@@ -657,6 +657,19 @@
       "aliases": []
     },
     {
+      "keyword": "Follow the Expert",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Stay close to a guide to move faster and safer through unfamiliar terrain.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Follow the Expert",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Follow the Expert"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Forceful",
       "phase": "General",
       "applicability": "general",
@@ -807,6 +820,21 @@
       "aliases": []
     },
     {
+      "keyword": "Identify Alchemy",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Crafting check to recognize alchemical items, poisons, or reagents.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Identify Alchemy",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Identify Alchemy"
+      },
+      "aliases": [
+        "identify alchemist"
+      ]
+    },
+    {
       "keyword": "Identify Magic",
       "phase": "Exploration",
       "applicability": "general",
@@ -952,6 +980,21 @@
       "aliases": [
         "flat-footed",
         "flat footed"
+      ]
+    },
+    {
+      "keyword": "Palm an Object",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Thievery check to secretly pick up or palm a small unattended object.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Palm an Object",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Palm an Object"
+      },
+      "aliases": [
+        "palm"
       ]
     },
     {
@@ -1342,6 +1385,19 @@
       "aliases": []
     },
     {
+      "keyword": "Steal",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Thievery check to lift an object from a person without being noticed.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Steal",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Steal"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Step",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -1548,6 +1604,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Trip"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Twin",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Weapon trait treating a one-handed weapon as if you were wielding two copies for flurry attacks.",
+      "citation": "Pathfinder Player Core (Remaster) — Equipment — Twin",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Equipment — Twin"
       },
       "aliases": []
     },

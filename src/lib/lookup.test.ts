@@ -163,18 +163,18 @@ describe('lookupKeyword', () => {
     }
   });
 
-  it('stamps pf2e-remaster-v12 and yze-srd-v13 on expanded SRD hits', async () => {
+  it('stamps pf2e-remaster-v13 and yze-srd-v14 on expanded SRD hits', async () => {
     const pf2e = await lookupKeyword('degree of success', 'pf2e-srd');
     expect(pf2e.found).toBe(true);
     if (pf2e.found) {
-      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v12');
+      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v13');
       expect(pf2e.keyword).toBe('Degree of Success');
     }
 
     const yze = await lookupKeyword('suppressive fire', 'year-zero-engine');
     expect(yze.found).toBe(true);
     if (yze.found) {
-      expect(yze.corpusVersion).toBe('yze-srd-v13');
+      expect(yze.corpusVersion).toBe('yze-srd-v14');
       expect(yze.keyword).toBe('Suppressive Fire');
     }
 
@@ -215,11 +215,31 @@ describe('lookupKeyword', () => {
     }
   });
 
-  it('stamps 5.2.1-lookup-v5 on D&D hits after phase deepen', async () => {
+  it('stamps 5.2.1-lookup-v6 on D&D hits after phase deepen', async () => {
     const result = await lookupKeyword('advantage', 'dnd5e-srd');
     expect(result.found).toBe(true);
     if (result.found) {
-      expect(result.corpusVersion).toBe('5.2.1-lookup-v5');
+      expect(result.corpusVersion).toBe('5.2.1-lookup-v6');
+    }
+  });
+
+  it('resolves D&D v6 aliases for help, casting, and recuperate', async () => {
+    const help = await lookupKeyword('help', 'dnd5e-srd');
+    expect(help.found).toBe(true);
+    if (help.found) {
+      expect(help.keyword).toBe('Help');
+    }
+
+    const casting = await lookupKeyword('casting', 'dnd5e-srd');
+    expect(casting.found).toBe(true);
+    if (casting.found) {
+      expect(casting.keyword).toBe('Casting a Spell');
+    }
+
+    const recuperate = await lookupKeyword('recuperate', 'dnd5e-srd');
+    expect(recuperate.found).toBe(true);
+    if (recuperate.found) {
+      expect(recuperate.keyword).toBe('Recuperating');
     }
   });
 
@@ -260,6 +280,51 @@ describe('lookupKeyword', () => {
     expect(save.found).toBe(true);
     if (save.found) {
       expect(save.keyword).toBe('Saving Throws');
+    }
+  });
+
+  it('returns PF2e v14 thievery and exploration keywords', async () => {
+    const steal = await lookupKeyword('steal', 'pf2e-srd');
+    expect(steal.found).toBe(true);
+    if (steal.found) {
+      expect(steal.keyword).toBe('Steal');
+    }
+
+    const twin = await lookupKeyword('twin', 'pf2e-srd');
+    expect(twin.found).toBe(true);
+    if (twin.found) {
+      expect(twin.keyword).toBe('Twin');
+    }
+
+    const follow = await lookupKeyword('follow the expert', 'pf2e-srd');
+    expect(follow.found).toBe(true);
+    if (follow.found) {
+      expect(follow.keyword).toBe('Follow the Expert');
+    }
+
+    expect(await lookupKeyword('steal', 'dnd5e-srd')).toEqual({
+      found: false,
+      query: 'steal',
+    });
+  });
+
+  it('returns YZE v14 charge and flank keywords', async () => {
+    const charge = await lookupKeyword('charging', 'year-zero-engine');
+    expect(charge.found).toBe(true);
+    if (charge.found) {
+      expect(charge.keyword).toBe('Charge');
+    }
+
+    const flank = await lookupKeyword('flanking', 'year-zero-engine');
+    expect(flank.found).toBe(true);
+    if (flank.found) {
+      expect(flank.keyword).toBe('Flank');
+    }
+
+    const pin = await lookupKeyword('pinning', 'year-zero-engine');
+    expect(pin.found).toBe(true);
+    if (pin.found) {
+      expect(pin.keyword).toBe('Pin');
     }
   });
 
@@ -714,6 +779,12 @@ describe('getKeywordSuggestions', () => {
     expect(getKeywordSuggestions('count', 'dnd5e-srd')).not.toContain('Counteract');
   });
 
+  it('suggests PF2e Steal and YZE Charge from v14 prefixes', () => {
+    expect(getKeywordSuggestions('stea', 'pf2e-srd')).toContain('Steal');
+    expect(getKeywordSuggestions('charg', 'year-zero-engine')).toContain('Charge');
+    expect(getKeywordSuggestions('stea', 'dnd5e-srd')).not.toContain('Steal');
+  });
+
   it('suggests PF2e Sense Motive and YZE Disarm from v13 prefixes', () => {
     expect(getKeywordSuggestions('sen', 'pf2e-srd')).toContain('Sense Motive');
     expect(getKeywordSuggestions('dis', 'year-zero-engine')).toContain('Disarm');
@@ -841,6 +912,7 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Subsist');
     expect(keywords).toContain('Defend');
     expect(keywords).toContain('Decipher Writing');
+    expect(keywords).toContain('Follow the Expert');
     expect(keywords).not.toContain('Reactive Strike');
   });
 
@@ -875,6 +947,9 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Deaf');
     expect(keywords).toContain('Disarm');
     expect(keywords).toContain('Bleeding');
+    expect(keywords).toContain('Charge');
+    expect(keywords).toContain('Flank');
+    expect(keywords).toContain('Pin');
     expect(keywords).not.toContain('Strike');
   });
 

@@ -1,9 +1,9 @@
 {
-  "version": "yze-srd-v13",
+  "version": "yze-srd-v14",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 95,
+  "entryCount": 99,
   "entries": [
     {
       "keyword": "Aim",
@@ -196,6 +196,21 @@
         "section": "SRD — Camp"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Charge",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Rush an enemy to close distance fast, often at the cost of exposure.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Charge",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Charge"
+      },
+      "aliases": [
+        "charging"
+      ]
     },
     {
       "keyword": "Chase",
@@ -488,6 +503,21 @@
         "section": "SRD — Fear Attack"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Flank",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Attack from the side or rear so the foe cannot cover every angle at once.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Flank",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Flank"
+      },
+      "aliases": [
+        "flanking"
+      ]
     },
     {
       "keyword": "Food",
@@ -805,6 +835,21 @@
       "aliases": []
     },
     {
+      "keyword": "Pin",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Hold a foe or suppress a position so they cannot move or shoot freely.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Pin",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Pin"
+      },
+      "aliases": [
+        "pinning"
+      ]
+    },
+    {
       "keyword": "Prone",
       "phase": "Encounter",
       "applicability": "general",
@@ -935,6 +980,21 @@
         "section": "SRD — Rest"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Retreat",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Break contact and fall back from a fight without turning your back recklessly.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Retreat",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Retreat"
+      },
+      "aliases": [
+        "retreating"
+      ]
     },
     {
       "keyword": "Rot",

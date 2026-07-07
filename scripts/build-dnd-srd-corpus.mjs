@@ -278,7 +278,7 @@ async function main() {
   );
 
   const output = {
-    version: '5.2.1-lookup-v5',
+    version: '5.2.1-lookup-v6',
     license: 'CC-BY-4.0',
     attribution:
       'D&D System Reference Document v5.2.1, © Wizards of the Coast LLC. ' +

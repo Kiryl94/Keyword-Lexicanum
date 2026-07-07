@@ -755,4 +755,40 @@ export const YZE_RULES = [
       'Cover, darkness, or terrain that makes you harder to spot or shoot.',
     ruleRef: 'SRD — Concealment',
   },
+  {
+    keyword: 'Retreat',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Break contact and fall back from a fight without turning your back recklessly.',
+    ruleRef: 'SRD — Retreat',
+    aliases: ['retreating'],
+  },
+  {
+    keyword: 'Flank',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Attack from the side or rear so the foe cannot cover every angle at once.',
+    ruleRef: 'SRD — Flank',
+    aliases: ['flanking'],
+  },
+  {
+    keyword: 'Charge',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Rush an enemy to close distance fast, often at the cost of exposure.',
+    ruleRef: 'SRD — Charge',
+    aliases: ['charging'],
+  },
+  {
+    keyword: 'Pin',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Hold a foe or suppress a position so they cannot move or shoot freely.',
+    ruleRef: 'SRD — Pin',
+    aliases: ['pinning'],
+  },
 ];
