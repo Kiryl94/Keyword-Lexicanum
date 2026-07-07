@@ -583,4 +583,39 @@ export const YZE_RULES = [
     ruleRef: 'SRD — Jump',
     aliases: ['jumping'],
   },
+  {
+    keyword: 'Climb',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Scale walls, cliffs, or wreckage using athletics; a failed roll may mean a fall.',
+    ruleRef: 'SRD — Climb',
+    aliases: ['climbing'],
+  },
+  {
+    keyword: 'Swim',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Move through water under load or current; drowning risk if armor or injury slows you.',
+    ruleRef: 'SRD — Swim',
+    aliases: ['swimming'],
+  },
+  {
+    keyword: 'Food',
+    phase: 'Exploration',
+    applicability: 'general',
+    summary:
+      'Rations and foraging that offset hunger; running out pushes the party toward starvation.',
+    ruleRef: 'SRD — Food',
+  },
+  {
+    keyword: 'Burst',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Fire several shots in quick succession at one target, often spending extra ammo.',
+    ruleRef: 'SRD — Burst',
+    aliases: ['burst fire'],
+  },
 ];

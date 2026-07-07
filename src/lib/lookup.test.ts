@@ -163,18 +163,18 @@ describe('lookupKeyword', () => {
     }
   });
 
-  it('stamps pf2e-remaster-v7 and yze-srd-v8 on expanded SRD hits', async () => {
+  it('stamps pf2e-remaster-v8 and yze-srd-v9 on expanded SRD hits', async () => {
     const pf2e = await lookupKeyword('degree of success', 'pf2e-srd');
     expect(pf2e.found).toBe(true);
     if (pf2e.found) {
-      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v7');
+      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v8');
       expect(pf2e.keyword).toBe('Degree of Success');
     }
 
     const yze = await lookupKeyword('suppressive fire', 'year-zero-engine');
     expect(yze.found).toBe(true);
     if (yze.found) {
-      expect(yze.corpusVersion).toBe('yze-srd-v8');
+      expect(yze.corpusVersion).toBe('yze-srd-v9');
       expect(yze.keyword).toBe('Suppressive Fire');
     }
 
@@ -212,6 +212,51 @@ describe('lookupKeyword', () => {
     expect(loot.found).toBe(true);
     if (loot.found) {
       expect(loot.keyword).toBe('Loot');
+    }
+  });
+
+  it('returns PF2e v9 exploration and weapon trait keywords', async () => {
+    const hustle = await lookupKeyword('hustle', 'pf2e-srd');
+    expect(hustle.found).toBe(true);
+    if (hustle.found) {
+      expect(hustle.keyword).toBe('Hustle');
+    }
+
+    const agile = await lookupKeyword('agile', 'pf2e-srd');
+    expect(agile.found).toBe(true);
+    if (agile.found) {
+      expect(agile.keyword).toBe('Agile');
+    }
+
+    const track = await lookupKeyword('track', 'pf2e-srd');
+    expect(track.found).toBe(true);
+    if (track.found) {
+      expect(track.keyword).toBe('Track');
+    }
+
+    expect(await lookupKeyword('hustle', 'dnd5e-srd')).toEqual({
+      found: false,
+      query: 'hustle',
+    });
+  });
+
+  it('returns YZE v9 survival and burst-fire keywords', async () => {
+    const food = await lookupKeyword('food', 'year-zero-engine');
+    expect(food.found).toBe(true);
+    if (food.found) {
+      expect(food.keyword).toBe('Food');
+    }
+
+    const burst = await lookupKeyword('burst fire', 'year-zero-engine');
+    expect(burst.found).toBe(true);
+    if (burst.found) {
+      expect(burst.keyword).toBe('Burst');
+    }
+
+    const swim = await lookupKeyword('swimming', 'year-zero-engine');
+    expect(swim.found).toBe(true);
+    if (swim.found) {
+      expect(swim.keyword).toBe('Swim');
     }
   });
 
@@ -441,6 +486,12 @@ describe('getKeywordSuggestions', () => {
     expect(getKeywordSuggestions('count', 'dnd5e-srd')).not.toContain('Counteract');
   });
 
+  it('suggests PF2e Hustle and YZE Burst from v9 prefixes', () => {
+    expect(getKeywordSuggestions('hus', 'pf2e-srd')).toContain('Hustle');
+    expect(getKeywordSuggestions('bur', 'year-zero-engine')).toContain('Burst');
+    expect(getKeywordSuggestions('hus', 'dnd5e-srd')).not.toContain('Hustle');
+  });
+
   it('suggests PF2e Delay and YZE Aim from v8 prefixes', () => {
     expect(getKeywordSuggestions('del', 'pf2e-srd')).toContain('Delay');
     expect(getKeywordSuggestions('aim', 'year-zero-engine')).toContain('Aim');
@@ -514,6 +565,8 @@ describe('getKeywordsForPhase', () => {
   it('returns PF2e exploration keywords from the ORC corpus', () => {
     const keywords = getKeywordsForPhase('exploration', 'pf2e-srd');
     expect(keywords).toContain('Detect Magic');
+    expect(keywords).toContain('Hustle');
+    expect(keywords).toContain('Track');
     expect(keywords).not.toContain('Reactive Strike');
   });
 
@@ -538,6 +591,7 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Suppressive Fire');
     expect(keywords).toContain('Aim');
     expect(keywords).toContain('Reload');
+    expect(keywords).toContain('Burst');
     expect(keywords).not.toContain('Strike');
   });
 
@@ -556,6 +610,9 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Loot');
     expect(keywords).toContain('Camp');
     expect(keywords).toContain('Navigate');
+    expect(keywords).toContain('Climb');
+    expect(keywords).toContain('Swim');
+    expect(keywords).toContain('Food');
     expect(keywords).not.toContain('Detect Magic');
   });
 

@@ -1,9 +1,9 @@
 {
-  "version": "pf2e-remaster-v7",
+  "version": "pf2e-remaster-v8",
   "license": "ORC",
   "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
   "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
-  "entryCount": 96,
+  "entryCount": 101,
   "entries": [
     {
       "keyword": "Administer First Aid",
@@ -19,6 +19,19 @@
       "aliases": [
         "first aid"
       ]
+    },
+    {
+      "keyword": "Agile",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Weapon trait that reduces the multiple attack penalty on later Strikes with that weapon.",
+      "citation": "Pathfinder Player Core (Remaster) — Equipment — Agile",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Equipment — Agile"
+      },
+      "aliases": []
     },
     {
       "keyword": "Aid",
@@ -56,6 +69,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Avert Gaze"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Balance",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Acrobatics check to move across a narrow or unstable surface without falling.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Balance",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Balance"
       },
       "aliases": []
     },
@@ -521,6 +547,19 @@
       "aliases": []
     },
     {
+      "keyword": "Forceful",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Weapon trait that can push a target back on a critical hit.",
+      "citation": "Pathfinder Player Core (Remaster) — Equipment — Forceful",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Equipment — Forceful"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Fortitude Save",
       "phase": "General",
       "applicability": "general",
@@ -626,6 +665,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Hide"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Hustle",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Move faster than a normal Stride while exploring, often at the cost of Perception or stealth.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Hustle",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Hustle"
       },
       "aliases": []
     },
@@ -1187,6 +1239,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Equipment — Thrown"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Track",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Survival check to follow signs of a creature or party through the wilderness.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Track",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Track"
       },
       "aliases": []
     },

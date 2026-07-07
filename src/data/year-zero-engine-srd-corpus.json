@@ -1,9 +1,9 @@
 {
-  "version": "yze-srd-v8",
+  "version": "yze-srd-v9",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 75,
+  "entryCount": 79,
   "entries": [
     {
       "keyword": "Aim",
@@ -142,6 +142,21 @@
       "aliases": []
     },
     {
+      "keyword": "Burst",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Fire several shots in quick succession at one target, often spending extra ammo.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Burst",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Burst"
+      },
+      "aliases": [
+        "burst fire"
+      ]
+    },
+    {
       "keyword": "Camp",
       "phase": "Exploration",
       "applicability": "restricted",
@@ -166,6 +181,21 @@
         "section": "SRD — Chases"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Climb",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Scale walls, cliffs, or wreckage using athletics; a failed roll may mean a fall.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Climb",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Climb"
+      },
+      "aliases": [
+        "climbing"
+      ]
     },
     {
       "keyword": "Combat Round",
@@ -372,6 +402,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Fear Attack"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Food",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Rations and foraging that offset hunger; running out pushes the party toward starvation.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Food",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Food"
       },
       "aliases": []
     },
@@ -910,6 +953,21 @@
         "section": "SRD — Suppressive Fire"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Swim",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Move through water under load or current; drowning risk if armor or injury slows you.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Swim",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Swim"
+      },
+      "aliases": [
+        "swimming"
+      ]
     },
     {
       "keyword": "Talent",

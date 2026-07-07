@@ -748,4 +748,44 @@ export const PF2E_RULES = [
       'Weapon trait that adds extra damage dice on a critical hit.',
     ruleRef: 'Equipment — Deadly',
   },
+  {
+    keyword: 'Hustle',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Move faster than a normal Stride while exploring, often at the cost of Perception or stealth.',
+    ruleRef: 'Actions — Hustle',
+  },
+  {
+    keyword: 'Track',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Survival check to follow signs of a creature or party through the wilderness.',
+    ruleRef: 'Actions — Track',
+  },
+  {
+    keyword: 'Balance',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Acrobatics check to move across a narrow or unstable surface without falling.',
+    ruleRef: 'Actions — Balance',
+  },
+  {
+    keyword: 'Agile',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Weapon trait that reduces the multiple attack penalty on later Strikes with that weapon.',
+    ruleRef: 'Equipment — Agile',
+  },
+  {
+    keyword: 'Forceful',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Weapon trait that can push a target back on a critical hit.',
+    ruleRef: 'Equipment — Forceful',
+  },
 ];
