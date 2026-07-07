@@ -1,9 +1,9 @@
 {
-  "version": "yze-srd-v14",
+  "version": "yze-srd-v15",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 99,
+  "entryCount": 100,
   "entries": [
     {
       "keyword": "Aim",
@@ -847,6 +847,21 @@
       },
       "aliases": [
         "pinning"
+      ]
+    },
+    {
+      "keyword": "Poison",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Toxic exposure from bites, tainted food, or contaminated zones; worsens until treated.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Poison",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Poison"
+      },
+      "aliases": [
+        "poisoned"
       ]
     },
     {

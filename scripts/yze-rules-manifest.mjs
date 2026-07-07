@@ -791,4 +791,13 @@ export const YZE_RULES = [
     ruleRef: 'SRD — Pin',
     aliases: ['pinning'],
   },
+  {
+    keyword: 'Poison',
+    phase: 'Exploration',
+    applicability: 'general',
+    summary:
+      'Toxic exposure from bites, tainted food, or contaminated zones; worsens until treated.',
+    ruleRef: 'SRD — Poison',
+    aliases: ['poisoned'],
+  },
 ];

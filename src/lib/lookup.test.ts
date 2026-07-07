@@ -174,7 +174,7 @@ describe('lookupKeyword', () => {
     const yze = await lookupKeyword('suppressive fire', 'year-zero-engine');
     expect(yze.found).toBe(true);
     if (yze.found) {
-      expect(yze.corpusVersion).toBe('yze-srd-v14');
+      expect(yze.corpusVersion).toBe('yze-srd-v15');
       expect(yze.keyword).toBe('Suppressive Fire');
     }
 
@@ -305,6 +305,20 @@ describe('lookupKeyword', () => {
     expect(await lookupKeyword('steal', 'dnd5e-srd')).toEqual({
       found: false,
       query: 'steal',
+    });
+  });
+
+  it('returns YZE v15 poison keyword at 100-entry milestone', async () => {
+    const poison = await lookupKeyword('poisoned', 'year-zero-engine');
+    expect(poison.found).toBe(true);
+    if (poison.found) {
+      expect(poison.keyword).toBe('Poison');
+      expect(poison.corpusVersion).toBe('yze-srd-v15');
+    }
+
+    expect(await lookupKeyword('poisoned', 'dnd5e-srd')).toMatchObject({
+      found: true,
+      keyword: 'Poisoned',
     });
   });
 
@@ -779,6 +793,11 @@ describe('getKeywordSuggestions', () => {
     expect(getKeywordSuggestions('count', 'dnd5e-srd')).not.toContain('Counteract');
   });
 
+  it('suggests YZE Poison at v15 milestone prefix', () => {
+    expect(getKeywordSuggestions('pois', 'year-zero-engine')).toContain('Poison');
+    expect(getKeywordSuggestions('pois', 'dnd5e-srd')).toContain('Poisoned');
+  });
+
   it('suggests PF2e Steal and YZE Charge from v14 prefixes', () => {
     expect(getKeywordSuggestions('stea', 'pf2e-srd')).toContain('Steal');
     expect(getKeywordSuggestions('charg', 'year-zero-engine')).toContain('Charge');
@@ -977,6 +996,7 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Map');
     expect(keywords).toContain('Infection');
     expect(keywords).toContain('Concealment');
+    expect(keywords).toContain('Poison');
     expect(keywords).not.toContain('Detect Magic');
   });
 

@@ -32,7 +32,8 @@ describe('SRD corpora integrity', () => {
       readFileSync(join(DATA, 'year-zero-engine-srd-corpus.json'), 'utf8'),
     );
     expect(corpus.license).toBe('YZE-FTL');
-    expect(corpus.version).toBe('yze-srd-v14');
+    expect(corpus.version).toBe('yze-srd-v15');
+    expect(corpus.entryCount).toBe(100);
     expect(corpus.entryCount).toBe(YZE_RULES.length);
     expect(corpus.entries).toHaveLength(YZE_RULES.length);
   });
