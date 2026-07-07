@@ -1,9 +1,9 @@
 {
-  "version": "pf2e-remaster-v4",
+  "version": "pf2e-remaster-v5",
   "license": "ORC",
   "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
   "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
-  "entryCount": 81,
+  "entryCount": 86,
   "entries": [
     {
       "keyword": "Administer First Aid",
@@ -99,6 +99,21 @@
       "aliases": []
     },
     {
+      "keyword": "Command",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Direct an animal companion or similar ally to take a specific action on its turn.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Command an Animal",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Command an Animal"
+      },
+      "aliases": [
+        "command an animal"
+      ]
+    },
+    {
       "keyword": "Concealed",
       "phase": "Encounter",
       "applicability": "general",
@@ -121,6 +136,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Conditions — Confused"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Controlled",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Another creature directs your actions; you follow their orders until the effect ends.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Controlled",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Controlled"
       },
       "aliases": []
     },
@@ -359,6 +387,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Feint"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Finesse",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Weapon trait letting you use Dexterity instead of Strength on attack and damage rolls.",
+      "citation": "Pathfinder Player Core (Remaster) — Equipment — Finesse",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Equipment — Finesse"
       },
       "aliases": []
     },
@@ -605,6 +646,19 @@
         "flat-footed",
         "flat footed"
       ]
+    },
+    {
+      "keyword": "Paralyzed",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Frozen in place; you cannot act and are off-guard until the paralysis ends.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Paralyzed",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Paralyzed"
+      },
+      "aliases": []
     },
     {
       "keyword": "Perception",
@@ -884,6 +938,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Sneak"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Stabilize",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Medicine check to keep a dying creature from losing more Hit Points before healing.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Stabilize",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Stabilize"
       },
       "aliases": []
     },

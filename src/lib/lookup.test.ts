@@ -163,18 +163,18 @@ describe('lookupKeyword', () => {
     }
   });
 
-  it('stamps pf2e-remaster-v4 and yze-srd-v5 on expanded SRD hits', async () => {
+  it('stamps pf2e-remaster-v5 and yze-srd-v6 on expanded SRD hits', async () => {
     const pf2e = await lookupKeyword('degree of success', 'pf2e-srd');
     expect(pf2e.found).toBe(true);
     if (pf2e.found) {
-      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v4');
+      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v5');
       expect(pf2e.keyword).toBe('Degree of Success');
     }
 
     const yze = await lookupKeyword('suppressive fire', 'year-zero-engine');
     expect(yze.found).toBe(true);
     if (yze.found) {
-      expect(yze.corpusVersion).toBe('yze-srd-v5');
+      expect(yze.corpusVersion).toBe('yze-srd-v6');
       expect(yze.keyword).toBe('Suppressive Fire');
     }
 
@@ -188,6 +188,18 @@ describe('lookupKeyword', () => {
     expect(hunger.found).toBe(true);
     if (hunger.found) {
       expect(hunger.keyword).toBe('Hunger');
+    }
+
+    const stabilize = await lookupKeyword('stabilize', 'pf2e-srd');
+    expect(stabilize.found).toBe(true);
+    if (stabilize.found) {
+      expect(stabilize.keyword).toBe('Stabilize');
+    }
+
+    const exposure = await lookupKeyword('exposure', 'year-zero-engine');
+    expect(exposure.found).toBe(true);
+    if (exposure.found) {
+      expect(exposure.keyword).toBe('Exposure');
     }
   });
 

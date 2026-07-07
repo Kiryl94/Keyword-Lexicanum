@@ -483,4 +483,36 @@ export const YZE_RULES = [
     ruleRef: 'SRD — Breaking Point',
     aliases: ['breaking point stress'],
   },
+  {
+    keyword: 'Exposure',
+    phase: 'Exploration',
+    applicability: 'general',
+    summary:
+      'Harsh weather or environment that drains stamina and may impose conditions over time.',
+    ruleRef: 'SRD — Exposure',
+  },
+  {
+    keyword: 'Forced March',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Push travel pace beyond comfort; risks exhaustion or stress before the party rests.',
+    ruleRef: 'SRD — Forced March',
+  },
+  {
+    keyword: 'Fear Attack',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Frightening assault or creature ability that forces a composure roll to avoid panic.',
+    ruleRef: 'SRD — Fear Attack',
+  },
+  {
+    keyword: 'Night Attack',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Strike under cover of darkness; often grants surprise or bonuses against unaware foes.',
+    ruleRef: 'SRD — Night Attack',
+  },
 ];

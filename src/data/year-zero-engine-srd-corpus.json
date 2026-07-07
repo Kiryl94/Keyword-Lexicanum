@@ -1,9 +1,9 @@
 {
-  "version": "yze-srd-v5",
+  "version": "yze-srd-v6",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 63,
+  "entryCount": 67,
   "entries": [
     {
       "keyword": "Ambush",
@@ -311,6 +311,19 @@
       "aliases": []
     },
     {
+      "keyword": "Exposure",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Harsh weather or environment that drains stamina and may impose conditions over time.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Exposure",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Exposure"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Fast Action",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -320,6 +333,32 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Actions"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Fear Attack",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Frightening assault or creature ability that forces a composure roll to avoid panic.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Fear Attack",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Fear Attack"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Forced March",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Push travel pace beyond comfort; risks exhaustion or stress before the party rests.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Forced March",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Forced March"
       },
       "aliases": []
     },
@@ -441,6 +480,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Mixed Success"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Night Attack",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Strike under cover of darkness; often grants surprise or bonuses against unaware foes.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Night Attack",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Night Attack"
       },
       "aliases": []
     },

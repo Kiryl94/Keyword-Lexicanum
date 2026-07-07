@@ -627,4 +627,45 @@ export const PF2E_RULES = [
     ruleRef: 'Core — Counteract',
     aliases: ['counteract check'],
   },
+  {
+    keyword: 'Controlled',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Another creature directs your actions; you follow their orders until the effect ends.',
+    ruleRef: 'Conditions — Controlled',
+  },
+  {
+    keyword: 'Paralyzed',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Frozen in place; you cannot act and are off-guard until the paralysis ends.',
+    ruleRef: 'Conditions — Paralyzed',
+  },
+  {
+    keyword: 'Stabilize',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Medicine check to keep a dying creature from losing more Hit Points before healing.',
+    ruleRef: 'Actions — Stabilize',
+  },
+  {
+    keyword: 'Command',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Direct an animal companion or similar ally to take a specific action on its turn.',
+    ruleRef: 'Actions — Command an Animal',
+    aliases: ['command an animal'],
+  },
+  {
+    keyword: 'Finesse',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Weapon trait letting you use Dexterity instead of Strength on attack and damage rolls.',
+    ruleRef: 'Equipment — Finesse',
+  },
 ];

@@ -218,10 +218,10 @@ MVP slices and test-plan rollout are complete. **Build priority (2026-07-07):** 
 
 | Priority | ID | Change ID | Outcome | Status | Notes |
 |----------|-----|-----------|---------|--------|-------|
-| 1 | S-16 | corpus-expansion | Grow D&D / PF2e / YZE manifests from table feedback | ongoing | v5 batch — PF2e 81, YZE 63 keywords |
+| 1 | S-16 | corpus-expansion | Grow D&D / PF2e / YZE manifests from table feedback | ongoing | v6 batch — PF2e 86, YZE 67 keywords |
 | 1 | — | m3l2-tdd | Ad-hoc tests via `/10x-tdd` + test-plan §6 cookbook | in progress | Quality contract for day-to-day test authoring |
 | 2 | S-14 | field-table-test | Validate SRD lookup flow on phone at a live game | done | Mobile UX confirmed 2026-07-07 |
-| 2 | S-17 | offline-pwa | Service worker / installable PWA shell | in progress | SW + manifest; corpora bundled in client JS |
+| 2 | S-17 | offline-pwa | Service worker / installable PWA shell | done | Installed on device 2026-07-07 |
 | **last** | S-15 | publisher-outreach | GW / Archon permission for Demo-tier full corpus | **deferred** | After SRD + web app complete; see `distribution-policy.md` |
 | **last** | — | demo-promotion | Promote WH40k / StarCraft from sample to full public corpus | **deferred** | Blocked on S-15; samples stay in production until then |
 
@@ -242,7 +242,7 @@ MVP slices and test-plan rollout are complete. **Build priority (2026-07-07):** 
 - **User accounts / cloud sync** — Why parked: PRD §Non-Goals.
 - **Publisher outreach (GW / Archon)** — Why parked: product decision 2026-07-07 — finish SRD depth and main web app first; WH40k and StarCraft stay Demo (sample corpora) until the very end. See S-15 in Post-MVP horizon.
 - **Warhammer: The Old World** — Why dropped: no free core rules PDF; paid rulebook only. Out of scope unless GW publishes a free core document.
-- **Offline corpus / service worker** — Why parked: speed path; NFR defers IndexedDB to post-MVP unless table testing (S-14) demands it.
+- **Offline corpus / service worker** — Shipped S-17 (2026-07-07): bundled corpora + SW shell; no separate IndexedDB layer.
 - **Age of Sigmar** — Why parked: free core rules exist on Warhammer Community, but same GW republication constraints as 40k; only after S-15 publisher outreach if ever pursued.
 
 ## Done
@@ -255,3 +255,4 @@ MVP slices and test-plan rollout are complete. **Build priority (2026-07-07):** 
 - **S-03: user can see which game phase a keyword applies to (or that it does not apply outside that phase).** — Archived 2026-06-24 → `context/archive/2026-06-24-phase-on-keyword/`. Lesson: restricted vs general applicability banners carry FR-007 until real corpus refines phase names.
 - **S-04: user can enter a phase name and browse keywords relevant to that phase.** — Archived 2026-06-24 → `context/archive/2026-06-24-browse-by-phase/`. Lesson: phase chips + keyword list on home panel keeps browse in the lookup flow without a separate tab.
 - **S-14: user can validate the SRD lookup flow on a phone at a live game.** — Archived 2026-07-07 → `context/archive/2026-07-07-field-table-test/`. Lesson: deploy smoke + mobile checklist closes the loop before offline/PWA work.
+- **S-17: user can use Keyword Lexicanum offline after first visit and install it to the home screen.** — Archived 2026-07-07 → `context/archive/2026-07-07-offline-pwa/`. Lesson: bundled SRD corpora + service-worker shell is enough for table offline; IndexedDB deferred.
