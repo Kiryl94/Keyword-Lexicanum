@@ -1,10 +1,12 @@
 import { describe, expect, it } from 'vitest';
+import { getCorpusVersion } from '@/lib/corpus/version';
 import {
   getKeywordSuggestions,
   getKeywordsForPhase,
   getPhasesForSystem,
   lookupKeyword,
 } from '@/lib/lookup';
+import type { GameSystemId } from '@/store/session';
 describe('lookupKeyword', () => {
   it('returns a hit for a known D&D term via alias', async () => {
     const result = await lookupKeyword('advantage', 'dnd5e-srd');
@@ -114,6 +116,38 @@ describe('lookupKeyword', () => {
   it('returns a miss for empty or whitespace-only queries', async () => {
     expect(await lookupKeyword('', 'dnd5e-srd')).toEqual({ found: false, query: '' });
     expect(await lookupKeyword('   ', 'dnd5e-srd')).toEqual({ found: false, query: '   ' });
+  });
+
+  it('does not return WH40k-only terms when D&D is active', async () => {
+    const result = await lookupKeyword('close quarters', 'dnd5e-srd');
+    expect(result).toEqual({ found: false, query: 'close quarters' });
+  });
+
+  it('scopes engagement to StarCraft — miss under D&D, hit under StarCraft', async () => {
+    const dndResult = await lookupKeyword('engagement', 'dnd5e-srd');
+    expect(dndResult).toEqual({ found: false, query: 'engagement' });
+
+    const scResult = await lookupKeyword('engagement', 'starcraft-mini');
+    expect(scResult.found).toBe(true);
+    if (scResult.found) {
+      expect(scResult.keyword).toBe('Engagement');
+    }
+  });
+
+  it('stamps corpusVersion on hits for every game system', async () => {
+    const cases: Array<{ query: string; systemId: GameSystemId }> = [
+      { query: 'advantage', systemId: 'dnd5e-srd' },
+      { query: 'lance', systemId: 'wh40k-11' },
+      { query: 'engagement', systemId: 'starcraft-mini' },
+    ];
+
+    for (const { query, systemId } of cases) {
+      const result = await lookupKeyword(query, systemId);
+      expect(result.found).toBe(true);
+      if (result.found) {
+        expect(result.corpusVersion).toBe(getCorpusVersion(systemId));
+      }
+    }
   });
 });
 

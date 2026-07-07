@@ -145,4 +145,49 @@ describe('useSessionStore recent lookups', () => {
     expect(getRecentLookups('wh40k-11')).toEqual(['Lance']);
     expect(getCachedLookup('wh40k-11', 'Lance')?.keyword).toBe('Lance');
   });
+
+  it('keeps WH40k recents when switching active system to D&D', () => {
+    const { recordSuccessfulLookup, setActiveSystem, getRecentLookups } =
+      useSessionStore.getState();
+
+    recordSuccessfulLookup('wh40k-11', {
+      ...sampleHit,
+      keyword: 'Close Quarters',
+      corpusVersion: getCorpusVersion('wh40k-11'),
+    });
+
+    setActiveSystem('dnd5e-srd');
+
+    expect(getRecentLookups('dnd5e-srd')).toEqual([]);
+    expect(getRecentLookups('wh40k-11')).toEqual(['Close Quarters']);
+    expect(useSessionStore.getState().activeSystemId).toBe('dnd5e-srd');
+  });
+
+  it('preserves per-system recents across a switch sequence', () => {
+    const { recordSuccessfulLookup, setActiveSystem, getRecentLookups } =
+      useSessionStore.getState();
+
+    recordSuccessfulLookup('dnd5e-srd', sampleHit);
+    setActiveSystem('wh40k-11');
+    recordSuccessfulLookup('wh40k-11', {
+      ...sampleHit,
+      keyword: 'Lance',
+      corpusVersion: getCorpusVersion('wh40k-11'),
+    });
+    setActiveSystem('dnd5e-srd');
+
+    expect(getRecentLookups('dnd5e-srd')).toEqual(['advantage']);
+    expect(getRecentLookups('wh40k-11')).toEqual(['Lance']);
+  });
+
+  it('rejects cached lookups when corpusVersion is stale', () => {
+    const { recordSuccessfulLookup, getCachedLookup } = useSessionStore.getState();
+
+    recordSuccessfulLookup('dnd5e-srd', {
+      ...sampleHit,
+      corpusVersion: 'stale-version',
+    });
+
+    expect(getCachedLookup('dnd5e-srd', 'advantage')).toBeUndefined();
+  });
 });
