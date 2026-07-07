@@ -138,10 +138,14 @@ relevant rollout phase ships.
 
 ### 6.5 Per-rollout-phase notes
 
-| Phase | Shipped artifact |
-|-------|------------------|
-| 3 | `LookupResultCard.test.tsx`, `vitest.setup.ts`, jsdom + RTL devDeps |
-| 4 | CI `lint` + `build` steps in `.github/workflows/ci.yml` |
+| Phase | Shipped artifact | Archive |
+|-------|------------------|---------|
+| 1 | `lookup.test.ts` + `session.test.ts` cross-system tests | `context/archive/2026-07-07-testing-system-isolation-lookup-grounding/` |
+| 2 | `sample-corpus-guard.test.mjs`, `srd-corpus-guard.test.mjs` | `context/archive/2026-07-07-testing-corpus-pipeline-regression/` |
+| 3 | `LookupResultCard.test.tsx`, RTL + jsdom setup | `context/archive/2026-07-07-testing-result-card-content-bounds/` |
+| 4 | CI lint + build in `.github/workflows/ci.yml` | `context/archive/2026-07-07-testing-ci-quality-gates/` |
+
+**Rollout status:** all four phases complete (2026-07-07).
 
 ## 7. What We Deliberately Don't Test
 

@@ -1,10 +1,10 @@
 ---
 change_id: testing-system-isolation-lookup-grounding
 title: System isolation and lookup grounding tests
-status: done
+status: archived
 created: 2026-07-07
 updated: 2026-07-07
-archived_at: null
+archived_at: 2026-07-07
 ---
 
 ## Notes
