@@ -1,6 +1,6 @@
 # Keyword Lexicanum
 
-Web app for in-context tabletop rules keyword lookup. **SRD** systems (D&D 5e, Pathfinder 2e and Year Zero Engine planned) ship full open-licensed corpora; **Demo** systems (WH40k, StarCraft) use public sample data only until publisher permission.
+Web app for in-context tabletop rules keyword lookup. **SRD** systems (D&D 5e, Pathfinder 2e, Year Zero Engine) ship full open-licensed corpora; **Demo** systems (WH40k, StarCraft) use public sample data only until publisher permission.
 
 **Platform:** responsive web — phone and desktop browsers at the table.
 
@@ -44,9 +44,9 @@ Prerequisites: GitHub repo and a [Vercel](https://vercel.com) account (free tier
 
 **Verify after deploy:**
 
-- Open `/` — system picker loads.
-- Open `/lookup`, search `advantage` — success card with collapsible Source citation.
-- Switch to WH40k on System tab, search `close quarters` — phase + citation.
+- Open `/` — system picker loads (SRD and Demo sections).
+- Search D&D `advantage`, PF2e `hero point`, YZE `push` — success cards with collapsible citations.
+- Switch to WH40k, search `close quarters` — phase + citation (Demo sample corpus).
 
 ## Project structure
 
@@ -66,5 +66,7 @@ context/        # PRD, shape-notes, tech-stack
 
 ## Sample lookups
 
-- WH40k: `close quarters`, `engagement`
-- D&D: `advantage`
+- D&D: `advantage`, `grapple`
+- Pathfinder 2e: `strike`, `flat-footed`, `hero point`
+- Year Zero Engine: `push`, `hp`
+- WH40k (Demo): `close quarters`, `engagement`

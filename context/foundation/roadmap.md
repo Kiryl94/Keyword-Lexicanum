@@ -3,7 +3,7 @@ project: Keyword Lexicanum
 version: 1
 status: draft
 created: 2026-06-24
-updated: 2026-06-24
+updated: 2026-07-07
 prd_version: 1
 main_goal: speed
 top_blocker: external
@@ -211,6 +211,18 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 | S-10 | pf2e-srd-corpus | Ingest Pathfinder 2e ORC SRD manifest | yes | Shipped — 66 keywords |
 | S-11 | yze-srd-corpus | Ingest Year Zero Engine FTL SRD manifest | yes | Shipped — 38 keywords |
 | S-12 | dnd-srd-deepen | Deepen D&D phase rulesets and rebuild v2 corpus | yes | Shipped — v2 rebuild |
+
+## Post-MVP horizon
+
+MVP slices and test-plan rollout are complete. Remaining work is product- and process-led.
+
+| ID | Change ID | Outcome | Status | Notes |
+|---|---|---|---|---|
+| S-13 | post-mvp-ops | Dependabot, doc refresh, health-check current | done | Shipped 2026-07-07 |
+| S-14 | field-table-test | Validate lookup flow on phone at a live game | not started | Manual — use deploy verify checklist in README |
+| S-15 | publisher-outreach | GW / Archon permission for Demo-tier full corpus | not started | Business track; see `distribution-policy.md` |
+| S-16 | corpus-expansion | Grow PF2e/YZE manifests from table feedback | ongoing | Edit manifests + `npm run corpus:build-*` |
+| S-17 | offline-pwa | Service worker / IndexedDB corpus cache | parked | PRD non-goal unless field test demands it |
 
 ## Open Roadmap Questions
 

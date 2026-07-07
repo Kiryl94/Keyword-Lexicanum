@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { trimAtNextWh40kKeywordEntry, trimAtNextNumberedRuleHeader, trimAtWh40kChapterCatalog, trimWh40kExplanation } from './corpus-pdf-utils.mjs';
+import { trimAtNextWh40kKeywordEntry, trimAtNextNumberedRuleHeader, trimAtWh40kChapterCatalog } from './corpus-pdf-utils.mjs';
 
 describe('trimAtNextWh40kKeywordEntry', () => {
   it('stops before the next bracketed ability header', () => {

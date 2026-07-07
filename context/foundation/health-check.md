@@ -1,6 +1,6 @@
 ---
 project: keyword-lexicanum
-checked_at: 2026-06-24T23:40:00Z
+checked_at: 2026-07-07T10:00:00Z
 health_status: healthy
 context_type: brownfield
 language_family: js
@@ -19,7 +19,7 @@ audit_findings:
   low: 0
 test_runner_detected: true
 ci_provider: GitHub Actions
-recommended_fixes: 5
+recommended_fixes: 2
 ---
 
 ## Dependency Health
@@ -32,7 +32,7 @@ Package manager: npm
 ### Security Audit
 
 Tool: `npm audit --json`
-Summary: 0 CRITICAL, 0 HIGH, 2 MODERATE, 0 LOW
+Summary: 0 CRITICAL, 0 HIGH, 2 MODERATE, 0 LOW (last assessed 2026-07-07)
 Direct vs transitive: 1 direct (`next`), 1 transitive (`postcss` via dependency chain)
 
 MODERATE findings (2):
@@ -40,25 +40,27 @@ MODERATE findings (2):
 - **next** 16.2.9 — advisory range 9.3.4-canary.0–16.3.0-canary.5; PostCSS-related chain. Fix: upgrade Next when a patched stable release is available beyond the advisory range.
 - **postcss** &lt;8.5.10 — PostCSS XSS via unescaped `</style>` in CSS stringify output (transitive). Fix: resolves when parent dependencies pull postcss ≥8.5.10.
 
+Dependabot: `.github/dependabot.yml` — weekly npm updates (added 2026-07-07).
+
 ### Outdated Dependencies
 
 Packages with major version gaps: 4
 
-- **typescript**: 5.3.3 → 6.0.3 (1 major behind latest; `package.json` allows `^5`)
-- **eslint**: 9.39.4 → 10.6.0 (1 major behind)
-- **vitest**: 3.2.6 → 4.1.9 (1 major behind)
-- **@types/node**: 20.19.43 → 26.0.1 (6 majors behind latest; dev-only)
+- **typescript**: 5.x → 6.x (dev-only; stay on 5 until Next/Vitest ecosystem confirms TS 6)
+- **eslint**: 9.x → 10.x
+- **vitest**: 3.x → 4.x
+- **@types/node**: 20.x → 26.x (dev-only)
 
 Minor/patch gaps only: `react`, `react-dom` (19.2.4 → 19.2.7).
 
 ## Test Suite
 
 Test runner: Vitest 3.2.6
-Tests found: 49 tests in 5 files
+Tests found: 71 tests in 8 files
 Test execution: passing
 
-Configuration: `vitest.config.ts`
-Framework: Vitest with Node environment; `@/` and corpus aliases mirror `tsconfig.json` / `next.config.ts`.
+Configuration: `vitest.config.ts`, `vitest.setup.ts`
+Framework: Vitest with Node + jsdom (`src/**/*.test.tsx`); React Testing Library for component tests.
 
 ## CI/CD
 
@@ -67,11 +69,11 @@ Configuration: `.github/workflows/ci.yml`
 
 | Stage      | Status | Notes                                      |
 |------------|--------|--------------------------------------------|
-| Lint       | ✗      | `npm run lint` not in workflow             |
-| Test       | ✓      | `npm test` (Vitest)                        |
-| Build      | ✗      | `npm run build` not in workflow            |
+| Lint       | ✓      | `npm run lint`                             |
+| Test       | ✓      | `npm test` (Vitest, 71 tests)              |
+| Build      | ✓      | `npm run build` (Next.js production)       |
 | Type check | ✓      | `npm run typecheck` (`tsc --noEmit`)       |
-| Security   | ✗      | No audit / Dependabot step                 |
+| Security   | partial | Dependabot weekly; no `npm audit` CI step |
 
 CI runs on push and pull_request to `main` with Node 22 and npm cache.
 
@@ -83,14 +85,13 @@ None detected.
 
 ### Medium severity
 
-- **Prettier / formatter** — ESLint is configured (`eslint.config.mjs`) but no Prettier or Biome. Agent-generated formatting may drift. Fix: add Prettier or document "ESLint only" as intentional in `AGENTS.md` (currently ESLint-only).
+- **Prettier / formatter** — ESLint only; no Prettier/Biome. Documented as intentional in `AGENTS.md`.
 
 ### Low severity
 
-- **`.editorconfig`** — missing. Cross-editor indentation may vary. Fix: add `.editorconfig` with 2-space indent for TS/TSX/JSON.
-- **CI lint step** — local `npm run lint` exists but CI does not run it. Fix: add lint step to `.github/workflows/ci.yml` when ready (Category B for course chain).
+None blocking. `.editorconfig` added 2026-07-07 for cross-editor indentation.
 
-Present and healthy: `tsconfig.json` (`strict: true`), `eslint.config.mjs`, `.gitignore` (includes `src/data/local/`, `.env*.local`), `.env.local.example`, root `README.md`.
+Present and healthy: `tsconfig.json` (`strict: true`), `eslint.config.mjs`, `.gitignore` (includes `src/data/local/`, `.env*.local`), `.env.local.example`, root `README.md`, `vitest-env.d.ts`.
 
 ## Stack Assessment Cross-Reference
 
@@ -99,11 +100,9 @@ Agent readiness (from stack-assess): ready
 
 | Quality Gate Gap | Health-Check Finding | Status |
 |------------------|----------------------|--------|
-| (none — all gates pass) | Typecheck enforced in CI | Reinforced |
-| (none) | 49 passing Vitest tests | Reinforced |
-| (none) | AGENTS.md updated with distribution hard rules | Mitigated |
-
-No stack-assessment gaps require operational compensation. Health-check adds operational polish items (lint in CI, moderate audit advisories) independent of stack choice.
+| (none — all gates pass) | Typecheck + lint + test + build in CI | Reinforced |
+| (none) | 71 passing Vitest tests incl. component layer | Reinforced |
+| (none) | AGENTS.md + distribution-policy hard rules | Mitigated |
 
 ## Recommended Fixes
 
@@ -111,9 +110,9 @@ No stack-assessment gaps require operational compensation. Health-check adds ope
 
 ### 1. Review moderate npm audit advisories
 
-**Impact**: Transitive PostCSS advisory affects the build toolchain; agents should not ignore security context when bumping Next.js.
+**Impact**: Transitive PostCSS advisory affects the build toolchain.
 **Severity**: medium
-**Effort**: quick (< 5 min to assess; moderate if upgrade needed)
+**Effort**: quick to assess; moderate if upgrade needed
 **Fix**:
 
 ```powershell
@@ -123,34 +122,16 @@ npm outdated next
 
 Upgrade Next.js when a stable release outside the advisory range is published; re-run `npm test` and `npm run build` after bump.
 
-### 2. Pin TypeScript within semver range
-
-**Impact**: Installed TypeScript 5.3.3 is below the `^5` range ceiling (5.9.3 wanted). Older compiler may miss newer lib checks agents assume.
-**Severity**: low
-**Effort**: quick
-**Fix**:
-
-```powershell
-npm update typescript
-npm run typecheck
-```
-
 ### Addressed in upcoming lessons (Category B)
 
-### CI lint and build stages
+### npm audit in CI
 
-**Lesson**: Sprint Zero z Agentem: infrastruktura, walking skeleton i pierwszy deploy (M1L5)
-**What you'll do there**: Extend GitHub Actions with lint and production build steps so PRs catch ESLint and Next.js build failures before merge.
-
-### Security scanning in CI
-
-**Lesson**: Sprint Zero z Agentem: infrastruktura, walking skeleton i pierwszy deploy (M1L5)
-**What you'll do there**: Add Dependabot or `npm audit` in CI for ongoing dependency monitoring.
+**What you'll do there**: Optional non-blocking `npm audit --audit-level=high` step once moderate advisories are cleared or accepted.
 
 ## Summary
 
 Health status: **healthy**
 
-The project has a pinned lockfile, zero critical/high vulnerabilities, a working Vitest suite (49/49 passing), strict TypeScript, and CI enforcing typecheck and tests. Two moderate audit advisories and missing lint/build CI stages are addressable without blocking agent work. Stack assessment rated the toolchain **ready** with no compensation gaps.
+The project has a pinned lockfile, zero critical/high vulnerabilities, 71 passing tests (unit + integration + component), strict TypeScript, and CI enforcing typecheck, lint, test, and production build. MVP roadmap and test-plan rollouts are complete. Remaining work is product-led (field testing, publisher outreach, corpus expansion) rather than infrastructure blockers.
 
-Next step: use the updated `AGENTS.md` for agent onboarding; optionally add lint to CI and bump Next.js when a patched stable release is available.
+Next step: field table test (roadmap S-14) and GW/Archon outreach (S-15).
