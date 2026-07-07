@@ -668,4 +668,44 @@ export const PF2E_RULES = [
       'Weapon trait letting you use Dexterity instead of Strength on attack and damage rolls.',
     ruleRef: 'Equipment — Finesse',
   },
+  {
+    keyword: 'Cursed',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Afflicted by a curse; your cursed value imposes penalties until the curse is removed.',
+    ruleRef: 'Conditions — Cursed',
+  },
+  {
+    keyword: 'Avert Gaze',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Look away from a visual threat to avoid its worst effect, often at the cost of awareness.',
+    ruleRef: 'Actions — Avert Gaze',
+  },
+  {
+    keyword: 'Coerce',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Intimidation check to bully someone into cooperating for a short time.',
+    ruleRef: 'Actions — Coerce',
+  },
+  {
+    keyword: 'Volley',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Ranged weapon trait penalizing shots made against targets closer than the listed distance.',
+    ruleRef: 'Equipment — Volley',
+  },
+  {
+    keyword: 'Thrown',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Weapon trait for items designed to be hurled; uses a thrown range increment.',
+    ruleRef: 'Equipment — Thrown',
+  },
 ];

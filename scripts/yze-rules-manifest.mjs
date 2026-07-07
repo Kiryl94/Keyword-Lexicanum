@@ -515,4 +515,38 @@ export const YZE_RULES = [
       'Strike under cover of darkness; often grants surprise or bonuses against unaware foes.',
     ruleRef: 'SRD — Night Attack',
   },
+  {
+    keyword: 'Loot',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Search bodies, containers, or sites for useful gear, ammo, or valuables after a scene.',
+    ruleRef: 'SRD — Loot',
+  },
+  {
+    keyword: 'Camp',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Set up a temporary site to rest, eat, and recover between travel legs.',
+    ruleRef: 'SRD — Camp',
+  },
+  {
+    keyword: 'Watch',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Stand guard while others rest; may roll to spot approaching threats overnight.',
+    ruleRef: 'SRD — Watch',
+    aliases: ['camp watch', 'night watch'],
+  },
+  {
+    keyword: 'Navigate',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Find the way through wilderness or ruins using survival skills and landmarks.',
+    ruleRef: 'SRD — Navigate',
+    aliases: ['navigation'],
+  },
 ];

@@ -21,8 +21,7 @@ MVP roadmap slices (F-01, S-01–S-12) and test-plan rollout (Phases 1–4) are 
 **Next (active):**
 - S-16: SRD corpus expansion (D&D, PF2e, YZE)
 - M3L2: `/10x-tdd` ad-hoc tests per test-plan §6 cookbook
-- S-14: field table test when ready
 
-**Deferred until SRD + web app complete:**
+**Dropped for now:**
 - S-15: GW / Archon publisher outreach
-- Demo → full promotion for WH40k / StarCraft (samples stay in production until then)
+- Demo → full promotion for WH40k / StarCraft (samples stay in production indefinitely)

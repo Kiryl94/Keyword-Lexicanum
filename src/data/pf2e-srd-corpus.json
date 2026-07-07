@@ -1,9 +1,9 @@
 {
-  "version": "pf2e-remaster-v5",
+  "version": "pf2e-remaster-v6",
   "license": "ORC",
   "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
   "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
-  "entryCount": 86,
+  "entryCount": 91,
   "entries": [
     {
       "keyword": "Administer First Aid",
@@ -43,6 +43,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Core — Attack Rolls"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Avert Gaze",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Look away from a visual threat to avoid its worst effect, often at the cost of awareness.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Avert Gaze",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Avert Gaze"
       },
       "aliases": []
     },
@@ -95,6 +108,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Conditions — Clumsy"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Coerce",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Intimidation check to bully someone into cooperating for a short time.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Coerce",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Coerce"
       },
       "aliases": []
     },
@@ -203,6 +229,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Core — Degrees of Success"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Cursed",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Afflicted by a curse; your cursed value imposes penalties until the curse is removed.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Cursed",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Cursed"
       },
       "aliases": []
     },
@@ -1074,6 +1113,19 @@
       ]
     },
     {
+      "keyword": "Thrown",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Weapon trait for items designed to be hurled; uses a thrown range increment.",
+      "citation": "Pathfinder Player Core (Remaster) — Equipment — Thrown",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Equipment — Thrown"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Treat Poison",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -1122,6 +1174,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Conditions — Unconscious"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Volley",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Ranged weapon trait penalizing shots made against targets closer than the listed distance.",
+      "citation": "Pathfinder Player Core (Remaster) — Equipment — Volley",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Equipment — Volley"
       },
       "aliases": []
     },

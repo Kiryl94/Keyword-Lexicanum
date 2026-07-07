@@ -163,18 +163,18 @@ describe('lookupKeyword', () => {
     }
   });
 
-  it('stamps pf2e-remaster-v5 and yze-srd-v6 on expanded SRD hits', async () => {
+  it('stamps pf2e-remaster-v6 and yze-srd-v7 on expanded SRD hits', async () => {
     const pf2e = await lookupKeyword('degree of success', 'pf2e-srd');
     expect(pf2e.found).toBe(true);
     if (pf2e.found) {
-      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v5');
+      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v6');
       expect(pf2e.keyword).toBe('Degree of Success');
     }
 
     const yze = await lookupKeyword('suppressive fire', 'year-zero-engine');
     expect(yze.found).toBe(true);
     if (yze.found) {
-      expect(yze.corpusVersion).toBe('yze-srd-v6');
+      expect(yze.corpusVersion).toBe('yze-srd-v7');
       expect(yze.keyword).toBe('Suppressive Fire');
     }
 
@@ -200,6 +200,57 @@ describe('lookupKeyword', () => {
     expect(exposure.found).toBe(true);
     if (exposure.found) {
       expect(exposure.keyword).toBe('Exposure');
+    }
+
+    const cursed = await lookupKeyword('cursed', 'pf2e-srd');
+    expect(cursed.found).toBe(true);
+    if (cursed.found) {
+      expect(cursed.keyword).toBe('Cursed');
+    }
+
+    const loot = await lookupKeyword('loot', 'year-zero-engine');
+    expect(loot.found).toBe(true);
+    if (loot.found) {
+      expect(loot.keyword).toBe('Loot');
+    }
+  });
+
+  it('returns PF2e v7 social and equipment trait keywords', async () => {
+    const coerce = await lookupKeyword('coerce', 'pf2e-srd');
+    expect(coerce.found).toBe(true);
+    if (coerce.found) {
+      expect(coerce.keyword).toBe('Coerce');
+    }
+
+    const volley = await lookupKeyword('volley', 'pf2e-srd');
+    expect(volley.found).toBe(true);
+    if (volley.found) {
+      expect(volley.keyword).toBe('Volley');
+    }
+
+    expect(await lookupKeyword('coerce', 'dnd5e-srd')).toEqual({
+      found: false,
+      query: 'coerce',
+    });
+  });
+
+  it('returns YZE v7 exploration keywords', async () => {
+    const camp = await lookupKeyword('camp', 'year-zero-engine');
+    expect(camp.found).toBe(true);
+    if (camp.found) {
+      expect(camp.keyword).toBe('Camp');
+    }
+
+    const watch = await lookupKeyword('night watch', 'year-zero-engine');
+    expect(watch.found).toBe(true);
+    if (watch.found) {
+      expect(watch.keyword).toBe('Watch');
+    }
+
+    const navigate = await lookupKeyword('navigation', 'year-zero-engine');
+    expect(navigate.found).toBe(true);
+    if (navigate.found) {
+      expect(navigate.keyword).toBe('Navigate');
     }
   });
 
@@ -345,6 +396,12 @@ describe('getKeywordSuggestions', () => {
     expect(getKeywordSuggestions('count', 'dnd5e-srd')).not.toContain('Counteract');
   });
 
+  it('suggests YZE Loot and PF2e Cursed from v7 prefixes', () => {
+    expect(getKeywordSuggestions('loo', 'year-zero-engine')).toContain('Loot');
+    expect(getKeywordSuggestions('cur', 'pf2e-srd')).toContain('Cursed');
+    expect(getKeywordSuggestions('loo', 'dnd5e-srd')).not.toContain('Loot');
+  });
+
   it('respects the result limit', () => {
     const allMatches = getKeywordSuggestions('a', 'dnd5e-srd');
     expect(allMatches.length).toBeGreaterThan(1);
@@ -414,6 +471,8 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Strike');
     expect(keywords).toContain('Off-Guard');
     expect(keywords).toContain('Reactive Strike');
+    expect(keywords).toContain('Paralyzed');
+    expect(keywords).toContain('Stabilize');
     expect(keywords).not.toContain('Close Quarters');
   });
 
@@ -439,6 +498,9 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Hunger');
     expect(keywords).toContain('Thirst');
     expect(keywords).toContain('Recon');
+    expect(keywords).toContain('Loot');
+    expect(keywords).toContain('Camp');
+    expect(keywords).toContain('Navigate');
     expect(keywords).not.toContain('Detect Magic');
   });
 

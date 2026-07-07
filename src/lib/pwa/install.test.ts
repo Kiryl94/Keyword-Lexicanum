@@ -29,4 +29,15 @@ describe('PWA install helpers', () => {
 
     vi.unstubAllGlobals();
   });
+
+  it('hides install affordance when already running standalone', () => {
+    vi.stubGlobal('window', {
+      matchMedia: () => ({ matches: true }),
+    });
+    vi.stubGlobal('navigator', {});
+
+    expect(canShowInstallButton()).toBe(false);
+
+    vi.unstubAllGlobals();
+  });
 });

@@ -1,9 +1,9 @@
 {
-  "version": "yze-srd-v6",
+  "version": "yze-srd-v7",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 67,
+  "entryCount": 71,
   "entries": [
     {
       "keyword": "Ambush",
@@ -125,6 +125,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Broken"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Camp",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Set up a temporary site to rest, eat, and recover between travel legs.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Camp",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Camp"
       },
       "aliases": []
     },
@@ -445,6 +458,19 @@
       "aliases": []
     },
     {
+      "keyword": "Loot",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Search bodies, containers, or sites for useful gear, ammo, or valuables after a scene.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Loot",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Loot"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Magic",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -482,6 +508,21 @@
         "section": "SRD — Mixed Success"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Navigate",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Find the way through wilderness or ruins using survival skills and landmarks.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Navigate",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Navigate"
+      },
+      "aliases": [
+        "navigation"
+      ]
     },
     {
       "keyword": "Night Attack",
@@ -865,6 +906,22 @@
         "section": "SRD — Vehicles"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Watch",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Stand guard while others rest; may roll to spot approaching threats overnight.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Watch",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Watch"
+      },
+      "aliases": [
+        "camp watch",
+        "night watch"
+      ]
     },
     {
       "keyword": "Weapon",

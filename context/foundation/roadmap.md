@@ -214,16 +214,14 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 
 ## Post-MVP horizon
 
-MVP slices and test-plan rollout are complete. **Build priority (2026-07-07):** finish all SRD systems and main web-app quality first; keep WH40k and StarCraft as **Demo** (sample corpora) until the very end; **defer publisher outreach** until after that work ships.
+MVP slices and test-plan rollout are complete. **Build priority (2026-07-07):** SRD corpus depth (S-16) and M3L2 tests. WH40k and StarCraft remain **Demo** (sample corpora) indefinitely — publisher outreach (S-15) is **dropped** for now.
 
 | Priority | ID | Change ID | Outcome | Status | Notes |
 |----------|-----|-----------|---------|--------|-------|
-| 1 | S-16 | corpus-expansion | Grow D&D / PF2e / YZE manifests from table feedback | ongoing | v6 batch — PF2e 86, YZE 67 keywords |
+| 1 | S-16 | corpus-expansion | Grow D&D / PF2e / YZE manifests from table feedback | ongoing | v7 batch — PF2e 91, YZE 71 keywords |
 | 1 | — | m3l2-tdd | Ad-hoc tests via `/10x-tdd` + test-plan §6 cookbook | in progress | Quality contract for day-to-day test authoring |
 | 2 | S-14 | field-table-test | Validate SRD lookup flow on phone at a live game | done | Mobile UX confirmed 2026-07-07 |
 | 2 | S-17 | offline-pwa | Service worker / installable PWA shell | done | Installed on device 2026-07-07 |
-| **last** | S-15 | publisher-outreach | GW / Archon permission for Demo-tier full corpus | **deferred** | After SRD + web app complete; see `distribution-policy.md` |
-| **last** | — | demo-promotion | Promote WH40k / StarCraft from sample to full public corpus | **deferred** | Blocked on S-15; samples stay in production until then |
 
 ## Open Roadmap Questions
 
@@ -240,10 +238,11 @@ MVP slices and test-plan rollout are complete. **Build priority (2026-07-07):** 
 - **D&D extension manuals** — Why parked: PRD §Non-Goals.
 - **Voice-first input** — Why parked: PRD §Non-Goals.
 - **User accounts / cloud sync** — Why parked: PRD §Non-Goals.
-- **Publisher outreach (GW / Archon)** — Why parked: product decision 2026-07-07 — finish SRD depth and main web app first; WH40k and StarCraft stay Demo (sample corpora) until the very end. See S-15 in Post-MVP horizon.
+- **Publisher outreach (GW / Archon)** — Why dropped (2026-07-07): not planned for the foreseeable future; WH40k and StarCraft stay Demo with sample corpora.
+- **Demo → full promotion (WH40k / StarCraft)** — Why dropped: tied to S-15; samples remain in production indefinitely.
 - **Warhammer: The Old World** — Why dropped: no free core rules PDF; paid rulebook only. Out of scope unless GW publishes a free core document.
 - **Offline corpus / service worker** — Shipped S-17 (2026-07-07): bundled corpora + SW shell; no separate IndexedDB layer.
-- **Age of Sigmar** — Why parked: free core rules exist on Warhammer Community, but same GW republication constraints as 40k; only after S-15 publisher outreach if ever pursued.
+- **Age of Sigmar** — Why parked: same GW republication constraints as 40k; only if publisher outreach is revived.
 
 ## Done
 
