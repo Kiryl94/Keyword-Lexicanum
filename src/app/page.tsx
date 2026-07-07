@@ -1,5 +1,6 @@
 'use client';
 
+import { InstallAppButton } from '@/components/InstallAppButton';
 import { LookupPanel } from '@/components/LookupPanel';
 import { SystemPicker } from '@/components/SystemPicker';
 import { VerticalGameSystemLabel } from '@/components/VerticalGameSystemLabel';
@@ -18,9 +19,12 @@ export default function HomePage() {
         <header className="border-b border-[#2a2a40] px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))]">
           <SystemPicker variant="icons" />
         </header>
-        <section className="flex-1 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+        <section className="flex-1 px-4 py-4">
           <KeyedLookupPanel />
         </section>
+        <footer className="px-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+          <InstallAppButton />
+        </footer>
       </div>
 
       {/* Desktop: vertical label + compact picker left, lookup right */}
@@ -30,8 +34,9 @@ export default function HomePage() {
           <SystemPicker variant="compact" />
         </aside>
         <section className="min-w-0 flex-1 px-6 py-4">
-          <div className="mx-auto max-w-2xl">
+          <div className="mx-auto flex max-w-2xl flex-col gap-4">
             <KeyedLookupPanel />
+            <InstallAppButton />
           </div>
         </section>
       </div>
