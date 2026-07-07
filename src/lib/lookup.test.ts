@@ -181,6 +181,12 @@ describe('lookupKeyword', () => {
     if (hero.found) {
       expect(hero.keyword).toBe('Hero Point');
     }
+
+    const reactive = await lookupKeyword('attack of opportunity', 'pf2e-srd');
+    expect(reactive.found).toBe(true);
+    if (reactive.found) {
+      expect(reactive.keyword).toBe('Reactive Strike');
+    }
   });
 
   it('returns YZE SRD hits', async () => {
@@ -195,6 +201,12 @@ describe('lookupKeyword', () => {
     expect(hp.found).toBe(true);
     if (hp.found) {
       expect(hp.keyword).toBe('Hit Points');
+    }
+
+    const group = await lookupKeyword('group roll', 'year-zero-engine');
+    expect(group.found).toBe(true);
+    if (group.found) {
+      expect(group.keyword).toBe('Group Roll');
     }
   });
 });

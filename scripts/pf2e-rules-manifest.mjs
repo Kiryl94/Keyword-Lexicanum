@@ -500,4 +500,81 @@ export const PF2E_RULES = [
     summary: 'Jump horizontally or vertically up to your maximum Leap distance without a check.',
     ruleRef: 'Actions — Leap',
   },
+  {
+    keyword: 'Reactive Strike',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Reaction when a foe triggers it by moving or manipulating within reach; make a melee Strike against that creature.',
+    ruleRef: 'Actions — Reactive Strike',
+    aliases: ['attack of opportunity', 'aoo'],
+  },
+  {
+    keyword: 'Reach',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'How many squares away you can Strike with a melee weapon; most reach weapons extend your threat beyond adjacent squares.',
+    ruleRef: 'Equipment — Reach',
+  },
+  {
+    keyword: 'Confused',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Mentally disoriented; you may attack the wrong target or act unpredictably until the condition ends.',
+    ruleRef: 'Conditions — Confused',
+  },
+  {
+    keyword: 'Fascinated',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Captivated by something; you cannot use concentrate actions except to focus on the source until it ends.',
+    ruleRef: 'Conditions — Fascinated',
+  },
+  {
+    keyword: 'Petrified',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Turned to stone; you are immobilized, cannot act, and have object immunities until the effect is removed.',
+    ruleRef: 'Conditions — Petrified',
+  },
+  {
+    keyword: 'Fortitude Save',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Resist physical effects such as poison, disease, or bodily harm using your Constitution modifier.',
+    ruleRef: 'Core — Fortitude',
+    aliases: ['fortitude', 'fortitude saving throw'],
+  },
+  {
+    keyword: 'Reflex Save',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Dodge sudden danger such as explosions or traps using your Dexterity modifier.',
+    ruleRef: 'Core — Reflex',
+    aliases: ['reflex', 'reflex saving throw'],
+  },
+  {
+    keyword: 'Will Save',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Resist mental effects such as charms or fear using your Wisdom modifier.',
+    ruleRef: 'Core — Will',
+    aliases: ['will', 'will saving throw'],
+  },
+  {
+    keyword: 'Degree of Success',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Compare your roll to the DC: critical success beats by 10+, success meets DC, failure misses, critical failure fails by 10+.',
+    ruleRef: 'Core — Degrees of Success',
+    aliases: ['degrees of success'],
+  },
 ];

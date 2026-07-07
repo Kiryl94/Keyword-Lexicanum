@@ -1,9 +1,9 @@
 {
-  "version": "pf2e-remaster-v2",
+  "version": "pf2e-remaster-v3",
   "license": "ORC",
   "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
   "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
-  "entryCount": 66,
+  "entryCount": 75,
   "entries": [
     {
       "keyword": "Aid",
@@ -84,6 +84,19 @@
       "aliases": []
     },
     {
+      "keyword": "Confused",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Mentally disoriented; you may attack the wrong target or act unpredictably until the condition ends.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Confused",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Confused"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Cover",
       "phase": "Encounter",
       "applicability": "general",
@@ -147,6 +160,21 @@
         "section": "Conditions — Deafened"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Degree of Success",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Compare your roll to the DC: critical success beats by 10+, success meets DC, failure misses, critical failure fails by 10+.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Degrees of Success",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Degrees of Success"
+      },
+      "aliases": [
+        "degrees of success"
+      ]
     },
     {
       "keyword": "Demoralize",
@@ -227,6 +255,19 @@
       "aliases": []
     },
     {
+      "keyword": "Fascinated",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Captivated by something; you cannot use concentrate actions except to focus on the source until it ends.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Fascinated",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Fascinated"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Fatigued",
       "phase": "Exploration",
       "applicability": "general",
@@ -277,6 +318,22 @@
         "section": "Core — Flat Checks"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Fortitude Save",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Resist physical effects such as poison, disease, or bodily harm using your Constitution modifier.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Fortitude",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Fortitude"
+      },
+      "aliases": [
+        "fortitude",
+        "fortitude saving throw"
+      ]
     },
     {
       "keyword": "Free Action",
@@ -507,6 +564,19 @@
       "aliases": []
     },
     {
+      "keyword": "Petrified",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Turned to stone; you are immobilized, cannot act, and have object immunities until the effect is removed.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Petrified",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Petrified"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Point-Out",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -559,6 +629,19 @@
       "aliases": []
     },
     {
+      "keyword": "Reach",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "How many squares away you can Strike with a melee weapon; most reach weapons extend your threat beyond adjacent squares.",
+      "citation": "Pathfinder Player Core (Remaster) — Equipment — Reach",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Equipment — Reach"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Reaction",
       "phase": "Encounter",
       "applicability": "general",
@@ -570,6 +653,22 @@
         "section": "Core — Reactions"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Reactive Strike",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Reaction when a foe triggers it by moving or manipulating within reach; make a melee Strike against that creature.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Reactive Strike",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Reactive Strike"
+      },
+      "aliases": [
+        "attack of opportunity",
+        "aoo"
+      ]
     },
     {
       "keyword": "Ready",
@@ -596,6 +695,22 @@
         "section": "Actions — Recall Knowledge"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Reflex Save",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Dodge sudden danger such as explosions or traps using your Dexterity modifier.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Reflex",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Reflex"
+      },
+      "aliases": [
+        "reflex",
+        "reflex saving throw"
+      ]
     },
     {
       "keyword": "Restrained",
@@ -860,6 +975,22 @@
         "section": "Conditions — Unconscious"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Will Save",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Resist mental effects such as charms or fear using your Wisdom modifier.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Will",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Will"
+      },
+      "aliases": [
+        "will",
+        "will saving throw"
+      ]
     },
     {
       "keyword": "Wounded",

@@ -1,9 +1,9 @@
 {
-  "version": "yze-srd-v3",
+  "version": "yze-srd-v4",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 53,
+  "entryCount": 59,
   "entries": [
     {
       "keyword": "Ambush",
@@ -322,6 +322,21 @@
       "aliases": []
     },
     {
+      "keyword": "Group Roll",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "One character rolls for the whole group when everyone attempts the same task under similar conditions.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Group Rolls",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Group Rolls"
+      },
+      "aliases": [
+        "group rolls"
+      ]
+    },
+    {
       "keyword": "Heal",
       "phase": "Downtime",
       "applicability": "restricted",
@@ -389,6 +404,19 @@
       "aliases": []
     },
     {
+      "keyword": "Mixed Success",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Partial win on a roll — you achieve something but pay a cost, suffer a complication, or get a weaker effect.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Mixed Success",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Mixed Success"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Opposed Roll",
       "phase": "Encounter",
       "applicability": "general",
@@ -398,6 +426,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Opposed Rolls"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Overwatch",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Hold an aimed shot to interrupt a foe who enters your line of fire during the round.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Overwatch",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Overwatch"
       },
       "aliases": []
     },
@@ -452,6 +493,21 @@
         "section": "SRD — Ranged Combat"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Recon",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Scout an area ahead of the group to learn layout, threats, or ambush positions before committing.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Recon",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Recon"
+      },
+      "aliases": [
+        "reconnaissance"
+      ]
     },
     {
       "keyword": "Relieve Stress",
@@ -515,6 +571,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Scared"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Shelter",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Find or establish cover from weather, radiation, or pursuit during travel or downtime.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Shelter",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Shelter"
       },
       "aliases": []
     },
@@ -638,6 +707,19 @@
       "aliases": [
         "supplies"
       ]
+    },
+    {
+      "keyword": "Suppressive Fire",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Sustained shooting that pins foes behind cover, forcing them to risk harm to act freely.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Suppressive Fire",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Suppressive Fire"
+      },
+      "aliases": []
     },
     {
       "keyword": "Talent",

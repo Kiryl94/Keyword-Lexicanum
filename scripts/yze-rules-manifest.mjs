@@ -400,4 +400,54 @@ export const YZE_RULES = [
     summary: 'Low visibility that penalizes sight-based rolls and may hide threats until they close in.',
     ruleRef: 'SRD — Darkness',
   },
+  {
+    keyword: 'Group Roll',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'One character rolls for the whole group when everyone attempts the same task under similar conditions.',
+    ruleRef: 'SRD — Group Rolls',
+    aliases: ['group rolls'],
+  },
+  {
+    keyword: 'Suppressive Fire',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Sustained shooting that pins foes behind cover, forcing them to risk harm to act freely.',
+    ruleRef: 'SRD — Suppressive Fire',
+  },
+  {
+    keyword: 'Overwatch',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Hold an aimed shot to interrupt a foe who enters your line of fire during the round.',
+    ruleRef: 'SRD — Overwatch',
+  },
+  {
+    keyword: 'Mixed Success',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Partial win on a roll — you achieve something but pay a cost, suffer a complication, or get a weaker effect.',
+    ruleRef: 'SRD — Mixed Success',
+  },
+  {
+    keyword: 'Recon',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Scout an area ahead of the group to learn layout, threats, or ambush positions before committing.',
+    ruleRef: 'SRD — Recon',
+    aliases: ['reconnaissance'],
+  },
+  {
+    keyword: 'Shelter',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Find or establish cover from weather, radiation, or pursuit during travel or downtime.',
+    ruleRef: 'SRD — Shelter',
+  },
 ];
