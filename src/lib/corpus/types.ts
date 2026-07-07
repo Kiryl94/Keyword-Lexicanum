@@ -17,6 +17,8 @@ export type CorpusEntry = {
   /** Human-readable citation line (includes page when available). */
   citation: string;
   source?: CorpusSource;
+  /** Alternate lookup terms that resolve to this entry's keyword. */
+  aliases?: string[];
 };
 
 export type CorpusBundle = {

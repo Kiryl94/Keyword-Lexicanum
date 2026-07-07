@@ -33,16 +33,16 @@ export const GAME_SYSTEMS: GameSystem[] = [
   {
     id: 'pf2e-srd',
     label: 'Pathfinder 2e',
-    description: 'ORC-licensed Remaster SRD — corpus coming soon',
+    description: 'ORC-licensed Remaster SRD — curated core rules lookup',
     category: 'srd',
-    available: false,
+    available: true,
   },
   {
     id: 'year-zero-engine',
     label: 'Year Zero Engine',
-    description: 'Free League third-party license — corpus coming soon',
+    description: 'YZE Free Tabletop License SRD — core engine terms',
     category: 'srd',
-    available: false,
+    available: true,
   },
   {
     id: 'wh40k-11',

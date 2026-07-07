@@ -137,6 +137,8 @@ describe('lookupKeyword', () => {
   it('stamps corpusVersion on hits for every game system', async () => {
     const cases: Array<{ query: string; systemId: GameSystemId }> = [
       { query: 'advantage', systemId: 'dnd5e-srd' },
+      { query: 'strike', systemId: 'pf2e-srd' },
+      { query: 'push', systemId: 'year-zero-engine' },
       { query: 'lance', systemId: 'wh40k-11' },
       { query: 'engagement', systemId: 'starcraft-mini' },
     ];
@@ -147,6 +149,29 @@ describe('lookupKeyword', () => {
       if (result.found) {
         expect(result.corpusVersion).toBe(getCorpusVersion(systemId));
       }
+    }
+  });
+
+  it('returns PF2e hits for remaster terms and aliases', async () => {
+    const strike = await lookupKeyword('strike', 'pf2e-srd');
+    expect(strike.found).toBe(true);
+    if (strike.found) {
+      expect(strike.keyword).toBe('Strike');
+    }
+
+    const alias = await lookupKeyword('flat-footed', 'pf2e-srd');
+    expect(alias.found).toBe(true);
+    if (alias.found) {
+      expect(alias.keyword).toBe('Off-Guard');
+    }
+  });
+
+  it('returns YZE SRD hits', async () => {
+    const result = await lookupKeyword('push', 'year-zero-engine');
+    expect(result.found).toBe(true);
+    if (result.found) {
+      expect(result.keyword).toBe('Push');
+      expect(result.explanation.toLowerCase()).toContain('push');
     }
   });
 });

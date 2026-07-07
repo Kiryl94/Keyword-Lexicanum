@@ -9,7 +9,9 @@ Web app for in-context tabletop rules keyword lookup. **SRD** systems (D&D 5e, P
 ## Corpus builds
 
 ```powershell
-npm run corpus:build-dnd          # D&D SRD — committed, public-safe
+npm run corpus:build-dnd          # D&D SRD — committed, public-safe (requires network)
+npm run corpus:build-pf2e         # Pathfinder 2e ORC — committed, public-safe
+npm run corpus:build-yze          # Year Zero Engine FTL — committed, public-safe
 npm run corpus:build-wh40k        # GW Core Rules PDF → src/data/local/ (gitignored)
 npm run corpus:build-starcraft    # Archon rulebook PDF → src/data/local/ (gitignored)
 ```

@@ -197,10 +197,15 @@ describe('useSessionStore recent lookups', () => {
     useSessionStore.setState({ activeSystemId: DEFAULT_SYSTEM_ID });
     const { setActiveSystem } = useSessionStore.getState();
 
-    setActiveSystem('pf2e-srd');
+    setActiveSystem('bogus-system' as 'dnd5e-srd');
     expect(useSessionStore.getState().activeSystemId).toBe(DEFAULT_SYSTEM_ID);
+  });
 
+  it('activates available SRD systems', () => {
+    const { setActiveSystem } = useSessionStore.getState();
+    setActiveSystem('pf2e-srd');
+    expect(useSessionStore.getState().activeSystemId).toBe('pf2e-srd');
     setActiveSystem('year-zero-engine');
-    expect(useSessionStore.getState().activeSystemId).toBe(DEFAULT_SYSTEM_ID);
+    expect(useSessionStore.getState().activeSystemId).toBe('year-zero-engine');
   });
 });

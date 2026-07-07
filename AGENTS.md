@@ -19,7 +19,7 @@ Keyword Lexicanum is a Next.js 16 + TypeScript web app for tabletop keyword look
 
 ## Build, Test, and Development Commands
 
-Run `npm run dev` for local dev (http://localhost:3000). Run `npm run typecheck` and `npm test` before pushing — CI runs both on PRs to `main` (@.github/workflows/ci.yml). Run `npm run build` to verify production builds. Corpus rebuilds: `npm run corpus:build-dnd`, `corpus:build-wh40k`, `corpus:build-starcraft`, then `corpus:build-samples` for public-safe samples.
+Run `npm run dev` for local dev (http://localhost:3000). Run `npm run typecheck` and `npm test` before pushing — CI runs both on PRs to `main` (@.github/workflows/ci.yml). Run `npm run build` to verify production builds. Corpus rebuilds: `npm run corpus:build-dnd`, `corpus:build-pf2e`, `corpus:build-yze`, `corpus:build-wh40k`, `corpus:build-starcraft`, then `corpus:build-samples` for public-safe Demo samples.
 
 ## Coding Style & Naming Conventions
 

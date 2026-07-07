@@ -62,12 +62,38 @@ const SPELL_RULESETS = new Set([
   'srd_spells-casting',
 ]);
 
+const EXPLORATION_RULESETS = new Set([
+  'srd_exploration',
+  'srd_travel',
+  'srd_environment',
+  'srd_hazards',
+]);
+
+const SOCIAL_RULESETS = new Set([
+  'srd_social-interaction',
+]);
+
+const ADVENTURING_RULESETS = new Set([
+  'srd_adventuring',
+  'srd_equipment',
+  'srd_using-ability-scores',
+]);
+
 function inferPhaseMeta(ruleset) {
   if (COMBAT_RULESETS.has(ruleset)) {
     return { phase: 'Combat', applicability: 'restricted' };
   }
   if (SPELL_RULESETS.has(ruleset)) {
     return { phase: 'Spellcasting', applicability: 'restricted' };
+  }
+  if (EXPLORATION_RULESETS.has(ruleset)) {
+    return { phase: 'Exploration', applicability: 'restricted' };
+  }
+  if (SOCIAL_RULESETS.has(ruleset)) {
+    return { phase: 'Social', applicability: 'restricted' };
+  }
+  if (ADVENTURING_RULESETS.has(ruleset)) {
+    return { phase: 'Adventuring', applicability: 'general' };
   }
   if (ruleset === 'srd_conditions') {
     return { phase: 'Combat', applicability: 'general' };
@@ -159,7 +185,7 @@ async function main() {
   );
 
   const output = {
-    version: '5.2.1-lookup-v1',
+    version: '5.2.1-lookup-v2',
     license: 'CC-BY-4.0',
     attribution:
       'D&D System Reference Document v5.2.1, © Wizards of the Coast LLC. ' +

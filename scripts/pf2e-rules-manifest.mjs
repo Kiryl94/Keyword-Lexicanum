@@ -1,0 +1,322 @@
+/**
+ * Curated Pathfinder 2e Remaster (ORC) keyword manifest.
+ * Brief paraphrased summaries — not verbatim Paizo text.
+ * @see https://paizo.com/licenses
+ */
+
+export const PF2E_DOCUMENT_TITLE = 'Pathfinder Player Core (Remaster)';
+export const PF2E_DOCUMENT_URL = 'https://2e.aonprd.com/Rules.aspx';
+
+/** @type {import('../src/lib/corpus/types.ts').CorpusEntry[]} */
+export const PF2E_RULES = [
+  {
+    keyword: 'Off-Guard',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'You are flat-footed to attackers you cannot see or who have you at a serious positional disadvantage; they often gain benefits against your AC.',
+    ruleRef: 'Conditions — Off-Guard',
+    aliases: ['flat-footed', 'flat footed'],
+  },
+  {
+    keyword: 'Frightened',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Shaken by fear; your frightened value reduces all your checks and DCs until it decreases at the end of your turn.',
+    ruleRef: 'Conditions — Frightened',
+  },
+  {
+    keyword: 'Grabbed',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Held by another creature; you are off-guard and cannot move until you Escape or the grab ends.',
+    ruleRef: 'Conditions — Grabbed',
+  },
+  {
+    keyword: 'Immobilized',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'You cannot use any action with the move trait; external forces or magic pin you in place.',
+    ruleRef: 'Conditions — Immobilized',
+  },
+  {
+    keyword: 'Prone',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'You are lying on the ground; melee attacks against you can be easier while ranged attacks can be harder until you Stand.',
+    ruleRef: 'Conditions — Prone',
+  },
+  {
+    keyword: 'Restrained',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Bound or entangled; you are off-guard, cannot use move actions, and have limited options until you break free.',
+    ruleRef: 'Conditions — Restrained',
+  },
+  {
+    keyword: 'Stunned',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Dazed or reeling; you lose actions at the start of your turn based on your stunned value.',
+    ruleRef: 'Conditions — Stunned',
+  },
+  {
+    keyword: 'Sickened',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Nauseated or ill; your sickened value penalizes your checks and DCs until it decreases.',
+    ruleRef: 'Conditions — Sickened',
+  },
+  {
+    keyword: 'Slowed',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'You have fewer actions at the start of your turn because of hindering magic or effects.',
+    ruleRef: 'Conditions — Slowed',
+  },
+  {
+    keyword: 'Strike',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Make a melee or ranged attack with a weapon or unarmed attack; roll against the target’s AC.',
+    ruleRef: 'Actions — Strike',
+  },
+  {
+    keyword: 'Stride',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Move up to your Speed; basic movement action used to reposition on the battlefield.',
+    ruleRef: 'Actions — Stride',
+  },
+  {
+    keyword: 'Step',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Move 5 feet without triggering reactions that care about your movement leaving a square.',
+    ruleRef: 'Actions — Step',
+  },
+  {
+    keyword: 'Raise Shield',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Gain your shield’s circumstance bonus to AC until the start of your next turn.',
+    ruleRef: 'Actions — Raise Shield',
+  },
+  {
+    keyword: 'Cast a Spell',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Use the spellcasting action appropriate to the spell’s casting time to produce a magical effect.',
+    ruleRef: 'Actions — Cast a Spell',
+  },
+  {
+    keyword: 'Seek',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Scan for hidden or undetected creatures and objects using Perception.',
+    ruleRef: 'Actions — Seek',
+  },
+  {
+    keyword: 'Hide',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Attempt to become hidden using Stealth against observers’ Perception.',
+    ruleRef: 'Actions — Hide',
+  },
+  {
+    keyword: 'Sneak',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Move while trying to stay undetected, rolling Stealth against observers.',
+    ruleRef: 'Actions — Sneak',
+  },
+  {
+    keyword: 'Demoralize',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Use Intimidation to frighten a foe within range who can perceive you.',
+    ruleRef: 'Actions — Demoralize',
+  },
+  {
+    keyword: 'Trip',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Athletics check to knock a target prone if you succeed against their Reflex DC.',
+    ruleRef: 'Actions — Trip',
+  },
+  {
+    keyword: 'Grapple',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Athletics check to grab a foe; success imposes the grabbed condition until it ends.',
+    ruleRef: 'Actions — Grapple',
+  },
+  {
+    keyword: 'Disarm',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Athletics check to knock an item from a foe’s grasp on a success.',
+    ruleRef: 'Actions — Disarm',
+  },
+  {
+    keyword: 'Shove',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Athletics check to push a foe back 5 feet or knock them prone.',
+    ruleRef: 'Actions — Shove',
+  },
+  {
+    keyword: 'Multiple Attack Penalty',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Each attack action after the first in your turn imposes a cumulative penalty on later attack rolls until your turn ends.',
+    ruleRef: 'Combat — MAP',
+    aliases: ['map'],
+  },
+  {
+    keyword: 'Attack Roll',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'd20 roll plus modifiers versus a target’s AC (or other defense) to see if an attack hits.',
+    ruleRef: 'Core — Attack Rolls',
+  },
+  {
+    keyword: 'Saving Throw',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Fortitude, Reflex, or Will defense roll against an effect’s DC to resist harm or conditions.',
+    ruleRef: 'Core — Saving Throws',
+    aliases: ['save'],
+  },
+  {
+    keyword: 'Perception',
+    phase: 'Exploration',
+    applicability: 'general',
+    summary:
+      'Wisdom-based skill for noticing threats, searching, and rolling initiative in many encounters.',
+    ruleRef: 'Skills — Perception',
+  },
+  {
+    keyword: 'Recall Knowledge',
+    phase: 'Exploration',
+    applicability: 'general',
+    summary:
+      'Use a Lore or relevant skill to remember useful facts about a creature, object, or topic.',
+    ruleRef: 'Actions — Recall Knowledge',
+  },
+  {
+    keyword: 'Flanking',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'You and an ally opposite a foe give each other flanking, making the target off-guard to your melee attacks.',
+    ruleRef: 'Combat — Flanking',
+  },
+  {
+    keyword: 'Cover',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Terrain or obstacles grant a circumstance bonus to AC and Reflex saves against area effects.',
+    ruleRef: 'Combat — Cover',
+  },
+  {
+    keyword: 'Reaction',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Special action triggered by a defined event; you get one reaction per round unless an effect says otherwise.',
+    ruleRef: 'Core — Reactions',
+  },
+  {
+    keyword: 'Free Action',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary: 'Costs no actions to use; only available when a rule or ability explicitly grants it.',
+    ruleRef: 'Core — Free Actions',
+  },
+  {
+    keyword: 'Three-Action Economy',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'On your turn you usually have three actions and one reaction; most activities cost one or more actions.',
+    ruleRef: 'Core — Actions',
+    aliases: ['actions'],
+  },
+  {
+    keyword: 'Critical Success',
+    phase: 'General',
+    applicability: 'general',
+    summary: 'Beat the DC or AC by 10 or more (or roll a natural 20 on an attack) for an improved outcome.',
+    ruleRef: 'Core — Degrees of Success',
+  },
+  {
+    keyword: 'Critical Failure',
+    phase: 'General',
+    applicability: 'general',
+    summary: 'Miss the DC or AC by 10 or more (or roll a natural 1 on an attack) for a worse outcome.',
+    ruleRef: 'Core — Degrees of Success',
+  },
+  {
+    keyword: 'Persistent Damage',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Damage that repeats at the end of your turn until you succeed at a flat check to end it.',
+    ruleRef: 'Combat — Persistent Damage',
+  },
+  {
+    keyword: 'Shield Block',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Reaction when you take damage while your shield is raised to reduce damage with hardness.',
+    ruleRef: 'Feats — Shield Block',
+  },
+  {
+    keyword: 'Aid',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Prepare to help an ally; if your roll beats the DC, they gain a bonus to their check.',
+    ruleRef: 'Actions — Aid',
+  },
+  {
+    keyword: 'Ready',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Spend an action to define a trigger; you use a reaction when the trigger occurs.',
+    ruleRef: 'Actions — Ready',
+  },
+  {
+    keyword: 'Point-Out',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary: 'Indicate a hidden creature’s location so allies know where to target or seek.',
+    ruleRef: 'Actions — Point Out',
+  },
+  {
+    keyword: 'Treat Wounds',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary: 'Medicine activity to heal hit points outside combat over a span of time.',
+    ruleRef: 'Actions — Treat Wounds',
+  },
+  {
+    keyword: 'Identify Magic',
+    phase: 'Exploration',
+    applicability: 'general',
+    summary: 'Use a magical tradition skill to learn the properties of a magic item or effect.',
+    ruleRef: 'Actions — Identify Magic',
+  },
+];

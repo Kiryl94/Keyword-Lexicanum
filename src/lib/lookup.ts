@@ -1,7 +1,9 @@
 import { getCorpusVersion } from '@/lib/corpus/version';
 import { findDndCorpusEntry, getDndCorpusEntries } from '@/lib/corpus/dnd5e-srd';
+import { findPf2eCorpusEntry, getPf2eCorpusEntries } from '@/lib/corpus/pf2e-srd';
 import { findStarcraftCorpusEntry, getStarcraftCorpusEntries } from '@/lib/corpus/starcraft-core';
 import { findWh40kCorpusEntry, getWh40kCorpusEntries } from '@/lib/corpus/wh40k-core';
+import { findYzeCorpusEntry, getYzeCorpusEntries } from '@/lib/corpus/year-zero-engine';
 import type { CorpusEntry, CorpusSource, PhaseApplicability } from '@/lib/corpus/types';
 import type { GameSystemId } from '@/store/session';
 
@@ -31,23 +33,37 @@ function normalize(value: string) {
 }
 
 function getCorpusEntries(systemId: GameSystemId): CorpusEntry[] {
-  if (systemId === 'dnd5e-srd') {
-    return getDndCorpusEntries();
+  switch (systemId) {
+    case 'dnd5e-srd':
+      return getDndCorpusEntries();
+    case 'pf2e-srd':
+      return getPf2eCorpusEntries();
+    case 'year-zero-engine':
+      return getYzeCorpusEntries();
+    case 'wh40k-11':
+      return getWh40kCorpusEntries();
+    case 'starcraft-mini':
+      return getStarcraftCorpusEntries();
+    default:
+      return [];
   }
-  if (systemId === 'wh40k-11') {
-    return getWh40kCorpusEntries();
-  }
-  return getStarcraftCorpusEntries();
 }
 
 function findCorpusEntry(query: string, systemId: GameSystemId): CorpusEntry | undefined {
-  if (systemId === 'dnd5e-srd') {
-    return findDndCorpusEntry(query);
+  switch (systemId) {
+    case 'dnd5e-srd':
+      return findDndCorpusEntry(query);
+    case 'pf2e-srd':
+      return findPf2eCorpusEntry(query);
+    case 'year-zero-engine':
+      return findYzeCorpusEntry(query);
+    case 'wh40k-11':
+      return findWh40kCorpusEntry(query);
+    case 'starcraft-mini':
+      return findStarcraftCorpusEntry(query);
+    default:
+      return undefined;
   }
-  if (systemId === 'wh40k-11') {
-    return findWh40kCorpusEntry(query);
-  }
-  return findStarcraftCorpusEntry(query);
 }
 
 function getCorpusVersionForSystem(systemId: GameSystemId): string {

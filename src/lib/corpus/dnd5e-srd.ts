@@ -9,6 +9,22 @@ const DND_KEYWORD_ALIASES: Record<string, string> = {
   advantage: 'advantage and disadvantage',
   disadvantage: 'advantage and disadvantage',
   ac: 'armor class',
+  hp: 'hit points',
+  dc: 'difficulty class',
+  grapple: 'grappling',
+  dash: 'dashing',
+  dodge: 'dodging',
+  help: 'helping',
+  hide: 'hiding',
+  ready: 'readying an action',
+  search: 'searching',
+  concentration: 'concentration',
+  initiative: 'initiative',
+  opportunity: 'opportunity attacks',
+  'opportunity attack': 'opportunity attacks',
+  rest: 'resting',
+  'short rest': 'resting',
+  'long rest': 'resting',
 };
 
 const dndByKeyword = new Map(

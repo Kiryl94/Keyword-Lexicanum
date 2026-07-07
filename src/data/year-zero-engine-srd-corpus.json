@@ -1,0 +1,336 @@
+{
+  "version": "yze-srd-v1",
+  "license": "YZE-FTL",
+  "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
+  "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+  "entryCount": 25,
+  "entries": [
+    {
+      "keyword": "Attribute",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Core physical and mental stats (Strength, Agility, Wits, Empathy) that define what your character is good at.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Attributes",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Attributes"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Block",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Defensive reaction that spends an action to reduce or negate an incoming attack before it lands.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Block",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Block"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Chase",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Structured pursuit where participants roll to close distance or escape each round.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Chases",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Chases"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Condition",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Temporary state such as Exhausted or Scared that imposes penalties until cleared or reduced.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Conditions",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Conditions"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Cover",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Terrain that makes you harder to hit; attackers suffer penalties or lose dice.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Cover",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Cover"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Critical",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Exceptional success on a roll — often extra damage or a bonus effect depending on the game.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Critical Hits",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Critical Hits"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Damage",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Harm applied when an attack succeeds; may reduce hit points or inflict critical injuries.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Damage",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Damage"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Difficulty",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Target number of successes the GM sets for a task based on how hard the action is.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Difficulty",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Difficulty"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Dodge",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Defensive reaction to avoid an attack entirely on a successful opposed roll.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Dodge",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Dodge"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Experience",
+      "phase": "Downtime",
+      "applicability": "general",
+      "explanation": "Points earned from play spent to improve skills or gain talents between sessions.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Experience",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Experience"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Fast Action",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Quick action such as drawing a weapon, ducking, or reloading in many YZE games.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Actions",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Actions"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Gear",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Equipment and supplies tracked on your sheet; may provide bonuses or consumable uses.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Gear",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Gear"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Initiative",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Roll at the start of combat to determine turn order for the round.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Initiative",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Initiative"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Magic",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Supernatural powers defined by the specific YZE game; usually costs willpower or similar resource.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Magic",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Magic"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Push",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "After a roll you may push to reroll unset dice, but you suffer a condition or stress for the risk.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Push",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Push"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Range",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Distance bands (point-blank, short, long) that affect whether attacks are possible and how hard they are.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Range",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Range"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Skill",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Trained ability tied to an attribute; you roll attribute + skill when attempting related tasks.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Skills",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Skills"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Skill Roll",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Roll a pool of base dice plus skill dice; each six counts as a success toward the difficulty.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Dice Pool Rolls",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Dice Pool Rolls"
+      },
+      "aliases": [
+        "roll"
+      ]
+    },
+    {
+      "keyword": "Slow Action",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "One of your two actions per round; used for heavier activities like aiming or moving far.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Actions",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Actions"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Step Dice",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Alternate YZE mode using polyhedral step dice instead of d6 pools; used in several newer titles.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Step Dice",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Step Dice"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Stress",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Mental strain from horror or pressure; in many YZE games pushing rolls adds stress that must be relieved.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Stress",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Stress"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Talent",
+      "phase": "Downtime",
+      "applicability": "general",
+      "explanation": "Special ability or edge purchased with experience that bends the core rules in your favor.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Talents",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Talents"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Travel",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Overland movement between scenes; may consume time, supplies, and trigger encounters.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Travel",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Travel"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Vehicle",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Mounted or driven transport with its own stats, damage tracks, and maneuver rules.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Vehicles",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Vehicles"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Willpower",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Resource spent to resist fear, use powers, or push beyond normal limits in many YZE games.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Willpower",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Willpower"
+      },
+      "aliases": []
+    }
+  ]
+}

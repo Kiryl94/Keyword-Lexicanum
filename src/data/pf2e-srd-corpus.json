@@ -1,0 +1,551 @@
+{
+  "version": "pf2e-remaster-v1",
+  "license": "ORC",
+  "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
+  "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
+  "entryCount": 41,
+  "entries": [
+    {
+      "keyword": "Aid",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Prepare to help an ally; if your roll beats the DC, they gain a bonus to their check.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Aid",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Aid"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Attack Roll",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "d20 roll plus modifiers versus a target’s AC (or other defense) to see if an attack hits.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Attack Rolls",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Attack Rolls"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Cast a Spell",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Use the spellcasting action appropriate to the spell’s casting time to produce a magical effect.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Cast a Spell",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Cast a Spell"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Cover",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Terrain or obstacles grant a circumstance bonus to AC and Reflex saves against area effects.",
+      "citation": "Pathfinder Player Core (Remaster) — Combat — Cover",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Combat — Cover"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Critical Failure",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Miss the DC or AC by 10 or more (or roll a natural 1 on an attack) for a worse outcome.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Degrees of Success",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Degrees of Success"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Critical Success",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Beat the DC or AC by 10 or more (or roll a natural 20 on an attack) for an improved outcome.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Degrees of Success",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Degrees of Success"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Demoralize",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Use Intimidation to frighten a foe within range who can perceive you.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Demoralize",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Demoralize"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Disarm",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Athletics check to knock an item from a foe’s grasp on a success.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Disarm",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Disarm"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Flanking",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "You and an ally opposite a foe give each other flanking, making the target off-guard to your melee attacks.",
+      "citation": "Pathfinder Player Core (Remaster) — Combat — Flanking",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Combat — Flanking"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Free Action",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Costs no actions to use; only available when a rule or ability explicitly grants it.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Free Actions",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Free Actions"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Frightened",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Shaken by fear; your frightened value reduces all your checks and DCs until it decreases at the end of your turn.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Frightened",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Frightened"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Grabbed",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Held by another creature; you are off-guard and cannot move until you Escape or the grab ends.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Grabbed",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Grabbed"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Grapple",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Athletics check to grab a foe; success imposes the grabbed condition until it ends.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Grapple",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Grapple"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Hide",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Attempt to become hidden using Stealth against observers’ Perception.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Hide",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Hide"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Identify Magic",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Use a magical tradition skill to learn the properties of a magic item or effect.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Identify Magic",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Identify Magic"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Immobilized",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "You cannot use any action with the move trait; external forces or magic pin you in place.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Immobilized",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Immobilized"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Multiple Attack Penalty",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Each attack action after the first in your turn imposes a cumulative penalty on later attack rolls until your turn ends.",
+      "citation": "Pathfinder Player Core (Remaster) — Combat — MAP",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Combat — MAP"
+      },
+      "aliases": [
+        "map"
+      ]
+    },
+    {
+      "keyword": "Off-Guard",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "You are flat-footed to attackers you cannot see or who have you at a serious positional disadvantage; they often gain benefits against your AC.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Off-Guard",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Off-Guard"
+      },
+      "aliases": [
+        "flat-footed",
+        "flat footed"
+      ]
+    },
+    {
+      "keyword": "Perception",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Wisdom-based skill for noticing threats, searching, and rolling initiative in many encounters.",
+      "citation": "Pathfinder Player Core (Remaster) — Skills — Perception",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Skills — Perception"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Persistent Damage",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Damage that repeats at the end of your turn until you succeed at a flat check to end it.",
+      "citation": "Pathfinder Player Core (Remaster) — Combat — Persistent Damage",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Combat — Persistent Damage"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Point-Out",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Indicate a hidden creature’s location so allies know where to target or seek.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Point Out",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Point Out"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Prone",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "You are lying on the ground; melee attacks against you can be easier while ranged attacks can be harder until you Stand.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Prone",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Prone"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Raise Shield",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Gain your shield’s circumstance bonus to AC until the start of your next turn.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Raise Shield",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Raise Shield"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Reaction",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Special action triggered by a defined event; you get one reaction per round unless an effect says otherwise.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Reactions",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Reactions"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Ready",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Spend an action to define a trigger; you use a reaction when the trigger occurs.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Ready",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Ready"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Recall Knowledge",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Use a Lore or relevant skill to remember useful facts about a creature, object, or topic.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Recall Knowledge",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Recall Knowledge"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Restrained",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Bound or entangled; you are off-guard, cannot use move actions, and have limited options until you break free.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Restrained",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Restrained"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Saving Throw",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Fortitude, Reflex, or Will defense roll against an effect’s DC to resist harm or conditions.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Saving Throws",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Saving Throws"
+      },
+      "aliases": [
+        "save"
+      ]
+    },
+    {
+      "keyword": "Seek",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Scan for hidden or undetected creatures and objects using Perception.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Seek",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Seek"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Shield Block",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Reaction when you take damage while your shield is raised to reduce damage with hardness.",
+      "citation": "Pathfinder Player Core (Remaster) — Feats — Shield Block",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Feats — Shield Block"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Shove",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Athletics check to push a foe back 5 feet or knock them prone.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Shove",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Shove"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Sickened",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Nauseated or ill; your sickened value penalizes your checks and DCs until it decreases.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Sickened",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Sickened"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Slowed",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "You have fewer actions at the start of your turn because of hindering magic or effects.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Slowed",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Slowed"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Sneak",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Move while trying to stay undetected, rolling Stealth against observers.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Sneak",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Sneak"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Step",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Move 5 feet without triggering reactions that care about your movement leaving a square.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Step",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Step"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Stride",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Move up to your Speed; basic movement action used to reposition on the battlefield.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Stride",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Stride"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Strike",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Make a melee or ranged attack with a weapon or unarmed attack; roll against the target’s AC.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Strike",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Strike"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Stunned",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Dazed or reeling; you lose actions at the start of your turn based on your stunned value.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Stunned",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Stunned"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Three-Action Economy",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "On your turn you usually have three actions and one reaction; most activities cost one or more actions.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Actions",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Actions"
+      },
+      "aliases": [
+        "actions"
+      ]
+    },
+    {
+      "keyword": "Treat Wounds",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Medicine activity to heal hit points outside combat over a span of time.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Treat Wounds",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Treat Wounds"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Trip",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Athletics check to knock a target prone if you succeed against their Reflex DC.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Trip",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Trip"
+      },
+      "aliases": []
+    }
+  ]
+}
