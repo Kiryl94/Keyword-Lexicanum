@@ -15,7 +15,6 @@ const eslintConfig = defineConfig([
     // Archived / bootstrap scaffolds (not part of active web app):
     "src.scaffold/**",
     "scripts.scaffold/**",
-    "mobile-expo-archive/**",
   ]),
 ]);
 

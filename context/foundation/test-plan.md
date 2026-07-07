@@ -66,7 +66,7 @@ orchestrator updates Status as artifacts appear on disk.
 | # | Phase name | Goal (one line) | Risks covered | Test types | Status | Change folder |
 |---|------------|-----------------|---------------|------------|--------|---------------|
 | 1 | System isolation & lookup grounding | Prove system switch rebinds corpus + recents; lookup stays corpus-grounded | #1, #3 | unit + integration | complete | testing-system-isolation-lookup-grounding |
-| 2 | Corpus pipeline regression floor | Catch silent keyword drops and wrong public corpus targets at build time | #2, #5 | integration | not started | — |
+| 2 | Corpus pipeline regression floor | Catch silent keyword drops and wrong public corpus targets at build time | #2, #5 | integration | complete | testing-corpus-pipeline-regression |
 | 3 | Result card content bounds | Assert minimal table-side presentation — no debug leakage on mobile | #4 | component unit | not started | — |
 | 4 | CI quality gates | Lock lint + production build in CI alongside existing typecheck/test | cross-cutting | gates | not started | — |
 
@@ -118,7 +118,10 @@ relevant rollout phase ships.
 
 ### 6.2 Adding an integration test (corpus build)
 
-TBD — see §3 Phase 2 for manifest-vs-output keyword count guard pattern.
+- **Location**: `scripts/*.test.mjs` beside build utilities.
+- **Pattern**: assert manifest length === sample `entryCount` === `entries.length`; assert Demo samples use `license: sample-only`; assert tsconfig/next aliases point at `*.sample.json`.
+- **Reference test**: `scripts/sample-corpus-guard.test.mjs`
+- **Run locally**: `npm test`
 
 ### 6.3 Adding a component test (result presentation)
 

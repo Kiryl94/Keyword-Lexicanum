@@ -3,30 +3,70 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import type { LookupHit } from '@/lib/lookup';
 import { getCorpusVersion } from '@/lib/corpus/version';
 
-export type GameSystemId = 'dnd5e-srd' | 'wh40k-11' | 'starcraft-mini';
+export type GameSystemId =
+  | 'dnd5e-srd'
+  | 'pf2e-srd'
+  | 'year-zero-engine'
+  | 'wh40k-11'
+  | 'starcraft-mini';
+
+/** SRD = open-licensed, full lookup. Demo = public sample data only, pending publisher permission. */
+export type GameSystemCategory = 'srd' | 'demo';
 
 export type GameSystem = {
   id: GameSystemId;
   label: string;
   description: string;
+  category: GameSystemCategory;
+  /** When false, shown in the picker as coming soon and cannot be selected. */
+  available: boolean;
 };
 
 export const GAME_SYSTEMS: GameSystem[] = [
   {
     id: 'dnd5e-srd',
     label: 'D&D 5e (SRD)',
-    description: 'Basic rules / SRD corpus for v1',
+    description: 'Open-licensed SRD 5.2.1 corpus (CC BY 4.0)',
+    category: 'srd',
+    available: true,
+  },
+  {
+    id: 'pf2e-srd',
+    label: 'Pathfinder 2e',
+    description: 'ORC-licensed Remaster SRD — corpus coming soon',
+    category: 'srd',
+    available: false,
+  },
+  {
+    id: 'year-zero-engine',
+    label: 'Year Zero Engine',
+    description: 'Free League third-party license — corpus coming soon',
+    category: 'srd',
+    available: false,
   },
   {
     id: 'wh40k-11',
     label: 'Warhammer 40k (11th ed)',
-    description: '11th ed core rules — build locally from GW free PDF',
+    description: 'Demo — public sample data only, pending GW permission',
+    category: 'demo',
+    available: true,
   },
   {
     id: 'starcraft-mini',
     label: 'StarCraft TMG',
-    description: 'Core rules — build locally from Archon free PDF',
+    description: 'Demo — public sample data only, pending Archon permission',
+    category: 'demo',
+    available: true,
   },
+];
+
+export const GAME_SYSTEM_CATEGORIES: {
+  category: GameSystemCategory;
+  label: string;
+  hint: string;
+}[] = [
+  { category: 'srd', label: 'SRD', hint: 'Open-licensed — full lookup' },
+  { category: 'demo', label: 'Demo', hint: 'Public sample data only' },
 ];
 
 export const DEFAULT_SYSTEM_ID: GameSystemId = 'dnd5e-srd';
@@ -128,9 +168,11 @@ export function sanitizePersistedProfile(state: {
   recentLookupsBySystem: RecentLookupsBySystem;
   recentLookupCacheBySystem: LookupCacheBySystem;
 } {
-  const activeSystemId = isValidGameSystemId(state.activeSystemId)
-    ? state.activeSystemId
-    : DEFAULT_SYSTEM_ID;
+  const activeSystemId =
+    isValidGameSystemId(state.activeSystemId) &&
+    GAME_SYSTEMS.find((s) => s.id === state.activeSystemId)?.available
+      ? state.activeSystemId
+      : DEFAULT_SYSTEM_ID;
 
   const recentLookupsBySystem = sanitizeRecentLookupsBySystem(
     state.recentLookupsBySystem,
@@ -164,7 +206,11 @@ export const useSessionStore = create<SessionState>()(
       activeSystemId: DEFAULT_SYSTEM_ID,
       recentLookupsBySystem: {},
       recentLookupCacheBySystem: {},
-      setActiveSystem: (id) => set({ activeSystemId: id }),
+      setActiveSystem: (id) => {
+        const system = GAME_SYSTEMS.find((s) => s.id === id);
+        if (!system?.available) return;
+        set({ activeSystemId: id });
+      },
       recordSuccessfulLookup: (systemId, hit) =>
         set((state) => {
           const recents = state.recentLookupsBySystem[systemId] ?? [];

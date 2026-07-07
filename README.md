@@ -1,10 +1,10 @@
 # Keyword Lexicanum
 
-Web app for in-context tabletop rules keyword lookup (D&D, WH40k, Starcraft Miniature Game).
+Web app for in-context tabletop rules keyword lookup. **SRD** systems (D&D 5e, Pathfinder 2e and Year Zero Engine planned) ship full open-licensed corpora; **Demo** systems (WH40k, StarCraft) use public sample data only until publisher permission.
 
-**Platform:** responsive web (phone browser at the table). Native mobile is a long-term option.
+**Platform:** responsive web — phone and desktop browsers at the table.
 
-**Live preview:** https://keyword-lexicanum.vercel.app (D&D corpus + sample miniature-system placeholders; see distribution policy before public relaunch with full GW/Archon text)
+**Live preview:** https://keyword-lexicanum.vercel.app
 
 ## Corpus builds
 
@@ -16,7 +16,7 @@ npm run corpus:build-starcraft    # Archon rulebook PDF → src/data/local/ (git
 
 After building WH40k or StarCraft locally, copy env paths from script output into `.env.local` (see `.env.local.example`).
 
-**Distribution:** see `context/foundation/distribution-policy.md` — do not publish GW/Archon embedded rules publicly without publisher consultation.
+**Distribution:** see `context/foundation/distribution-policy.md` — SRD tier is public-safe; Demo tier uses samples only until GW/Archon permission.
 
 ## Run locally
 
@@ -53,7 +53,6 @@ src/app/        # System picker, keyword lookup, phase browse
 src/lib/        # lookup + sample corpus
 src/store/      # Zustand session state (browser memory)
 context/        # PRD, shape-notes, tech-stack
-mobile-expo-archive/  # prior Expo scaffold (archived)
 ```
 
 ## Foundation docs

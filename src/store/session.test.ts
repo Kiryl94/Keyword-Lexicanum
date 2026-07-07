@@ -22,6 +22,8 @@ const sampleHit: LookupHit = {
 describe('isValidGameSystemId', () => {
   it('accepts all PRD game systems', () => {
     expect(isValidGameSystemId('dnd5e-srd')).toBe(true);
+    expect(isValidGameSystemId('pf2e-srd')).toBe(true);
+    expect(isValidGameSystemId('year-zero-engine')).toBe(true);
     expect(isValidGameSystemId('wh40k-11')).toBe(true);
     expect(isValidGameSystemId('starcraft-mini')).toBe(true);
   });
@@ -189,5 +191,16 @@ describe('useSessionStore recent lookups', () => {
     });
 
     expect(getCachedLookup('dnd5e-srd', 'advantage')).toBeUndefined();
+  });
+
+  it('does not activate coming-soon SRD systems', () => {
+    useSessionStore.setState({ activeSystemId: DEFAULT_SYSTEM_ID });
+    const { setActiveSystem } = useSessionStore.getState();
+
+    setActiveSystem('pf2e-srd');
+    expect(useSessionStore.getState().activeSystemId).toBe(DEFAULT_SYSTEM_ID);
+
+    setActiveSystem('year-zero-engine');
+    expect(useSessionStore.getState().activeSystemId).toBe(DEFAULT_SYSTEM_ID);
   });
 });

@@ -6,7 +6,7 @@ export type SystemIconAsset = {
 };
 
 /** Official / canonical marks sourced from Wikimedia Commons and publisher branding. */
-export const SYSTEM_ICON_ASSETS: Record<GameSystemId, SystemIconAsset> = {
+export const SYSTEM_ICON_ASSETS: Partial<Record<GameSystemId, SystemIconAsset>> = {
   'dnd5e-srd': {
     src: '/icons/systems/dnd5e-srd-mark.png',
     label: 'Dungeons & Dragons 5th Edition',

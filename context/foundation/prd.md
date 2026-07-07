@@ -132,7 +132,6 @@ Single user; no login; data lives in the browser only (localStorage / IndexedDB)
 - **No real-time multi-player table sync** — no shared session state across devices at the table.
 - **No D&D extension manuals in v1** — basic/SRD only; paid extension books deferred.
 - **No voice-first input in v1** — text and guided suggestions only.
-- **No native mobile app in v1** — ship as a responsive web app first; Expo/React Native or installable PWA is a long-term option.
 - **No user accounts or cloud sync in v1** — browser-local profile only.
 
 ## Open Questions

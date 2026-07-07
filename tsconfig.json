@@ -29,9 +29,7 @@
   ],
   "exclude": [
     "node_modules",
-    "mobile-expo-archive",
     "src.scaffold",
-    "**/*.scaffold",
-    ".expo"
+    "**/*.scaffold"
   ]
 }

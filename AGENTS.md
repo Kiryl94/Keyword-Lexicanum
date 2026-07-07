@@ -5,8 +5,7 @@ Keyword Lexicanum is a Next.js 16 + TypeScript web app for tabletop keyword look
 ## Hard rules
 
 - Never commit full WH40k or StarCraft corpus JSON from `src/data/local/` — gitignored, personal-use only per @context/foundation/distribution-policy.md.
-- Public bundles must use sample corpora (`wh40k-core-corpus.sample.json`, `starcraft-core-corpus.sample.json`) unless publisher permission exists.
-- Do not edit `mobile-expo-archive/` — archived Expo scaffold, excluded from active builds via @tsconfig.json and @eslint.config.mjs.
+- Public bundles must use sample corpora for **Demo** systems (`wh40k-core-corpus.sample.json`, `starcraft-core-corpus.sample.json`) unless publisher permission exists. **SRD** systems ship full open-licensed corpora.
 
 ## Project Structure & Module Organization
 
