@@ -52,11 +52,16 @@ const COMBAT_RULESETS = new Set([
   'srd_actions-in-combat',
   'srd_attacking',
   'srd_combat',
+  'srd_combat-sequence',
   'srd_cover',
   'srd_damage-and-healing',
   'srd_initiative',
   'srd_movement-and-position',
+  'srd_movement',
+  'srd_mounted-combat',
   'srd_underwater-combat',
+  'srd-2024_combat',
+  'srd-2024_damage-and-healing',
 ]);
 
 const SPELL_RULESETS = new Set([
@@ -70,19 +75,56 @@ const EXPLORATION_RULESETS = new Set([
   'srd_travel',
   'srd_environment',
   'srd_hazards',
+  'srd_diseases',
+  'srd_traps',
+  'srd_poisons',
+  'srd-2024_exploration',
 ]);
 
 const SOCIAL_RULESETS = new Set([
   'srd_social-interaction',
+  'srd_inspiration',
+  'srd-2024_social-interaction',
 ]);
+
+const DOWNTIME_RULESETS = new Set(['srd_between-adventures']);
 
 const ADVENTURING_RULESETS = new Set([
   'srd_adventuring',
   'srd_equipment',
   'srd_using-ability-scores',
+  'srd_magic-items',
+  'srd_weapons',
+  'srd_armor',
+  'srd_expenses',
+  'srd_coins',
+  'srd_objects',
+  'srd_mounts-and-vehicles',
 ]);
 
+const CHARACTER_RULESETS = new Set([
+  'srd_backgrounds',
+  'srd_races',
+  'srd_alignment',
+  'srd_multiclassing',
+  'srd-2024_multiclassing',
+  'srd-2024_create-your-character',
+]);
+
+const CORE_RULESETS = new Set([
+  'srd_abilities',
+  'srd-2024_the-six-abilities',
+  'srd-2024_d20-tests',
+  'srd-2024_proficiency',
+]);
+
+/** Monster-building stat blocks — not player keyword lookup. */
+const SKIP_RULESETS = new Set(['srd_monsters', 'srd_pantheons', 'srd_planes', 'srd_madness']);
+
 function inferPhaseMeta(ruleset) {
+  if (SKIP_RULESETS.has(ruleset)) {
+    return null;
+  }
   if (COMBAT_RULESETS.has(ruleset)) {
     return { phase: 'Combat', applicability: 'restricted' };
   }
@@ -95,8 +137,17 @@ function inferPhaseMeta(ruleset) {
   if (SOCIAL_RULESETS.has(ruleset)) {
     return { phase: 'Social', applicability: 'restricted' };
   }
+  if (DOWNTIME_RULESETS.has(ruleset)) {
+    return { phase: 'Downtime', applicability: 'restricted' };
+  }
   if (ADVENTURING_RULESETS.has(ruleset)) {
     return { phase: 'Adventuring', applicability: 'general' };
+  }
+  if (CHARACTER_RULESETS.has(ruleset)) {
+    return { phase: 'Character', applicability: 'general' };
+  }
+  if (CORE_RULESETS.has(ruleset)) {
+    return { phase: 'General', applicability: 'general' };
   }
   if (ruleset === 'srd_conditions') {
     return { phase: 'Combat', applicability: 'general' };
@@ -186,7 +237,10 @@ async function main() {
     const explanation = cleanDndExplanation(rawExplanation);
     if (!explanation || explanation.length < 15) continue;
 
-    const { phase, applicability } = inferPhaseMeta(rule.ruleset);
+    const phaseMeta = inferPhaseMeta(rule.ruleset);
+    if (!phaseMeta) continue;
+
+    const { phase, applicability } = phaseMeta;
     const open5eUrl = `https://open5e.com/search/?query=${encodeURIComponent(keyword)}`;
     const { source, citation } = dndRuleSource(keyword, open5eUrl);
     upsertEntry({
@@ -224,7 +278,7 @@ async function main() {
   );
 
   const output = {
-    version: '5.2.1-lookup-v3',
+    version: '5.2.1-lookup-v4',
     license: 'CC-BY-4.0',
     attribution:
       'D&D System Reference Document v5.2.1, © Wizards of the Coast LLC. ' +

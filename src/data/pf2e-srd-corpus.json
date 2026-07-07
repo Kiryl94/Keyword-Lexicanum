@@ -1,9 +1,9 @@
 {
-  "version": "pf2e-remaster-v9",
+  "version": "pf2e-remaster-v10",
   "license": "ORC",
   "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
   "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
-  "entryCount": 106,
+  "entryCount": 111,
   "entries": [
     {
       "keyword": "Administer First Aid",
@@ -283,6 +283,21 @@
         "section": "Actions — Crawl"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Create a Diversion",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Distract foes so allies can slip away or set up a better position.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Create a Diversion",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Create a Diversion"
+      },
+      "aliases": [
+        "diversion"
+      ]
     },
     {
       "keyword": "Critical Failure",
@@ -801,6 +816,32 @@
       "aliases": []
     },
     {
+      "keyword": "Lie",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Deception check to convince someone of a falsehood without being caught.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Lie",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Lie"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Manipulate",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Action trait requiring at least one free hand to interact with objects.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Manipulate",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Manipulate"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Multiple Attack Penalty",
       "phase": "Encounter",
       "applicability": "general",
@@ -1061,6 +1102,21 @@
       ]
     },
     {
+      "keyword": "Scout",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Survey ahead for danger or points of interest while the party travels.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Scout",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Scout"
+      },
+      "aliases": [
+        "scouting"
+      ]
+    },
+    {
       "keyword": "Seek",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -1226,6 +1282,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Conditions — Stupefied"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Subsist",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Survival check to find food and water for yourself in the wild.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Subsist",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Subsist"
       },
       "aliases": []
     },

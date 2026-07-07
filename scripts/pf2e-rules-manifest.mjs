@@ -829,4 +829,46 @@ export const PF2E_RULES = [
       'Weapon trait letting you attack multiple adjacent foes with one Strike.',
     ruleRef: 'Equipment — Sweep',
   },
+  {
+    keyword: 'Lie',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Deception check to convince someone of a falsehood without being caught.',
+    ruleRef: 'Actions — Lie',
+  },
+  {
+    keyword: 'Create a Diversion',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Distract foes so allies can slip away or set up a better position.',
+    ruleRef: 'Actions — Create a Diversion',
+    aliases: ['diversion'],
+  },
+  {
+    keyword: 'Manipulate',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Action trait requiring at least one free hand to interact with objects.',
+    ruleRef: 'Core — Manipulate',
+  },
+  {
+    keyword: 'Scout',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Survey ahead for danger or points of interest while the party travels.',
+    ruleRef: 'Actions — Scout',
+    aliases: ['scouting'],
+  },
+  {
+    keyword: 'Subsist',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Survival check to find food and water for yourself in the wild.',
+    ruleRef: 'Actions — Subsist',
+  },
 ];

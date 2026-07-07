@@ -163,18 +163,18 @@ describe('lookupKeyword', () => {
     }
   });
 
-  it('stamps pf2e-remaster-v9 and yze-srd-v10 on expanded SRD hits', async () => {
+  it('stamps pf2e-remaster-v10 and yze-srd-v11 on expanded SRD hits', async () => {
     const pf2e = await lookupKeyword('degree of success', 'pf2e-srd');
     expect(pf2e.found).toBe(true);
     if (pf2e.found) {
-      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v9');
+      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v10');
       expect(pf2e.keyword).toBe('Degree of Success');
     }
 
     const yze = await lookupKeyword('suppressive fire', 'year-zero-engine');
     expect(yze.found).toBe(true);
     if (yze.found) {
-      expect(yze.corpusVersion).toBe('yze-srd-v10');
+      expect(yze.corpusVersion).toBe('yze-srd-v11');
       expect(yze.keyword).toBe('Suppressive Fire');
     }
 
@@ -212,6 +212,79 @@ describe('lookupKeyword', () => {
     expect(loot.found).toBe(true);
     if (loot.found) {
       expect(loot.keyword).toBe('Loot');
+    }
+  });
+
+  it('stamps 5.2.1-lookup-v4 on D&D hits after phase deepen', async () => {
+    const result = await lookupKeyword('advantage', 'dnd5e-srd');
+    expect(result.found).toBe(true);
+    if (result.found) {
+      expect(result.corpusVersion).toBe('5.2.1-lookup-v4');
+    }
+  });
+
+  it('resolves D&D deepen aliases for death saves and shove', async () => {
+    const death = await lookupKeyword('death save', 'dnd5e-srd');
+    expect(death.found).toBe(true);
+    if (death.found) {
+      expect(death.keyword).toBe('Dropping to 0 Hit Points');
+    }
+
+    const shove = await lookupKeyword('shove', 'dnd5e-srd');
+    expect(shove.found).toBe(true);
+    if (shove.found) {
+      expect(shove.keyword).toBe('Shoving a Creature');
+    }
+
+    const save = await lookupKeyword('save', 'dnd5e-srd');
+    expect(save.found).toBe(true);
+    if (save.found) {
+      expect(save.keyword).toBe('Saving Throws');
+    }
+  });
+
+  it('returns PF2e v11 social and exploration keywords', async () => {
+    const lie = await lookupKeyword('lie', 'pf2e-srd');
+    expect(lie.found).toBe(true);
+    if (lie.found) {
+      expect(lie.keyword).toBe('Lie');
+    }
+
+    const scout = await lookupKeyword('scouting', 'pf2e-srd');
+    expect(scout.found).toBe(true);
+    if (scout.found) {
+      expect(scout.keyword).toBe('Scout');
+    }
+
+    const manipulate = await lookupKeyword('manipulate', 'pf2e-srd');
+    expect(manipulate.found).toBe(true);
+    if (manipulate.found) {
+      expect(manipulate.keyword).toBe('Manipulate');
+    }
+
+    expect(await lookupKeyword('lie', 'dnd5e-srd')).toEqual({
+      found: false,
+      query: 'lie',
+    });
+  });
+
+  it('returns YZE v11 prone and full-auto keywords', async () => {
+    const prone = await lookupKeyword('prone', 'year-zero-engine');
+    expect(prone.found).toBe(true);
+    if (prone.found) {
+      expect(prone.keyword).toBe('Prone');
+    }
+
+    const fullAuto = await lookupKeyword('full-auto', 'year-zero-engine');
+    expect(fullAuto.found).toBe(true);
+    if (fullAuto.found) {
+      expect(fullAuto.keyword).toBe('Full Auto');
+    }
+
+    const water = await lookupKeyword('water', 'year-zero-engine');
+    expect(water.found).toBe(true);
+    if (water.found) {
+      expect(water.keyword).toBe('Water');
     }
   });
 
@@ -531,6 +604,12 @@ describe('getKeywordSuggestions', () => {
     expect(getKeywordSuggestions('count', 'dnd5e-srd')).not.toContain('Counteract');
   });
 
+  it('suggests PF2e Scout and YZE Full Auto from v11 prefixes', () => {
+    expect(getKeywordSuggestions('sco', 'pf2e-srd')).toContain('Scout');
+    expect(getKeywordSuggestions('ful', 'year-zero-engine')).toContain('Full Auto');
+    expect(getKeywordSuggestions('sco', 'dnd5e-srd')).not.toContain('Scout');
+  });
+
   it('suggests PF2e Gather Information and YZE Grapple from v10 prefixes', () => {
     expect(getKeywordSuggestions('gat', 'pf2e-srd')).toContain('Gather Information');
     expect(getKeywordSuggestions('gra', 'year-zero-engine')).toContain('Grapple');
@@ -574,6 +653,21 @@ describe('getPhasesForSystem', () => {
     expect(phases).toContain('Charge Phase');
     expect(new Set(phases).size).toBe(phases.length);
     expect(phases).toEqual([...phases].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })));
+  });
+
+  it('includes Downtime and Social for D&D after phase deepen', () => {
+    const phases = getPhasesForSystem('dnd5e-srd');
+    expect(phases).toContain('Downtime');
+    expect(phases).toContain('Social');
+    expect(phases).toContain('Combat');
+  });
+
+  it('returns D&D downtime keywords from the deepened corpus', () => {
+    const keywords = getKeywordsForPhase('downtime', 'dnd5e-srd');
+    expect(keywords).toContain('Downtime Activities');
+    expect(keywords).toContain('Crafting');
+    expect(keywords).toContain('Recuperating');
+    expect(keywords).not.toContain('Strike');
   });
 
   it('includes Encounter and Exploration for Pathfinder 2e SRD', () => {
@@ -621,6 +715,8 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Track');
     expect(keywords).toContain('Gather Information');
     expect(keywords).toContain('Avoid Notice');
+    expect(keywords).toContain('Scout');
+    expect(keywords).toContain('Subsist');
     expect(keywords).not.toContain('Reactive Strike');
   });
 
@@ -648,6 +744,8 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Burst');
     expect(keywords).toContain('Grapple');
     expect(keywords).toContain('Knock Down');
+    expect(keywords).toContain('Full Auto');
+    expect(keywords).toContain('Prone');
     expect(keywords).not.toContain('Strike');
   });
 
@@ -671,6 +769,7 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Food');
     expect(keywords).toContain('Trail');
     expect(keywords).toContain('Disease');
+    expect(keywords).toContain('Water');
     expect(keywords).not.toContain('Detect Magic');
   });
 

@@ -653,4 +653,37 @@ export const YZE_RULES = [
     ruleRef: 'SRD — Knock Down',
     aliases: ['knockdown'],
   },
+  {
+    keyword: 'Prone',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Lying on the ground; harder to move and fight until you stand up.',
+    ruleRef: 'SRD — Prone',
+  },
+  {
+    keyword: 'Stunned',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Reeling from a blow or shock; lose actions until you recover.',
+    ruleRef: 'SRD — Stunned',
+  },
+  {
+    keyword: 'Water',
+    phase: 'Exploration',
+    applicability: 'general',
+    summary:
+      'Clean drinking water offsets thirst; scarcity forces hard choices on the march.',
+    ruleRef: 'SRD — Water',
+  },
+  {
+    keyword: 'Full Auto',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Spray automatic fire across an arc, chewing through ammo to suppress an area.',
+    ruleRef: 'SRD — Full Auto',
+    aliases: ['full-auto'],
+  },
 ];

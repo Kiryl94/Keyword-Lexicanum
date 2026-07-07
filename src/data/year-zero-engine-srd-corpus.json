@@ -1,9 +1,9 @@
 {
-  "version": "yze-srd-v10",
+  "version": "yze-srd-v11",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 83,
+  "entryCount": 87,
   "entries": [
     {
       "keyword": "Aim",
@@ -445,6 +445,21 @@
       "aliases": []
     },
     {
+      "keyword": "Full Auto",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Spray automatic fire across an arc, chewing through ammo to suppress an area.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Full Auto",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Full Auto"
+      },
+      "aliases": [
+        "full-auto"
+      ]
+    },
+    {
       "keyword": "Gear",
       "phase": "Exploration",
       "applicability": "general",
@@ -687,6 +702,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Panicked"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Prone",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Lying on the ground; harder to move and fight until you stand up.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Prone",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Prone"
       },
       "aliases": []
     },
@@ -970,6 +998,19 @@
       "aliases": []
     },
     {
+      "keyword": "Stunned",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Reeling from a blow or shock; lose actions until you recover.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Stunned",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Stunned"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Supply",
       "phase": "Exploration",
       "applicability": "general",
@@ -1094,6 +1135,19 @@
         "camp watch",
         "night watch"
       ]
+    },
+    {
+      "keyword": "Water",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Clean drinking water offsets thirst; scarcity forces hard choices on the march.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Water",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Water"
+      },
+      "aliases": []
     },
     {
       "keyword": "Weapon",
