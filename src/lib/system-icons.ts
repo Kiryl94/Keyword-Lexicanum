@@ -19,4 +19,12 @@ export const SYSTEM_ICON_ASSETS: Partial<Record<GameSystemId, SystemIconAsset>> 
     src: '/icons/systems/starcraft-mini-mark.svg',
     label: 'StarCraft',
   },
+  'pf2e-srd': {
+    src: '/icons/systems/pf2e-srd-mark.png',
+    label: 'Pathfinder 2e',
+  },
+  'year-zero-engine': {
+    src: '/icons/systems/year-zero-engine-mark.svg',
+    label: 'Year Zero Engine',
+  },
 };

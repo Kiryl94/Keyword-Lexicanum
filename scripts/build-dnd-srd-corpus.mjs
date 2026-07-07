@@ -11,6 +11,9 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   cleanDndExplanation,
+  canonicalDndTopicKey,
+  disambiguateDndPhaseKeyword,
+  mergeDndDuplicateEntries,
   shouldExcludeDndEntry,
 } from './dnd-corpus-utils.mjs';
 
@@ -135,23 +138,59 @@ async function main() {
     fetchAllRules(),
   ]);
 
-  const byKeyword = new Map();
+  const byTopicPhase = new Map();
+
+  function topicPhaseKey(keyword, phase) {
+    return `${canonicalDndTopicKey(keyword)}::${normalizeKeyword(phase)}`;
+  }
+
+  function refreshTopicDisambiguation(topicKey) {
+    const related = [...byTopicPhase.entries()].filter(([key]) =>
+      key.startsWith(`${topicKey}::`),
+    );
+    if (related.length <= 1) return;
+
+    for (const [key, entry] of related) {
+      const baseKeyword = entry.keyword.replace(/\s*\([^)]+ Only\)$/i, '').trim();
+      const nextKeyword =
+        entry.applicability === 'restricted'
+          ? disambiguateDndPhaseKeyword(baseKeyword, entry.phase)
+          : baseKeyword;
+      if (nextKeyword !== entry.keyword) {
+        byTopicPhase.set(key, { ...entry, keyword: nextKeyword });
+      }
+    }
+  }
+
+  function upsertEntry(candidate) {
+    const topicKey = canonicalDndTopicKey(candidate.keyword);
+    if (!topicKey) return;
+
+    const key = topicPhaseKey(candidate.keyword, candidate.phase);
+    const existing = byTopicPhase.get(key);
+    if (existing) {
+      byTopicPhase.set(key, mergeDndDuplicateEntries(existing, candidate));
+    } else {
+      byTopicPhase.set(key, { ...candidate });
+    }
+    refreshTopicDisambiguation(topicKey);
+  }
 
   for (const rule of rules) {
-    const keyword = normalizeKeyword(rule.name);
-    if (!keyword || byKeyword.has(keyword)) continue;
+    const keyword = rule.name.trim();
+    if (!keyword) continue;
 
     const rawExplanation = cleanDescription(rule.desc);
-    if (shouldExcludeDndEntry(rule.name, rawExplanation)) continue;
+    if (shouldExcludeDndEntry(keyword, rawExplanation)) continue;
 
     const explanation = cleanDndExplanation(rawExplanation);
     if (!explanation || explanation.length < 15) continue;
 
     const { phase, applicability } = inferPhaseMeta(rule.ruleset);
-    const open5eUrl = `https://open5e.com/search/?query=${encodeURIComponent(rule.name)}`;
-    const { source, citation } = dndRuleSource(rule.name, open5eUrl);
-    byKeyword.set(keyword, {
-      keyword: rule.name,
+    const open5eUrl = `https://open5e.com/search/?query=${encodeURIComponent(keyword)}`;
+    const { source, citation } = dndRuleSource(keyword, open5eUrl);
+    upsertEntry({
+      keyword,
       phase,
       applicability,
       explanation,
@@ -161,17 +200,17 @@ async function main() {
   }
 
   for (const condition of conditionsPayload.conditions) {
-    const keyword = normalizeKeyword(condition.name);
+    const keyword = condition.name.trim();
     const rawExplanation = cleanDescription(condition.description);
-    if (shouldExcludeDndEntry(condition.name, rawExplanation)) continue;
+    if (shouldExcludeDndEntry(keyword, rawExplanation)) continue;
 
     const explanation = cleanDndExplanation(rawExplanation);
     if (!explanation || explanation.length < 15) continue;
 
-    const open5eUrl = `https://open5e.com/search/?query=${encodeURIComponent(`${condition.name} condition`)}`;
-    const { source, citation } = dndRuleSource(condition.name, open5eUrl);
-    byKeyword.set(keyword, {
-      keyword: condition.name,
+    const open5eUrl = `https://open5e.com/search/?query=${encodeURIComponent(`${keyword} condition`)}`;
+    const { source, citation } = dndRuleSource(keyword, open5eUrl);
+    upsertEntry({
+      keyword,
       phase: 'Combat',
       applicability: 'general',
       explanation,
@@ -180,12 +219,12 @@ async function main() {
     });
   }
 
-  const entries = [...byKeyword.values()].sort((a, b) =>
+  const entries = [...byTopicPhase.values()].sort((a, b) =>
     a.keyword.localeCompare(b.keyword, 'en', { sensitivity: 'base' }),
   );
 
   const output = {
-    version: '5.2.1-lookup-v2',
+    version: '5.2.1-lookup-v3',
     license: 'CC-BY-4.0',
     attribution:
       'D&D System Reference Document v5.2.1, © Wizards of the Coast LLC. ' +

@@ -4,6 +4,14 @@ import dndBundleJson from '@/data/dnd5e-srd-corpus.json';
 const dndBundle = dndBundleJson as CorpusBundle;
 const DND_SRD_CORPUS: CorpusEntry[] = dndBundle.entries;
 
+const aliasToKeyword = new Map<string, string>();
+for (const entry of DND_SRD_CORPUS) {
+  const canonical = normalizeKeyword(entry.keyword);
+  for (const alias of entry.aliases ?? []) {
+    aliasToKeyword.set(normalizeKeyword(alias), canonical);
+  }
+}
+
 /** Common table terms → canonical SRD entry keyword (normalized). */
 const DND_KEYWORD_ALIASES: Record<string, string> = {
   advantage: 'advantage and disadvantage',
@@ -27,10 +35,6 @@ const DND_KEYWORD_ALIASES: Record<string, string> = {
   'long rest': 'resting',
 };
 
-const dndByKeyword = new Map(
-  DND_SRD_CORPUS.map((entry) => [normalizeKeyword(entry.keyword), entry]),
-);
-
 function normalizeKeyword(value: string) {
   return value.trim().toLowerCase();
 }
@@ -39,11 +43,20 @@ export function findDndCorpusEntry(query: string): CorpusEntry | undefined {
   const normalized = normalizeKeyword(query);
   if (!normalized) return undefined;
 
-  const direct = dndByKeyword.get(normalized);
+  const direct = DND_SRD_CORPUS.find(
+    (entry) => normalizeKeyword(entry.keyword) === normalized,
+  );
   if (direct) return direct;
 
+  const corpusAlias = aliasToKeyword.get(normalized);
+  if (corpusAlias) {
+    return DND_SRD_CORPUS.find((entry) => normalizeKeyword(entry.keyword) === corpusAlias);
+  }
+
   const aliasTarget = DND_KEYWORD_ALIASES[normalized];
-  if (aliasTarget) return dndByKeyword.get(aliasTarget);
+  if (aliasTarget) {
+    return DND_SRD_CORPUS.find((entry) => normalizeKeyword(entry.keyword) === aliasTarget);
+  }
 
   const prefixMatches = DND_SRD_CORPUS.filter((entry) =>
     normalizeKeyword(entry.keyword).startsWith(normalized),

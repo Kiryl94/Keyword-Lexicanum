@@ -12,10 +12,21 @@ describe('lookupKeyword', () => {
     const result = await lookupKeyword('advantage', 'dnd5e-srd');
     expect(result.found).toBe(true);
     if (result.found) {
-      expect(result.keyword.toLowerCase()).toContain('advantage');
+      expect(result.keyword).toBe('Advantage and Disadvantage');
       expect(result.phaseApplicability).toBe('general');
       expect(result.source?.documentTitle).toContain('Reference Document');
       expect(result.source?.documentUrl).toMatch(/^https?:\/\//);
+    }
+  });
+
+  it('resolves slash and alias forms to the single Advantage entry', async () => {
+    const slash = await lookupKeyword('advantage/disadvantage', 'dnd5e-srd');
+    const disadvantage = await lookupKeyword('disadvantage', 'dnd5e-srd');
+    expect(slash.found).toBe(true);
+    expect(disadvantage.found).toBe(true);
+    if (slash.found && disadvantage.found) {
+      expect(slash.keyword).toBe('Advantage and Disadvantage');
+      expect(disadvantage.keyword).toBe('Advantage and Disadvantage');
     }
   });
 
@@ -281,6 +292,7 @@ describe('getKeywordsForPhase', () => {
     const keywords = getKeywordsForPhase('encounter', 'year-zero-engine');
     expect(keywords).toContain('Push');
     expect(keywords).toContain('Skill Roll');
+    expect(keywords).toContain('Sneak Attack');
     expect(keywords).not.toContain('Strike');
   });
 

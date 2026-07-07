@@ -1,10 +1,23 @@
 {
-  "version": "yze-srd-v2",
+  "version": "yze-srd-v3",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 38,
+  "entryCount": 53,
   "entries": [
+    {
+      "keyword": "Ambush",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Surprise opening where prepared attackers act before defenders can react.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Ambush",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Ambush"
+      },
+      "aliases": []
+    },
     {
       "keyword": "Ammo",
       "phase": "Encounter",
@@ -88,6 +101,19 @@
       ]
     },
     {
+      "keyword": "Broken",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Serious harm state from a critical injury; imposes lasting penalties until treated or healed.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Broken",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Broken"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Chase",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -97,6 +123,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Chases"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Combat Round",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Structured slice of battle where each participant takes fast and slow actions in turn order.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Combat Round",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Combat Round"
       },
       "aliases": []
     },
@@ -127,6 +166,19 @@
       "aliases": []
     },
     {
+      "keyword": "Craft",
+      "phase": "Downtime",
+      "applicability": "restricted",
+      "explanation": "Create or modify gear during downtime using skills, materials, and time.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Crafting",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Crafting"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Critical",
       "phase": "Encounter",
       "applicability": "general",
@@ -140,6 +192,19 @@
       "aliases": []
     },
     {
+      "keyword": "Critical Injury",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Severe wound from a critical hit; roll on the injury table for lasting effects or broken state.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Critical Injuries",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Critical Injuries"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Damage",
       "phase": "Encounter",
       "applicability": "general",
@@ -149,6 +214,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Damage"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Darkness",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Low visibility that penalizes sight-based rolls and may hide threats until they close in.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Darkness",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Darkness"
       },
       "aliases": []
     },
@@ -192,6 +270,19 @@
       "aliases": []
     },
     {
+      "keyword": "Exhausted",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Fatigued from exertion or hardship; physical rolls suffer until you rest or recover.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Exhausted",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Exhausted"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Experience",
       "phase": "Downtime",
       "applicability": "general",
@@ -227,6 +318,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Gear"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Heal",
+      "phase": "Downtime",
+      "applicability": "restricted",
+      "explanation": "Medical care or first aid that restores hit points or stabilizes critical injuries.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Healing",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Healing"
       },
       "aliases": []
     },
@@ -268,6 +372,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Magic"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Melee Combat",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Close-quarters fighting using hand-to-hand weapons or brawling at short range.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Melee",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Melee"
       },
       "aliases": []
     },
@@ -324,6 +441,19 @@
       "aliases": []
     },
     {
+      "keyword": "Ranged Combat",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Attacks at a distance using firearms, bows, or thrown weapons with range penalties.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Ranged Combat",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Ranged Combat"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Relieve Stress",
       "phase": "Downtime",
       "applicability": "restricted",
@@ -333,6 +463,58 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Stress Relief"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Repair",
+      "phase": "Downtime",
+      "applicability": "restricted",
+      "explanation": "Fix damaged gear, vehicles, or equipment using appropriate skills and spare parts.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Repair",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Repair"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Rest",
+      "phase": "Downtime",
+      "applicability": "restricted",
+      "explanation": "Extended downtime to recover hit points, clear conditions, or relieve stress between scenes.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Rest",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Rest"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Rot",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Decay track for food and supplies in horror-themed YZE games; spoiled goods impose risk if used.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Rot",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Rot"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Scared",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Frightened condition that penalizes composure rolls until the source of fear passes.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Scared",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Scared"
       },
       "aliases": []
     },
@@ -387,6 +569,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Actions"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Sneak Attack",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Strike an unaware or surprised foe for extra damage or an easier hit in many YZE games.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Sneak Attack",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Sneak Attack"
       },
       "aliases": []
     },

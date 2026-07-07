@@ -70,3 +70,60 @@ export function cleanDndExplanation(text) {
     .replace(/\n{3,}/g, '\n\n')
     .trim();
 }
+
+/** Collapse punctuation variants for duplicate topic detection (e.g. Advantage/Disadvantage). */
+export function canonicalDndTopicKey(name) {
+  return name
+    .toLowerCase()
+    .replace(/\//g, ' and ')
+    .replace(/\band\b/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+    .replace(/\s+/g, ' ');
+}
+
+export function preferDndDisplayKeyword(a, b) {
+  const score = (name) => {
+    let value = 0;
+    if (/\band\b/i.test(name)) value += 3;
+    if (!name.includes('/')) value += 2;
+    if (name.length > 12) value += 1;
+    return value;
+  };
+  return score(a) >= score(b) ? a : b;
+}
+
+export function mergeDndDuplicateEntries(existing, incoming) {
+  const keyword = preferDndDisplayKeyword(incoming.keyword, existing.keyword);
+  const explanation =
+    incoming.explanation.length > existing.explanation.length
+      ? incoming.explanation
+      : existing.explanation;
+  const citation =
+    incoming.explanation.length > existing.explanation.length
+      ? incoming.citation
+      : existing.citation;
+  const source =
+    incoming.explanation.length > existing.explanation.length
+      ? incoming.source
+      : existing.source;
+  const aliases = new Set([...(existing.aliases ?? []), ...(incoming.aliases ?? [])]);
+  for (const label of [existing.keyword, incoming.keyword]) {
+    if (label !== keyword) aliases.add(label);
+  }
+  return {
+    ...existing,
+    keyword,
+    explanation,
+    citation,
+    source,
+    aliases: aliases.size > 0 ? [...aliases].sort() : undefined,
+  };
+}
+
+export function disambiguateDndPhaseKeyword(keyword, phase) {
+  if (/\([^)]+\sOnly\)$/i.test(keyword)) {
+    return keyword;
+  }
+  return `${keyword} (${phase} Only)`;
+}

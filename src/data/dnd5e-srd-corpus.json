@@ -1,9 +1,9 @@
 {
-  "version": "5.2.1-lookup-v2",
+  "version": "5.2.1-lookup-v3",
   "license": "CC-BY-4.0",
   "attribution": "D&D System Reference Document v5.2.1, © Wizards of the Coast LLC. Licensed under CC BY 4.0. Rule text via Open5e API (wotc-srd); conditions via github.com/cocoajamworld/srd-5.2.1.",
   "sourceDocumentUrl": "https://www.dndbeyond.com/sources/dnd/free-rules",
-  "entryCount": 228,
+  "entryCount": 236,
   "entries": [
     {
       "keyword": "Ability Checks",
@@ -105,25 +105,16 @@
       "keyword": "Advantage and Disadvantage",
       "phase": "General",
       "applicability": "general",
-      "explanation": "Sometimes a special ability or spell tells you that you have advantage or disadvantage on an ability check, a saving throw, or an attack roll.\nWhen that happens, you roll a second d20 when you make the roll. Use the higher of the two rolls if you have advantage, and use the lower roll if you have disadvantage. For example, if you have disadvantage and roll a 17 and a 5, you use the 5. If you instead have advantage and roll those numbers, you use the 17.\n\nIf multiple situations affect a roll and each one grants advantage or imposes disadvantage on it, you don't roll more than one additional d20.\nIf two favorable situations grant advantage, for example, you still roll only one additional d20.\n\nIf circumstances cause a roll to have both advantage and disadvantage, you are considered to have neither of them, and you roll one d20. This is true even if multiple circumstances impose disadvantage and only one grants advantage or vice versa. In such a situation, you have neither advantage nor disadvantage.\n\nWhen you have advantage or disadvantage and something in the game, such as the halfling's Lucky trait, lets you reroll the d20, you can reroll only one of the dice. You choose which one. For example, if a halfling has advantage or disadvantage on an ability check and rolls a 1 and a 13, the halfling could use the Lucky trait to reroll the 1.\n\nYou usually gain advantage or disadvantage through the use of special abilities, actions, or spells. Inspiration can also give a character advantage. The GM can also decide that circumstances influence a roll in one direction or the other and grant advantage or impose disadvantage as a result.",
-      "citation": "D&D System Reference Document 5.2.1 — Advantage and Disadvantage",
-      "source": {
-        "documentTitle": "D&D System Reference Document 5.2.1",
-        "documentUrl": "https://open5e.com/search/?query=Advantage%20and%20Disadvantage",
-        "section": "Advantage and Disadvantage"
-      }
-    },
-    {
-      "keyword": "Advantage/Disadvantage",
-      "phase": "General",
-      "applicability": "general",
       "explanation": "Sometimes a D20 Test is modified by Advantage or Disadvantage. Advantage reflects the positive circumstances surrounding a d20 roll, while Disadvantage reflects negative circumstances.\n\nYou usually acquire Advantage or Disadvantage through the use of special abilities and actions. The GM can also decide that circumstances grant Advantage or impose Disadvantage.\n\n## Roll Two D20s\n\nWhen a roll has either Advantage or Disadvantage, roll a second d20 when you make the roll. Use the higher of the two rolls if you have Advantage, and use the lower roll if you have Disadvantage. For example, if you have Disadvantage and roll an 18 and a 3, use the 3. If you instead have Advantage and roll those numbers, use the 18.\n\n## They Don't Stack\n\nIf multiple situations affect a roll and they all grant Advantage on it, you still roll only two d20s. Similarly, if multiple situations impose Disadvantage on a roll, you roll only two d20s.\n\nIf circumstances cause a roll to have both Advantage and Disadvantage, the roll has neither of them, and you roll one d20. This is true even if multiple circumstances impose Disadvantage and only one grants Advantage or vice versa. In such a situation, you have neither Advantage nor Disadvantage.\n\n## Interactions with Rerolls\n\nWhen you have Advantage or Disadvantage and something in the game lets you reroll or replace the d20, you can reroll or replace only one die, not both. You choose which one.\n\nFor example, if you have Heroic Inspiration (see the sidebar below) and roll a 3 and an 18 on an ability check that has Advantage or Disadvantage, you could expend your Heroic Inspiration to reroll one of those dice, not both of them.",
       "citation": "D&D System Reference Document 5.2.1 — Advantage/Disadvantage",
       "source": {
         "documentTitle": "D&D System Reference Document 5.2.1",
         "documentUrl": "https://open5e.com/search/?query=Advantage%2FDisadvantage",
         "section": "Advantage/Disadvantage"
-      }
+      },
+      "aliases": [
+        "Advantage/Disadvantage"
+      ]
     },
     {
       "keyword": "Adventuring Equipment",
@@ -235,6 +226,18 @@
     },
     {
       "keyword": "Attack Rolls",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "An attack roll determines whether an attack hits a target. An attack roll hits if the roll equals or exceeds the target’s Armor Class. Attack rolls usually occur in battle, described in “Combat” later in “Playing the Game,” but the GM might also ask for an attack roll in other situations, such as an archery competition.\n\n## Ability Modifier\n\nThe Attack Roll Abilities table shows which ability modifier to use for different types of attack rolls.\n\nTable: Attack Roll Abilities\n\nSome features let you use different ability modifiers from those listed. For example, the Finesse property (see “Equipment”) lets you use Strength or Dexterity with a weapon that has that property.\n\n## Proficiency Bonus\n\nYou add your Proficiency Bonus to your attack roll when you attack using a weapon you have proficiency with, as well as when you attack with a spell. See “Proficiency” later in “Playing the Game” for more information about weapon proficiencies.\n\n## Armor Class\n\nA creature’s Armor Class represents how well the creature avoids being wounded in combat. The AC of a character is determined at character creation (see “Character Creation”), whereas the AC of a monster appears in its stat block.\n\nCalculating AC. All creatures start with the same base AC calculation:\n\nA creature’s AC can then be modified by armor, magic items, spells, and more.\n\nOnly One Base AC. Some spells and class features give characters a different way to calculate their AC. A character with multiple features that give different ways to calculate AC must choose which one to use; only one base calculation can be in effect for a creature.\n\nRolling 20 or 1\n\nIf you roll a 20 on the d20 (called a “natural 20”) for an attack roll, the attack hits regardless of any modifiers or the target’s AC. This is called a Critical Hit (see “Combat” later in “Playing the Game”).\n\nIf you roll a 1 on the d20 (a “natural 1”) for an attack roll, the attack misses regardless of any modifiers or the target’s AC.",
+      "citation": "D&D System Reference Document 5.2.1 — Attack Rolls",
+      "source": {
+        "documentTitle": "D&D System Reference Document 5.2.1",
+        "documentUrl": "https://open5e.com/search/?query=Attack%20Rolls",
+        "section": "Attack Rolls"
+      }
+    },
+    {
+      "keyword": "Attack Rolls (Combat Only)",
       "phase": "Combat",
       "applicability": "restricted",
       "explanation": "When you make an attack, your attack roll determines whether the attack hits or misses. To make an attack roll, roll a d20 and add the appropriate modifiers. If the total of the roll plus modifiers equals or exceeds the target's Armor Class (AC), the attack hits. The AC of a character is determined at character creation, whereas the AC of a monster is in its stat block.",
@@ -285,7 +288,7 @@
       "keyword": "Blindsight",
       "phase": "Exploration",
       "applicability": "restricted",
-      "explanation": "A creature with blindsight can perceive its surroundings without relyingon sight, within a specific radius. Creatures without eyes, such asoozes, and creatures with echolocation or heightened senses, such asbats and true dragons, have this sense.",
+      "explanation": "Many creatures in fantasy gaming worlds, especially those that dwell underground, have darkvision. Within a specified range, a creature withdarkvision can see in darkness as if the darkness were dim light, soareas of darkness are only lightly obscured as far as that creature is concerned. However, the creature can't discern color in darkness, only shades of gray.",
       "citation": "D&D System Reference Document 5.2.1 — Blindsight",
       "source": {
         "documentTitle": "D&D System Reference Document 5.2.1",
@@ -561,7 +564,7 @@
       "keyword": "Consumables",
       "phase": "General",
       "applicability": "general",
-      "explanation": "Some items are used up when they are activated. A potion or an elixir must be swallowed, or an oil applied to the body. The writing vanishes from a scroll when it is read. Once used, a consumable item loses its magic.",
+      "explanation": "Some magic items allow the user to cast a spell from the item. The spell is cast at the lowest possible spell level, doesn’t expend any of the user’s spell slots, and requires no components, unless the item’s description says otherwise. The spell uses its normal casting time, range, and duration, and the user of the item must concentrate if the spell requires concentration. Many items, such as potions, bypass the casting of a spell and confer the spell’s effects, with their usual duration. Certain items make exceptions to these rules, changing the casting time, duration, or other parts of a spell.\n\nA magic item, such as certain staffs, may require you to use your own spellcasting ability when you cast a spell from the item. If you have more than one spellcasting ability, you choose which one to use with the item. If you don’t have a spellcasting ability—perhaps you’re a rogue with the Use Magic Device feature—your spellcasting ability modifier is +0 for the item, and your proficiency bonus does apply.",
       "citation": "D&D System Reference Document 5.2.1 — Consumables",
       "source": {
         "documentTitle": "D&D System Reference Document 5.2.1",
@@ -619,6 +622,18 @@
     },
     {
       "keyword": "Critical Hits",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "When you score a Critical Hit, you deal extra damage. Roll the attack’s damage dice twice, add them together, and add any relevant modifiers as normal. For example, if you score a Critical Hit with a Dagger, roll 2d4 for the damage rather than 1d4, and add your relevant ability modifier. If the attack involves other damage dice, such as from the Rogue’s Sneak Attack feature, you also roll those dice twice.",
+      "citation": "D&D System Reference Document 5.2.1 — Critical Hits",
+      "source": {
+        "documentTitle": "D&D System Reference Document 5.2.1",
+        "documentUrl": "https://open5e.com/search/?query=Critical%20Hits",
+        "section": "Critical Hits"
+      }
+    },
+    {
+      "keyword": "Critical Hits (Combat Only)",
       "phase": "Combat",
       "applicability": "restricted",
       "explanation": "Each weapon, spell, and harmful monster ability specifies the damage it deals. You roll the damage die or dice, add any modifiers, and apply the damage to your target. Magic weapons, special abilities, and other factors can grant a bonus to damage. With a penalty, it is possible to deal 0 damage, but never negative damage. When attacking with a weapon, you add your ability modifier---the same modifier used for the attack roll---to the damage. A spell tells you which dice to roll for damage and whether to add any modifiers.\n\nIf a spell or other effect deals damage to more than one target at the same time, roll the damage once for all of them. For example, when a wizard casts srd:fireball or a cleric casts srd:flame-strike, the spell's damage is rolled once for all creatures caught in the blast.",
@@ -655,6 +670,18 @@
     },
     {
       "keyword": "Damage Rolls",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Each weapon, spell, and damaging monster ability specifies the damage it deals. You roll the damage dice, add any modifiers, and deal the damage to your target. If there’s a penalty to the damage, it’s possible to deal 0 damage but not negative damage.\n\nWhen attacking with a weapon, you add your ability modifier—the same modifier used for the attack roll—to the damage roll. A spell tells you which dice to roll for damage and whether to add any modifiers. Unless a rule says otherwise, you don’t add your ability modifier to a fixed damage amount that doesn’t use a roll, such as the damage of a Blowgun. See “Equipment” for weapons’ damage dice and “Spells” for spells’ damage dice.",
+      "citation": "D&D System Reference Document 5.2.1 — Damage Rolls",
+      "source": {
+        "documentTitle": "D&D System Reference Document 5.2.1",
+        "documentUrl": "https://open5e.com/search/?query=Damage%20Rolls",
+        "section": "Damage Rolls"
+      }
+    },
+    {
+      "keyword": "Damage Rolls (Combat Only)",
       "phase": "Combat",
       "applicability": "restricted",
       "explanation": "Each weapon, spell, and harmful monster ability specifies the damage it deals. You roll the damage die or dice, add any modifiers, and apply the damage to your target. Magic weapons, special abilities, and other factors can grant a bonus to damage. With a penalty, it is possible to deal 0 damage, but never negative damage. When attacking with a weapon, you add your ability modifier---the same modifier used for the attack roll---to the damage. A spell tells you which dice to roll for damage and whether to add any modifiers.\n\nIf a spell or other effect deals damage to more than one target at the same time, roll the damage once for all of them. For example, when a wizard casts srd:fireball or a cleric casts srd:flame-strike, the spell's damage is rolled once for all creatures caught in the blast.",
@@ -679,6 +706,18 @@
     },
     {
       "keyword": "Damage Types",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Each instance of damage has a type, like Fire or Slashing. Damage types are listed in “Rules Glossary” and have no rules of their own, but other rules, such as Resistance, rely on damage types.",
+      "citation": "D&D System Reference Document 5.2.1 — Damage Types",
+      "source": {
+        "documentTitle": "D&D System Reference Document 5.2.1",
+        "documentUrl": "https://open5e.com/search/?query=Damage%20Types",
+        "section": "Damage Types"
+      }
+    },
+    {
+      "keyword": "Damage Types (Combat Only)",
       "phase": "Combat",
       "applicability": "restricted",
       "explanation": "Different attacks, damaging spells, and other harmful effects deal different types of damage. Damage types have no rules of their own, but other rules, such as damage resistance, rely on the types.\n\nThe damage types follow, with examples to help a GM assign a damage type to a new effect.\n\nAcid. The corrosive spray of a black dragon's breath and the dissolving enzymes secreted by a black pudding deal acid damage.\n\nBludgeoning. Blunt force attacks---hammers, falling, constriction, and the like---deal bludgeoning damage.\n\nCold. The infernal chill radiating from an ice devil's spear and the frigid blast of a white dragon's breath deal cold damage.\n\nFire. Red dragons breathe fire, and many spells conjure flames to deal fire damage.\n\nForce. Force is pure magical energy focused into a damaging form. Most effects that deal force damage are spells, including _magic missile_ and _spiritual weapon_.\n\nLightning. A _lightning bolt_ spell and a blue dragon's breath deal lightning damage.\n\nNecrotic. Necrotic damage, dealt by certain undead and a spell such as _chill touch_, withers matter and even the soul.\n\nPiercing. Puncturing and impaling attacks, including spears and monsters' bites, deal piercing damage.\n\nPoison. Venomous stings and the toxic gas of a green dragon's breath deal poison damage.\n\nPsychic. Mental abilities such as a mind flayer's psionic blast deal psychic damage.\n\nRadiant. Radiant damage, dealt by a cleric's _flame strike_ spell or an angel's smiting weapon, sears the flesh like fire and overloads the spirit with power.\n\nSlashing. Swords, axes, and monsters' claws deal slashing damage.\n\nThunder. A concussive burst of sound, such as the effect of the srd:thunderwave spell, deals thunder damage.",
@@ -825,7 +864,7 @@
       "keyword": "Equipment",
       "phase": "General",
       "applicability": "general",
-      "explanation": "Each background provides a package of starting equipment. If you use the optional rule to spend coin on gear, you do not receive the starting equipment from your background.",
+      "explanation": "A stat block rarely refers to equipment, other than armor or weapons used by a monster. A creature that customarily wears clothes, such as a humanoid, is assumed to be dressed appropriately.\n\nYou can equip monsters with additional gear and trinkets however you like, and you decide how much of a monster’s equipment is recoverable after the creature is slain and whether any of that equipment is still usable. A battered suit of armor made for a monster is rarely usable by someone else, for instance.\n\nIf a spellcasting monster needs material components to cast its spells, assume that it has the material components it needs to cast the spells in its stat block.",
       "citation": "D&D System Reference Document 5.2.1 — Equipment",
       "source": {
         "documentTitle": "D&D System Reference Document 5.2.1",
@@ -849,7 +888,7 @@
       "keyword": "Experience Points",
       "phase": "General",
       "applicability": "general",
-      "explanation": "The experience point cost to gain a level is always based on your total character level. See the linked SRD for the full chart. So, if you are a cleric 6/fighter 1, you must gain enough XP to reach 8th level before you can take your second level as a fighter or your seventh level as a cleric.",
+      "explanation": "The number of experience points (XP) a monster is worth is based on its challenge rating. Typically, XP is awarded for defeating the monster, although the GM may also award XP for neutralizing the threat posed by the monster in some other manner.\n\nUnless something tells you otherwise, a monster summoned by a spell or other magical ability is worth the XP noted in its stat block.",
       "citation": "D&D System Reference Document 5.2.1 — Experience Points",
       "source": {
         "documentTitle": "D&D System Reference Document 5.2.1",
@@ -1111,6 +1150,18 @@
     },
     {
       "keyword": "Hit Points",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Hit Points represent durability and the will to live. Creatures with more Hit Points are more difficult to kill. Your Hit Point maximum is the number of Hit Points you have when uninjured. Your current Hit Points can be any number from that maximum down to 0, which is the lowest Hit Points can go.\n\nWhenever you take damage, subtract it from your Hit Points. Hit Point loss has no effect on your capabilities until you reach 0 Hit Points.\n\nIf you have half your Hit Points or fewer, you’re Bloodied, which has no game effect on its own but which might trigger other game effects.",
+      "citation": "D&D System Reference Document 5.2.1 — Hit Points",
+      "source": {
+        "documentTitle": "D&D System Reference Document 5.2.1",
+        "documentUrl": "https://open5e.com/search/?query=Hit%20Points",
+        "section": "Hit Points"
+      }
+    },
+    {
+      "keyword": "Hit Points (Combat Only)",
       "phase": "Combat",
       "applicability": "restricted",
       "explanation": "Hit points represent a combination of physical and mental durability, the will to live, and luck. Creatures with more hit points are more difficult to kill. Those with fewer hit points are more fragile.\n\nA creature's current hit points (usually just called hit points) can be any number from the creature's hit point maximum down to 0. This number changes frequently as a creature takes damage or receives healing.\n\nWhenever a creature takes damage, that damage is subtracted from its hit points. The loss of hit points has no effect on a creature's capabilities until the creature drops to 0 hit points.\n\n## Damage Rolls\n\nEach weapon, spell, and harmful monster ability specifies the damage it deals. You roll the damage die or dice, add any modifiers, and apply the damage to your target. Magic weapons, special abilities, and other factors can grant a bonus to damage. With a penalty, it is possible to deal 0 damage, but never negative damage. When attacking with a weapon, you add your ability modifier---the same modifier used for the attack roll---to the damage. A spell tells you which dice to roll for damage and whether to add any modifiers.\n\nIf a spell or other effect deals damage to more than one target at the same time, roll the damage once for all of them. For example, when a wizard casts srd:fireball or a cleric casts srd:flame-strike, the spell's damage is rolled once for all creatures caught in the blast.",
@@ -1254,6 +1305,18 @@
       }
     },
     {
+      "keyword": "Interacting with Objects (Exploration Only)",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "A character's interaction with objects in an environment is often simple to resolve in the game. The player tells the GM that his or hercharacter is doing something, such as moving a lever, and the GM describes what, if anything, happens.\nFor example, a character might decide to pull a lever, which might, inturn, raise a portcullis, cause a room to flood with water, or open asecret door in a nearby wall. If the lever is rusted in position,though, a character might need to force it. In such a situation, the GM might call for a Strength check to see whether the character can wrench the lever into place. The GM sets the DC for any such check based on the difficulty of the task.\nCharacters can also damage objects with their weapons and spells.\nObjects are immune to poison and psychic damage, but otherwise they canbe affected by physical and magical attacks much like creatures can. TheGM determines an object's Armor Class and hit points, and might decidethat certain objects have resistance or immunity to certain kinds ofattacks. (It's hard to cut a rope with a club, for example.) Objectsalways fail Strength and Dexterity saving throws, and they are immune toeffects that require other saves. When an object drops to 0 hit points,it breaks.\nA character can also attempt a Strength check to break an object. The GM sets the DC for any such check.",
+      "citation": "D&D System Reference Document 5.2.1 — Interacting with Objects",
+      "source": {
+        "documentTitle": "D&D System Reference Document 5.2.1",
+        "documentUrl": "https://open5e.com/search/?query=Interacting%20with%20Objects",
+        "section": "Interacting with Objects"
+      }
+    },
+    {
       "keyword": "Invisible",
       "phase": "Combat",
       "applicability": "general",
@@ -1317,7 +1380,7 @@
       "keyword": "Languages",
       "phase": "General",
       "applicability": "general",
-      "explanation": "Some backgrounds also allow characters to learn additional languages beyond those given by race. See “Languages.",
+      "explanation": "The languages that a monster can speak are listed in alphabetical order. Sometimes a monster can understand a language but can’t speak it, and this is noted in its entry. A \"—\" indicates that a creature neither speaks nor understands any language.",
       "citation": "D&D System Reference Document 5.2.1 — Languages",
       "source": {
         "documentTitle": "D&D System Reference Document 5.2.1",
@@ -1365,7 +1428,7 @@
       "keyword": "Lifestyle Expenses",
       "phase": "General",
       "applicability": "general",
-      "explanation": "Between adventures, you choose a particular quality of life and pay the cost of maintaining that lifestyle.\n\nLiving a particular lifestyle doesn't have a huge effect on your character, but your lifestyle can affect the way other individuals and groups react to you. For example, when you lead an aristocratic lifestyle, it might be easier for you to influence the nobles of the city than if you live in poverty.",
+      "explanation": "Lifestyle expenses provide you with a simple way to account for the cost of living in a fantasy world. They cover your accommodations, food and drink, and all your other necessities. Furthermore, expenses cover the cost of maintaining your equipment so you can be ready when adventure next calls.\n\nAt the start of each week or month (your choice), choose a lifestyle from the Expenses table and pay the price to sustain that lifestyle. The prices listed are per day, so if you wish to calculate the cost of your chosen lifestyle over a thirty-day period, multiply the listed price by 30. Your lifestyle might change from one period to the next, based on the funds you have at your disposal, or you might maintain the same lifestyle throughout your character's career.\n\nYour lifestyle choice can have consequences. Maintaining a wealthy lifestyle might help you make contacts with the rich and powerful, though you run the risk of attracting thieves. Likewise, living frugally might help you avoid criminals, but you are unlikely to make powerful connections.\n\nLifestyle Expenses (table)\n\n_Wretched._ You live in inhumane conditions. With no place to call home, you shelter wherever you can, sneaking into barns, huddling in old crates, and relying on the good graces of people better off than you. A wretched lifestyle presents abundant dangers. Violence, disease, and hunger follow you wherever you go. Other wretched people covet your armor, weapons, and adventuring gear, which represent a fortune by their standards. You are beneath the notice of most people.\n\n_Squalid._ You live in a leaky stable, a mud-floored hut just outside town, or a vermin-infested boarding house in the worst part of town. You have shelter from the elements, but you live in a desperate and often violent environment, in places rife with disease, hunger, and misfortune. You are beneath the notice of most people, and you have few legal protections. Most people at this lifestyle level have suffered some terrible setback. They might be disturbed, marked as exiles, or suffer from disease.\n\n_Poor._ A poor lifestyle means going without the comforts available in a stable community. Simple food and lodgings, threadbare clothing, and unpredictable conditions result in a sufficient, though probably unpleasant, experience. Your accommodations might be a room in a flophouse or in the common room above a tavern. You benefit from some legal protections, but you still have to contend with violence, crime, and disease. People at this lifestyle level tend to be unskilled laborers, costermongers, peddlers, thieves, mercenaries, and other disreputable types.\n\n_Modest._ A modest lifestyle keeps you out of the slums and ensures that you can maintain your equipment. You live in an older part of town, renting a room in a boarding house, inn, or temple. You don't go hungry or thirsty, and your living conditions are clean, if simple. Ordinary people living modest lifestyles include soldiers with families, laborers, students, priests, hedge wizards, and the like.\n\n_Comfortable._ Choosing a comfortable lifestyle means that you can afford nicer clothing and can easily maintain your equipment. You live in a small cottage in a middle-class neighborhood or in a private room at a fine inn. You associate with merchants, skilled tradespeople, and military officers.\n\n_Wealthy._ Choosing a wealthy lifestyle means living a life of luxury, though you might not have achieved the social status associated with the old money of nobility or royalty. You live a lifestyle comparable to that of a highly successful merchant, a favored servant of the royalty, or the owner of a few small businesses. You have respectable lodgings, usually a spacious home in a good part of town or a comfortable suite at a fine inn. You likely have a small staff of servants.\n\n_Aristocratic._ You live a life of plenty and comfort. You move in circles populated by the most powerful people in the community. You have excellent lodgings, perhaps a townhouse in the nicest part of town or rooms in the finest inn. You dine at the best restaurants, retain the most skilled and fashionable tailor, and have servants attending to your every need. You receive invitations to the social gatherings of the rich and powerful, and spend evenings in the company of politicians, guild leaders, high priests, and nobility. You must also contend with the highest levels of deceit and treachery. The wealthier you are, the greater the chance you will be drawn into political intrigue as a pawn or participant.",
       "citation": "D&D System Reference Document 5.2.1 — Lifestyle Expenses",
       "source": {
         "documentTitle": "D&D System Reference Document 5.2.1",
@@ -1459,6 +1522,18 @@
     },
     {
       "keyword": "Melee Attacks",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "A melee attack allows you to attack a target within your reach. A melee attack typically uses a hand-held weapon or an Unarmed Strike. Many monsters make melee attacks with claws, teeth, or other body parts. A few spells also involve melee attacks.\n\n## Reach\n\nA creature has a 5-foot reach and can thus attack targets within 5 feet when making a melee attack. Certain creatures have melee attacks with a reach greater than 5 feet, as noted in their descriptions.\n\n## Opportunity Attacks\n\nCombatants watch for enemies to drop their guard. If you move heedlessly past your foes, you put yourself in danger by provoking an Opportunity Attack.\n\nAvoiding Opportunity Attacks. You can avoid provoking an Opportunity Attack by taking the Disengage action. You also don’t provoke an Opportunity Attack when you Teleport or when you are moved without using your movement, action, Bonus Action, or Reaction. For example, you don’t provoke an Opportunity Attack if an explosion hurls you out of a foe’s reach or if you fall past an enemy.\n\nMaking an Opportunity Attack. You can make an Opportunity Attack when a creature that you can see leaves your reach. To make the attack, take a Reaction to make one melee attack with a weapon or an Unarmed Strike against that creature. The attack occurs right before it leaves your reach.",
+      "citation": "D&D System Reference Document 5.2.1 — Melee Attacks",
+      "source": {
+        "documentTitle": "D&D System Reference Document 5.2.1",
+        "documentUrl": "https://open5e.com/search/?query=Melee%20Attacks",
+        "section": "Melee Attacks"
+      }
+    },
+    {
+      "keyword": "Melee Attacks (Combat Only)",
       "phase": "Combat",
       "applicability": "restricted",
       "explanation": "Used in hand-to-hand combat, a melee attack allows you to attack a foe within your reach. A melee attack typically uses a handheld weapon such as a sword, a warhammer, or an axe. A typical monster makes a melee attack when it strikes with its claws, horns, teeth, tentacles, or other body part. A few spells also involve making a melee attack.\n\nMost creatures have a 5-foot reach and can thus attack targets within 5 feet of them when making a melee attack. Certain creatures (typically those larger than Medium) have melee attacks with a greater reach than 5 feet, as noted in their descriptions.\n\nInstead of using a weapon to make a melee weapon attack, you can use an unarmed strike: a punch, kick, head-butt, or similar forceful blow (none of which count as weapons). On a hit, an unarmed strike deals bludgeoning damage equal to 1 + your Strength modifier. You are proficient with your unarmed strikes.",
@@ -2061,7 +2136,7 @@
       "keyword": "Search",
       "phase": "Combat",
       "applicability": "restricted",
-      "explanation": "When you take the Search action, you devote your attention to finding something. Depending on the nature of your search, the GM might have you make a Wisdom (Perception) check or an Intelligence (Investigation) check.",
+      "explanation": "You normally interact with an object while doing something else, such as when you draw a sword as part of an attack. When an object requires your action for its use, you take the Use an Object action. This action is also useful when you want to interact with more than one object on your turn.",
       "citation": "D&D System Reference Document 5.2.1 — Search",
       "source": {
         "documentTitle": "D&D System Reference Document 5.2.1",
@@ -2145,7 +2220,7 @@
       "keyword": "Size",
       "phase": "General",
       "applicability": "general",
-      "explanation": "A monster can be Tiny, Small, Medium, Large, Huge, or Gargantuan. The Size Categories table shows how much space a creature of a particular size controls in combat. See the •Player’s Handbook• for more information on creature size and space.\n\n### Size Categories",
+      "explanation": "Characters of most races are Medium, a size category including creatures that are roughly 4 to 8 feet tall. Members of a few races are Small (between 2 and 4 feet tall), which means that certain rules of the game affect them differently. The most important of these rules is that Small characters have trouble wielding heavy weapons, as explained in \"Equipment.\"",
       "citation": "D&D System Reference Document 5.2.1 — Size",
       "source": {
         "documentTitle": "D&D System Reference Document 5.2.1",
@@ -2217,7 +2292,7 @@
       "keyword": "Speed",
       "phase": "General",
       "applicability": "general",
-      "explanation": "Every character and monster has a speed, which is the distance in feetthat the character or monster can walk in 1 round. This number assumesshort bursts of energetic movement in the midst of a life-threatening situation.\n\nThe following rules determine how far a character or monster can move in a minute, an hour, or a day.",
+      "explanation": "A monster’s speed tells you how far it can move on its turn. For more information on speed, see the •Player’s Handbook•.\n\nAll creatures have a walking speed, simply called the monster’s speed. Creatures that have no form of ground-based locomotion have a walking speed of 0 feet.\n\nSome creatures have one or more of the following additional movement modes.\n\n## Burrow\n\nA monster that has a burrowing speed can use that speed to move through sand, earth, mud, or ice. A monster can’t burrow through solid rock unless it has a special trait that allows it to do so.\n\n## Climb\n\nA monster that has a climbing speed can use all or part of its movement to move on vertical surfaces. The monster doesn’t need to spend extra movement to climb.\n\n## Fly\n\nA monster that has a flying speed can use all or part of its movement to fly. Some monsters have the ability to hover, which makes them hard to knock out of the air (as explained in the rules on flying in the •Player’s Handbook•). Such a monster stops hovering when it dies.\n\n## Swim\n\nA monster that has a swimming speed doesn’t need to spend extra movement to swim.",
       "citation": "D&D System Reference Document 5.2.1 — Speed",
       "source": {
         "documentTitle": "D&D System Reference Document 5.2.1",
@@ -2277,7 +2352,7 @@
       "keyword": "Spellcasting",
       "phase": "General",
       "applicability": "general",
-      "explanation": "Your capacity for spellcasting depends partly on your combined levels in all your spellcasting classes and partly on your individual levels in those classes. Once you have the Spellcasting feature from more than one class, use the rules below. If you multiclass but have the Spellcasting feature from only one class, follow the rules for that class.\n\nSpells Prepared. You determine what spells you can prepare for each class individually, as if you were a single-classed member of that class. If you are a level 4 Ranger / level 3 Sorcerer, for example, you can prepare five level 1 Ranger spells, and you can prepare six Sorcerer spells of level 1 or 2 (as well as four Sorcerer cantrips).\n\nEach spell you prepare is associated with one of your classes, and you use the spellcasting ability of that class when you cast the spell.\n\nCantrips. If a cantrip of yours increases in power at higher levels, the increase is based on your total character level, not your level in a particular class, unless the spell says otherwise.\n\nSpell Slots. You determine your available spell slots by adding together the following:\n\n- All your levels in the Bard, Cleric, Druid, Sorcerer, and Wizard classes\n- Half your levels (round up) in the Paladin and Ranger classes\n\nThen look up this total level in the Level column of the Multiclass Spellcaster table. You use the slots for that level to cast spells of an appropriate level from any class whose Spellcasting feature you have.\n\nThis table might give you spell slots of a higher level than the spells you prepare. You can use those slots but only to cast your lower-level spells. If a lower-level spell that you cast, like •Burning Hands•, has an enhanced effect when cast at a higher level, you can use the enhanced effect as normal.\n\nFor example, if you are a level 4 Ranger / level 3 Sorcerer, you count as a level 5 character when determining your spell slots, counting all your levels as a Sorcerer and half your Ranger levels. As detailed in the linked SRD, you have four level 1 spell slots, three level 2 slots, and two level 3 slots. However, you can't prepare any level 3 spells, nor can you prepare any level 2 Ranger spells. You can use the spell slots of those levels to cast the spells you do prepare—and potentially enhance their effects.\n\nPact Magic. If you have the Pact Magic feature from the Warlock class and the Spellcasting feature, you can use the spell slots you gain from Pact Magic to cast spells you have prepared from classes with the Spellcasting feature, and you can use the spell slots you gain from the Spellcasting feature to cast Warlock spells you have prepared.",
+      "explanation": "Your capacity for spellcasting depends partly on your combined levels in all your spellcasting classes and partly on your individual levels in those classes. Once you have the Spellcasting feature from more than one class, use the rules below. If you multiclass but have the Spellcasting feature from only one class, you follow the rules as described in that class.\n\n_Spells Known and Prepared._ You determine what spells you know and can prepare for each class individually, as if you were a single-classed member of that class. If you are a ranger 4/wizard 3, for example, you know three 1st-level ranger spells based on your levels in the ranger class. As 3rd-level wizard, you know three wizard cantrips, and your spellbook contains ten wizard spells, two of which (the two you gained when you reached 3rd level as a wizard) can be 2nd-level spells. If your Intelligence is 16, you can prepare six wizard spells from your spellbook.\n\nEach spell you know and prepare is associated with one of your classes, and you use the spellcasting ability of that class when you cast the spell. Similarly, a spellcasting focus, such as a holy symbol, can be used only for the spells from the class associated with that focus.\n\n_Spell Slots._ You determine your available spell slots by adding together all your levels in the bard, cleric, druid, sorcerer, and wizard classes, and half your levels (rounded down) in the paladin and ranger classes. Use this total to determine your spell slots by consulting the Multiclass Spellcaster table.\n\nIf you have more than one spellcasting class, this table might give you spell slots of a level that is higher than the spells you know or can prepare. You can use those slots, but only to cast your lower-level spells. If a lower-level spell that you cast, like _burning hands_, has an enhanced effect when cast using a higher-level slot, you can use the enhanced effect, even though you don't have any spells of that higher level.\n\nFor example, if you are the aforementioned ranger 4/wizard 3, you count as a 5th-level character when determining your spell slots: you have four 1st-level slots, three 2nd-level slots, and two 3rd-level slots. However, you don't know any 3rd-level spells, nor do you know any 2nd-level ranger spells. You can use the spell slots of those levels to cast the spells you do know-and potentially enhance their effects.\n\n_Pact Magic._ If you have both the Spellcasting class feature and the Pact Magic class feature from the warlock class, you can use the spell slots you gain from the Pact Magic feature to cast spells you know or have prepared from classes with the Spellcasting class feature, and you can use the spell slots you gain from the Spellcasting class feature to cast warlock spells you know.\n\nMulticlass Spellcaster: Spell Slots per Spell Level (table)",
       "citation": "D&D System Reference Document 5.2.1 — Spellcasting",
       "source": {
         "documentTitle": "D&D System Reference Document 5.2.1",
@@ -2599,6 +2674,18 @@
     },
     {
       "keyword": "Unseen Attackers and Targets",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "When you make an attack roll against a target you can’t see, you have Disadvantage on the roll. This is true whether you’re guessing the target’s location or targeting a creature you can hear but not see. If the target isn’t in the location you targeted, you miss.\n\nWhen a creature can’t see you, you have Advantage on attack rolls against it.\n\nIf you are hidden when you make an attack roll, you give away your location when the attack hits or misses.",
+      "citation": "D&D System Reference Document 5.2.1 — Unseen Attackers and Targets",
+      "source": {
+        "documentTitle": "D&D System Reference Document 5.2.1",
+        "documentUrl": "https://open5e.com/search/?query=Unseen%20Attackers%20and%20Targets",
+        "section": "Unseen Attackers and Targets"
+      }
+    },
+    {
+      "keyword": "Unseen Attackers and Targets (Combat Only)",
       "phase": "Combat",
       "applicability": "restricted",
       "explanation": "Combatants often try to escape their foes' notice by hiding, casting the invisibility spell, or lurking in darkness.\n\nWhen you attack a target that you can't see, you have disadvantage on the attack roll. This is true whether you're guessing the target's location or you're targeting a creature you can hear but not see. If the target isn't in the location you targeted, you automatically miss, but the GM typically just says that the attack missed, not whether you guessed the target's location correctly.\n\nWhen a creature can't see you, you have advantage on attack rolls against it. If you are hidden---both unseen and unheard---when you make an attack, you give away your location when the attack hits or misses.",
@@ -2638,6 +2725,18 @@
       "phase": "General",
       "applicability": "general",
       "explanation": "Some adventuring tasks—such as noticing danger, hitting an enemy, and targeting certain spells are affected by sight, so effects that obscure vision can hinder you, as explained below.\n\n## Obscured Areas\n\nAn area might be Lightly or Heavily Obscured. In a Lightly Obscured area—such as an area with Dim Light, patchy fog, or moderate foliage—you have Disadvantage on Wisdom (Perception) checks that rely on sight.\n\nA Heavily Obscured area—such as an area with Darkness, heavy fog, or dense foliage—is opaque. You have the Blinded condition (see “Rules Glossary”) when trying to see something there.\n\n## Light\n\nThe presence or absence of light determines the category of illumination in an area, as defined below.\n\nBright Light. Bright Light lets most creatures see normally. Even gloomy days provide Bright Light, as do torches, lanterns, fires, and other sources of illumination within a specific radius.\n\nDim Light. Dim Light, also called shadows, creates a Lightly Obscured area. An area of Dim Light is usually a boundary between Bright Light and surrounding Darkness. The soft light of twilight and dawn also counts as Dim Light. A full moon might bathe the land in Dim Light.\n\nDarkness. Darkness creates a Heavily Obscured area. Characters face Darkness outdoors at night (even most moonlit nights), within the confines of an unlit dungeon, or in an area of magical Darkness.\n\n## Special Senses\n\nSome creatures have special senses that help them perceive things in certain situations. “Rules Glossary” defines the following special senses:\n\n• Blindsight\n• Darkvision\n• Tremorsense\n• Truesight",
+      "citation": "D&D System Reference Document 5.2.1 — Vision and Light",
+      "source": {
+        "documentTitle": "D&D System Reference Document 5.2.1",
+        "documentUrl": "https://open5e.com/search/?query=Vision%20and%20Light",
+        "section": "Vision and Light"
+      }
+    },
+    {
+      "keyword": "Vision and Light (Exploration Only)",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "The most fundamental tasks of adventuring---noticing danger, finding hidden objects, hitting an enemy in combat, and targeting a spell, toname just a few---rely heavily on a character's ability to see. Darknessand other effects that obscure vision can prove a significant hindrance.\nA given area might be lightly or heavily obscured. In a lightly obscured area, such as dim light, patchy fog, or moderate foliage,creatures have disadvantage on Wisdom (Perception) checks that rely onsight.\nA heavily obscured area---such as darkness, opaque fog, or densefoliage---blocks vision entirely. A creature effectively suffers fromthe blinded condition when trying to see something in that area.\nThe presence or absence of light in an environment creates threecategories of illumination: bright light, dim light, and darkness.\nBright light lets most creatures see normally. Even gloomy daysprovide bright light, as do torches, lanterns, fires, and other sourcesof illumination within a specific radius.\nDim light, also called shadows, creates a lightly obscured area. Anarea of dim light is usually a boundary between a source of brightlight, such as a torch, and surrounding darkness. The soft light oftwilight and dawn also counts as dim light. A particularly brilliantfull moon might bathe the land in dim light.\nDarkness creates a heavily obscured area. Characters face darknessoutdoors at night (even most moonlit nights), within the confines of an unlit dungeon or a subterranean vault, or in an area of magical darkness.",
       "citation": "D&D System Reference Document 5.2.1 — Vision and Light",
       "source": {
         "documentTitle": "D&D System Reference Document 5.2.1",

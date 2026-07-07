@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import {
   cleanDndExplanation,
+  canonicalDndTopicKey,
+  disambiguateDndPhaseKeyword,
+  mergeDndDuplicateEntries,
   proseWithoutTables,
   shouldExcludeDndEntry,
   stripMarkdownTables,
@@ -62,5 +65,44 @@ describe('cleanDndExplanation', () => {
 
     expect(cleanDndExplanation(text)).not.toContain('|');
     expect(proseWithoutTables(cleanDndExplanation(text))).toContain('derived from its score');
+  });
+});
+
+describe('canonicalDndTopicKey', () => {
+  it('treats slash and "and" variants as the same topic', () => {
+    expect(canonicalDndTopicKey('Advantage and Disadvantage')).toBe(
+      canonicalDndTopicKey('Advantage/Disadvantage'),
+    );
+  });
+});
+
+describe('mergeDndDuplicateEntries', () => {
+  it('keeps one display keyword and stores the other as an alias', () => {
+    const merged = mergeDndDuplicateEntries(
+      {
+        keyword: 'Advantage/Disadvantage',
+        phase: 'General',
+        applicability: 'general',
+        explanation: 'Short.',
+        citation: 'a',
+      },
+      {
+        keyword: 'Advantage and Disadvantage',
+        phase: 'General',
+        applicability: 'general',
+        explanation: 'Longer explanation about rolling two d20s.',
+        citation: 'b',
+      },
+    );
+
+    expect(merged.keyword).toBe('Advantage and Disadvantage');
+    expect(merged.explanation).toContain('rolling two d20s');
+    expect(merged.aliases).toContain('Advantage/Disadvantage');
+  });
+});
+
+describe('disambiguateDndPhaseKeyword', () => {
+  it('appends a phase-only suffix for restricted topics', () => {
+    expect(disambiguateDndPhaseKeyword('Attack', 'Combat')).toBe('Attack (Combat Only)');
   });
 });
