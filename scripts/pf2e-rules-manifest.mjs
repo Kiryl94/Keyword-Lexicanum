@@ -871,4 +871,44 @@ export const PF2E_RULES = [
       'Survival check to find food and water for yourself in the wild.',
     ruleRef: 'Actions — Subsist',
   },
+  {
+    keyword: 'Perform',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Entertain a crowd or earn coin with music, dance, oratory, or similar art.',
+    ruleRef: 'Actions — Perform',
+  },
+  {
+    keyword: 'Drop',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Release something you are holding, leaving it in your space or nearby.',
+    ruleRef: 'Actions — Drop',
+  },
+  {
+    keyword: 'Release',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Free a creature you have grabbed or restrained so it is no longer held.',
+    ruleRef: 'Actions — Release',
+  },
+  {
+    keyword: 'Versatile',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Weapon trait allowing one- or two-handed use with different damage dice.',
+    ruleRef: 'Equipment — Versatile',
+  },
+  {
+    keyword: 'Defend',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Fortify a camp or position against attack while the party rests or works.',
+    ruleRef: 'Actions — Defend',
+  },
 ];

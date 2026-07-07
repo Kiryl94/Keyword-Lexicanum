@@ -1,9 +1,9 @@
 {
-  "version": "yze-srd-v11",
+  "version": "yze-srd-v12",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 87,
+  "entryCount": 91,
   "entries": [
     {
       "keyword": "Aim",
@@ -84,6 +84,21 @@
         "section": "SRD — Base Dice"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Blind",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Cannot see; attacks and awareness suffer until vision is restored.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Blind",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Blind"
+      },
+      "aliases": [
+        "blinded"
+      ]
     },
     {
       "keyword": "Block",
@@ -300,6 +315,21 @@
         "section": "SRD — Darkness"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Deaf",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Cannot hear; may miss warnings and coordinated cues until the effect ends.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Deaf",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Deaf"
+      },
+      "aliases": [
+        "deafened"
+      ]
     },
     {
       "keyword": "Difficulty",
@@ -544,6 +574,19 @@
       "aliases": []
     },
     {
+      "keyword": "Infection",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Wound or illness that worsens without treatment; common in harsh zones.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Infection",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Infection"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Initiative",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -611,6 +654,21 @@
         "section": "SRD — Magic"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Map",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Chart landmarks and routes so the party can retrace steps or plan detours.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Map",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Map"
+      },
+      "aliases": [
+        "mapping"
+      ]
     },
     {
       "keyword": "Melee Combat",

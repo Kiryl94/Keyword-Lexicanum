@@ -1,9 +1,9 @@
 {
-  "version": "pf2e-remaster-v10",
+  "version": "pf2e-remaster-v11",
   "license": "ORC",
   "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
   "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
-  "entryCount": 111,
+  "entryCount": 116,
   "entries": [
     {
       "keyword": "Administer First Aid",
@@ -378,6 +378,19 @@
       "aliases": []
     },
     {
+      "keyword": "Defend",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Fortify a camp or position against attack while the party rests or works.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Defend",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Defend"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Degree of Success",
       "phase": "General",
       "applicability": "general",
@@ -467,6 +480,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Conditions — Drained"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Drop",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Release something you are holding, leaving it in your space or nearby.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Drop",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Drop"
       },
       "aliases": []
     },
@@ -899,6 +925,19 @@
       "aliases": []
     },
     {
+      "keyword": "Perform",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Entertain a crowd or earn coin with music, dance, oratory, or similar art.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Perform",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Perform"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Persistent Damage",
       "phase": "Encounter",
       "applicability": "general",
@@ -1059,6 +1098,19 @@
         "reflex",
         "reflex saving throw"
       ]
+    },
+    {
+      "keyword": "Release",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Free a creature you have grabbed or restrained so it is no longer held.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Release",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Release"
+      },
+      "aliases": []
     },
     {
       "keyword": "Request",
@@ -1440,6 +1492,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Conditions — Unconscious"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Versatile",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Weapon trait allowing one- or two-handed use with different damage dice.",
+      "citation": "Pathfinder Player Core (Remaster) — Equipment — Versatile",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Equipment — Versatile"
       },
       "aliases": []
     },

@@ -686,4 +686,39 @@ export const YZE_RULES = [
     ruleRef: 'SRD — Full Auto',
     aliases: ['full-auto'],
   },
+  {
+    keyword: 'Blind',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Cannot see; attacks and awareness suffer until vision is restored.',
+    ruleRef: 'SRD — Blind',
+    aliases: ['blinded'],
+  },
+  {
+    keyword: 'Deaf',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Cannot hear; may miss warnings and coordinated cues until the effect ends.',
+    ruleRef: 'SRD — Deaf',
+    aliases: ['deafened'],
+  },
+  {
+    keyword: 'Map',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Chart landmarks and routes so the party can retrace steps or plan detours.',
+    ruleRef: 'SRD — Map',
+    aliases: ['mapping'],
+  },
+  {
+    keyword: 'Infection',
+    phase: 'Exploration',
+    applicability: 'general',
+    summary:
+      'Wound or illness that worsens without treatment; common in harsh zones.',
+    ruleRef: 'SRD — Infection',
+  },
 ];
