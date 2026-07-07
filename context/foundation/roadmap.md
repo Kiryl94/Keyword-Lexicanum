@@ -39,6 +39,9 @@ New tabletop players hit a steep terminology barrier in dense rulebooks. Keyword
 | S-07 | dnd-srd-corpus | look up keywords against the real D&D SRD corpus (not sample data) | S-02 | FR-003, FR-004 | done |
 | S-08 | wh40k-core-corpus | look up WH40k keywords against locally built GW core rules corpus | S-02, distribution policy | FR-003, FR-004 | done |
 | S-09 | starcraft-core-corpus | look up StarCraft TMG keywords against locally built Archon corpus | S-02, distribution policy | FR-003, FR-004 | done |
+| S-10 | pf2e-srd-corpus | look up Pathfinder 2e Remaster keywords against ORC SRD manifest | S-02 | FR-003, FR-004 | done |
+| S-11 | yze-srd-corpus | look up Year Zero Engine keywords against FTL SRD manifest | S-02 | FR-003, FR-004 | done |
+| S-12 | dnd-srd-deepen | richer D&D phase rulesets, alias map, and v2 corpus rebuild | S-07 | FR-003, FR-007 | done |
 
 ## Streams
 
@@ -49,7 +52,7 @@ Navigation aid — groups items that share a prerequisites chain. Canonical orde
 | A | Core lookup wedge | `S-01` → `S-02` → `S-03` / `S-05` | Speed-first must-have path; north star at `S-02`. |
 | B | Deploy for field test | `F-01` | Parallel with Stream A once `S-02` is demoable — share URL at the game store. |
 | C | Phase browse | `S-04` | Joins Stream A at `S-02`; blocked on phase taxonomy until Open Question 1 resolves. |
-| D | Real corpus | `S-07` → `S-08` / `S-09` | D&D public; GW/Archon personal/local until consultation. See `distribution-policy.md`. |
+| D | Real corpus | `S-07` → `S-08` / `S-09` / `S-10` / `S-11` | D&D + PF2e + YZE public SRD; GW/Archon Demo until consultation. See `distribution-policy.md`. |
 | E | Session polish | `S-06` | Joins Stream A at `S-02`; nice-to-have, cut if schedule slips. |
 
 ## Baseline
@@ -166,7 +169,7 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 - **Parallel with:** —
 - **Blockers:** — (D&D SRD is CC BY 4.0)
 - **Unknowns:** D&D phase taxonomy refinement — Owner: product. Block: no for v1.
-- **Risk:** 228-entry static JSON (table-only entries filtered); rebuild via `npm run corpus:build-dnd`.
+- **Risk:** 228-entry static JSON (table-only entries filtered); rebuild via `npm run corpus:build-dnd`. v2 adds phase rulesets from Open5e rulesets.
 - **Status:** done
 
 ### S-08: Real WH40k core rules corpus (personal)
@@ -205,6 +208,9 @@ Prior Expo scaffold archived at `mobile-expo-archive/`; not part of active basel
 | S-07 | dnd-srd-corpus | Ingest D&D SRD corpus for real lookups | yes | Shipped — public OK |
 | S-08 | wh40k-core-corpus | Build WH40k corpus from GW free PDF (local) | yes | Personal use; consult GW before public |
 | S-09 | starcraft-core-corpus | Build StarCraft corpus from Archon free PDF (local) | yes | Personal use; consult Archon before public |
+| S-10 | pf2e-srd-corpus | Ingest Pathfinder 2e ORC SRD manifest | yes | Shipped — 66 keywords |
+| S-11 | yze-srd-corpus | Ingest Year Zero Engine FTL SRD manifest | yes | Shipped — 38 keywords |
+| S-12 | dnd-srd-deepen | Deepen D&D phase rulesets and rebuild v2 corpus | yes | Shipped — v2 rebuild |
 
 ## Open Roadmap Questions
 

@@ -1,10 +1,38 @@
 {
-  "version": "yze-srd-v1",
+  "version": "yze-srd-v2",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 25,
+  "entryCount": 38,
   "entries": [
+    {
+      "keyword": "Ammo",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Ranged attacks consume ammunition tracked on your sheet unless the weapon says otherwise.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Ammunition",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Ammunition"
+      },
+      "aliases": [
+        "ammunition"
+      ]
+    },
+    {
+      "keyword": "Armor",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Protective gear that reduces damage taken or makes you harder to hit in many YZE games.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Armor",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Armor"
+      },
+      "aliases": []
+    },
     {
       "keyword": "Attribute",
       "phase": "General",
@@ -15,6 +43,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Attributes"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Base Dice",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "d6 dice from your attribute rating added to every skill roll in the classic dice-pool mode.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Base Dice",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Base Dice"
       },
       "aliases": []
     },
@@ -30,6 +71,21 @@
         "section": "SRD — Block"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Botch",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Catastrophic failure on a roll — often when no successes are rolled and at least one die shows 1.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Botch",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Botch"
+      },
+      "aliases": [
+        "fumble"
+      ]
     },
     {
       "keyword": "Chase",
@@ -123,6 +179,19 @@
       "aliases": []
     },
     {
+      "keyword": "Encumbered",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Carrying too much; movement and physical rolls may suffer until you drop weight.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Encumbrance",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Encumbrance"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Experience",
       "phase": "Downtime",
       "applicability": "general",
@@ -162,6 +231,21 @@
       "aliases": []
     },
     {
+      "keyword": "Hit Points",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Health pool; when reduced to zero you risk critical injuries or death depending on the game.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Hit Points",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Hit Points"
+      },
+      "aliases": [
+        "hp"
+      ]
+    },
+    {
       "keyword": "Initiative",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -184,6 +268,32 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Magic"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Opposed Roll",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Both sides roll; the higher number of successes wins the contest.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Opposed Rolls",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Opposed Rolls"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Panicked",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Overwhelmed by fear; you must flee or cower and cannot act normally until the condition clears.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Panicked",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Panicked"
       },
       "aliases": []
     },
@@ -214,6 +324,19 @@
       "aliases": []
     },
     {
+      "keyword": "Relieve Stress",
+      "phase": "Downtime",
+      "applicability": "restricted",
+      "explanation": "Rest, comfort, or downtime activity that removes accumulated stress between intense scenes.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Stress Relief",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Stress Relief"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Skill",
       "phase": "General",
       "applicability": "general",
@@ -223,6 +346,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Skills"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Skill Dice",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Extra d6 dice from your trained skill level, rolled alongside base dice on skill checks.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Skill Dice",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Skill Dice"
       },
       "aliases": []
     },
@@ -255,6 +391,19 @@
       "aliases": []
     },
     {
+      "keyword": "Stealth",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Skill to move quietly and stay unseen; opposed by observers’ perception in many scenes.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Stealth",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Stealth"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Step Dice",
       "phase": "Encounter",
       "applicability": "general",
@@ -279,6 +428,21 @@
         "section": "SRD — Stress"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Supply",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Food, ammo, or consumables tracked on the sheet; depletes during travel and downtime.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Supplies",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Supplies"
+      },
+      "aliases": [
+        "supplies"
+      ]
     },
     {
       "keyword": "Talent",
@@ -316,6 +480,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Vehicles"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Weapon",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Gear used to attack; defines damage, range, and special traits for combat rolls.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Weapons",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Weapons"
       },
       "aliases": []
     },

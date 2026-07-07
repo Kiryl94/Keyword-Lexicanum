@@ -164,6 +164,12 @@ describe('lookupKeyword', () => {
     if (alias.found) {
       expect(alias.keyword).toBe('Off-Guard');
     }
+
+    const hero = await lookupKeyword('hero points', 'pf2e-srd');
+    expect(hero.found).toBe(true);
+    if (hero.found) {
+      expect(hero.keyword).toBe('Hero Point');
+    }
   });
 
   it('returns YZE SRD hits', async () => {
@@ -172,6 +178,12 @@ describe('lookupKeyword', () => {
     if (result.found) {
       expect(result.keyword).toBe('Push');
       expect(result.explanation.toLowerCase()).toContain('push');
+    }
+
+    const hp = await lookupKeyword('hp', 'year-zero-engine');
+    expect(hp.found).toBe(true);
+    if (hp.found) {
+      expect(hp.keyword).toBe('Hit Points');
     }
   });
 });

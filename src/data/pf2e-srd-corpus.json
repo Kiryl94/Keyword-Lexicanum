@@ -1,9 +1,9 @@
 {
-  "version": "pf2e-remaster-v1",
+  "version": "pf2e-remaster-v2",
   "license": "ORC",
   "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
   "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
-  "entryCount": 41,
+  "entryCount": 66,
   "entries": [
     {
       "keyword": "Aid",
@@ -32,6 +32,19 @@
       "aliases": []
     },
     {
+      "keyword": "Blinded",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Cannot see; you automatically fail sight-based checks and attacks against you may gain benefits.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Blinded",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Blinded"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Cast a Spell",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -41,6 +54,32 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Cast a Spell"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Clumsy",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Your clumsy value penalizes Dexterity-based checks and DCs until it decreases.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Clumsy",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Clumsy"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Concealed",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Harder to see clearly; creatures must succeed at a flat check to target you with some effects.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Concealed",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Concealed"
       },
       "aliases": []
     },
@@ -84,6 +123,32 @@
       "aliases": []
     },
     {
+      "keyword": "Dazzled",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Visual overload; you take a penalty on sight-based Perception checks until the effect ends.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Dazzled",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Dazzled"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Deafened",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Cannot hear; you automatically fail hearing-based checks and some auditory effects fail.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Deafened",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Deafened"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Demoralize",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -110,6 +175,84 @@
       "aliases": []
     },
     {
+      "keyword": "Drained",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Life force sapped; your drained value reduces your maximum Hit Points until it decreases.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Drained",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Drained"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Dying",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "At 0 HP and losing life; you must attempt recovery checks or worsen toward death each round.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Dying",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Dying"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Enfeebled",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Weakened physically; your enfeebled value penalizes Strength-based checks and DCs.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Enfeebled",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Enfeebled"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Escape",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Athletics or Acrobatics check to break free from grab, restraint, or similar immobilization.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Escape",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Escape"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Fatigued",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Worn out from exertion; you cannot gain temporary Hit Points and may take other penalties.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Fatigued",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Fatigued"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Feint",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Deception check to make a foe off-guard to your melee attacks until the end of your turn.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Feint",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Feint"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Flanking",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -119,6 +262,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Combat — Flanking"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Flat Check",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Roll d20 against a fixed DC with no modifiers; used to end persistent damage and similar effects.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Flat Checks",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Flat Checks"
       },
       "aliases": []
     },
@@ -175,6 +331,34 @@
       "aliases": []
     },
     {
+      "keyword": "Hero Point",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Spend to reroll a check, avoid death, or use a class feat — usually one per session unless you earn more.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Hero Points",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Hero Points"
+      },
+      "aliases": [
+        "hero points"
+      ]
+    },
+    {
+      "keyword": "Hidden",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Undetected by some creatures; they must Seek or guess your square to target you.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Hidden",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Hidden"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Hide",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -210,6 +394,58 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Conditions — Immobilized"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Initiative",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Perception roll at combat start to determine turn order for all participants.",
+      "citation": "Pathfinder Player Core (Remaster) — Combat — Initiative",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Combat — Initiative"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Interact",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Draw, stow, pick up, or manipulate an object you can reach — one action in most cases.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Interact",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Interact"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Invisible",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Cannot be seen; you are undetected to creatures that cannot perceive you otherwise.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Invisible",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Invisible"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Leap",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Jump horizontally or vertically up to your maximum Leap distance without a check.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Leap",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Leap"
       },
       "aliases": []
     },
@@ -293,6 +529,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Conditions — Prone"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Quickened",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "You gain an extra action at the start of your turn from a spell or effect.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Quickened",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Quickened"
       },
       "aliases": []
     },
@@ -455,6 +704,19 @@
       "aliases": []
     },
     {
+      "keyword": "Stand",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Rise from prone to standing; costs an action unless an ability says otherwise.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Stand",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Stand"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Step",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -507,6 +769,45 @@
       "aliases": []
     },
     {
+      "keyword": "Stupefied",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Mentally dulled; your stupefied value penalizes mental checks, DCs, and spell rolls.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Stupefied",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Stupefied"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Sustain a Spell",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Spend an action to extend the duration of a spell you are already concentrating on.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Sustain a Spell",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Sustain a Spell"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Take Cover",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Hunker behind cover to gain its circumstance bonus until you move away.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Take Cover",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Take Cover"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Three-Action Economy",
       "phase": "Encounter",
       "applicability": "general",
@@ -544,6 +845,32 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Trip"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Unconscious",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Knocked out; you cannot act and are off-guard until you regain consciousness.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Unconscious",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Unconscious"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Wounded",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Serious injury stacks when you regain consciousness from dying, making future recovery harder.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Wounded",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Wounded"
       },
       "aliases": []
     }

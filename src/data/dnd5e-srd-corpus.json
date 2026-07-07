@@ -1,5 +1,5 @@
 {
-  "version": "5.2.1-lookup-v1",
+  "version": "5.2.1-lookup-v2",
   "license": "CC-BY-4.0",
   "attribution": "D&D System Reference Document v5.2.1, © Wizards of the Coast LLC. Licensed under CC BY 4.0. Rule text via Open5e API (wotc-srd); conditions via github.com/cocoajamworld/srd-5.2.1.",
   "sourceDocumentUrl": "https://www.dndbeyond.com/sources/dnd/free-rules",
@@ -283,8 +283,8 @@
     },
     {
       "keyword": "Blindsight",
-      "phase": "General",
-      "applicability": "general",
+      "phase": "Exploration",
+      "applicability": "restricted",
       "explanation": "A creature with blindsight can perceive its surroundings without relyingon sight, within a specific radius. Creatures without eyes, such asoozes, and creatures with echolocation or heightened senses, such asbats and true dragons, have this sense.",
       "citation": "D&D System Reference Document 5.2.1 — Blindsight",
       "source": {
@@ -871,8 +871,8 @@
     },
     {
       "keyword": "Falling",
-      "phase": "General",
-      "applicability": "general",
+      "phase": "Exploration",
+      "applicability": "restricted",
       "explanation": "A fall from a great height is one of the most common hazards facing anadventurer. At the end of a fall, a creature takes 1d6 bludgeoningdamage for every 10 feet it fell, to a maximum of 20d6. The creaturelands prone, unless it avoids taking damage from the fall.",
       "citation": "D&D System Reference Document 5.2.1 — Falling",
       "source": {
@@ -907,8 +907,8 @@
     },
     {
       "keyword": "Food and Water",
-      "phase": "General",
-      "applicability": "general",
+      "phase": "Exploration",
+      "applicability": "restricted",
       "explanation": "Characters who don't eat or drink suffer the effects of exhaustion. Exhaustion caused by lack of food or water can't beremoved until the character eats and drinks the full required amount.\n## Food\nA character needs one pound of food per day and can make food last longer by subsisting on half rations. Eating half a pound of food in aday counts as half a day without food.\n\nA character can go without food for a number of days equal to 3 + his orher Constitution modifier (minimum 1). At the end of each day beyondthat limit, a character automatically suffers one level of exhaustion.\n\nA normal day of eating resets the count of days without food to zero.## Water\n\nA character needs one gallon of water per day, or two gallons per day ifthe weather is hot. A character who drinks only half that much watermust succeed on a DC 15 Constitution saving throw or suffer one level of exhaustion at the end of the day. A character with access to evenless water automatically suffers one level of exhaustion at the end of the day.\n\nIf the character already has one or more levels of exhaustion, the character takes two levels in either case.",
       "citation": "D&D System Reference Document 5.2.1 — Food and Water",
       "source": {
@@ -2347,8 +2347,8 @@
     },
     {
       "keyword": "Suffocating",
-      "phase": "General",
-      "applicability": "general",
+      "phase": "Exploration",
+      "applicability": "restricted",
       "explanation": "A creature can hold its breath for a number of minutes equal to 1 + itsConstitution modifier (minimum of 30 seconds).\nWhen a creature runs out of breath or is choking, it can survive for anumber of rounds equal to its Constitution modifier (minimum of 1round). At the start of its next turn, it drops to 0 hit points and isdying, and it can't regain hit points or be stabilized until it canbreathe again.\nFor example, a creature with a Constitution of 14 can hold its breathfor 3 minutes. If it starts suffocating, it has 2 rounds to reach airbefore it drops to 0 hit points.",
       "citation": "D&D System Reference Document 5.2.1 — Suffocating",
       "source": {
@@ -2527,8 +2527,8 @@
     },
     {
       "keyword": "Truesight",
-      "phase": "General",
-      "applicability": "general",
+      "phase": "Exploration",
+      "applicability": "restricted",
       "explanation": "A creature with truesight can, out to a specific range, see in normal and magical darkness, see invisible creatures and objects,automatically detect visual illusions and succeed on saving throwsagainst them, and perceives the original form of a shapechanger or acreature that is transformed by magic. Furthermore, the creature can see into the Ethereal Plane.",
       "citation": "D&D System Reference Document 5.2.1 — Truesight",
       "source": {
