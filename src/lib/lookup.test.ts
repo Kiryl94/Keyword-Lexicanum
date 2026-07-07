@@ -202,6 +202,54 @@ describe('lookupKeyword', () => {
     });
   });
 
+  it('returns PF2e v5 healing and condition keywords', async () => {
+    const banishment = await lookupKeyword('banishment', 'pf2e-srd');
+    expect(banishment.found).toBe(true);
+    if (banishment.found) {
+      expect(banishment.keyword).toBe('Banishment');
+      expect(banishment.phaseApplicability).toBe('restricted');
+    }
+
+    const counteract = await lookupKeyword('counteract check', 'pf2e-srd');
+    expect(counteract.found).toBe(true);
+    if (counteract.found) {
+      expect(counteract.keyword).toBe('Counteract');
+    }
+
+    const firstAid = await lookupKeyword('first aid', 'pf2e-srd');
+    expect(firstAid.found).toBe(true);
+    if (firstAid.found) {
+      expect(firstAid.keyword).toBe('Administer First Aid');
+    }
+  });
+
+  it('returns YZE v5 survival and stress keywords', async () => {
+    const rally = await lookupKeyword('rally', 'year-zero-engine');
+    expect(rally.found).toBe(true);
+    if (rally.found) {
+      expect(rally.keyword).toBe('Rally');
+    }
+
+    const breaking = await lookupKeyword('breaking point', 'year-zero-engine');
+    expect(breaking.found).toBe(true);
+    if (breaking.found) {
+      expect(breaking.keyword).toBe('Breaking Point');
+    }
+
+    const thirst = await lookupKeyword('thirst', 'year-zero-engine');
+    expect(thirst.found).toBe(true);
+    if (thirst.found) {
+      expect(thirst.keyword).toBe('Thirst');
+    }
+  });
+
+  it('scopes banishment to PF2e — miss under D&D', async () => {
+    expect(await lookupKeyword('banishment', 'dnd5e-srd')).toEqual({
+      found: false,
+      query: 'banishment',
+    });
+  });
+
   it('returns PF2e hits for remaster terms and aliases', async () => {
     const strike = await lookupKeyword('strike', 'pf2e-srd');
     expect(strike.found).toBe(true);
@@ -279,6 +327,12 @@ describe('getKeywordSuggestions', () => {
     expect(getKeywordSuggestions('react', 'dnd5e-srd')).not.toContain('Reactive Strike');
   });
 
+  it('suggests PF2e Counteract and Detect Magic from v5 prefixes', () => {
+    expect(getKeywordSuggestions('count', 'pf2e-srd')).toContain('Counteract');
+    expect(getKeywordSuggestions('det', 'pf2e-srd')).toContain('Detect Magic');
+    expect(getKeywordSuggestions('count', 'dnd5e-srd')).not.toContain('Counteract');
+  });
+
   it('respects the result limit', () => {
     const allMatches = getKeywordSuggestions('a', 'dnd5e-srd');
     expect(allMatches.length).toBeGreaterThan(1);
@@ -335,6 +389,12 @@ describe('getKeywordsForPhase', () => {
     const keywords = getKeywordsForPhase('battle round', 'wh40k-11');
     expect(keywords.length).toBeGreaterThan(1);
     expect(keywords).toEqual([...keywords].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })));
+  });
+
+  it('returns PF2e exploration keywords from the ORC corpus', () => {
+    const keywords = getKeywordsForPhase('exploration', 'pf2e-srd');
+    expect(keywords).toContain('Detect Magic');
+    expect(keywords).not.toContain('Reactive Strike');
   });
 
   it('returns PF2e encounter keywords from the ORC corpus', () => {

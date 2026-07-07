@@ -1,0 +1,17 @@
+{
+  "name": "Keyword Lexicanum",
+  "short_name": "Lexicanum",
+  "description": "In-context tabletop rules keyword lookup with grounded citations",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f1a",
+  "theme_color": "#16213e",
+  "icons": [
+    {
+      "src": "/icons/systems/pf2e-srd-mark.png",
+      "sizes": "375x375",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

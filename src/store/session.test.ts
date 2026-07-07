@@ -65,12 +65,16 @@ describe('sanitizePersistedProfile', () => {
     const result = sanitizePersistedProfile({
       recentLookupsBySystem: {
         'dnd5e-srd': ['advantage', 42, 'initiative'],
+        'pf2e-srd': ['strike'],
+        'year-zero-engine': ['push'],
         bogus: ['ignored'],
       },
     });
 
     expect(result.recentLookupsBySystem).toEqual({
       'dnd5e-srd': ['advantage', 'initiative'],
+      'pf2e-srd': ['strike'],
+      'year-zero-engine': ['push'],
     });
   });
 
