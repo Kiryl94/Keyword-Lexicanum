@@ -911,4 +911,46 @@ export const PF2E_RULES = [
       'Fortify a camp or position against attack while the party rests or works.',
     ruleRef: 'Actions — Defend',
   },
+  {
+    keyword: 'Knockdown',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Weapon trait that can knock a foe prone on a critical hit.',
+    ruleRef: 'Equipment — Knockdown',
+  },
+  {
+    keyword: 'Sense Motive',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Perception check to tell if someone is lying or hiding their intent.',
+    ruleRef: 'Actions — Sense Motive',
+  },
+  {
+    keyword: 'Decipher Writing',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Society check to read an unknown script, cipher, or archaic document.',
+    ruleRef: 'Actions — Decipher Writing',
+    aliases: ['decipher'],
+  },
+  {
+    keyword: 'Earn Income',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Use a skill or lore to work for pay between adventures over downtime.',
+    ruleRef: 'Actions — Earn Income',
+  },
+  {
+    keyword: 'Bon Mot',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Clever quip or performance that boosts allies or unsettles listeners.',
+    ruleRef: 'Actions — Bon Mot',
+    aliases: ['bon mot'],
+  },
 ];

@@ -163,18 +163,18 @@ describe('lookupKeyword', () => {
     }
   });
 
-  it('stamps pf2e-remaster-v11 and yze-srd-v12 on expanded SRD hits', async () => {
+  it('stamps pf2e-remaster-v12 and yze-srd-v13 on expanded SRD hits', async () => {
     const pf2e = await lookupKeyword('degree of success', 'pf2e-srd');
     expect(pf2e.found).toBe(true);
     if (pf2e.found) {
-      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v11');
+      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v12');
       expect(pf2e.keyword).toBe('Degree of Success');
     }
 
     const yze = await lookupKeyword('suppressive fire', 'year-zero-engine');
     expect(yze.found).toBe(true);
     if (yze.found) {
-      expect(yze.corpusVersion).toBe('yze-srd-v12');
+      expect(yze.corpusVersion).toBe('yze-srd-v13');
       expect(yze.keyword).toBe('Suppressive Fire');
     }
 
@@ -260,6 +260,51 @@ describe('lookupKeyword', () => {
     expect(save.found).toBe(true);
     if (save.found) {
       expect(save.keyword).toBe('Saving Throws');
+    }
+  });
+
+  it('returns PF2e v13 social and exploration keywords', async () => {
+    const sense = await lookupKeyword('sense motive', 'pf2e-srd');
+    expect(sense.found).toBe(true);
+    if (sense.found) {
+      expect(sense.keyword).toBe('Sense Motive');
+    }
+
+    const decipher = await lookupKeyword('decipher', 'pf2e-srd');
+    expect(decipher.found).toBe(true);
+    if (decipher.found) {
+      expect(decipher.keyword).toBe('Decipher Writing');
+    }
+
+    const knockdown = await lookupKeyword('knockdown', 'pf2e-srd');
+    expect(knockdown.found).toBe(true);
+    if (knockdown.found) {
+      expect(knockdown.keyword).toBe('Knockdown');
+    }
+
+    expect(await lookupKeyword('sense motive', 'dnd5e-srd')).toEqual({
+      found: false,
+      query: 'sense motive',
+    });
+  });
+
+  it('returns YZE v13 disarm and wound keywords', async () => {
+    const disarm = await lookupKeyword('disarming', 'year-zero-engine');
+    expect(disarm.found).toBe(true);
+    if (disarm.found) {
+      expect(disarm.keyword).toBe('Disarm');
+    }
+
+    const bleeding = await lookupKeyword('bleeding', 'year-zero-engine');
+    expect(bleeding.found).toBe(true);
+    if (bleeding.found) {
+      expect(bleeding.keyword).toBe('Bleeding');
+    }
+
+    const concealment = await lookupKeyword('concealment', 'year-zero-engine');
+    expect(concealment.found).toBe(true);
+    if (concealment.found) {
+      expect(concealment.keyword).toBe('Concealment');
     }
   });
 
@@ -669,6 +714,12 @@ describe('getKeywordSuggestions', () => {
     expect(getKeywordSuggestions('count', 'dnd5e-srd')).not.toContain('Counteract');
   });
 
+  it('suggests PF2e Sense Motive and YZE Disarm from v13 prefixes', () => {
+    expect(getKeywordSuggestions('sen', 'pf2e-srd')).toContain('Sense Motive');
+    expect(getKeywordSuggestions('dis', 'year-zero-engine')).toContain('Disarm');
+    expect(getKeywordSuggestions('sen', 'dnd5e-srd')).not.toContain('Sense Motive');
+  });
+
   it('suggests PF2e Perform and YZE Map from v12 prefixes', () => {
     expect(getKeywordSuggestions('per', 'pf2e-srd')).toContain('Perform');
     expect(getKeywordSuggestions('map', 'year-zero-engine')).toContain('Map');
@@ -789,6 +840,7 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Scout');
     expect(keywords).toContain('Subsist');
     expect(keywords).toContain('Defend');
+    expect(keywords).toContain('Decipher Writing');
     expect(keywords).not.toContain('Reactive Strike');
   });
 
@@ -821,6 +873,8 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Prone');
     expect(keywords).toContain('Blind');
     expect(keywords).toContain('Deaf');
+    expect(keywords).toContain('Disarm');
+    expect(keywords).toContain('Bleeding');
     expect(keywords).not.toContain('Strike');
   });
 
@@ -847,6 +901,7 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Water');
     expect(keywords).toContain('Map');
     expect(keywords).toContain('Infection');
+    expect(keywords).toContain('Concealment');
     expect(keywords).not.toContain('Detect Magic');
   });
 

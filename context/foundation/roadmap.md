@@ -218,7 +218,7 @@ MVP slices and test-plan rollout are complete. **Build priority (2026-07-07):** 
 
 | Priority | ID | Change ID | Outcome | Status | Notes |
 |----------|-----|-----------|---------|--------|-------|
-| 1 | S-16 | corpus-expansion | Grow D&D / PF2e / YZE manifests from table feedback | ongoing | v12 batch — PF2e 116, YZE 91; D&D `lookup-v5` |
+| 1 | S-16 | corpus-expansion | Grow D&D / PF2e / YZE manifests from table feedback | ongoing | v13 batch — PF2e 121, YZE 95 keywords |
 | 1 | — | m3l2-tdd | Ad-hoc tests via `/10x-tdd` + test-plan §6 cookbook | in progress | Quality contract for day-to-day test authoring |
 | 2 | S-14 | field-table-test | Validate SRD lookup flow on phone at a live game | done | Mobile UX confirmed 2026-07-07 |
 | 2 | S-17 | offline-pwa | Service worker / installable PWA shell | done | Installed on device 2026-07-07 |

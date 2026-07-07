@@ -1,9 +1,9 @@
 {
-  "version": "pf2e-remaster-v11",
+  "version": "pf2e-remaster-v12",
   "license": "ORC",
   "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
   "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
-  "entryCount": 116,
+  "entryCount": 121,
   "entries": [
     {
       "keyword": "Administer First Aid",
@@ -136,6 +136,21 @@
         "section": "Conditions — Blinded"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Bon Mot",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Clever quip or performance that boosts allies or unsettles listeners.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Bon Mot",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Bon Mot"
+      },
+      "aliases": [
+        "bon mot"
+      ]
     },
     {
       "keyword": "Cast a Spell",
@@ -378,6 +393,21 @@
       "aliases": []
     },
     {
+      "keyword": "Decipher Writing",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Society check to read an unknown script, cipher, or archaic document.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Decipher Writing",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Decipher Writing"
+      },
+      "aliases": [
+        "decipher"
+      ]
+    },
+    {
       "keyword": "Defend",
       "phase": "Exploration",
       "applicability": "restricted",
@@ -506,6 +536,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Conditions — Dying"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Earn Income",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Use a skill or lore to work for pay between adventures over downtime.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Earn Income",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Earn Income"
       },
       "aliases": []
     },
@@ -825,6 +868,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Conditions — Invisible"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Knockdown",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Weapon trait that can knock a foe prone on a critical hit.",
+      "citation": "Pathfinder Player Core (Remaster) — Equipment — Knockdown",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Equipment — Knockdown"
       },
       "aliases": []
     },
@@ -1178,6 +1234,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Seek"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Sense Motive",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Perception check to tell if someone is lying or hiding their intent.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Sense Motive",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Sense Motive"
       },
       "aliases": []
     },

@@ -721,4 +721,38 @@ export const YZE_RULES = [
       'Wound or illness that worsens without treatment; common in harsh zones.',
     ruleRef: 'SRD — Infection',
   },
+  {
+    keyword: 'Disarm',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Strike or wrestle a weapon from an opponent’s grip in close combat.',
+    ruleRef: 'SRD — Disarm',
+    aliases: ['disarming'],
+  },
+  {
+    keyword: 'Bleeding',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Ongoing blood loss from a wound; untreated bleeding can worsen rapidly.',
+    ruleRef: 'SRD — Bleeding',
+  },
+  {
+    keyword: 'Wound',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Injury that may slow you, impose penalties, or require field treatment.',
+    ruleRef: 'SRD — Wound',
+    aliases: ['wounded'],
+  },
+  {
+    keyword: 'Concealment',
+    phase: 'Exploration',
+    applicability: 'general',
+    summary:
+      'Cover, darkness, or terrain that makes you harder to spot or shoot.',
+    ruleRef: 'SRD — Concealment',
+  },
 ];

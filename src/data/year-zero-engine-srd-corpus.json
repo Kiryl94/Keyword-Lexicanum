@@ -1,9 +1,9 @@
 {
-  "version": "yze-srd-v12",
+  "version": "yze-srd-v13",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 91,
+  "entryCount": 95,
   "entries": [
     {
       "keyword": "Aim",
@@ -82,6 +82,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Base Dice"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Bleeding",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Ongoing blood loss from a wound; untreated bleeding can worsen rapidly.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Bleeding",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Bleeding"
       },
       "aliases": []
     },
@@ -226,6 +239,19 @@
       "aliases": []
     },
     {
+      "keyword": "Concealment",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Cover, darkness, or terrain that makes you harder to spot or shoot.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Concealment",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Concealment"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Condition",
       "phase": "Encounter",
       "applicability": "general",
@@ -343,6 +369,21 @@
         "section": "SRD — Difficulty"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Disarm",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Strike or wrestle a weapon from an opponent’s grip in close combat.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Disarm",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Disarm"
+      },
+      "aliases": [
+        "disarming"
+      ]
     },
     {
       "keyword": "Disease",
@@ -1232,6 +1273,21 @@
         "section": "SRD — Willpower"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Wound",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Injury that may slow you, impose penalties, or require field treatment.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Wound",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Wound"
+      },
+      "aliases": [
+        "wounded"
+      ]
     }
   ]
 }
