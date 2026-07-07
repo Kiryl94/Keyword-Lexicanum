@@ -1,9 +1,9 @@
 {
-  "version": "pf2e-remaster-v6",
+  "version": "pf2e-remaster-v7",
   "license": "ORC",
   "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
   "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
-  "entryCount": 91,
+  "entryCount": 96,
   "entries": [
     {
       "keyword": "Administer First Aid",
@@ -95,6 +95,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Cast a Spell"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Climb",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Athletics check to scale a surface; failure may mean a fall or no progress.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Climb",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Climb"
       },
       "aliases": []
     },
@@ -207,6 +220,19 @@
       "aliases": []
     },
     {
+      "keyword": "Crawl",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Move while prone at half Speed without standing up first.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Crawl",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Crawl"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Critical Failure",
       "phase": "General",
       "applicability": "general",
@@ -259,6 +285,19 @@
       "aliases": []
     },
     {
+      "keyword": "Deadly",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Weapon trait that adds extra damage dice on a critical hit.",
+      "citation": "Pathfinder Player Core (Remaster) — Equipment — Deadly",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Equipment — Deadly"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Deafened",
       "phase": "Encounter",
       "applicability": "general",
@@ -285,6 +324,19 @@
       "aliases": [
         "degrees of success"
       ]
+    },
+    {
+      "keyword": "Delay",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Push your turn later in the initiative order so you can act after allies or react to foes.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Delay",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Delay"
+      },
+      "aliases": []
     },
     {
       "keyword": "Demoralize",
@@ -1081,6 +1133,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Sustain a Spell"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Swim",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Athletics check to move through water; currents and armor can impose penalties.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Swim",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Swim"
       },
       "aliases": []
     },

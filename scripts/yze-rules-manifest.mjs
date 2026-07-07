@@ -549,4 +549,38 @@ export const YZE_RULES = [
     ruleRef: 'SRD — Navigate',
     aliases: ['navigation'],
   },
+  {
+    keyword: 'Aim',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Spend an action lining up a ranged shot for a bonus on the next attack.',
+    ruleRef: 'SRD — Aim',
+  },
+  {
+    keyword: 'Reload',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Load ammunition into a ranged weapon before it can fire again.',
+    ruleRef: 'SRD — Reload',
+  },
+  {
+    keyword: 'Run',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Move at full pace, often trading defense or awareness for distance.',
+    ruleRef: 'SRD — Run',
+    aliases: ['running'],
+  },
+  {
+    keyword: 'Jump',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Athletics check to leap a gap or hurdle an obstacle.',
+    ruleRef: 'SRD — Jump',
+    aliases: ['jumping'],
+  },
 ];

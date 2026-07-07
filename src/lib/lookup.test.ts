@@ -163,18 +163,18 @@ describe('lookupKeyword', () => {
     }
   });
 
-  it('stamps pf2e-remaster-v6 and yze-srd-v7 on expanded SRD hits', async () => {
+  it('stamps pf2e-remaster-v7 and yze-srd-v8 on expanded SRD hits', async () => {
     const pf2e = await lookupKeyword('degree of success', 'pf2e-srd');
     expect(pf2e.found).toBe(true);
     if (pf2e.found) {
-      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v6');
+      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v7');
       expect(pf2e.keyword).toBe('Degree of Success');
     }
 
     const yze = await lookupKeyword('suppressive fire', 'year-zero-engine');
     expect(yze.found).toBe(true);
     if (yze.found) {
-      expect(yze.corpusVersion).toBe('yze-srd-v7');
+      expect(yze.corpusVersion).toBe('yze-srd-v8');
       expect(yze.keyword).toBe('Suppressive Fire');
     }
 
@@ -212,6 +212,51 @@ describe('lookupKeyword', () => {
     expect(loot.found).toBe(true);
     if (loot.found) {
       expect(loot.keyword).toBe('Loot');
+    }
+  });
+
+  it('returns PF2e v8 combat economy and athletics keywords', async () => {
+    const delay = await lookupKeyword('delay', 'pf2e-srd');
+    expect(delay.found).toBe(true);
+    if (delay.found) {
+      expect(delay.keyword).toBe('Delay');
+    }
+
+    const deadly = await lookupKeyword('deadly', 'pf2e-srd');
+    expect(deadly.found).toBe(true);
+    if (deadly.found) {
+      expect(deadly.keyword).toBe('Deadly');
+    }
+
+    const climb = await lookupKeyword('climb', 'pf2e-srd');
+    expect(climb.found).toBe(true);
+    if (climb.found) {
+      expect(climb.keyword).toBe('Climb');
+    }
+
+    expect(await lookupKeyword('delay', 'dnd5e-srd')).toEqual({
+      found: false,
+      query: 'delay',
+    });
+  });
+
+  it('returns YZE v8 ranged and movement keywords', async () => {
+    const aim = await lookupKeyword('aim', 'year-zero-engine');
+    expect(aim.found).toBe(true);
+    if (aim.found) {
+      expect(aim.keyword).toBe('Aim');
+    }
+
+    const reload = await lookupKeyword('reload', 'year-zero-engine');
+    expect(reload.found).toBe(true);
+    if (reload.found) {
+      expect(reload.keyword).toBe('Reload');
+    }
+
+    const jump = await lookupKeyword('jumping', 'year-zero-engine');
+    expect(jump.found).toBe(true);
+    if (jump.found) {
+      expect(jump.keyword).toBe('Jump');
     }
   });
 
@@ -396,6 +441,12 @@ describe('getKeywordSuggestions', () => {
     expect(getKeywordSuggestions('count', 'dnd5e-srd')).not.toContain('Counteract');
   });
 
+  it('suggests PF2e Delay and YZE Aim from v8 prefixes', () => {
+    expect(getKeywordSuggestions('del', 'pf2e-srd')).toContain('Delay');
+    expect(getKeywordSuggestions('aim', 'year-zero-engine')).toContain('Aim');
+    expect(getKeywordSuggestions('del', 'dnd5e-srd')).not.toContain('Delay');
+  });
+
   it('suggests YZE Loot and PF2e Cursed from v7 prefixes', () => {
     expect(getKeywordSuggestions('loo', 'year-zero-engine')).toContain('Loot');
     expect(getKeywordSuggestions('cur', 'pf2e-srd')).toContain('Cursed');
@@ -473,6 +524,8 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Reactive Strike');
     expect(keywords).toContain('Paralyzed');
     expect(keywords).toContain('Stabilize');
+    expect(keywords).toContain('Delay');
+    expect(keywords).toContain('Crawl');
     expect(keywords).not.toContain('Close Quarters');
   });
 
@@ -483,6 +536,8 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Sneak Attack');
     expect(keywords).toContain('Group Roll');
     expect(keywords).toContain('Suppressive Fire');
+    expect(keywords).toContain('Aim');
+    expect(keywords).toContain('Reload');
     expect(keywords).not.toContain('Strike');
   });
 

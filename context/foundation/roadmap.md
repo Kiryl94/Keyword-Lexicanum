@@ -218,7 +218,7 @@ MVP slices and test-plan rollout are complete. **Build priority (2026-07-07):** 
 
 | Priority | ID | Change ID | Outcome | Status | Notes |
 |----------|-----|-----------|---------|--------|-------|
-| 1 | S-16 | corpus-expansion | Grow D&D / PF2e / YZE manifests from table feedback | ongoing | v7 batch — PF2e 91, YZE 71 keywords |
+| 1 | S-16 | corpus-expansion | Grow D&D / PF2e / YZE manifests from table feedback | ongoing | v8 batch — PF2e 96, YZE 75 keywords |
 | 1 | — | m3l2-tdd | Ad-hoc tests via `/10x-tdd` + test-plan §6 cookbook | in progress | Quality contract for day-to-day test authoring |
 | 2 | S-14 | field-table-test | Validate SRD lookup flow on phone at a live game | done | Mobile UX confirmed 2026-07-07 |
 | 2 | S-17 | offline-pwa | Service worker / installable PWA shell | done | Installed on device 2026-07-07 |
@@ -226,7 +226,7 @@ MVP slices and test-plan rollout are complete. **Build priority (2026-07-07):** 
 ## Open Roadmap Questions
 
 1. **Exact game-phase taxonomy per system** (Engagement, etc.) — Owner: product/build. Block: refines browse quality, not v1 demo.
-2. **GW / Archon permission for public corpus** — Owner: product. **Deferred** until SRD + main web app work is complete; Demo samples remain in production until then.
+2. **GW / Archon permission for public corpus** — Owner: product. **Dropped** (2026-07-07); Demo samples remain in production indefinitely.
 3. **US-02 for phase-based keyword browse** — Owner: product. Block: roadmap-wide acceptance criteria only.
 
 ## Parked

@@ -38,7 +38,7 @@ const entries = YZE_RULES.map(toEntry).sort((a, b) =>
 );
 
 const output = {
-  version: 'yze-srd-v7',
+  version: 'yze-srd-v8',
   license: 'YZE-FTL',
   attribution:
     'Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; ' +

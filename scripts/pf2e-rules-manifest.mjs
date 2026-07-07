@@ -708,4 +708,44 @@ export const PF2E_RULES = [
       'Weapon trait for items designed to be hurled; uses a thrown range increment.',
     ruleRef: 'Equipment — Thrown',
   },
+  {
+    keyword: 'Delay',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Push your turn later in the initiative order so you can act after allies or react to foes.',
+    ruleRef: 'Actions — Delay',
+  },
+  {
+    keyword: 'Crawl',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Move while prone at half Speed without standing up first.',
+    ruleRef: 'Actions — Crawl',
+  },
+  {
+    keyword: 'Climb',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Athletics check to scale a surface; failure may mean a fall or no progress.',
+    ruleRef: 'Actions — Climb',
+  },
+  {
+    keyword: 'Swim',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Athletics check to move through water; currents and armor can impose penalties.',
+    ruleRef: 'Actions — Swim',
+  },
+  {
+    keyword: 'Deadly',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Weapon trait that adds extra damage dice on a critical hit.',
+    ruleRef: 'Equipment — Deadly',
+  },
 ];

@@ -1,10 +1,23 @@
 {
-  "version": "yze-srd-v7",
+  "version": "yze-srd-v8",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 71,
+  "entryCount": 75,
   "entries": [
+    {
+      "keyword": "Aim",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Spend an action lining up a ranged shot for a bonus on the next attack.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Aim",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Aim"
+      },
+      "aliases": []
+    },
     {
       "keyword": "Ambush",
       "phase": "Encounter",
@@ -458,6 +471,21 @@
       "aliases": []
     },
     {
+      "keyword": "Jump",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Athletics check to leap a gap or hurdle an obstacle.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Jump",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Jump"
+      },
+      "aliases": [
+        "jumping"
+      ]
+    },
+    {
       "keyword": "Loot",
       "phase": "Exploration",
       "applicability": "restricted",
@@ -657,6 +685,19 @@
       "aliases": []
     },
     {
+      "keyword": "Reload",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Load ammunition into a ranged weapon before it can fire again.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Reload",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Reload"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Repair",
       "phase": "Downtime",
       "applicability": "restricted",
@@ -694,6 +735,21 @@
         "section": "SRD — Rot"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Run",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Move at full pace, often trading defense or awareness for distance.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Run",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Run"
+      },
+      "aliases": [
+        "running"
+      ]
     },
     {
       "keyword": "Scared",
