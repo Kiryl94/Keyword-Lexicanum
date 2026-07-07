@@ -12,7 +12,7 @@ describe('SRD corpora integrity', () => {
   it('PF2e corpus matches manifest and is ORC-licensed', () => {
     const corpus = JSON.parse(readFileSync(join(DATA, 'pf2e-srd-corpus.json'), 'utf8'));
     expect(corpus.license).toBe('ORC');
-    expect(corpus.version).toBe('pf2e-remaster-v8');
+    expect(corpus.version).toBe('pf2e-remaster-v9');
     expect(corpus.entryCount).toBe(PF2E_RULES.length);
     expect(corpus.entries).toHaveLength(PF2E_RULES.length);
   });
@@ -22,7 +22,7 @@ describe('SRD corpora integrity', () => {
       readFileSync(join(DATA, 'year-zero-engine-srd-corpus.json'), 'utf8'),
     );
     expect(corpus.license).toBe('YZE-FTL');
-    expect(corpus.version).toBe('yze-srd-v9');
+    expect(corpus.version).toBe('yze-srd-v10');
     expect(corpus.entryCount).toBe(YZE_RULES.length);
     expect(corpus.entries).toHaveLength(YZE_RULES.length);
   });

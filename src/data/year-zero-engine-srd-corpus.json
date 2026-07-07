@@ -1,9 +1,9 @@
 {
-  "version": "yze-srd-v9",
+  "version": "yze-srd-v10",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 79,
+  "entryCount": 83,
   "entries": [
     {
       "keyword": "Aim",
@@ -315,6 +315,19 @@
       "aliases": []
     },
     {
+      "keyword": "Disease",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Illness contracted in the wild; worsens over time until treated or endured.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Disease",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Disease"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Dodge",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -445,6 +458,21 @@
       "aliases": []
     },
     {
+      "keyword": "Grapple",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Close in and wrestle a foe to restrain movement or force them down.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Grapple",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Grapple"
+      },
+      "aliases": [
+        "grappling"
+      ]
+    },
+    {
       "keyword": "Group Roll",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -526,6 +554,21 @@
       },
       "aliases": [
         "jumping"
+      ]
+    },
+    {
+      "keyword": "Knock Down",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Strike or shove hard enough to drop a target prone or off balance.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Knock Down",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Knock Down"
+      },
+      "aliases": [
+        "knockdown"
       ]
     },
     {
@@ -994,6 +1037,21 @@
         "section": "SRD — Thirst"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Trail",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Follow tracks, spoor, or signs left by people or creatures through the zone.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Trail",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Trail"
+      },
+      "aliases": [
+        "tracking"
+      ]
     },
     {
       "keyword": "Travel",

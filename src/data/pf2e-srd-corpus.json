@@ -1,9 +1,9 @@
 {
-  "version": "pf2e-remaster-v8",
+  "version": "pf2e-remaster-v9",
   "license": "ORC",
   "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
   "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
-  "entryCount": 101,
+  "entryCount": 106,
   "entries": [
     {
       "keyword": "Administer First Aid",
@@ -69,6 +69,32 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Avert Gaze"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Avoid Notice",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Stealth check to travel without drawing attention while the party explores.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Avoid Notice",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Avoid Notice"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Backstabber",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Weapon trait that deals extra precision damage when you hit an off-guard foe.",
+      "citation": "Pathfinder Player Core (Remaster) — Equipment — Backstabber",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Equipment — Backstabber"
       },
       "aliases": []
     },
@@ -602,6 +628,21 @@
       "aliases": []
     },
     {
+      "keyword": "Gather Information",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Diplomacy check to collect rumors and leads by talking with locals.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Gather Information",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Gather Information"
+      },
+      "aliases": [
+        "gather info"
+      ]
+    },
+    {
       "keyword": "Grabbed",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -979,6 +1020,19 @@
       ]
     },
     {
+      "keyword": "Request",
+      "phase": "General",
+      "applicability": "restricted",
+      "explanation": "Diplomacy check to ask a favor or cooperation from someone who is not hostile.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Request",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Request"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Restrained",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -1185,6 +1239,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Sustain a Spell"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Sweep",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Weapon trait letting you attack multiple adjacent foes with one Strike.",
+      "citation": "Pathfinder Player Core (Remaster) — Equipment — Sweep",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Equipment — Sweep"
       },
       "aliases": []
     },

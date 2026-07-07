@@ -163,18 +163,18 @@ describe('lookupKeyword', () => {
     }
   });
 
-  it('stamps pf2e-remaster-v8 and yze-srd-v9 on expanded SRD hits', async () => {
+  it('stamps pf2e-remaster-v9 and yze-srd-v10 on expanded SRD hits', async () => {
     const pf2e = await lookupKeyword('degree of success', 'pf2e-srd');
     expect(pf2e.found).toBe(true);
     if (pf2e.found) {
-      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v8');
+      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v9');
       expect(pf2e.keyword).toBe('Degree of Success');
     }
 
     const yze = await lookupKeyword('suppressive fire', 'year-zero-engine');
     expect(yze.found).toBe(true);
     if (yze.found) {
-      expect(yze.corpusVersion).toBe('yze-srd-v9');
+      expect(yze.corpusVersion).toBe('yze-srd-v10');
       expect(yze.keyword).toBe('Suppressive Fire');
     }
 
@@ -212,6 +212,51 @@ describe('lookupKeyword', () => {
     expect(loot.found).toBe(true);
     if (loot.found) {
       expect(loot.keyword).toBe('Loot');
+    }
+  });
+
+  it('returns PF2e v10 diplomacy and weapon trait keywords', async () => {
+    const gather = await lookupKeyword('gather info', 'pf2e-srd');
+    expect(gather.found).toBe(true);
+    if (gather.found) {
+      expect(gather.keyword).toBe('Gather Information');
+    }
+
+    const sweep = await lookupKeyword('sweep', 'pf2e-srd');
+    expect(sweep.found).toBe(true);
+    if (sweep.found) {
+      expect(sweep.keyword).toBe('Sweep');
+    }
+
+    const request = await lookupKeyword('request', 'pf2e-srd');
+    expect(request.found).toBe(true);
+    if (request.found) {
+      expect(request.keyword).toBe('Request');
+    }
+
+    expect(await lookupKeyword('sweep', 'dnd5e-srd')).toEqual({
+      found: false,
+      query: 'sweep',
+    });
+  });
+
+  it('returns YZE v10 grapple and trail keywords', async () => {
+    const grapple = await lookupKeyword('grappling', 'year-zero-engine');
+    expect(grapple.found).toBe(true);
+    if (grapple.found) {
+      expect(grapple.keyword).toBe('Grapple');
+    }
+
+    const trail = await lookupKeyword('tracking', 'year-zero-engine');
+    expect(trail.found).toBe(true);
+    if (trail.found) {
+      expect(trail.keyword).toBe('Trail');
+    }
+
+    const knock = await lookupKeyword('knockdown', 'year-zero-engine');
+    expect(knock.found).toBe(true);
+    if (knock.found) {
+      expect(knock.keyword).toBe('Knock Down');
     }
   });
 
@@ -486,6 +531,13 @@ describe('getKeywordSuggestions', () => {
     expect(getKeywordSuggestions('count', 'dnd5e-srd')).not.toContain('Counteract');
   });
 
+  it('suggests PF2e Gather Information and YZE Grapple from v10 prefixes', () => {
+    expect(getKeywordSuggestions('gat', 'pf2e-srd')).toContain('Gather Information');
+    expect(getKeywordSuggestions('gra', 'year-zero-engine')).toContain('Grapple');
+    expect(getKeywordSuggestions('gra', 'pf2e-srd')).toContain('Grapple');
+    expect(getKeywordSuggestions('gra', 'dnd5e-srd')).not.toContain('Grapple');
+  });
+
   it('suggests PF2e Hustle and YZE Burst from v9 prefixes', () => {
     expect(getKeywordSuggestions('hus', 'pf2e-srd')).toContain('Hustle');
     expect(getKeywordSuggestions('bur', 'year-zero-engine')).toContain('Burst');
@@ -567,6 +619,8 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Detect Magic');
     expect(keywords).toContain('Hustle');
     expect(keywords).toContain('Track');
+    expect(keywords).toContain('Gather Information');
+    expect(keywords).toContain('Avoid Notice');
     expect(keywords).not.toContain('Reactive Strike');
   });
 
@@ -592,6 +646,8 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Aim');
     expect(keywords).toContain('Reload');
     expect(keywords).toContain('Burst');
+    expect(keywords).toContain('Grapple');
+    expect(keywords).toContain('Knock Down');
     expect(keywords).not.toContain('Strike');
   });
 
@@ -613,6 +669,8 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Climb');
     expect(keywords).toContain('Swim');
     expect(keywords).toContain('Food');
+    expect(keywords).toContain('Trail');
+    expect(keywords).toContain('Disease');
     expect(keywords).not.toContain('Detect Magic');
   });
 

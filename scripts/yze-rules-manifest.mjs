@@ -618,4 +618,39 @@ export const YZE_RULES = [
     ruleRef: 'SRD — Burst',
     aliases: ['burst fire'],
   },
+  {
+    keyword: 'Disease',
+    phase: 'Exploration',
+    applicability: 'general',
+    summary:
+      'Illness contracted in the wild; worsens over time until treated or endured.',
+    ruleRef: 'SRD — Disease',
+  },
+  {
+    keyword: 'Trail',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Follow tracks, spoor, or signs left by people or creatures through the zone.',
+    ruleRef: 'SRD — Trail',
+    aliases: ['tracking'],
+  },
+  {
+    keyword: 'Grapple',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Close in and wrestle a foe to restrain movement or force them down.',
+    ruleRef: 'SRD — Grapple',
+    aliases: ['grappling'],
+  },
+  {
+    keyword: 'Knock Down',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Strike or shove hard enough to drop a target prone or off balance.',
+    ruleRef: 'SRD — Knock Down',
+    aliases: ['knockdown'],
+  },
 ];

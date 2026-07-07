@@ -788,4 +788,45 @@ export const PF2E_RULES = [
       'Weapon trait that can push a target back on a critical hit.',
     ruleRef: 'Equipment — Forceful',
   },
+  {
+    keyword: 'Gather Information',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Diplomacy check to collect rumors and leads by talking with locals.',
+    ruleRef: 'Actions — Gather Information',
+    aliases: ['gather info'],
+  },
+  {
+    keyword: 'Avoid Notice',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Stealth check to travel without drawing attention while the party explores.',
+    ruleRef: 'Actions — Avoid Notice',
+  },
+  {
+    keyword: 'Request',
+    phase: 'General',
+    applicability: 'restricted',
+    summary:
+      'Diplomacy check to ask a favor or cooperation from someone who is not hostile.',
+    ruleRef: 'Actions — Request',
+  },
+  {
+    keyword: 'Backstabber',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Weapon trait that deals extra precision damage when you hit an off-guard foe.',
+    ruleRef: 'Equipment — Backstabber',
+  },
+  {
+    keyword: 'Sweep',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Weapon trait letting you attack multiple adjacent foes with one Strike.',
+    ruleRef: 'Equipment — Sweep',
+  },
 ];
