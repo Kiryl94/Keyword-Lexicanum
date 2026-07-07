@@ -67,8 +67,8 @@ orchestrator updates Status as artifacts appear on disk.
 |---|------------|-----------------|---------------|------------|--------|---------------|
 | 1 | System isolation & lookup grounding | Prove system switch rebinds corpus + recents; lookup stays corpus-grounded | #1, #3 | unit + integration | complete | testing-system-isolation-lookup-grounding |
 | 2 | Corpus pipeline regression floor | Catch silent keyword drops and wrong public corpus targets at build time | #2, #5 | integration | complete | testing-corpus-pipeline-regression |
-| 3 | Result card content bounds | Assert minimal table-side presentation — no debug leakage on mobile | #4 | component unit | not started | — |
-| 4 | CI quality gates | Lock lint + production build in CI alongside existing typecheck/test | cross-cutting | gates | not started | — |
+| 3 | Result card content bounds | Assert minimal table-side presentation — no debug leakage on mobile | #4 | component unit | complete | testing-result-card-content-bounds |
+| 4 | CI quality gates | Lock lint + production build in CI alongside existing typecheck/test | cross-cutting | gates | complete | testing-ci-quality-gates |
 
 ## 4. Stack
 
@@ -78,7 +78,7 @@ The classic test base for this project. AI-native tools (if any) carry a
 | Layer | Tool | Version | Notes |
 |-------|------|---------|-------|
 | unit + integration | Vitest | 3.2.x | Node environment; corpus aliases in `vitest.config.ts` mirror production |
-| component | Vitest + React Testing Library | none yet — see Phase 3 | Add only when Phase 3 research confirms cheapest layer |
+| component | Vitest + React Testing Library | 16.x | jsdom for `src/**/*.test.tsx`; see `LookupResultCard.test.tsx` |
 | API mocking | none | — | Client-only app; no HTTP API surface in MVP |
 | e2e / browser | cursor-ide-browser (session MCP) | n/a | Table-smoke only if component tests miss a real-device gap; not default |
 | accessibility | none | — | Not in MVP rollout |
@@ -89,7 +89,7 @@ The classic test base for this project. AI-native tools (if any) carry a
 - Runtime/browser: cursor-ide-browser — optional post-Phase-3 smoke; not used for Phase 1; checked: 2026-06-24
 - Provider/platform: none — no GitHub/Vercel MCP for CI verification; local `.github/workflows/ci.yml` read instead; checked: 2026-06-24
 
-Test-base profile at plan authoring: **sparse** — 5 test files / 49 tests in `src/lib/`, `src/store/`, `scripts/`; `src/components/` and `src/app/` bare.
+Test-base profile at plan authoring: **sparse → growing** — 8 test files / 71 tests across `src/lib/`, `src/store/`, `src/components/`, `scripts/`.
 
 ## 5. Quality Gates
 
@@ -97,8 +97,8 @@ Test-base profile at plan authoring: **sparse** — 5 test files / 49 tests in `
 |------|-------|-----------|---------|
 | typecheck | local + CI | required | type drift |
 | unit + integration (Vitest) | local + CI | required | lookup, session, corpus logic regressions |
-| lint (ESLint) | local | required after Phase 4 | style/import drift |
-| production build | local + CI | required after Phase 4 | alias/bundle failures, Next.js compile errors |
+| lint (ESLint) | local + CI | required | style/import drift |
+| production build | local + CI | required | alias/bundle failures, Next.js compile errors |
 | e2e table-smoke | manual / optional MCP | optional | full mobile browser quirks component tests miss |
 | post-edit hook | local (agent loop) | not planned | — |
 | visual diff | CI | excluded (see §7) | — |
@@ -125,15 +125,23 @@ relevant rollout phase ships.
 
 ### 6.3 Adding a component test (result presentation)
 
-TBD — see §3 Phase 3 for minimal summary / no debug-field pattern.
+- **Location**: `src/components/*.test.tsx` beside the component.
+- **Pattern**: assert collapsed citation by default, expand on click, no `undefined`/`null` in DOM for hit and miss states.
+- **Reference test**: `src/components/LookupResultCard.test.tsx`
+- **Run locally**: `npm test`
 
 ### 6.4 Adding a CI gate
 
-TBD — see §3 Phase 4 for lint + build workflow steps.
+- **Workflow**: `.github/workflows/ci.yml` — after checkout and `npm ci`, run `typecheck`, `lint`, `test`, then `build`.
+- **Run locally**: `npm run typecheck && npm run lint && npm test && npm run build`
+- **Note**: ESLint warnings do not fail the job; errors do.
 
 ### 6.5 Per-rollout-phase notes
 
-(empty — filled as phases complete)
+| Phase | Shipped artifact |
+|-------|------------------|
+| 3 | `LookupResultCard.test.tsx`, `vitest.setup.ts`, jsdom + RTL devDeps |
+| 4 | CI `lint` + `build` steps in `.github/workflows/ci.yml` |
 
 ## 7. What We Deliberately Don't Test
 
@@ -145,8 +153,8 @@ Exclusions from Phase 2 interview Q5. Re-evaluate if product scope or team size 
 
 ## 8. Freshness Ledger
 
-- Strategy (§1–§5) last reviewed: 2026-06-24
-- Stack versions last verified: 2026-06-24
+- Strategy (§1–§5) last reviewed: 2026-07-07
+- Stack versions last verified: 2026-07-07
 - AI-native tool references last verified: 2026-06-24
 
 Refresh (`/10x-test-plan --refresh`) when:
