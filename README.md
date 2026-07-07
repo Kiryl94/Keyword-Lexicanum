@@ -48,6 +48,30 @@ Prerequisites: GitHub repo and a [Vercel](https://vercel.com) account (free tier
 - Search D&D `advantage`, PF2e `hero point`, YZE `push` — success cards with collapsible citations.
 - Switch to WH40k, search `close quarters` — phase + citation (Demo sample corpus).
 
+## Field table test
+
+Run this checklist on your phone during a live session (or solo dry-run at the table). Use the [live preview](https://keyword-lexicanum.vercel.app) or local `npm run dev` on the same Wi‑Fi.
+
+**Prerequisites:** modern mobile browser (Safari/Chrome), portrait orientation, stable connection.
+
+| # | Step | Pass? | Notes |
+|---|------|-------|-------|
+| 1 | Open app — SRD and Demo sections visible in system picker | | |
+| 2 | Select **D&D 5e** — search `advantage` — hit with citation, phase shown | | |
+| 3 | Search `grapple` — hit (combat term) | | |
+| 4 | Switch to **Pathfinder 2e** — search `reactive strike` (or alias `attack of opportunity`) — hit | | |
+| 5 | Search `degree of success` — hit | | |
+| 6 | Switch to **Year Zero Engine** — search `group roll` — hit | | |
+| 7 | Search `push` — hit with stress/condition context | | |
+| 8 | **System isolation:** switch back to D&D — search `push` — should **not** find YZE Push | | |
+| 9 | **Recents:** each system shows its own recent lookups after switching | | |
+| 10 | **Phase browse:** on PF2e, enter phase `encounter` — keyword list includes `Strike` | | |
+| 11 | **Demo tier:** select WH40k — search `close quarters` — hit from sample corpus | | |
+| 12 | **Citation expand:** tap citation on any hit — source link/section visible | | |
+| 13 | **Suggestions:** type `adv` on D&D — suggestion list appears; pick one — auto-search works | | |
+
+Record results in `context/changes/field-table-test/plan.md` Progress when done. File issues for any failure.
+
 ## Project structure
 
 ```
@@ -67,6 +91,6 @@ context/        # PRD, shape-notes, tech-stack
 ## Sample lookups
 
 - D&D: `advantage`, `grapple`
-- Pathfinder 2e: `strike`, `flat-footed`, `hero point`
-- Year Zero Engine: `push`, `hp`
+- Pathfinder 2e: `strike`, `flat-footed`, `hero point`, `reactive strike`
+- Year Zero Engine: `push`, `hp`, `group roll`
 - WH40k (Demo): `close quarters`, `engagement`

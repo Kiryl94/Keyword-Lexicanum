@@ -218,9 +218,9 @@ MVP slices and test-plan rollout are complete. **Build priority (2026-07-07):** 
 
 | Priority | ID | Change ID | Outcome | Status | Notes |
 |----------|-----|-----------|---------|--------|-------|
-| 1 | S-16 | corpus-expansion | Grow D&D / PF2e / YZE manifests from table feedback | ongoing | Public-safe; edit manifests + `npm run corpus:build-*` |
+| 1 | S-16 | corpus-expansion | Grow D&D / PF2e / YZE manifests from table feedback | ongoing | v4 batch shipped — PF2e 75, YZE 59 keywords |
 | 1 | — | m3l2-tdd | Ad-hoc tests via `/10x-tdd` + test-plan §6 cookbook | in progress | Quality contract for day-to-day test authoring |
-| 2 | S-14 | field-table-test | Validate SRD lookup flow on phone at a live game | not started | Manual — README deploy verify checklist |
+| 2 | S-14 | field-table-test | Validate SRD lookup flow on phone at a live game | checklist ready | Manual — README field table test § |
 | 2 | S-17 | offline-pwa | Service worker / IndexedDB corpus cache | parked | Only if field test (S-14) demands it |
 | **last** | S-15 | publisher-outreach | GW / Archon permission for Demo-tier full corpus | **deferred** | After SRD + web app complete; see `distribution-policy.md` |
 | **last** | — | demo-promotion | Promote WH40k / StarCraft from sample to full public corpus | **deferred** | Blocked on S-15; samples stay in production until then |
