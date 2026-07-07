@@ -231,6 +231,21 @@ describe('getPhasesForSystem', () => {
     expect(new Set(phases).size).toBe(phases.length);
     expect(phases).toEqual([...phases].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })));
   });
+
+  it('includes Encounter and Exploration for Pathfinder 2e SRD', () => {
+    const phases = getPhasesForSystem('pf2e-srd');
+    expect(phases).toContain('Encounter');
+    expect(phases).toContain('Exploration');
+    expect(phases).not.toContain('Fight Phase');
+  });
+
+  it('includes core YZE phase buckets', () => {
+    const phases = getPhasesForSystem('year-zero-engine');
+    expect(phases).toContain('Encounter');
+    expect(phases).toContain('Exploration');
+    expect(phases).toContain('Downtime');
+    expect(phases).toContain('General');
+  });
 });
 
 describe('getKeywordsForPhase', () => {
@@ -253,5 +268,24 @@ describe('getKeywordsForPhase', () => {
     const keywords = getKeywordsForPhase('battle round', 'wh40k-11');
     expect(keywords.length).toBeGreaterThan(1);
     expect(keywords).toEqual([...keywords].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })));
+  });
+
+  it('returns PF2e encounter keywords from the ORC corpus', () => {
+    const keywords = getKeywordsForPhase('encounter', 'pf2e-srd');
+    expect(keywords).toContain('Strike');
+    expect(keywords).toContain('Off-Guard');
+    expect(keywords).not.toContain('Close Quarters');
+  });
+
+  it('returns YZE encounter keywords without PF2e-only terms', () => {
+    const keywords = getKeywordsForPhase('encounter', 'year-zero-engine');
+    expect(keywords).toContain('Push');
+    expect(keywords).toContain('Skill Roll');
+    expect(keywords).not.toContain('Strike');
+  });
+
+  it('does not return D&D combat keywords when browsing PF2e phases', () => {
+    expect(getKeywordsForPhase('combat', 'pf2e-srd')).not.toContain('Advantage');
+    expect(getKeywordsForPhase('combat', 'pf2e-srd').length).toBe(0);
   });
 });

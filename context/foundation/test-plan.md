@@ -112,7 +112,7 @@ relevant rollout phase ships.
 
 - **Location**: Co-located `*.test.ts` beside source (`src/lib/lookup.test.ts`, `src/store/session.test.ts`).
 - **Naming**: `describe` blocks mirror the module; `it` names state behavior/regression caught.
-- **Reference tests**: cross-corpus miss — `lookup.test.ts` (`close quarters` under D&D); switch sequence — `session.test.ts` (`preserves per-system recents across a switch sequence`).
+- **Reference tests**: cross-corpus miss — `lookup.test.ts` (`close quarters` under D&D); switch sequence — `session.test.ts` (`preserves per-system recents across a switch sequence`); SRD phase browse — `lookup.test.ts` (`getKeywordsForPhase('encounter', 'pf2e-srd')`).
 - **Run locally**: `npm test`
 - **Oracles**: independent corpus facts (term in one system only), PRD not-found contract, `getCorpusVersion()` — not copied explanation strings.
 
