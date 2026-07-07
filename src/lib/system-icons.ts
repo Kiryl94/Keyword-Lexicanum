@@ -24,7 +24,7 @@ export const SYSTEM_ICON_ASSETS: Partial<Record<GameSystemId, SystemIconAsset>> 
     label: 'Pathfinder 2e',
   },
   'year-zero-engine': {
-    src: '/icons/systems/year-zero-engine-mark.svg',
+    src: '/icons/systems/year-zero-engine-mark.png',
     label: 'Year Zero Engine',
   },
 };
