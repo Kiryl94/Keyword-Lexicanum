@@ -57,8 +57,8 @@ README contains a step-by-step field-test checklist a player can run on their ph
 #### Manual
 
 - [x] 2.0 Automated deploy smoke (browser MCP, 2026-07-07) — steps 1–12 except live-session phone UX
-- [ ] 2.1 Run full checklist on phone at live session
-- [ ] 2.2 Record pass/fail and notes
+- [x] 2.1 Run full checklist on phone at live session — user confirmed mobile UX pass 2026-07-07
+- [x] 2.2 Record pass/fail and notes — no failures reported
 
 **Deploy smoke results (2026-07-07, keyword-lexicanum.vercel.app):**
 

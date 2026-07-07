@@ -577,4 +577,54 @@ export const PF2E_RULES = [
     ruleRef: 'Core — Degrees of Success',
     aliases: ['degrees of success'],
   },
+  {
+    keyword: 'Detect Magic',
+    phase: 'Exploration',
+    applicability: 'restricted',
+    summary:
+      'Sense magical auras within range; reveals presence, school, and strength of magic on objects or creatures.',
+    ruleRef: 'Spells — Detect Magic',
+  },
+  {
+    keyword: 'Treat Poison',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Medicine check to help a poisoned ally; may reduce stage or grant a bonus on their next save against the poison.',
+    ruleRef: 'Actions — Treat Poison',
+  },
+  {
+    keyword: 'Administer First Aid',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Stabilize a dying creature or grant temporary hit points with a Medicine check during combat.',
+    ruleRef: 'Actions — Administer First Aid',
+    aliases: ['first aid'],
+  },
+  {
+    keyword: 'Banishment',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Sent to another plane or dimension; you cannot act on your current plane until the effect ends.',
+    ruleRef: 'Conditions — Banishment',
+  },
+  {
+    keyword: 'Doomed',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Fate turns against you; your doomed value makes death more likely when you reach dying.',
+    ruleRef: 'Conditions — Doomed',
+  },
+  {
+    keyword: 'Counteract',
+    phase: 'General',
+    applicability: 'general',
+    summary:
+      'Use spell rank and a skill check to end an ongoing spell or magical effect on a target.',
+    ruleRef: 'Core — Counteract',
+    aliases: ['counteract check'],
+  },
 ];

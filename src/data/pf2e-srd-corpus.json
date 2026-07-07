@@ -1,10 +1,25 @@
 {
-  "version": "pf2e-remaster-v3",
+  "version": "pf2e-remaster-v4",
   "license": "ORC",
   "attribution": "Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; see ORC license at paizo.com/licenses. Not affiliated with or endorsed by Paizo.",
   "sourceDocumentUrl": "https://2e.aonprd.com/Rules.aspx",
-  "entryCount": 75,
+  "entryCount": 81,
   "entries": [
+    {
+      "keyword": "Administer First Aid",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Stabilize a dying creature or grant temporary hit points with a Medicine check during combat.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Administer First Aid",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Administer First Aid"
+      },
+      "aliases": [
+        "first aid"
+      ]
+    },
     {
       "keyword": "Aid",
       "phase": "Encounter",
@@ -28,6 +43,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Core — Attack Rolls"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Banishment",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Sent to another plane or dimension; you cannot act on your current plane until the effect ends.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Banishment",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Banishment"
       },
       "aliases": []
     },
@@ -95,6 +123,21 @@
         "section": "Conditions — Confused"
       },
       "aliases": []
+    },
+    {
+      "keyword": "Counteract",
+      "phase": "General",
+      "applicability": "general",
+      "explanation": "Use spell rank and a skill check to end an ongoing spell or magical effect on a target.",
+      "citation": "Pathfinder Player Core (Remaster) — Core — Counteract",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Core — Counteract"
+      },
+      "aliases": [
+        "counteract check"
+      ]
     },
     {
       "keyword": "Cover",
@@ -190,6 +233,19 @@
       "aliases": []
     },
     {
+      "keyword": "Detect Magic",
+      "phase": "Exploration",
+      "applicability": "restricted",
+      "explanation": "Sense magical auras within range; reveals presence, school, and strength of magic on objects or creatures.",
+      "citation": "Pathfinder Player Core (Remaster) — Spells — Detect Magic",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Spells — Detect Magic"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Disarm",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -199,6 +255,19 @@
         "documentTitle": "Pathfinder Player Core (Remaster)",
         "documentUrl": "https://2e.aonprd.com/Rules.aspx",
         "section": "Actions — Disarm"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Doomed",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Fate turns against you; your doomed value makes death more likely when you reach dying.",
+      "citation": "Pathfinder Player Core (Remaster) — Conditions — Doomed",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Conditions — Doomed"
       },
       "aliases": []
     },
@@ -936,6 +1005,19 @@
       "aliases": [
         "actions"
       ]
+    },
+    {
+      "keyword": "Treat Poison",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Medicine check to help a poisoned ally; may reduce stage or grant a bonus on their next save against the poison.",
+      "citation": "Pathfinder Player Core (Remaster) — Actions — Treat Poison",
+      "source": {
+        "documentTitle": "Pathfinder Player Core (Remaster)",
+        "documentUrl": "https://2e.aonprd.com/Rules.aspx",
+        "section": "Actions — Treat Poison"
+      },
+      "aliases": []
     },
     {
       "keyword": "Treat Wounds",

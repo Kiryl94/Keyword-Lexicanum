@@ -163,19 +163,31 @@ describe('lookupKeyword', () => {
     }
   });
 
-  it('stamps pf2e-remaster-v3 and yze-srd-v4 on expanded SRD hits', async () => {
+  it('stamps pf2e-remaster-v4 and yze-srd-v5 on expanded SRD hits', async () => {
     const pf2e = await lookupKeyword('degree of success', 'pf2e-srd');
     expect(pf2e.found).toBe(true);
     if (pf2e.found) {
-      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v3');
+      expect(pf2e.corpusVersion).toBe('pf2e-remaster-v4');
       expect(pf2e.keyword).toBe('Degree of Success');
     }
 
     const yze = await lookupKeyword('suppressive fire', 'year-zero-engine');
     expect(yze.found).toBe(true);
     if (yze.found) {
-      expect(yze.corpusVersion).toBe('yze-srd-v4');
+      expect(yze.corpusVersion).toBe('yze-srd-v5');
       expect(yze.keyword).toBe('Suppressive Fire');
+    }
+
+    const detect = await lookupKeyword('detect magic', 'pf2e-srd');
+    expect(detect.found).toBe(true);
+    if (detect.found) {
+      expect(detect.keyword).toBe('Detect Magic');
+    }
+
+    const hunger = await lookupKeyword('hunger', 'year-zero-engine');
+    expect(hunger.found).toBe(true);
+    if (hunger.found) {
+      expect(hunger.keyword).toBe('Hunger');
     }
   });
 
@@ -348,6 +360,14 @@ describe('getKeywordsForPhase', () => {
     expect(keywords).toContain('Rest');
     expect(keywords).toContain('Craft');
     expect(keywords).not.toContain('Reactive Strike');
+  });
+
+  it('returns YZE exploration keywords from the FTL corpus', () => {
+    const keywords = getKeywordsForPhase('exploration', 'year-zero-engine');
+    expect(keywords).toContain('Hunger');
+    expect(keywords).toContain('Thirst');
+    expect(keywords).toContain('Recon');
+    expect(keywords).not.toContain('Detect Magic');
   });
 
   it('does not return D&D combat keywords when browsing PF2e phases', () => {

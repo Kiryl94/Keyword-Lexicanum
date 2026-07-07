@@ -42,7 +42,7 @@ const entries = PF2E_RULES.map(toEntry).sort((a, b) =>
 );
 
 const output = {
-  version: 'pf2e-remaster-v3',
+  version: 'pf2e-remaster-v4',
   license: 'ORC',
   attribution:
     'Pathfinder Remaster content © Paizo Inc. Summaries are brief paraphrases for table lookup; ' +

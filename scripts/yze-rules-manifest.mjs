@@ -450,4 +450,37 @@ export const YZE_RULES = [
       'Find or establish cover from weather, radiation, or pursuit during travel or downtime.',
     ruleRef: 'SRD — Shelter',
   },
+  {
+    keyword: 'Hunger',
+    phase: 'Exploration',
+    applicability: 'general',
+    summary:
+      'Food depletion track in survival-focused YZE games; starving characters suffer penalties until they eat.',
+    ruleRef: 'SRD — Hunger',
+  },
+  {
+    keyword: 'Thirst',
+    phase: 'Exploration',
+    applicability: 'general',
+    summary:
+      'Water depletion track; dehydration imposes escalating penalties until the character drinks.',
+    ruleRef: 'SRD — Thirst',
+  },
+  {
+    keyword: 'Rally',
+    phase: 'Encounter',
+    applicability: 'restricted',
+    summary:
+      'Inspire allies under fire to shake off fear or regain composure for the next roll.',
+    ruleRef: 'SRD — Rally',
+  },
+  {
+    keyword: 'Breaking Point',
+    phase: 'Encounter',
+    applicability: 'general',
+    summary:
+      'Stress threshold where a character cracks — may panic, freeze, or act against their interests.',
+    ruleRef: 'SRD — Breaking Point',
+    aliases: ['breaking point stress'],
+  },
 ];

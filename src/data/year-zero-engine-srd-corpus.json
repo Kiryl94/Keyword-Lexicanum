@@ -1,9 +1,9 @@
 {
-  "version": "yze-srd-v4",
+  "version": "yze-srd-v5",
   "license": "YZE-FTL",
   "attribution": "Year Zero Engine SRD © Fria Ligan AB. Summaries are brief paraphrases for table lookup; published under the Year Zero Engine Free Tabletop License. Not affiliated with Free League.",
   "sourceDocumentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
-  "entryCount": 59,
+  "entryCount": 63,
   "entries": [
     {
       "keyword": "Ambush",
@@ -98,6 +98,21 @@
       },
       "aliases": [
         "fumble"
+      ]
+    },
+    {
+      "keyword": "Breaking Point",
+      "phase": "Encounter",
+      "applicability": "general",
+      "explanation": "Stress threshold where a character cracks — may panic, freeze, or act against their interests.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Breaking Point",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Breaking Point"
+      },
+      "aliases": [
+        "breaking point stress"
       ]
     },
     {
@@ -365,6 +380,19 @@
       ]
     },
     {
+      "keyword": "Hunger",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Food depletion track in survival-focused YZE games; starving characters suffer penalties until they eat.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Hunger",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Hunger"
+      },
+      "aliases": []
+    },
+    {
       "keyword": "Initiative",
       "phase": "Encounter",
       "applicability": "restricted",
@@ -465,6 +493,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Push"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Rally",
+      "phase": "Encounter",
+      "applicability": "restricted",
+      "explanation": "Inspire allies under fire to shake off fear or regain composure for the next roll.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Rally",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Rally"
       },
       "aliases": []
     },
@@ -731,6 +772,19 @@
         "documentTitle": "Year Zero Engine Standard Reference Document",
         "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
         "section": "SRD — Talents"
+      },
+      "aliases": []
+    },
+    {
+      "keyword": "Thirst",
+      "phase": "Exploration",
+      "applicability": "general",
+      "explanation": "Water depletion track; dehydration imposes escalating penalties until the character drinks.",
+      "citation": "Year Zero Engine Standard Reference Document — SRD — Thirst",
+      "source": {
+        "documentTitle": "Year Zero Engine Standard Reference Document",
+        "documentUrl": "https://freeleaguepublishing.com/wp-content/uploads/2023/11/YZE-Standard-Reference-Document.pdf",
+        "section": "SRD — Thirst"
       },
       "aliases": []
     },
