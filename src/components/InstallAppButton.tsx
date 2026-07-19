@@ -8,16 +8,16 @@ import {
 } from '@/lib/pwa/install';
 
 export function InstallAppButton() {
-  const [visible, setVisible] = useState(false);
+  const [visible] = useState(() =>
+    typeof window !== 'undefined' ? canShowInstallButton() : false,
+  );
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(
     null,
   );
   const [showHint, setShowHint] = useState(false);
 
   useEffect(() => {
-    if (!canShowInstallButton()) return;
-
-    setVisible(true);
+    if (!visible) return;
 
     const onBeforeInstall = (event: Event) => {
       event.preventDefault();
@@ -26,7 +26,7 @@ export function InstallAppButton() {
 
     window.addEventListener('beforeinstallprompt', onBeforeInstall);
     return () => window.removeEventListener('beforeinstallprompt', onBeforeInstall);
-  }, []);
+  }, [visible]);
 
   if (!visible) return null;
 

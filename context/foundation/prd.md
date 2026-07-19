@@ -69,9 +69,9 @@ The pain is workflow friction: constant book-flipping and manual cross-referenci
 
   > Socrates: Counter-argument considered: none. Resolution: kept as written.
 
-- FR-006: Player can use the app with a local profile (no login). Priority: must-have
+- FR-006: Player can use the app with a local profile (no login required). Optional magic-link sign-in may sync favorites when configured. Priority: must-have
 
-  > Socrates: Counter-argument considered: none. Resolution: kept local-profile model for MVP.
+  > Socrates: Counter-argument considered: none. Resolution: kept local-profile model for MVP; accounts later added as opt-in sync only.
 
 ### Keyword & phase lookup
 
@@ -119,11 +119,13 @@ Given a game system and a keyword (or phase name), the app explains the keyword 
 
 ## Access Control
 
-Single user; no login; data lives in the browser only (localStorage / IndexedDB).
+Guest use remains the default: no login required; session data lives in the browser (localStorage).
 
-**User model:** flat — single local user per browser profile. No role separation (player vs GM vs admin) in v1.
+**Optional sync:** when Supabase env vars are configured, players may sign in with a magic-link email to sync keyword favorites across devices. Lookup and local recents continue to work without an account.
 
-**Rationale:** privacy-first, zero friction at the table, no server-side identity for MVP.
+**User model:** flat — one local guest profile per browser, plus optional authenticated favorites. No role separation (player vs GM vs admin) in v1.
+
+**Rationale:** privacy-first and zero friction at the table; accounts are opt-in for sync only.
 
 ## Non-Goals
 
@@ -132,7 +134,7 @@ Single user; no login; data lives in the browser only (localStorage / IndexedDB)
 - **No real-time multi-player table sync** — no shared session state across devices at the table.
 - **No D&D extension manuals in v1** — basic/SRD only; paid extension books deferred.
 - **No voice-first input in v1** — text and guided suggestions only.
-- **No user accounts or cloud sync in v1** — browser-local profile only.
+- **No required user accounts or cloud sync for core lookup** — guest/local profile is enough; optional magic-link sync exists only for keyword favorites when Supabase is configured.
 
 ## Open Questions
 

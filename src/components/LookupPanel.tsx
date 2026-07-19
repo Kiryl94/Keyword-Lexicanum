@@ -1,6 +1,8 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { FavoritesList } from '@/components/FavoritesList';
+import { FavoritesProvider } from '@/components/FavoritesProvider';
 import { KeywordSuggestionList } from '@/components/KeywordSuggestionList';
 import { LookupResultCard } from '@/components/LookupResultCard';
 import { PhaseBrowseSection } from '@/components/PhaseBrowseSection';
@@ -102,64 +104,72 @@ export function LookupPanel() {
   }
 
   return (
-    <div className="flex flex-col gap-3">
-      <h1 className="sr-only">Keyword lookup</h1>
-      <input
-        type="search"
-        enterKeyHint="search"
-        autoComplete="off"
-        inputMode="search"
-        value={query}
-        onChange={(e) => {
-          setQuery(e.target.value);
-          if (error) setError(null);
-        }}
-        onKeyDown={(e) => e.key === 'Enter' && canSearch && onSearch(query)}
-        placeholder="Enter a keyword (e.g. Advantage, Lance)"
-        className={SEARCH_INPUT_CLASS}
-      />
-      <KeywordSuggestionList
-        suggestions={suggestions}
-        onSelect={onSuggestionSelect}
-      />
+    <FavoritesProvider systemId={activeSystem.id}>
+      <div className="flex flex-col gap-3">
+        <h1 className="sr-only">Keyword lookup</h1>
+        <input
+          type="search"
+          enterKeyHint="search"
+          autoComplete="off"
+          inputMode="search"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            if (error) setError(null);
+          }}
+          onKeyDown={(e) => e.key === 'Enter' && canSearch && onSearch(query)}
+          placeholder="Enter a keyword (e.g. Advantage, Lance)"
+          className={SEARCH_INPUT_CLASS}
+        />
+        <KeywordSuggestionList
+          suggestions={suggestions}
+          onSelect={onSuggestionSelect}
+        />
 
-      {showWelcomeHint && (
-        <p className="text-sm leading-relaxed text-[#8a8aa0]">
-          Type a keyword or tap a suggestion to look it up. Use{' '}
-          <span className="text-[#a0a0b0]">Browse by phase</span> below to explore terms
-          for the current game phase.
-        </p>
-      )}
+        {showWelcomeHint && (
+          <p className="text-sm leading-relaxed text-[#8a8aa0]">
+            Type a keyword or tap a suggestion to look it up. Use{' '}
+            <span className="text-[#a0a0b0]">Browse by phase</span> below to explore terms
+            for the current game phase.
+          </p>
+        )}
 
-      {loading && (
-        <p className="text-sm text-[#8a8aa0]" aria-live="polite">
-          Looking up keyword…
-        </p>
-      )}
+        {loading && (
+          <p className="text-sm text-[#8a8aa0]" aria-live="polite">
+            Looking up keyword…
+          </p>
+        )}
 
-      {error && (
-        <div
-          className="rounded-xl border border-[#5a3040] bg-[#1a1520] p-4 text-sm text-[#e0c0c8]"
-          role="alert"
-        >
-          {error}
-        </div>
-      )}
+        {error && (
+          <div
+            className="rounded-xl border border-[#5a3040] bg-[#1a1520] p-4 text-sm text-[#e0c0c8]"
+            role="alert"
+          >
+            {error}
+          </div>
+        )}
 
-      {visibleResult && (
-        <LookupResultCard result={visibleResult} systemLabel={activeSystem.label} />
-      )}
+        {visibleResult && (
+          <LookupResultCard
+            result={visibleResult}
+            systemLabel={activeSystem.label}
+            systemId={activeSystem.id}
+          />
+        )}
 
-      <RecentLookupList
-        items={recentLookups}
-        onSelect={onRecentSelect}
-        onClear={onClearRecents}
-      />
+        <FavoritesList onSelect={onRecentSelect} />
 
-      <PhaseBrowseSection
-        systemId={activeSystem.id}
-        onKeywordSelect={onSuggestionSelect}
-      />
-    </div>
+        <RecentLookupList
+          items={recentLookups}
+          onSelect={onRecentSelect}
+          onClear={onClearRecents}
+        />
+
+        <PhaseBrowseSection
+          systemId={activeSystem.id}
+          onKeywordSelect={onSuggestionSelect}
+        />
+      </div>
+    </FavoritesProvider>
   );
 }

@@ -2,15 +2,22 @@
 
 import { useState } from 'react';
 import { CitationBlock } from '@/components/CitationBlock';
+import { FavoriteButton } from '@/components/FavoriteButton';
 import { PhaseRelevance } from '@/components/PhaseRelevance';
 import type { LookupResult } from '@/lib/lookup';
+import type { GameSystemId } from '@/store/session';
 
 type LookupResultCardProps = {
   result: LookupResult;
   systemLabel: string;
+  systemId?: GameSystemId;
 };
 
-export function LookupResultCard({ result, systemLabel }: LookupResultCardProps) {
+export function LookupResultCard({
+  result,
+  systemLabel,
+  systemId,
+}: LookupResultCardProps) {
   const [citationExpanded, setCitationExpanded] = useState(false);
 
   if (!result.found) {
@@ -34,7 +41,12 @@ export function LookupResultCard({ result, systemLabel }: LookupResultCardProps)
 
   return (
     <div className="flex flex-col gap-2 rounded-xl bg-[#1a1a2e] p-4">
-      <h2 className="text-lg font-bold text-[#f5f5f5]">{result.keyword}</h2>
+      <div className="flex items-start justify-between gap-3">
+        <h2 className="text-lg font-bold text-[#f5f5f5]">{result.keyword}</h2>
+        {systemId && (
+          <FavoriteButton systemId={systemId} keyword={result.keyword} />
+        )}
+      </div>
       <PhaseRelevance
         phase={result.phase}
         phaseApplicability={result.phaseApplicability}

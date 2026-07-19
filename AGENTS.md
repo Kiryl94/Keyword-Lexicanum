@@ -6,15 +6,17 @@ Keyword Lexicanum is a Next.js 16 + TypeScript web app for tabletop keyword look
 
 - Never commit full WH40k or StarCraft corpus JSON from `src/data/local/` — gitignored, personal-use only per @context/foundation/distribution-policy.md.
 - Public bundles must use sample corpora for **Demo** systems (`wh40k-core-corpus.sample.json`, `starcraft-core-corpus.sample.json`) unless publisher permission exists. **SRD** systems ship full open-licensed corpora.
+- Never commit `.env.local`. Optional Supabase sync uses public anon key only (`NEXT_PUBLIC_SUPABASE_*`); do not put the service-role key in the client or repo.
 
 ## Project Structure & Module Organization
 
-- `src/app/` — Next.js App Router pages (system picker, lookup, phases).
+- `src/app/` — Next.js App Router pages (system picker, lookup, phases), auth callback, favorites API routes.
 - `src/components/` — React UI (PascalCase `.tsx` files).
-- `src/lib/` — lookup logic and corpus loaders (`lookup.ts`, `corpus/`).
+- `src/lib/` — lookup logic and corpus loaders (`lookup.ts`, `corpus/`), optional Supabase helpers.
 - `src/store/` — Zustand session state (`session.ts`).
 - `src/data/` — committed corpora and samples; local PDF builds land in `src/data/local/` (gitignored).
 - `scripts/` — corpus build manifests and Node tests (`*.mjs`, `*-manifest.mjs`).
+- `supabase/` — SQL migrations for optional synced favorites.
 - `context/foundation/` — PRD, roadmap, distribution policy. See @README.md.
 
 ## Build, Test, and Development Commands

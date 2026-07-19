@@ -42,11 +42,27 @@ Prerequisites: GitHub repo and a [Vercel](https://vercel.com) account (free tier
 
 **Redeploy:** push to `main`; Vercel rebuilds automatically.
 
+## Optional sync (auth + favorites)
+
+Core lookup works as a guest with no account. To enable magic-link sign-in and synced favorites:
+
+1. Create a free [Supabase](https://supabase.com) project.
+2. In the SQL editor, run [`supabase/migrations/001_favorites.sql`](supabase/migrations/001_favorites.sql).
+3. Authentication → Providers → enable **Email** (magic link).
+4. Authentication → URL configuration: set Site URL to `http://localhost:3000` (and add your Vercel URL to Redirect URLs, e.g. `https://keyword-lexicanum.vercel.app/auth/callback`).
+5. Copy Project URL + anon public key into `.env.local` (see `.env.local.example`):
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+6. Restart `npm run dev`. Sign in from the nav, then star a lookup result to sync a favorite.
+
+Without these env vars the app stays guest-only (CI and public deploys need no secrets).
+
 **Verify after deploy:**
 
 - Open `/` — system picker loads (SRD and Demo sections).
 - Search D&D `advantage`, PF2e `hero point`, YZE `push` — success cards with collapsible citations.
 - Switch to WH40k, search `close quarters` — phase + citation (Demo sample corpus).
+- (If Supabase configured) Sign in → favorite a keyword → it appears under Favorites after refresh.
 
 ## Field table test
 
@@ -75,9 +91,10 @@ Record results in `context/changes/field-table-test/plan.md` Progress when done.
 ## Project structure
 
 ```
-src/app/        # System picker, keyword lookup, phase browse
-src/lib/        # lookup + sample corpus
+src/app/        # System picker, keyword lookup, phase browse, auth callback, favorites API
+src/lib/        # lookup + corpus + supabase helpers
 src/store/      # Zustand session state (browser memory)
+supabase/       # SQL migrations for optional synced favorites
 context/        # PRD, shape-notes, tech-stack
 ```
 
